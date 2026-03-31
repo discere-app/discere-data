@@ -1,0 +1,14 @@
+{
+  "name": "Meeresschildkröten",
+  "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet.",
+  "imageUrl": "https://www.turtle-foundation.org/wp-content/uploads/Seaturtles_species.jpg",
+  "speciesNames": [
+    "Caretta caretta",
+    "Chelonia mydas",
+    "Eretmochelys imbricata",
+    "Dermochelys coriacea",
+    "Lepidochelys olivacea",
+    "Lepidochelys kempii",
+    "Natator depressus"
+  ]
+}
