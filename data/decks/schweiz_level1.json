@@ -1,0 +1,32 @@
+{
+    "name": "Switzerland Fish - Level 1",
+    "description": "Einsteiger: markante und leicht unterscheidbare Arten",
+    "imageUrl": "https://publicdomainvectors.org/photos/Switzerland-Map-Flag.png",
+    "speciesNames": [
+        "Esox lucius",
+        "Perca fluviatilis",
+        "Salmo trutta",
+        "Oncorhynchus mykiss",
+        "Thymallus thymallus",
+        "Salvelinus umbla",
+        "Anguilla anguilla",
+        "Silurus glanis",
+        "Cyprinus carpio",
+        "Sander lucioperca",
+        "Cottus gobio",
+        "Gasterosteus aculeatus",
+        "Lota lota",
+        "Hucho hucho",
+        "Salvelinus alpinus"
+    ],
+    "sources": [
+        {
+            "name": "BAFU (Bundesamt für Umwelt)",
+            "url": "https://www.bafu.admin.ch/"
+        },
+        {
+            "name": "FishBase",
+            "url": "https://www.fishbase.se/"
+        }
+    ]
+}
