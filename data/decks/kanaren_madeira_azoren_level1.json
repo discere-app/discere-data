@@ -1,0 +1,59 @@
+{
+  "name": "Kanaren Madeira Azoren - Level 1",
+  "description": "Sehr häufige Arten: Azoren + Madeira + Kanaren",
+  "speciesNames": [
+    "Sparisoma cretense",
+    "Thalassoma pavo",
+    "Similiparma lurida",
+    "Sphoeroides marmoratus",
+    "Diplodus cadenati",
+    "Diplodus vulgaris",
+    "Scorpaena maderensis",
+    "Chromis limbata",
+    "Hermodice carunculata",
+    "Serranus atricauda",
+    "Asparagopsis taxiformis",
+    "Sarpa salpa",
+    "Muraena augusti",
+    "Apogon imberbis",
+    "Ophioblennius atlanticus",
+    "Holothuria sanctori",
+    "Tripterygion delaisi",
+    "Coris melanura",
+    "Ophidiaster ophidianus",
+    "Arbacia lixula",
+    "Epinephelus marginatus",
+    "Sphaerechinus granularis",
+    "Pseudocaranx dentex",
+    "Mullus surmuletus",
+    "Padina pavonica",
+    "Boops boops",
+    "Pomadasys incisus",
+    "Spondyliosoma cantharus",
+    "Diplodus sargus",
+    "Diadema africanum"
+  ],
+  "imageUrl": "",
+  "sources": [
+    {
+      "name": "REEF",
+      "url": "https://www.reef.org/"
+    },
+    {
+      "name": "IUCN SSC Shark Specialist Group – Important Shark and Ray Areas (ISRA)",
+      "url": "https://sharkrayareas.org/"
+    },
+    {
+      "name": "Angel Shark Network",
+      "url": "https://angelsharknetwork.com/"
+    },
+    {
+      "name": "Divers Alert Network (DAN)",
+      "url": "https://dan.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.se/"
+    }
+  ]
+}

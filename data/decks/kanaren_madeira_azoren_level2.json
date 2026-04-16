@@ -1,0 +1,72 @@
+{
+  "name": "Kanaren Madeira Azoren - Level 2",
+  "description": "Häufige Arten: Azoren + Madeira + Kanaren",
+  "speciesNames": [
+    "Mycteroperca fusca",
+    "Symphodus caeruleus",
+    "Caulerpa webbiana",
+    "Asparagopsis armata",
+    "Aulostomus strigosus",
+    "Canthigaster capistrata",
+    "Corynactis viridis",
+    "Distaplia corolla",
+    "Diplodus cervinus",
+    "Labrus bergylta",
+    "Sabella spallanzanii",
+    "Megabalanus azoricus",
+    "Bothus podas",
+    "Paracentrotus lividus",
+    "Centrostephanus longispinus",
+    "Pinna rudis",
+    "Bodianus scrofa",
+    "Dardanus calidus",
+    "Marthasterias glacialis",
+    "Synodus saurus",
+    "Scyllarides latus",
+    "Sphyraena viridensis",
+    "Trachinotus ovatus",
+    "Parablennius ruber",
+    "Pelagia noctiluca",
+    "Myliobatis aquila",
+    "Gymnothorax unicolor",
+    "Balistes capriscus",
+    "Plesionika narval",
+    "Octopus vulgaris",
+    "Chilomycterus reticulatus",
+    "Phycis phycis",
+    "Symphodus mediterraneus",
+    "Aluterus scriptus",
+    "Codium elisabethae",
+    "Gongolaria abies-marina",
+    "Dasyatis pastinaca",
+    "Enchelycore anatina",
+    "Diplodus annularis",
+    "Symphodus trutta",
+    "Mola mola",
+    "Squatina squatina",
+    "Caretta caretta"
+  ],
+  "imageUrl": "",
+  "sources": [
+    {
+      "name": "REEF",
+      "url": "https://www.reef.org/"
+    },
+    {
+      "name": "IUCN SSC Shark Specialist Group – Important Shark and Ray Areas (ISRA)",
+      "url": "https://sharkrayareas.org/"
+    },
+    {
+      "name": "Angel Shark Network",
+      "url": "https://angelsharknetwork.com/"
+    },
+    {
+      "name": "Divers Alert Network (DAN)",
+      "url": "https://dan.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.se/"
+    }
+  ]
+}
