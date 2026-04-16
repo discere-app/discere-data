@@ -1,0 +1,44 @@
+{
+  "name": "Mittelmeer - Level 1",
+  "description": "Sehr häufige Arten",
+  "speciesNames": [
+    "Diplodus vulgaris",
+    "Diplodus sargus",
+    "Sarpa salpa",
+    "Oblada melanurus",
+    "Arbacia lixula",
+    "Mullus surmuletus",
+    "Lithognathus mormyrus",
+    "Mugil cephalus",
+    "Thalassoma pavo",
+    "Diplodus puntazzo",
+    "Charonia lampas",
+    "Pomadasys incisus",
+    "Dicentrarchus labrax",
+    "Symphodus tinca",
+    "Chromis chromis",
+    "Sphyraena pinguis",
+    "Serranus scriba",
+    "Coris julis",
+    "Sparus aurata",
+    "Sparisoma cretense",
+    "Apogon imberbis",
+    "Hermodice carunculata",
+    "Epinephelus marginatus",
+    "Symphodus roissali",
+    "Diplodus annularis",
+    "Umbrina cirrosa",
+    "Boops boops",
+    "Padina pavonica",
+    "Gobius niger",
+    "Symphodus ocellatus",
+    "Spondyliosoma cantharus"
+  ],
+  "imageUrl": "https://images.pexels.com/photos/1200289/pexels-photo-1200289.jpeg",
+  "sources": [
+    {
+      "name": "REEF",
+      "url": "https://www.reef.org/"
+    }
+  ]
+}

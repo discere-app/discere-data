@@ -267,13 +267,34 @@
     "Tylosurus choram",
     "Urogymnus granulatus",
     "Valenciennea sexguttata",
-    "Xanthichthys caeruleolineatus"
+    "Xanthichthys caeruleolineatus",
+    "Sphyrna lewini",
+    "Carcharhinus falciformis",
+    "Galeocerdo cuvier",
+    "Rhincodon typus",
+    "Tridacna squamosina"
   ],
   "imageUrl": "https://www.reef.org/sites/all/modules/custom/reef_zones/images/iors.jpg",
   "sources": [
     {
       "name": "REEF",
       "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FAO – Sharks and Rays of the Red Sea and Gulf of Aden (Field Identification Guide)",
+      "url": "https://www.fao.org/"
+    },
+    {
+      "name": "IUCN SSC Shark Specialist Group – Important Shark and Ray Areas (ISRA)",
+      "url": "https://sharkrayareas.org/"
+    },
+    {
+      "name": "IUCN Red List of Threatened Species",
+      "url": "https://www.iucnredlist.org/"
+    },
+    {
+      "name": "Frontiers in Marine Science",
+      "url": "https://www.frontiersin.org/journals/marine-science"
     }
   ]
 }
