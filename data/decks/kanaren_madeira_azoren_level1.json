@@ -1,37 +1,38 @@
 {
-  "name": "Kanaren Madeira Azoren - Level 1",
-  "description": "Sehr häufige Arten: Azoren + Madeira + Kanaren",
+  "name": "Kanare Madeira Azoren - Level 1",
+  "description": "Sehr häufige Arten",
   "speciesNames": [
-    "Sparisoma cretense",
     "Thalassoma pavo",
+    "Sparisoma cretense",
     "Similiparma lurida",
+    "Diplodus vulgaris",
     "Sphoeroides marmoratus",
     "Diplodus cadenati",
-    "Diplodus vulgaris",
-    "Scorpaena maderensis",
-    "Chromis limbata",
     "Hermodice carunculata",
+    "Chromis limbata",
     "Serranus atricauda",
     "Asparagopsis taxiformis",
+    "Scorpaena maderensis",
+    "Holothuria sanctori",
     "Sarpa salpa",
     "Muraena augusti",
     "Apogon imberbis",
-    "Ophioblennius atlanticus",
-    "Holothuria sanctori",
-    "Tripterygion delaisi",
-    "Coris melanura",
     "Ophidiaster ophidianus",
     "Arbacia lixula",
-    "Epinephelus marginatus",
+    "Ophioblennius atlanticus",
     "Sphaerechinus granularis",
-    "Pseudocaranx dentex",
-    "Mullus surmuletus",
+    "Tripterygion delaisi",
     "Padina pavonica",
+    "Mullus surmuletus",
+    "Pseudocaranx dentex",
     "Boops boops",
-    "Pomadasys incisus",
-    "Spondyliosoma cantharus",
-    "Diplodus sargus",
-    "Diadema africanum"
+    "Caulerpa webbiana",
+    "Asparagopsis armata",
+    "Corynactis viridis",
+    "Distaplia corolla",
+    "Coris julis",
+    "Squatina squatina",
+    "Caretta caretta"
   ],
   "imageUrl": "",
   "sources": [
@@ -40,20 +41,16 @@
       "url": "https://www.reef.org/"
     },
     {
-      "name": "IUCN SSC Shark Specialist Group – Important Shark and Ray Areas (ISRA)",
-      "url": "https://sharkrayareas.org/"
-    },
-    {
-      "name": "Angel Shark Network",
-      "url": "https://angelsharknetwork.com/"
-    },
-    {
-      "name": "Divers Alert Network (DAN)",
-      "url": "https://dan.org/"
-    },
-    {
       "name": "FishBase",
-      "url": "https://www.fishbase.se/"
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
     }
   ]
 }

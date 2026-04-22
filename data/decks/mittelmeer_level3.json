@@ -2,9 +2,7 @@
   "name": "Mittelmeer - Level 3",
   "description": "Seltene Arten",
   "speciesNames": [
-    "Pterois miles",
     "Siganus luridus",
-    "Anthias anthias",
     "Corcyrogobius liechtensteini",
     "Holothuria mammata",
     "Lipophrys trigloides",
@@ -15,7 +13,6 @@
     "Parablennius gattorugine",
     "Parablennius incognitus",
     "Scorpaena notata",
-    "Scorpaena porcus",
     "Trachinus radiatus",
     "Trachurus picturatus",
     "Dactylopterus volitans",
@@ -61,31 +58,41 @@
     "Felimare picta",
     "Gammogobius steinitzi",
     "Gobius xanthocephalus",
-    "Gongolaria abies-marina",
     "Labrus bergylta",
     "Microchirus azevia",
     "Microlipophrys canevae",
     "Pelagia noctiluca",
-    "Sciaena umbra",
     "Scophthalmus maximus",
     "Seriola fasciata",
     "Siganus rivulatus",
     "Similiparma lurida",
-    "Sphyraena sphyraena",
     "Symphodus caeruleus",
     "Syngnathus abaster",
-    "Torpedo marmorata",
-    "Torpedo torpedo",
-    "Scyliorhinus canicula",
-    "Mycteroperca rubra",
-    "Stephanolepis diaspros",
-    "Sphyraena chrysotaenia"
+    "Hippocampus guttulatus",
+    "Seriola dumerili",
+    "Sphyraena viridensis",
+    "Scorpaena maderensis",
+    "Corallium rubrum",
+    "Mola mola",
+    "Mobula mobular"
   ],
-  "imageUrl": "https://images.pexels.com/photos/1200289/pexels-photo-1200289.jpeg",
+  "imageUrl": "",
   "sources": [
     {
       "name": "REEF",
       "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
     }
   ]
 }

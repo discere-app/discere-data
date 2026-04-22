@@ -1,50 +1,59 @@
 {
-  "name": "Kanaren Madeira Azoren - Level 2",
-  "description": "Häufige Arten: Azoren + Madeira + Kanaren",
+  "name": "Kanare Madeira Azoren - Level 2",
+  "description": "Häufige Arten",
   "speciesNames": [
-    "Mycteroperca fusca",
-    "Symphodus caeruleus",
-    "Caulerpa webbiana",
-    "Asparagopsis armata",
     "Aulostomus strigosus",
     "Canthigaster capistrata",
-    "Corynactis viridis",
-    "Distaplia corolla",
-    "Diplodus cervinus",
-    "Labrus bergylta",
+    "Symphodus caeruleus",
     "Sabella spallanzanii",
     "Megabalanus azoricus",
+    "Diplodus cervinus",
     "Bothus podas",
+    "Labrus bergylta",
     "Paracentrotus lividus",
     "Centrostephanus longispinus",
     "Pinna rudis",
-    "Bodianus scrofa",
+    "Balistes capriscus",
+    "Sphyraena viridensis",
     "Dardanus calidus",
     "Marthasterias glacialis",
-    "Synodus saurus",
+    "Bodianus scrofa",
     "Scyllarides latus",
-    "Sphyraena viridensis",
-    "Trachinotus ovatus",
-    "Parablennius ruber",
     "Pelagia noctiluca",
-    "Myliobatis aquila",
-    "Gymnothorax unicolor",
-    "Balistes capriscus",
+    "Synodus saurus",
+    "Trachinotus ovatus",
     "Plesionika narval",
     "Octopus vulgaris",
-    "Chilomycterus reticulatus",
+    "Gymnothorax unicolor",
+    "Myliobatis aquila",
+    "Parablennius ruber",
+    "Oblada melanurus",
+    "Felimare picta",
     "Phycis phycis",
+    "Chilomycterus reticulatus",
+    "Antipathella wollastoni",
     "Symphodus mediterraneus",
+    "Charonia lampas",
     "Aluterus scriptus",
-    "Codium elisabethae",
-    "Gongolaria abies-marina",
     "Dasyatis pastinaca",
     "Enchelycore anatina",
-    "Diplodus annularis",
-    "Symphodus trutta",
-    "Mola mola",
-    "Squatina squatina",
-    "Caretta caretta"
+    "Seriola rivoliana",
+    "Gnatholepis thompsoni",
+    "Taeniurops grabatus",
+    "Tedania anhelans",
+    "Myrichthys pardalis",
+    "Pagellus acarne",
+    "Coscinasterias tenuispina",
+    "Tambja ceutae",
+    "Canthidermis sufflamen",
+    "Heteroconger longissimus",
+    "Diplodus sargus",
+    "Muraena helena",
+    "Anthias anthias",
+    "Conger conger",
+    "Epinephelus marginatus",
+    "Mycteroperca fusca",
+    "Mobula mobular"
   ],
   "imageUrl": "",
   "sources": [
@@ -53,20 +62,16 @@
       "url": "https://www.reef.org/"
     },
     {
-      "name": "IUCN SSC Shark Specialist Group – Important Shark and Ray Areas (ISRA)",
-      "url": "https://sharkrayareas.org/"
-    },
-    {
-      "name": "Angel Shark Network",
-      "url": "https://angelsharknetwork.com/"
-    },
-    {
-      "name": "Divers Alert Network (DAN)",
-      "url": "https://dan.org/"
-    },
-    {
       "name": "FishBase",
-      "url": "https://www.fishbase.se/"
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
     }
   ]
 }

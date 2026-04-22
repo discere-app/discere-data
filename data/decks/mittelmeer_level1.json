@@ -31,14 +31,30 @@
     "Boops boops",
     "Padina pavonica",
     "Gobius niger",
-    "Symphodus ocellatus",
-    "Spondyliosoma cantharus"
+    "Sphyraena sphyraena",
+    "Paracentrotus lividus",
+    "Muraena helena",
+    "Posidonia oceanica",
+    "Caretta caretta",
+    "Conger conger"
   ],
-  "imageUrl": "https://images.pexels.com/photos/1200289/pexels-photo-1200289.jpeg",
+  "imageUrl": "",
   "sources": [
     {
       "name": "REEF",
       "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
     }
   ]
 }

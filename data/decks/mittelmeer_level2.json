@@ -2,19 +2,14 @@
   "name": "Mittelmeer - Level 2",
   "description": "Häufige Arten",
   "speciesNames": [
-    "Scorpaena maderensis",
-    "Seriola dumerili",
     "Octopus vulgaris",
-    "Sphyraena viridensis",
     "Gobius incognitus",
     "Sabella spallanzanii",
     "Trachinotus ovatus",
     "Caranx crysos",
     "Bothus podas",
-    "Muraena helena",
     "Tripterygion delaisi",
     "Tripterygion melanurus",
-    "Paracentrotus lividus",
     "Belone belone",
     "Ophidiaster ophidianus",
     "Atherina presbyter",
@@ -24,7 +19,6 @@
     "Xyrichtys novacula",
     "Dardanus calidus",
     "Centrostephanus longispinus",
-    "Codium elisabethae",
     "Epinephelus costae",
     "Spicara maena",
     "Uranoscopus scaber",
@@ -43,21 +37,33 @@
     "Sphaerechinus granularis",
     "Chromis limbata",
     "Coscinasterias tenuispina",
-    "Ellisolandia elongata",
-    "Hippocampus guttulatus",
     "Holothuria sanctori",
-    "Conger conger",
-    "Spicara smaris",
-    "Labrus viridis",
-    "Pagellus erythrinus",
-    "Chelon auratus",
-    "Dicentrarchus punctatus"
+    "Pterois miles",
+    "Scorpaena porcus",
+    "Sciaena umbra",
+    "Anthias anthias",
+    "Pinna nobilis",
+    "Paramuricea clavata",
+    "Eunicella cavolini",
+    "Astroides calycularis"
   ],
-  "imageUrl": "https://images.pexels.com/photos/1200289/pexels-photo-1200289.jpeg",
+  "imageUrl": "",
   "sources": [
     {
       "name": "REEF",
       "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
     }
   ]
 }
