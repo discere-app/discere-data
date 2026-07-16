@@ -1,49 +1,50 @@
 {
-    "name": "Switzerland Fish - Level 2",
-    "description": "Fortgeschritten: häufige Arten mit ähnlicher Morphologie",
-    "imageUrl": "https://publicdomainvectors.org/photos/Switzerland-Map-Flag.png",
-    "speciesNames": [
-        "Rutilus rutilus",
-        "Scardinius erythrophthalmus",
-        "Abramis brama",
-        "Tinca tinca",
-        "Squalius cephalus",
-        "Barbus barbus",
-        "Phoxinus phoxinus",
-        "Leuciscus leuciscus",
-        "Alburnus alburnus",
-        "Blicca bjoerkna",
-        "Rhodeus amarus",
-        "Leucaspius delineatus",
-        "Alburnoides bipunctatus",
-        "Gobio gobio",
-        "Barbatula barbatula",
-        "Gymnocephalus cernua",
-        "Pungitius laevis",
-        "Salvelinus fontinalis",
-        "Petromyzon marinus",
-        "Chondrostoma nasus",
-        "Leuciscus idus",
-        "Vimba vimba",
-        "Gobio occitaniae",
-        "Carassius carassius",
-        "Carassius gibelio",
-        "Pseudorasbora parva",
-        "Ameiurus melas",
-        "Ameiurus nebulosus",
-        "Micropterus salmoides",
-        "Lepomis gibbosus",
-        "Neogobius melanostomus",
-        "Ctenopharyngodon idella"
-    ],
-    "sources": [
-        {
-            "name": "BAFU (Bundesamt für Umwelt)",
-            "url": "https://www.bafu.admin.ch/"
-        },
-        {
-            "name": "FishBase",
-            "url": "https://www.fishbase.se/"
-        }
-    ]
+  "name": "Switzerland Fish - Level 2",
+  "description": "Fortgeschritten: häufige Arten mit ähnlicher Morphologie",
+  "imageUrl": "https://publicdomainvectors.org/photos/Switzerland-Map-Flag.png",
+  "speciesNames": [
+    "Rutilus rutilus",
+    "Scardinius erythrophthalmus",
+    "Abramis brama",
+    "Tinca tinca",
+    "Squalius cephalus",
+    "Barbus barbus",
+    "Phoxinus phoxinus",
+    "Leuciscus leuciscus",
+    "Alburnus alburnus",
+    "Blicca bjoerkna",
+    "Rhodeus amarus",
+    "Leucaspius delineatus",
+    "Alburnoides bipunctatus",
+    "Gobio gobio",
+    "Barbatula barbatula",
+    "Gymnocephalus cernua",
+    "Pungitius laevis",
+    "Salvelinus fontinalis",
+    "Petromyzon marinus",
+    "Chondrostoma nasus",
+    "Leuciscus idus",
+    "Vimba vimba",
+    "Gobio occitaniae",
+    "Carassius carassius",
+    "Carassius gibelio",
+    "Pseudorasbora parva",
+    "Ameiurus melas",
+    "Ameiurus nebulosus",
+    "Micropterus salmoides",
+    "Lepomis gibbosus",
+    "Neogobius melanostomus",
+    "Ctenopharyngodon idella"
+  ],
+  "sources": [
+    {
+      "name": "BAFU (Bundesamt für Umwelt)",
+      "url": "https://www.bafu.admin.ch/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.se/"
+    }
+  ],
+  "sourceId": "73db6850-309f-40a2-a007-704cea77c951"
 }

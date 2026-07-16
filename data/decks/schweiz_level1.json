@@ -1,32 +1,33 @@
 {
-    "name": "Switzerland Fish - Level 1",
-    "description": "Einsteiger: markante und leicht unterscheidbare Arten",
-    "imageUrl": "https://publicdomainvectors.org/photos/Switzerland-Map-Flag.png",
-    "speciesNames": [
-        "Esox lucius",
-        "Perca fluviatilis",
-        "Salmo trutta",
-        "Oncorhynchus mykiss",
-        "Thymallus thymallus",
-        "Salvelinus umbla",
-        "Anguilla anguilla",
-        "Silurus glanis",
-        "Cyprinus carpio",
-        "Sander lucioperca",
-        "Cottus gobio",
-        "Gasterosteus aculeatus",
-        "Lota lota",
-        "Hucho hucho",
-        "Salvelinus alpinus"
-    ],
-    "sources": [
-        {
-            "name": "BAFU (Bundesamt für Umwelt)",
-            "url": "https://www.bafu.admin.ch/"
-        },
-        {
-            "name": "FishBase",
-            "url": "https://www.fishbase.se/"
-        }
-    ]
+  "name": "Switzerland Fish - Level 1",
+  "description": "Einsteiger: markante und leicht unterscheidbare Arten",
+  "imageUrl": "https://publicdomainvectors.org/photos/Switzerland-Map-Flag.png",
+  "speciesNames": [
+    "Esox lucius",
+    "Perca fluviatilis",
+    "Salmo trutta",
+    "Oncorhynchus mykiss",
+    "Thymallus thymallus",
+    "Salvelinus umbla",
+    "Anguilla anguilla",
+    "Silurus glanis",
+    "Cyprinus carpio",
+    "Sander lucioperca",
+    "Cottus gobio",
+    "Gasterosteus aculeatus",
+    "Lota lota",
+    "Hucho hucho",
+    "Salvelinus alpinus"
+  ],
+  "sources": [
+    {
+      "name": "BAFU (Bundesamt für Umwelt)",
+      "url": "https://www.bafu.admin.ch/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.se/"
+    }
+  ],
+  "sourceId": "ec793ff7-aeeb-446e-8552-9b4b8bf30e28"
 }
