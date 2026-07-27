@@ -18,14 +18,15 @@ Mehr ist nicht nötig - `data/decks/index.json` wird nicht von Hand gepflegt.
 
 Die App lädt Decks über `data/decks/index.json`, eine generierte Datei, die
 alle einzelnen Deck-Dateien zusammenfasst (ein Request statt einer pro Deck).
-Nach dem Mergen eines PRs nach `main` einmal ausführen, um sie zu
-aktualisieren:
+Ein GitHub-Actions-Workflow (`.github/workflows/sync-deck-index.yml`)
+regeneriert sie automatisch nach jedem Merge eines PRs nach `main` und pusht
+das Ergebnis. Contributors müssen dafür nichts tun.
+
+Bei Bedarf lässt sich der Lauf auch manuell anstoßen (Tab "Actions" ->
+"Sync deck index" -> "Run workflow"), oder lokal:
 
 ```
 ./scripts/sync_index.sh
 ```
-
-Das Script pullt `main`, regeneriert `data/decks/index.json` und pusht das
-Ergebnis. Es gibt (noch) keinen CI-Runner, der das automatisch macht.
 
 Daten dürfen nicht-kommerziell genutzt werden; Attribution bei Bildern empfohlen (z. B. iNaturalist, FishBase)
