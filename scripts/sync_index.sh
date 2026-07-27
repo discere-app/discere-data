@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 # =============================================================================
-# sync_index.sh — Maintainer-only: regenerate and publish data/decks/index.json
+# sync_index.sh — regenerate and publish data/decks/index.json
 #
-# Run manually on a local checkout of `main`, after merging a deck PR.
-# Contributors never touch this - they only add a deck JSON file and open a
-# PR. This script:
+# Runs automatically via .github/workflows/sync-deck-index.yml on every push
+# to main that touches data/decks/*.json (i.e. after a deck PR is merged),
+# and can also be triggered manually (Actions tab -> "Run workflow") or run
+# locally by a maintainer. Contributors never touch this - they only add a
+# deck JSON file and open a PR. This script:
 #   1. Pulls the latest main.
 #   2. Assigns a stable `sourceId` (a UUID, not derived from the filename) to
 #      any deck file that doesn't have one yet, and persists it back into
@@ -34,6 +36,11 @@ INDEX_FILE="$DECKS_DIR/index.json"
 SYNC_COMMIT_MESSAGE="chore: regenerate deck index"
 
 cd "$REPO_ROOT"
+
+if [ -n "${GITHUB_ACTIONS:-}" ]; then
+  git config user.name "github-actions[bot]"
+  git config user.email "github-actions[bot]@users.noreply.github.com"
+fi
 
 branch="$(git rev-parse --abbrev-ref HEAD)"
 if [ "$branch" != "main" ]; then
@@ -71,7 +78,7 @@ done < <(list_deck_files)
 
 echo "Generating index.json..."
 while IFS= read -r deck_file; do
-  updated_at="$(git log --invert-grep --grep="^${SYNC_COMMIT_MESSAGE}\$" -1 --format=%cI -- "$deck_file")"
+  updated_at="$(git log --invert-grep --grep="^${SYNC_COMMIT_MESSAGE}" -1 --format=%cI -- "$deck_file")"
   [ -z "$updated_at" ] && updated_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
   jq --arg u "$updated_at" '. + {updatedAt: $u}' "$deck_file"
 done < <(list_deck_files) | jq -s '.' > "$INDEX_FILE"
@@ -84,7 +91,7 @@ if [ -z "$(git status --porcelain -- "$DECKS_DIR")" ]; then
 fi
 
 git add "$DECKS_DIR"
-git commit -m "$SYNC_COMMIT_MESSAGE"
+git commit -m "$SYNC_COMMIT_MESSAGE [skip ci]"
 
 echo "Pushing to main..."
 git push origin main

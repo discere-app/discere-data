@@ -1,0 +1,32 @@
+name: Sync deck index
+
+# Regenerates data/decks/index.json after a deck PR is merged to main, and
+# lets a maintainer re-run it manually (Actions tab -> "Run workflow").
+# Push-triggered runs of this workflow are skipped automatically via the
+# "[skip ci]" marker in scripts/sync_index.sh's own commit message, so the
+# commit it creates does not re-trigger this workflow.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "data/decks/*.json"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-deck-index
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Regenerate deck index
+        run: ./scripts/sync_index.sh
