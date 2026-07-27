@@ -5,6 +5,15 @@ name: Sync deck index
 # Push-triggered runs of this workflow are skipped automatically via the
 # "[skip ci]" marker in scripts/sync_index.sh's own commit message, so the
 # commit it creates does not re-trigger this workflow.
+#
+# Pushes with a fine-grained PAT (secrets.SYNC_INDEX_TOKEN, contents:
+# read/write on this repo only) instead of the default GITHUB_TOKEN: main is
+# rule-protected ("changes must be made through a pull request"), and that
+# rule's bypass list is role-based (RepositoryRole), which only recognizes
+# actual collaborator roles - the default token authenticates as the
+# github-actions app/bot, which has no such role, so it can never satisfy a
+# RepositoryRole bypass no matter which role is listed. The PAT belongs to a
+# real admin account, which already has bypass.
 on:
   push:
     branches: [main]
@@ -27,6 +36,7 @@ jobs:
         with:
           ref: main
           fetch-depth: 0
+          token: ${{ secrets.SYNC_INDEX_TOKEN }}
 
       - name: Regenerate deck index
         run: ./scripts/sync_index.sh
