@@ -6,7 +6,6 @@
     "speciesNames": [
       "Chromodoris willani",
       "Chromodoris annae",
-      "Hypselodoris apolegma",
       "Hypselodoris bullockii",
       "Glossodoris atromarginata",
       "Phyllidia varicosa",
@@ -36,7 +35,7 @@
       "Elysia crispata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-04-01T17:41:52+02:00"
+    "updatedAt": "2026-07-26T20:04:39+02:00"
   },
   {
     "name": "Haie und Rochen",
@@ -76,7 +75,7 @@
       "Raja clavata"
     ],
     "sourceId": "ab980617-8600-437d-b33c-d77c015849cf",
-    "updatedAt": "2026-04-01T17:41:52+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 1",
@@ -269,7 +268,7 @@
     ],
     "createdBy": "Fabian Eberle",
     "sourceId": "e33e2175-12f9-43b6-b394-d3a16a41622a",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 2",
@@ -524,7 +523,7 @@
     ],
     "createdBy": "Fabian Eberle",
     "sourceId": "fe483d41-624e-4cce-ad0d-16d1d70e6052",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 3",
@@ -924,7 +923,7 @@
     ],
     "createdBy": "Fabian Eberle",
     "sourceId": "1d914b12-fd12-4b83-b2f7-c79399108434",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Kanare Madeira Azoren - Level 1",
@@ -982,7 +981,7 @@
       }
     ],
     "sourceId": "e9ee5ea8-fd59-4714-878d-0be1e7f35e29",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Kanare Madeira Azoren - Level 2",
@@ -1061,7 +1060,7 @@
       }
     ],
     "sourceId": "60974df1-45e0-420e-8c3a-c6adb60f2310",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Kanare Madeira Azoren - Level 3",
@@ -1157,7 +1156,7 @@
       }
     ],
     "sourceId": "3a8b8329-4499-4d1d-ac51-f010b3b1c15c",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Kopffüßer",
@@ -1194,7 +1193,7 @@
       "Dosidicus gigas"
     ],
     "sourceId": "8bfbfa51-7b8f-40f5-9f93-f13053e16e20",
-    "updatedAt": "2026-04-01T17:41:52+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Meeresschildkröten",
@@ -1210,7 +1209,7 @@
       "Natator depressus"
     ],
     "sourceId": "fc16b688-fdb0-40b7-abd0-6f10aa1d9575",
-    "updatedAt": "2026-04-01T17:41:52+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Mittelmeer - Level 1",
@@ -1272,7 +1271,7 @@
       }
     ],
     "sourceId": "aaa40845-2dc0-44f5-90f4-6dddd95d7e62",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Mittelmeer - Level 2",
@@ -1343,7 +1342,7 @@
       }
     ],
     "sourceId": "27cf727e-c5ff-4a15-8704-fcec88aab559",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Mittelmeer - Level 3",
@@ -1443,7 +1442,7 @@
       }
     ],
     "sourceId": "ce8cf577-92af-485e-a516-1103eb85e86e",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Rotesmeer - Level 1",
@@ -1583,7 +1582,7 @@
       }
     ],
     "sourceId": "486801f4-f365-4d25-b208-d527590cc459",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Rotesmeer - Level 2",
@@ -1767,7 +1766,7 @@
       }
     ],
     "sourceId": "84fef7d3-e639-46ea-923c-7c0ae055a9ba",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Rotesmeer - Level 3",
@@ -2056,7 +2055,7 @@
       }
     ],
     "sourceId": "6d55ef16-167d-4519-9e76-cb7ac0da3f74",
-    "updatedAt": "2026-04-30T09:38:10+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Switzerland Fish - Level 1",
@@ -2090,7 +2089,7 @@
       }
     ],
     "sourceId": "ec793ff7-aeeb-446e-8552-9b4b8bf30e28",
-    "updatedAt": "2026-04-15T11:07:54+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Switzerland Fish - Level 2",
@@ -2141,7 +2140,7 @@
       }
     ],
     "sourceId": "73db6850-309f-40a2-a007-704cea77c951",
-    "updatedAt": "2026-04-15T11:07:54+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   },
   {
     "name": "Switzerland Fish - Level 3",
@@ -2217,6 +2216,6 @@
       }
     ],
     "sourceId": "1a44f5c9-eed4-4b35-bf4a-2b0f7d175af7",
-    "updatedAt": "2026-04-15T11:07:54+02:00"
+    "updatedAt": "2026-07-16T21:57:34+02:00"
   }
 ]
