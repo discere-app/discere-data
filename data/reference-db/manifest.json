@@ -1,8 +1,8 @@
 {
   "version": 1,
   "schemaVersion": 1,
-  "url": "https://codeberg.org/attachments/641645f0-592d-4d86-affb-a37a5d72976b",
+  "url": "https://github.com/feberle/discere-data/releases/download/refdb-v1/discere_reference.db.gz",
   "sha256": "10a6829694e3cf9bf365b7579e630e9b63802b4834f249cfa8b356cc1d61a8cf",
   "compressedSizeBytes": 85158398,
-  "publishedAt": "2026-07-26T18:40:59Z"
+  "publishedAt": "2026-07-27T08:19:15Z"
 }
