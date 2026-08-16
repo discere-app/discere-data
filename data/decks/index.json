@@ -4,6 +4,7 @@
     "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben.",
     "imageUrl": "https://images.pexels.com/photos/8065536/pexels-photo-8065536.jpeg",
     "speciesNames": [
+      "achaeus japonicus",
       "Chromodoris willani",
       "Chromodoris annae",
       "Hypselodoris bullockii",
@@ -34,7 +35,7 @@
       "Elysia crispata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-08-16T20:04:39+02:00"
+    "updatedAt": "2026-08-16T20:14:39+02:00"
   },
   {
     "name": "Haie und Rochen",
