@@ -31,6 +31,22 @@
       "Triaenodon obesus",
       "Nebrius ferrugineus",
       "Ginglymostoma cirratum",
+      "Symphodus mediterraneus",
+      "Synodus saurus",
+      "Pagellus acarne",
+      "Xyrichtys novacula",
+      "Dardanus calidus",
+      "Centrostephanus longispinus",
+      "Epinephelus costae",
+      "Spicara maena",
+      "Uranoscopus scaber",
+      "Serranus cabrilla",
+      "Parablennius rouxi",
+      "Scorpaena scrofa",
+      "Tripterygion tripteronotum",
+      "Gobius geniporus",
+      "Symphodus rostratus",
+      "Trachinus draco",
       "Stegostoma tigrinum",
       "Sphyrna lewini",
       "Gnathophyllum americanum",
@@ -38,7 +54,7 @@
       "Lybia tessellata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-08-16T19:51:10Z"
+    "updatedAt": "2026-08-16T19:52:10Z"
   },
   {
     "name": "Haie und Rochen",
