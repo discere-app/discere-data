@@ -1214,10 +1214,25 @@
       "Dermochelys coriacea",
       "Lepidochelys olivacea",
       "Lepidochelys kempii",
-      "Natator depressus"
+      "Natator depressus",
+      "Diplodus vulgaris",
+      "Diplodus sargus",
+      "Sarpa salpa",
+      "Oblada melanurus",
+      "Arbacia lixula",
+      "Mullus surmuletus",
+      "Lithognathus mormyrus",
+      "Mugil cephalus",
+      "Thalassoma pavo",
+      "Diplodus puntazzo",
+      "Octopus vulgaris",
+      "Gobius incognitus",
+      "Sabella spallanzanii",
+      "Trachinotus ovatus",
+      "Caranx crysos"
     ],
     "sourceId": "fc16b688-fdb0-40b7-abd0-6f10aa1d9575",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Mittelmeer - Level 1",
