@@ -25,17 +25,20 @@
       "Lysmata amboinensis",
       "Lysmata debelius",
       "Hymenocera picta",
+      "Carcharhinus amblyrhynchos",
+      "Carcharhinus falciformis",
+      "Carcharhinus limbatus",
+      "Triaenodon obesus",
+      "Nebrius ferrugineus",
+      "Ginglymostoma cirratum",
+      "Stegostoma tigrinum",
+      "Sphyrna lewini",
       "Gnathophyllum americanum",
       "Neopetrolisthes maculatus",
-      "Lybia tessellata",
-      "Camposcia retusa",
-      "Hoplophrys oatesii",
-      "Tonna perdix",
-      "Cyerce nigricans",
-      "Elysia crispata"
+      "Lybia tessellata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-08-16T19:50:10Z"
+    "updatedAt": "2026-08-16T19:51:10Z"
   },
   {
     "name": "Haie und Rochen",
@@ -47,6 +50,12 @@
       "Carcharhinus leucas",
       "Carcharhinus longimanus",
       "Carcharhinus galapagensis",
+      "Flabellina affinis",
+      "Janolus cristatus",
+      "Doto pinnatifida",
+      "Costasiella kuroshimae",
+      "Berghia stephanieae",
+      "Thor amboinensis",
       "Carcharhinus melanopterus",
       "Carcharhinus amblyrhynchos",
       "Carcharhinus falciformis",
@@ -68,14 +77,11 @@
       "Rhinoptera bonasus",
       "Aetobatus narinari",
       "Dasyatis pastinaca",
-      "Taeniura lymma",
-      "Himantura uarnak",
-      "Urobatis halleri",
       "Torpedo marmorata",
       "Raja clavata"
     ],
     "sourceId": "ab980617-8600-437d-b33c-d77c015849cf",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 1",
@@ -90,13 +96,15 @@
       "Chaetodon kleinii",
       "Centropyge multispinis",
       "Chlorurus sordidus",
-      "Chaetodon trifasciatus",
-      "Pycnochromis fieldi",
-      "Cephalophlis rogaa",
-      "Forcipiger flavissimus",
       "Chaetodon guttatissimus",
       "Thalassoma lunare",
       "Acanthurus leucosternon",
+      "Flabellina affinis",
+      "Janolus cristatus",
+      "Doto pinnatifida",
+      "Costasiella kuroshimae",
+      "Berghia stephanieae",
+      "Thor amboinensis",
       "Pomacentrus xanthocercus",
       "Sufflamen bursa",
       "Parupeneus macronemus",
@@ -122,19 +130,6 @@
       "Naso vlamingii",
       "Thalassoma amblycephalum",
       "Bodianus diana",
-      "Sargocentron caudimaculatum",
-      "Acanthurus thompsoni",
-      "Canthigaster valentini",
-      "Naso elegans",
-      "Acanthurus nigricauda",
-      "Amphiprion nigripes",
-      "Apolemichthys trimaculatus",
-      "Pseudocheilinus hexataenia",
-      "Pterocaesio tile",
-      "Balistoides conspicillum",
-      "Mirolabrichthys evansi",
-      "Ptereleotris evides",
-      "Chaetodon falcula",
       "Monotaxis heterodon",
       "Chaetodon auriga",
       "Monotaxis grandoculis",
@@ -211,6 +206,20 @@
       "Caesio lunaris",
       "Caesio varilineata",
       "Eviota sebreei",
+      "Arothron meleagris",
+      "Epinephelus merra",
+      "Canthigaster janthinoptera",
+      "Aetobatus ocellatus",
+      "Acanthurus leucocheilus",
+      "Acanthurus triostegus",
+      "Pomacentrus nagasakiensis",
+      "Scarus ghobban",
+      "Lethrinus erythracanthus",
+      "Acanthurus auranticavus",
+      "Heteroconger hassi",
+      "Parupeneus pleurostigma",
+      "Koumansetta hectori",
+      "Neoniphon sam",
       "Myripristis kuntee",
       "Cetoscarus ocellatus",
       "Ecsenius bicolor",
@@ -268,12 +277,29 @@
     ],
     "createdBy": "Fabian Eberle",
     "sourceId": "e33e2175-12f9-43b6-b394-d3a16a41622a",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:57:35+02:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 2",
     "description": "Reef: IORS Regions 2 and 6",
     "speciesNames": [
+      "Sufflamen chrysopterum",
+      "Sargocentron spiniferum",
+      "Chaetodon meyeri",
+      "Cephalopholis leopardus",
+      "Chaetodon madagaskariensis",
+      "Chromis viridis",
+      "Cephalopholis nigripinnis",
+      "Cirrhitichthys oxycephalus",
+      "Nemateleotris magnifica",
+      "Macropharyngodon bipartitus",
+      "Chaetodon xanthocephalus",
+      "Pomacentrus pavo",
+      "Dascyllus aruanus",
+      "Macolor macularis",
+      "Naso brevirostris",
+      "Thalassoma hardwicke",
+      "Chlorurus strongylocephalus",
       "Parapercis hexophtalma",
       "Halichoeres scapularis",
       "Heniochus monoceros",
@@ -283,14 +309,6 @@
       "Epinephelus spilotoceps",
       "Thalassoma jansenii",
       "Halichoeres vrolikii",
-      "Cheilinus undulatus",
-      "Epibulus insidiator",
-      "Ecsenius lineatus",
-      "Meiacanthus smithi",
-      "Parupeneus cyclostomus",
-      "Hemigymnus melapterus",
-      "Plectropomus laevis",
-      "Ostracion meleagris",
       "Pterois miles",
       "Stethojulis albovittata",
       "Chaetodon melannotus",
@@ -305,16 +323,6 @@
       "Siganus corallinus",
       "Acanthurus xanthopterus",
       "Scarus scaber",
-      "Acanthurus mata",
-      "Plagiotremus phenax",
-      "Cephalopholis spiloparaea",
-      "Scarus prasiognathos",
-      "Chaetodon citrinellus",
-      "Cheilinus trilobatus",
-      "Gymnosarda unicolor",
-      "Cheilodipterus quinquelineatus",
-      "Epinephelus fasciatus",
-      "Gymnothorax flavimarginatus",
       "Aluterus scriptus",
       "Arothron meleagris",
       "Epinephelus merra",
@@ -523,7 +531,7 @@
     ],
     "createdBy": "Fabian Eberle",
     "sourceId": "fe483d41-624e-4cce-ad0d-16d1d70e6052",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 3",
@@ -923,7 +931,7 @@
     ],
     "createdBy": "Fabian Eberle",
     "sourceId": "1d914b12-fd12-4b83-b2f7-c79399108434",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Kanare Madeira Azoren - Level 1",
@@ -981,7 +989,7 @@
       }
     ],
     "sourceId": "e9ee5ea8-fd59-4714-878d-0be1e7f35e29",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Kanare Madeira Azoren - Level 2",
@@ -1060,7 +1068,7 @@
       }
     ],
     "sourceId": "60974df1-45e0-420e-8c3a-c6adb60f2310",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Kanare Madeira Azoren - Level 3",
@@ -1156,7 +1164,7 @@
       }
     ],
     "sourceId": "3a8b8329-4499-4d1d-ac51-f010b3b1c15c",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Kopffüßer",
@@ -1193,7 +1201,7 @@
       "Dosidicus gigas"
     ],
     "sourceId": "8bfbfa51-7b8f-40f5-9f93-f13053e16e20",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Meeresschildkröten",
@@ -1271,7 +1279,7 @@
       }
     ],
     "sourceId": "aaa40845-2dc0-44f5-90f4-6dddd95d7e62",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Mittelmeer - Level 2",
@@ -1342,7 +1350,7 @@
       }
     ],
     "sourceId": "27cf727e-c5ff-4a15-8704-fcec88aab559",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Mittelmeer - Level 3",
@@ -1442,7 +1450,7 @@
       }
     ],
     "sourceId": "ce8cf577-92af-485e-a516-1103eb85e86e",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T22:57:34+02:00"
   },
   {
     "name": "Rotesmeer - Level 1",
@@ -1582,7 +1590,7 @@
       }
     ],
     "sourceId": "486801f4-f365-4d25-b208-d527590cc459",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:58:34+02:00"
   },
   {
     "name": "Rotesmeer - Level 2",
@@ -1766,7 +1774,7 @@
       }
     ],
     "sourceId": "84fef7d3-e639-46ea-923c-7c0ae055a9ba",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:57:44+02:00"
   },
   {
     "name": "Rotesmeer - Level 3",
@@ -2089,7 +2097,7 @@
       }
     ],
     "sourceId": "ec793ff7-aeeb-446e-8552-9b4b8bf30e28",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:57:35+02:00"
   },
   {
     "name": "Switzerland Fish - Level 2",
@@ -2216,6 +2224,6 @@
       }
     ],
     "sourceId": "1a44f5c9-eed4-4b35-bf4a-2b0f7d175af7",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-07-16T21:57:37+02:00"
   }
 ]
