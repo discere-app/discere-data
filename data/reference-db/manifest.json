@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "version": 2,
   "schemaVersion": 1,
-  "url": "https://github.com/feberle/discere-data/releases/download/refdb-v1/discere_reference.db.gz",
-  "sha256": "10a6829694e3cf9bf365b7579e630e9b63802b4834f249cfa8b356cc1d61a8cf",
-  "compressedSizeBytes": 85158398,
-  "publishedAt": "2026-07-27T08:19:15Z"
+  "url": "https://github.com/discere-app/discere-data/releases/download/refdb-v2/discere_reference.db.gz",
+  "sha256": "356852beaf63c68245dfbe37ffb407255132e42c20f584b68a8039af942b0d52",
+  "compressedSizeBytes": 85839399,
+  "publishedAt": "2026-08-21T15:45:36Z"
 }
