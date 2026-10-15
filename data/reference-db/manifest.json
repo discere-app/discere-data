@@ -1,8 +1,8 @@
 {
-  "version": 4,
+  "version": 5,
   "schemaVersion": 2,
   "url": "https://github.com/discere-app/discere-data/releases/download/refdb-v3-dev/discere_reference.db.gz",
   "sha256": "c45a6b6f017813e0c7ae2eeed7d948f08ceac44f3e0b57406eeeaf5b4d12f930",
   "compressedSizeBytes": 90177101,
-  "publishedAt": "2026-10-15T13:28:15Z"
+  "publishedAt": "2026-10-15T15:46:26Z"
 }
