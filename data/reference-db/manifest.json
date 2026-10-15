@@ -1,8 +1,8 @@
 {
-  "version": 2,
-  "schemaVersion": 1,
-  "url": "https://github.com/discere-app/discere-data/releases/download/refdb-2607-dev/discere_reference.db.gz",
-  "sha256": "a32b131eb0e8f2786a77a58484f7c72f50c22d5d66fba75c08d20284b82ebc78",
-  "compressedSizeBytes": 85839408,
-  "publishedAt": "2026-08-21T14:08:00Z"
+  "version": 3,
+  "schemaVersion": 2,
+  "url": "https://github.com/discere-app/discere-data/releases/download/refdb-v3-dev/discere_reference.db.gz",
+  "sha256": "c45a6b6f017813e0c7ae2eeed7d948f08ceac44f3e0b57406eeeaf5b4d12f930",
+  "compressedSizeBytes": 90177101,
+  "publishedAt": "2026-10-15T11:19:21Z"
 }
