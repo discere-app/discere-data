@@ -90,8 +90,13 @@ Ersetzt ein Deck andere Decks, z. B. drei Level-Decks durch ein Deck mit drei
 Subdecks oder ein Deck, das aufgeteilt wird, listet es deren `sourceId`s in
 `supersedes`. Wer die alten Decks importiert hat, bekommt in der App
 angeboten, sie zusammenzuführen. Der Lernfortschritt folgt dabei der Art: Das
-neue Deck übernimmt den Fortschritt jeder Art, die es selbst enthält. Die
-abgelösten Deck-Dateien werden im selben PR gelöscht.
+neue Deck übernimmt den Fortschritt jeder Art, die es selbst enthält.
+
+> **Noch nicht verwenden.** Der Index wird von allen App-Versionen gelesen,
+> auch von solchen, die `subdecks` und `supersedes` nicht kennen. Decks mit
+> diesen Feldern dürfen erst in den Index, und abgelöste Decks erst gelöscht
+> werden, wenn der Katalog nach Formatversion getrennt ist
+> ([discere-app/discere#384](https://github.com/discere-app/discere/issues/384)).
 
 Die Generatoren unter `scripts/reef/` erzeugen weiterhin Level-Dateien
 (`<base>_level1.json` …). Liegen diese in `data/decks/`, macht
