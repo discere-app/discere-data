@@ -16,6 +16,50 @@ Einfach eine neue JSON-Datei unter `data/decks/` anlegen (Felder: `name`,
 `description`, `imageUrl`, `speciesNames`) und einen PR nach `main` öffnen.
 Mehr ist nicht nötig - `data/decks/index.json` wird nicht von Hand gepflegt.
 
+### Subdecks (Levels)
+
+Ein Deck kann in Subdecks unterteilt sein, z. B. nach Schwierigkeitsgrad. In
+der App schaltet der Nutzer jedes Subdeck einzeln ein oder aus:
+
+```json
+{
+  "name": "Mittelmeer",
+  "speciesNames": ["Diplodus vulgaris", "Sarpa salpa", "…"],
+  "subdecks": [
+    {"id": "level-1", "name": "Level 1", "speciesNames": ["Diplodus vulgaris"]},
+    {"id": "level-2", "name": "Level 2", "speciesNames": ["Sarpa salpa"]}
+  ]
+}
+```
+
+- `speciesNames` enthält **alle** Arten des Decks, auch die der Subdecks.
+  App-Versionen ohne Subdecks importieren das Deck daraus flach.
+- Eine Art steht in höchstens einem Subdeck.
+- Die `id` eines Subdecks bleibt über Updates gleich. An ihr erkennt die App
+  das Subdeck wieder und behält, ob der Nutzer es abgeschaltet hat. Der
+  `name` darf sich ändern.
+
+### Decks ablösen (`supersedes`)
+
+Ersetzt ein Deck andere Decks, z. B. drei Level-Decks durch ein Deck mit drei
+Subdecks oder ein Deck, das aufgeteilt wird, listet es deren `sourceId`s in
+`supersedes`. Wer die alten Decks importiert hat, bekommt in der App
+angeboten, sie zusammenzuführen. Der Lernfortschritt folgt dabei der Art: Das
+neue Deck übernimmt den Fortschritt jeder Art, die es selbst enthält. Die
+abgelösten Deck-Dateien werden im selben PR gelöscht.
+
+Die Generatoren unter `scripts/reef/` erzeugen weiterhin Level-Dateien
+(`<base>_level1.json` …). Liegen diese in `data/decks/`, macht
+
+```
+python3 scripts/merge_level_decks.py <base>
+```
+
+daraus ein Deck `<base>.json` mit Subdecks und `supersedes` und löscht die
+Level-Dateien. Die Level-Dateien brauchen dafür ihre `sourceId`, also müssen
+sie schon einmal auf `main` gewesen sein. Für ein ganz neues Deck reicht es,
+`supersedes` wegzulassen.
+
 Die App lädt Decks über `data/decks/index.json`, eine generierte Datei, die
 alle einzelnen Deck-Dateien zusammenfasst (ein Request statt einer pro Deck).
 Ein GitHub-Actions-Workflow (`.github/workflows/sync-deck-index.yml`)
