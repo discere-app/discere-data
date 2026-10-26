@@ -1,0 +1,27 @@
+name: Validate decks
+
+# Checks every deck file against schema/deck.schema.json and the rules
+# the schema cannot express (scripts/validate_decks.py), so a broken deck is
+# caught in its PR rather than silently skipped by the app.
+on:
+  pull_request:
+    paths:
+      - "data/decks/**"
+      - "schema/**"
+      - "scripts/validate_decks.py"
+      - ".github/workflows/validate-decks.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install "jsonschema[format]==4.23.0"
+      - run: python3 scripts/validate_decks.py

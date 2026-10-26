@@ -12,9 +12,54 @@ main Branch ist geschützt.
 
 ## Neues Deck hinzufügen
 
-Einfach eine neue JSON-Datei unter `data/decks/` anlegen (Felder: `name`,
-`description`, `imageUrl`, `speciesNames`) und einen PR nach `main` öffnen.
-Mehr ist nicht nötig - `data/decks/index.json` wird nicht von Hand gepflegt.
+Einfach eine neue JSON-Datei unter `data/decks/` anlegen und einen PR nach
+`main` öffnen. Mehr ist nicht nötig - `data/decks/index.json` wird nicht von
+Hand gepflegt.
+
+```json
+{
+  "$schema": "../../schema/deck.schema.json",
+  "name": "Kopffüßer",
+  "description": "Kraken, Sepien und Kalmare",
+  "imageUrl": "https://…",
+  "sources": [{"name": "FishBase", "url": "https://www.fishbase.org/"}],
+  "createdBy": "Dein Name",
+  "speciesNames": ["Octopus vulgaris", "Sepia officinalis"]
+}
+```
+
+### Format
+
+Das Format ist als JSON Schema festgehalten:
+[`schema/deck.schema.json`](schema/deck.schema.json). Mit der
+`"$schema"`-Zeile oben vervollständigen und prüfen Editoren wie VS Code
+schon beim Schreiben.
+
+| Feld | Pflicht | Inhalt |
+|---|---|---|
+| `name` | ja | Name des Decks in der App |
+| `description` | ja | Kurzbeschreibung, darf leer sein |
+| `speciesNames` | ja | Wissenschaftliche Namen aller Arten, ohne Doppelte |
+| `imageUrl` | nein | Titelbild (`http(s)://…`) oder leer |
+| `sources` | nein | Datenquellen, je `name` und optional `url` |
+| `createdBy` | nein | Wer das Deck erstellt hat |
+| `subdecks` | nein | Unterteilung, siehe [Subdecks](#subdecks-levels) |
+| `supersedes` | nein | Abgelöste Decks, siehe [Decks ablösen](#decks-ablösen-supersedes) |
+| `sourceId` | – | Vergibt `scripts/sync_index.sh` nach dem Merge, nicht von Hand setzen |
+
+Andere Felder sind nicht erlaubt; so fällt ein Tippfehler wie `subDecks` auf,
+statt in der App stillschweigend ignoriert zu werden.
+
+Jeder PR, der Decks ändert, läuft durch den Check „Validate decks“
+(`.github/workflows/validate-decks.yml`). Er prüft alle Decks gegen das Schema
+und dazu, was ein Schema nicht ausdrücken kann: Subdecks nennen nur Arten aus
+`speciesNames`, jede Art steht in höchstens einem Subdeck, sourceIds sind
+eindeutig. Lokal:
+
+```
+pip install "jsonschema[format]"
+python3 scripts/validate_decks.py
+```
 
 ### Subdecks (Levels)
 
