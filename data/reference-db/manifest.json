@@ -4,5 +4,21 @@
   "url": "https://github.com/discere-app/discere-data/releases/download/refdb-v2/discere_reference.db.gz",
   "sha256": "356852beaf63c68245dfbe37ffb407255132e42c20f584b68a8039af942b0d52",
   "compressedSizeBytes": 85839399,
-  "publishedAt": "2026-08-21T15:45:36Z"
+  "publishedAt": "2026-08-21T15:45:36Z",
+  "schemas": {
+    "1": {
+      "version": 2,
+      "url": "https://github.com/discere-app/discere-data/releases/download/refdb-v2/discere_reference.db.gz",
+      "sha256": "356852beaf63c68245dfbe37ffb407255132e42c20f584b68a8039af942b0d52",
+      "compressedSizeBytes": 85839399,
+      "publishedAt": "2026-08-21T15:45:36Z"
+    },
+    "2": {
+      "version": 3,
+      "url": "https://github.com/discere-app/discere-data/releases/download/refdb-v3/discere_reference.db.gz",
+      "sha256": "a2258df01ebc0a4acd75bef9c7564a2d528abbb4357f8ad2b1fc109f64daa5f3",
+      "compressedSizeBytes": 95579210,
+      "publishedAt": "2026-10-26T14:14:32Z"
+    }
+  }
 }
