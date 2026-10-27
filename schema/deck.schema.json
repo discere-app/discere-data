@@ -1,54 +1,54 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/discere-app/discere-data/main/schema/deck.schema.json",
-  "title": "Discere-Deck",
-  "description": "Ein Lern-Deck unter data/decks/. Regeln, die JSON Schema nicht ausdrücken kann (Subdecks nur mit Arten aus speciesNames, jede Art in höchstens einem Subdeck, eindeutige sourceIds), prüft scripts/validate_decks.py.",
+  "title": "Discere deck",
+  "description": "A learning deck under data/decks/. Rules JSON Schema cannot express (subdecks only with species from speciesNames, each species in at most one subdeck, unique sourceIds) are checked by scripts/validate_decks.py.",
   "type": "object",
   "required": ["name", "description", "speciesNames"],
   "additionalProperties": false,
   "properties": {
     "$schema": {
-      "description": "Verweis auf dieses Schema, damit Editoren beim Schreiben vervollständigen und prüfen. Die App ignoriert das Feld.",
+      "description": "Reference to this schema, so editors complete and check while writing. The app ignores this field.",
       "type": "string"
     },
     "name": {
-      "description": "Name des Decks, wie die App ihn zeigt.",
+      "description": "Name of the deck as the app shows it.",
       "type": "string",
       "minLength": 1
     },
     "description": {
-      "description": "Kurzbeschreibung, in der App unter dem Namen.",
+      "description": "Short description, shown below the name in the app.",
       "type": "string"
     },
     "imageUrl": {
-      "description": "Titelbild des Decks; leer, wenn es keins gibt.",
+      "description": "Cover image of the deck; empty if there is none.",
       "anyOf": [
         { "type": "string", "format": "uri", "pattern": "^https?://" },
         { "const": "" }
       ]
     },
     "speciesNames": {
-      "description": "Wissenschaftliche Namen aller Arten des Decks, auch die der Subdecks. App-Versionen ohne Subdecks importieren das Deck allein daraus.",
+      "description": "Scientific names of every species in the deck, those in subdecks included. App versions without subdecks import the deck from this alone.",
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
       "items": { "$ref": "#/$defs/scientificName" }
     },
     "subdecks": {
-      "description": "Optionale Unterteilung, z. B. nach Schwierigkeitsgrad. Der Nutzer schaltet jedes Subdeck einzeln ein oder aus.",
+      "description": "Optional division, e.g. by difficulty. The user switches each subdeck on or off on its own.",
       "type": "array",
       "minItems": 1,
       "items": { "$ref": "#/$defs/subdeck" }
     },
     "supersedes": {
-      "description": "sourceIds der Decks, die dieses ablöst. Die App bietet an, sie zusammenzuführen; der Lernfortschritt folgt der Art.",
+      "description": "sourceIds of the decks this one supersedes. The app offers to merge them; learning progress follows the species.",
       "type": "array",
       "minItems": 1,
       "uniqueItems": true,
       "items": { "$ref": "#/$defs/sourceId" }
     },
     "sources": {
-      "description": "Datenquellen des Decks.",
+      "description": "Data sources of the deck.",
       "type": "array",
       "items": {
         "type": "object",
@@ -60,12 +60,24 @@
         }
       }
     },
+    "learningMode": {
+      "description": "What the deck asks for after import: species, genus or family. If missing, the app asks for the species. Applies only to the first import; an update does not change the user's setting.",
+      "enum": ["species", "genus", "family"]
+    },
+    "nameType": {
+      "description": "Which name the deck asks for after import: common name or scientific name. If missing, the common name. Like learningMode, applies only to the first import.",
+      "enum": ["commonName", "scientificName"]
+    },
+    "reviewMode": {
+      "description": "How the deck asks after import: flip the card and self-rate, or multiple choice. If missing, flip. Like learningMode, applies only to the first import. If the deck has too few distinct names in the chosen mode, the app falls back to flipping card by card.",
+      "enum": ["flip", "multipleChoice"]
+    },
     "createdBy": {
-      "description": "Wer das Deck erstellt hat.",
+      "description": "Who created the deck.",
       "type": "string"
     },
     "sourceId": {
-      "description": "Stabile Identität des Decks. Wird von scripts/sync_index.sh vergeben — nicht von Hand setzen.",
+      "description": "Stable identity of the deck. Assigned by scripts/sync_index.sh — do not set by hand.",
       "$ref": "#/$defs/sourceId"
     }
   },
@@ -85,12 +97,12 @@
       "additionalProperties": false,
       "properties": {
         "id": {
-          "description": "Bleibt über Updates gleich. An ihr erkennt die App das Subdeck wieder und behält, ob der Nutzer es abgeschaltet hat.",
+          "description": "Stays the same across updates. The app recognizes the subdeck by it and keeps whether the user switched it off.",
           "type": "string",
           "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
         },
         "name": {
-          "description": "Name in der App; darf sich ändern.",
+          "description": "Name in the app; may change.",
           "type": "string",
           "minLength": 1
         },

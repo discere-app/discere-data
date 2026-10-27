@@ -45,10 +45,18 @@ schon beim Schreiben.
 | `createdBy` | nein | Wer das Deck erstellt hat |
 | `subdecks` | nein | Unterteilung, siehe [Subdecks](#subdecks-levels) |
 | `supersedes` | nein | Abgelöste Decks, siehe [Decks ablösen](#decks-ablösen-supersedes) |
+| `learningMode` | nein | Startwert nach dem Import: `species` (Standard), `genus` oder `family` |
+| `nameType` | nein | Startwert nach dem Import: `commonName` (Standard) oder `scientificName` |
+| `reviewMode` | nein | Startwert nach dem Import: `flip` (Standard) oder `multipleChoice` |
 | `sourceId` | – | Vergibt `scripts/sync_index.sh` nach dem Merge, nicht von Hand setzen |
 
 Andere Felder sind nicht erlaubt; so fällt ein Tippfehler wie `subDecks` auf,
 statt in der App stillschweigend ignoriert zu werden.
+
+`learningMode`, `nameType` und `reviewMode` gelten nur beim ersten Import:
+Danach gehören die Einstellungen dem Nutzer, ein Update des Decks ändert sie
+nicht. Multiple Choice braucht genug verschiedene Namen im gewählten Modus;
+fehlen sie, fällt die App pro Karte auf Umdrehen zurück.
 
 Jeder PR, der Decks ändert, läuft durch den Check „Validate decks“
 (`.github/workflows/validate-decks.yml`). Er prüft alle Decks gegen das Schema

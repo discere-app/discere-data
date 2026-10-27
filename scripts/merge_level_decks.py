@@ -1,28 +1,28 @@
 #!/usr/bin/env python3
 # =============================================================================
-# merge_level_decks.py — Level-Decks zu einem Deck mit Subdecks zusammenführen
+# merge_level_decks.py — merge level decks into one deck with subdecks
 #
-# Die Generatoren unter scripts/reef/ erzeugen pro Region drei Level-Dateien
-# (<base>_level1.json … <base>_level3.json). Die App führt ein Deck mit
-# Subdecks: ein Deck pro Region, jedes Level ein Subdeck, das der Nutzer
-# einzeln abschalten kann. Dieses Skript macht aus den Level-Dateien das eine
-# Deck und löscht sie.
+# The generators under scripts/reef/ produce three level files per region
+# (<base>_level1.json … <base>_level3.json). The app keeps one deck with
+# subdecks: one deck per region, each level a subdeck the user can switch
+# off on its own. This script turns the level files into that one deck and
+# deletes them.
 #
-# Format des Ergebnisses (siehe docs/architecture-overview.md §7.5 im
-# App-Repo):
-#   speciesNames  Vereinigung aller Level — App-Versionen ohne Subdecks
-#                 importieren das Deck daraus flach.
-#   subdecks      [{id, name, speciesNames}] pro Level; die id ist stabil
-#                 ("level-1" …), an ihr erkennt ein Update das Subdeck wieder.
-#   supersedes    die sourceIds der Level-Decks: wer sie importiert hat,
-#                 bekommt in der App angeboten, sie zusammenzuführen, und
-#                 behält seinen Lernfortschritt.
-# Eine neue sourceId vergibt scripts/sync_index.sh nach dem Merge nach main.
+# Format of the result (see docs/architecture-overview.md §7.5 in the
+# app repo):
+#   speciesNames  union of all levels — app versions without subdecks
+#                 import the deck from it as a flat list.
+#   subdecks      [{id, name, speciesNames}] per level; the id is stable
+#                 ("level-1" …), an update recognizes the subdeck by it.
+#   supersedes    the sourceIds of the level decks: whoever imported them
+#                 is offered to merge them in the app and keeps their
+#                 learning progress.
+# scripts/sync_index.sh assigns a new sourceId after the merge into main.
 #
 # Usage:
 #   python scripts/merge_level_decks.py <base> [<base> …] [--decks-dir DIR]
 #
-# Beispiel:
+# Example:
 #   python scripts/merge_level_decks.py mittelmeer rotesmeer
 # =============================================================================
 

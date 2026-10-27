@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # =============================================================================
-# apply_corrections.py — LLM-Korrekturen auf Discere Deck-JSONs anwenden
+# apply_corrections.py — apply LLM corrections to Discere deck JSONs
 #
 # Usage:
 #   python apply_corrections.py <corrections.json> <base_name> [--out-dir DIR] [--dry-run]
 #
-# Beispiel:
+# Example:
 #   python apply_corrections.py kanare_madeira_azoren_corrections.json kanare_madeira_azoren
 #   python apply_corrections.py corrections.json kanare_madeira_azoren --out-dir generated
 #
@@ -52,7 +52,7 @@ def main():
     out_dir = args.out_dir or os.path.dirname(os.path.abspath(args.corrections_file))
     base = args.base_name
 
-    # --- Dateien laden ---
+    # --- Load files ---
     if not os.path.exists(args.corrections_file):
         print(f"[ERROR] Korrekturen-Datei nicht gefunden: {args.corrections_file}", file=sys.stderr)
         sys.exit(1)
@@ -69,7 +69,7 @@ def main():
         with open(path) as f:
             decks[level] = json.load(f)
 
-    # Arbeitskopie
+    # Working copy
     decks = deepcopy(decks)
 
     additions = corrections.get("additions", [])
@@ -87,7 +87,7 @@ def main():
     log_line("=" * 60)
     log_line()
 
-    # --- Level-Korrekturen ---
+    # --- Level corrections ---
     log_line(f"LEVEL-KORREKTUREN ({len(level_corrections)})")
     log_line("-" * 40)
 
@@ -153,7 +153,7 @@ def main():
         log_line(f"       Grund: {reason}")
         log_line()
 
-    # --- Zusammenfassung ---
+    # --- Summary ---
     log_line()
     log_line("=" * 60)
     log_line("ZUSAMMENFASSUNG")
@@ -162,7 +162,7 @@ def main():
         log_line(f"{level.replace('level', 'Level ')}: {len(deck['speciesNames'])} Arten")
     log_line("=" * 60)
 
-    # --- Source-Eintrag ergänzen ---
+    # --- Add source entry ---
     source_urls = {
         "ChatGPT": "https://openai.com/chatgpt",
         "Claude":  "https://claude.ai",
@@ -177,7 +177,7 @@ def main():
         if args.source not in existing_sources:
             deck.setdefault("sources", []).append(source_entry)
 
-    # --- Ausgabe ---
+    # --- Output ---
     if args.dry_run:
         print("\n[DRY-RUN] Keine Dateien geschrieben.")
     else:
