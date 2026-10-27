@@ -2,14 +2,14 @@
 # =============================================================================
 # build_reef_decks.py — Standalone REEF CSV -> Discere deck JSONs
 #
-# Erstellt Level-Decks aus einem REEF-CSV und löst wissenschaftliche Namen
-# direkt gegen FishBase-/SeaLifeBase-Parquets auf. Das Script ist unabhängig
-# vom Discere-ETL-Build und nutzt weder discere_reference.db noch ETL-Tabellen.
+# Builds level decks from a REEF CSV and resolves scientific names directly
+# against the FishBase/SeaLifeBase parquets. The script is independent of the
+# Discere ETL build and uses neither discere_reference.db nor ETL tables.
 #
-# Standardmäßig werden die Parquets remote von Hugging Face per DuckDB gelesen.
-# Optional können lokale Parquet-Verzeichnisse übergeben werden.
+# By default the parquets are read remotely from Hugging Face via DuckDB.
+# Local parquet directories can be passed instead.
 #
-# Abhängigkeiten:
+# Dependencies:
 #   pip install duckdb
 #
 # Usage:
@@ -54,11 +54,11 @@ BINOMIAL_RE = re.compile(r"^[A-Z][A-Za-z-]+ [a-z][A-Za-z-]+$")
 
 
 # =============================================================================
-# CSV-Parsing
+# CSV parsing
 # =============================================================================
 
 def parse_reef_csv(csv_file):
-    """Liest REEF-CSV und gibt deduplizierte Kandidatenliste zurück."""
+    """Reads a REEF CSV and returns the deduplicated list of candidates."""
     with open(csv_file, newline="", encoding="utf-8-sig") as f:
         lines = f.readlines()
 
@@ -110,7 +110,7 @@ def parse_reef_csv(csv_file):
 
 
 # =============================================================================
-# DuckDB-Lookup
+# DuckDB lookup
 # =============================================================================
 
 SQL_TEMPLATE = """
@@ -266,7 +266,7 @@ def run_lookup(candidates_csv, resolution_csv, fb_base, slb_base, work_dir):
 
 
 # =============================================================================
-# Level-Berechnung & JSON-Ausgabe
+# Level computation & JSON output
 # =============================================================================
 
 def compute_levels(resolution_csv):
@@ -280,7 +280,7 @@ def compute_levels(resolution_csv):
             else:
                 invalid.append(row)
 
-    # Deduplizieren nach resolved_name, höchste SF behalten
+    # Deduplicate by resolved_name, keeping the highest SF
     by_name = {}
     for row in resolved:
         name = row["resolved_name"]
@@ -324,7 +324,7 @@ def write_deck_json(path, name, description, rows):
 
 
 # =============================================================================
-# Prompt-Generierung
+# Prompt generation
 # =============================================================================
 
 PROMPT_B_TEMPLATE = """\
@@ -485,26 +485,26 @@ def main():
         candidates_csv = os.path.join(work_dir, "candidates.csv")
         resolution_csv = os.path.join(work_dir, "species_resolution.csv")
 
-        # 1. CSV parsen
+        # 1. Parse CSV
         candidates = parse_reef_csv(args.csv_file)
         with open(candidates_csv, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["original_name", "normalized_name", "sf"])
             writer.writeheader()
             writer.writerows(candidates)
 
-        # 2. DuckDB-Lookup
+        # 2. DuckDB lookup
         run_lookup(candidates_csv, resolution_csv, fb_base, slb_base, work_dir)
 
-        # 3. Level-Berechnung
+        # 3. Level computation
         level1, level2, level3, resolved, invalid = compute_levels(resolution_csv)
 
-        # 4. Resolution-CSV schreiben
+        # 4. Write resolution CSV
         resolution_out = os.path.join(args.out_dir, f"{base_name}_species_resolution.csv")
         with open(resolution_csv, newline="", encoding="utf-8") as src, \
              open(resolution_out, "w", newline="", encoding="utf-8") as dst:
             dst.write(src.read())
 
-        # 5. Invalid-CSV schreiben
+        # 5. Write invalid CSV
         invalid_out = os.path.join(args.out_dir, f"{base_name}_invalid_species.csv")
         with open(invalid_out, "w", newline="", encoding="utf-8") as f:
             writer = csv.DictWriter(f, fieldnames=["original_name", "sf"])
@@ -512,7 +512,7 @@ def main():
             for row in invalid:
                 writer.writerow({"original_name": row["original_name"], "sf": row["sf"]})
 
-        # 6. Deck-JSONs schreiben
+        # 6. Write deck JSONs
         pretty = " ".join(w.capitalize() for w in base_name.split("_"))
         l1_path = os.path.join(args.out_dir, f"{base_name}_level1.json")
         l2_path = os.path.join(args.out_dir, f"{base_name}_level2.json")
@@ -522,11 +522,11 @@ def main():
         write_deck_json(l2_path, f"{pretty} - Level 2", "Häufige Arten",      level2)
         write_deck_json(l3_path, f"{pretty} - Level 3", "Seltene Arten",      level3)
 
-        # 7. Prompt B schreiben
+        # 7. Write prompt B
         prompt_b_path = os.path.join(args.out_dir, f"{base_name}_prompt_b.txt")
         write_prompt_b(prompt_b_path, region_name, l1_path, l2_path, l3_path)
 
-    # 8. Zusammenfassung
+    # 8. Summary
     n = len(level1) + len(level2) + len(level3)
     synonym_count = sum(1 for r in resolved if r["match_type"] != "canonical")
     print()

@@ -2,7 +2,7 @@
 # =============================================================================
 # discere_reef.py — REEF CSV -> Discere deck JSONs (Wizard)
 #
-# Abhängigkeiten:
+# Dependencies:
 #   pip install duckdb
 #
 # Usage:
@@ -12,11 +12,11 @@
 #   python discere_reef.py reef.csv --version v25.04
 #   python discere_reef.py reef.csv --fishbase-dir ./fb/parquet --slb-dir ./slb/parquet
 #
-# Ablauf:
-#   1. REEF CSV einlesen & gegen FishBase/SeaLifeBase auflösen
-#   2. Prompt B anzeigen → in ChatGPT einfügen
-#   3. ChatGPT-Output hier einfügen
-#   4. Korrekturen anwenden & alle JSONs schreiben
+# Steps:
+#   1. Read the REEF CSV & resolve it against FishBase/SeaLifeBase
+#   2. Show prompt B → paste it into ChatGPT
+#   3. Paste the ChatGPT output here
+#   4. Apply the corrections & write all JSONs
 # =============================================================================
 
 import argparse
@@ -47,7 +47,7 @@ BINOMIAL_RE = re.compile(r"^[A-Z][A-Za-z-]+ [a-z][A-Za-z-]+$")
 
 
 # =============================================================================
-# SCHRITT 1 — CSV parsen
+# STEP 1 — Parse CSV
 # =============================================================================
 
 def parse_reef_csv(csv_file):
@@ -88,7 +88,7 @@ def parse_reef_csv(csv_file):
 
 
 # =============================================================================
-# SCHRITT 2 — DuckDB-Lookup
+# STEP 2 — DuckDB lookup
 # =============================================================================
 
 SQL_TEMPLATE = """
@@ -193,7 +193,7 @@ def run_lookup(candidates_csv, resolution_csv, fb_base, slb_base, work_dir):
 
 
 # =============================================================================
-# SCHRITT 3 — Level-Berechnung
+# STEP 3 — Level computation
 # =============================================================================
 
 def compute_levels(resolution_csv):
@@ -225,7 +225,7 @@ def compute_levels(resolution_csv):
 
 
 # =============================================================================
-# SCHRITT 4 — Prompt B generieren & anzeigen
+# STEP 4 — Generate & show prompt B
 # =============================================================================
 
 PROMPT_B_TEMPLATE = """\
@@ -346,7 +346,7 @@ def generate_prompt_b(region, decks):
 
 
 # =============================================================================
-# SCHRITT 5 — Korrekturen einlesen & anwenden
+# STEP 5 — Read & apply corrections
 # =============================================================================
 
 def normalize(name):
@@ -447,7 +447,7 @@ def apply_corrections(decks, corrections, source_name):
         log_line(f"{level.replace('level','Level ')}: {len(deck['speciesNames'])} Arten")
     log_line("=" * 60)
 
-    # Source-Eintrag ergänzen
+    # Add source entry
     if source_name:
         if isinstance(source_name, dict):
             source_entry = source_name
@@ -466,14 +466,14 @@ def apply_corrections(decks, corrections, source_name):
 
 
 # =============================================================================
-# SCHRITT 6 — Dateien schreiben
+# STEP 6 — Write files
 # =============================================================================
 
 def write_outputs(decks, base_name, out_dir, log, invalid_rows, metadata):
     os.makedirs(out_dir, exist_ok=True)
 
     for level, deck in decks.items():
-        # Metadaten überschreiben
+        # Overwrite metadata
         level_label = level.replace("level", "Level ")
         deck["name"]        = f"{metadata['name']} - {level_label}"
         deck["description"] = metadata["description"]
@@ -492,18 +492,18 @@ def write_outputs(decks, base_name, out_dir, log, invalid_rows, metadata):
 
 
 # =============================================================================
-# SOURCE-AUSWAHL — Arrow-Key Selector
+# SOURCE SELECTION — arrow-key selector
 # =============================================================================
 
 def arrow_select(prompt, options):
-    """Interaktive Auswahl mit Pfeiltasten. Gibt gewählte Option zurück."""
+    """Interactive selection with the arrow keys. Returns the chosen option."""
     import tty
     import termios
 
     idx = 0
 
     def render(current):
-        # Cursor nach oben bewegen um neu zu zeichnen
+        # Move the cursor up to redraw
         sys.stdout.write(f"\033[{len(options)}A")
         for i, opt in enumerate(options):
             prefix = "  \033[1;36m›\033[0m " if i == current else "    "
@@ -527,9 +527,9 @@ def arrow_select(prompt, options):
                 ch2 = sys.stdin.read(1)
                 ch3 = sys.stdin.read(1)
                 if ch2 == "[":
-                    if ch3 == "A":  # Hoch
+                    if ch3 == "A":  # Up
                         idx = (idx - 1) % len(options)
-                    elif ch3 == "B":  # Runter
+                    elif ch3 == "B":  # Down
                         idx = (idx + 1) % len(options)
                 render(idx)
             elif ch == "\x03":  # Ctrl+C
@@ -542,7 +542,7 @@ def arrow_select(prompt, options):
 
 
 def ask_source():
-    """Fragt ob Source-Enrichment gewünscht, dann welches System."""
+    """Asks whether source enrichment is wanted, then which system."""
     answer = input("\nSource-Eintrag in JSONs schreiben? (j/N): ").strip().lower()
     if answer not in ("j", "ja", "y", "yes"):
         print("  → Übersprungen.")
@@ -586,7 +586,7 @@ def write_invalid_csv(invalid_rows, base_name, out_dir):
 
 
 def ask_metadata(region_name):
-    """Fragt die Deck-Attribute interaktiv ab."""
+    """Asks for the deck attributes interactively."""
     print(f"\n{'─'*60}")
     print("  Deck-Attribute")
     print(f"{'─'*60}")
@@ -634,7 +634,7 @@ def main():
         region_name = " ".join(w.capitalize() for w in base_name.split("_"))
         print(f"  → Kein Name eingegeben, verwende: {region_name}")
 
-    # --- [1] CSV einlesen & Lookup ---
+    # --- [1] Read CSV & lookup ---
     print(f"\n[1/3] CSV einlesen & gegen FishBase/SeaLifeBase auflösen...")
 
     with tempfile.TemporaryDirectory() as work_dir:
@@ -658,7 +658,7 @@ def main():
 
         print(f"\n      {n} Arten aufgelöst | {len(invalid)} ungültig | {synonym_count} Synonym-Korrekturen")
 
-        # Ungültige Arten sofort schreiben
+        # Write invalid species right away
         if invalid:
             print(f"\n      Ungültige Arten (nicht in FishBase/SeaLifeBase):")
             for row in invalid:
@@ -666,7 +666,7 @@ def main():
             print(f"\n      Schreibe invalid_species.csv...")
             write_invalid_csv(invalid, base_name, out_dir)
 
-        # --- [2] AI-Anreicherung ---
+        # --- [2] AI enrichment ---
         pretty = " ".join(w.capitalize() for w in base_name.split("_"))
         decks = {
             "level1": build_deck_dict(pretty, "Level 1", "Sehr häufige Arten", level1_rows),
@@ -703,7 +703,7 @@ def main():
         else:
             print("      → Übersprungen.")
 
-        # --- [3] Deck-Attribute & Schreiben ---
+        # --- [3] Deck attributes & writing ---
         print(f"\n[3/3] Deck-Attribute & Ausgabe")
         metadata = ask_metadata(region_name)
 

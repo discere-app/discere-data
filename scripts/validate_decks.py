@@ -1,18 +1,18 @@
 #!/usr/bin/env python3
 # =============================================================================
-# validate_decks.py — alle Deck-Dateien gegen schema/deck.schema.json prüfen
+# validate_decks.py — check every deck file against schema/deck.schema.json
 #
-# Läuft in CI bei jedem PR (.github/workflows/validate-decks.yml) und lokal:
+# Runs in CI on every PR (.github/workflows/validate-decks.yml) and locally:
 #   pip install "jsonschema[format]"
 #   python3 scripts/validate_decks.py
 #
-# Zusätzlich zum Schema prüft es, was JSON Schema nicht ausdrücken kann:
-#   - Subdecks enthalten nur Arten aus speciesNames,
-#   - jede Art steht in höchstens einem Subdeck,
-#   - Subdeck-ids sind innerhalb eines Decks eindeutig,
-#   - sourceIds sind über alle Decks eindeutig, und kein Deck löst sich
-#     selbst oder ein Deck ab, das noch im Katalog steht.
-# Exit-Code 1, wenn etwas nicht stimmt.
+# Besides the schema, it checks what JSON Schema cannot express:
+#   - subdecks contain only species from speciesNames,
+#   - each species is in at most one subdeck,
+#   - subdeck ids are unique within a deck,
+#   - sourceIds are unique across all decks, and no deck supersedes itself
+#     or a deck that is still in the catalog.
+# Exit code 1 if anything is wrong.
 # =============================================================================
 
 import glob
