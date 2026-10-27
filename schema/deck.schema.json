@@ -2,10 +2,9 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/discere-app/discere-data/main/schema/deck.schema.json",
   "title": "Discere-Deck",
-  "description": "Ein Lern-Deck unter data/decks/. Regeln, die JSON Schema nicht ausdrücken kann (Subdecks nur mit Arten aus speciesNames, jede Art in höchstens einem Subdeck, eindeutige sourceIds), prüft scripts/validate_decks.py.",
+  "description": "Ein Lern-Deck unter data/decks/. Regeln, die JSON Schema nicht ausdrücken kann (Subdecks nur mit Arten aus speciesNames, jede Art in höchstens einem Subdeck, eindeutige sourceIds), prüft scripts/validate_decks.py. Unbekannte Felder sind erlaubt: Die App ignoriert sie, so bleibt ein Deck mit Feldern einer neueren App-Version für ältere gültig.",
   "type": "object",
   "required": ["name", "description", "speciesNames"],
-  "additionalProperties": false,
   "properties": {
     "$schema": {
       "description": "Verweis auf dieses Schema, damit Editoren beim Schreiben vervollständigen und prüfen. Die App ignoriert das Feld.",
@@ -53,7 +52,6 @@
       "items": {
         "type": "object",
         "required": ["name"],
-        "additionalProperties": false,
         "properties": {
           "name": { "type": "string", "minLength": 1 },
           "url": { "type": "string", "format": "uri", "pattern": "^https?://" }
@@ -82,7 +80,6 @@
     "subdeck": {
       "type": "object",
       "required": ["id", "name", "speciesNames"],
-      "additionalProperties": false,
       "properties": {
         "id": {
           "description": "Bleibt über Updates gleich. An ihr erkennt die App das Subdeck wieder und behält, ob der Nutzer es abgeschaltet hat.",

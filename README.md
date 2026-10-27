@@ -33,7 +33,10 @@ Hand gepflegt.
 Das Format ist als JSON Schema festgehalten:
 [`schema/deck.schema.json`](schema/deck.schema.json). Mit der
 `"$schema"`-Zeile oben vervollständigen und prüfen Editoren wie VS Code
-schon beim Schreiben.
+schon beim Schreiben. Felder, die das Schema nicht kennt, sind erlaubt: Die
+App ignoriert sie. So bleibt ein Deck mit Feldern einer neueren App-Version
+auch für ältere gültig – ein Tippfehler in einem optionalen Feldnamen fällt
+dafür nicht auf.
 
 | Feld | Pflicht | Inhalt |
 |---|---|---|
