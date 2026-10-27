@@ -21,6 +21,9 @@
     }
   ],
   "createdBy": "Fabian Eberle",
+  "learningMode": "family",
+  "nameType": "commonName",
+  "reviewMode": "flip",
   "speciesNames": [
     "Zanclus cornutus",
     "Labroides dimidiatus",
