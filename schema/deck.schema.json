@@ -60,6 +60,18 @@
         }
       }
     },
+    "learningMode": {
+      "description": "Wonach das Deck nach dem Import fragt: Art, Gattung oder Familie. Fehlt es, fragt die App nach der Art. Gilt nur beim ersten Import, ein Update ändert die Einstellung des Nutzers nicht.",
+      "enum": ["species", "genus", "family"]
+    },
+    "nameType": {
+      "description": "Welchen Namen das Deck nach dem Import abfragt: Trivialname oder wissenschaftlichen Namen. Fehlt es, den Trivialnamen. Gilt wie learningMode nur beim ersten Import.",
+      "enum": ["commonName", "scientificName"]
+    },
+    "reviewMode": {
+      "description": "Wie das Deck nach dem Import abfragt: Karte umdrehen und selbst bewerten oder Multiple Choice. Fehlt es, Umdrehen. Gilt wie learningMode nur beim ersten Import. Hat das Deck im gewählten Modus zu wenige verschiedene Namen, fällt die App pro Karte auf Umdrehen zurück.",
+      "enum": ["flip", "multipleChoice"]
+    },
     "createdBy": {
       "description": "Wer das Deck erstellt hat.",
       "type": "string"
