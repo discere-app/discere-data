@@ -10,8 +10,12 @@
 #   - subdecks contain only species from speciesNames,
 #   - each species is in at most one subdeck,
 #   - subdeck ids are unique within a deck,
+#   - formatVersion is a JSON integer: the schema's "integer" accepts 2.0,
+#     which the app does not read as a version,
 #   - sourceIds are unique across all decks, and no deck supersedes itself
-#     or a deck that is still in the catalog.
+#     or a deck of the same or a higher format version: a superseded deck
+#     stays in the catalog for the indexes of older versions, and leaves
+#     only the indexes from the superseding deck's version on.
 # Exit code 1 if anything is wrong.
 # =============================================================================
 
@@ -32,6 +36,16 @@ def deck_files():
         p for p in glob.glob(os.path.join(DECKS_DIR, "*.json"))
         if os.path.basename(p) != "index.json"
     )
+
+
+def format_version(deck):
+    return deck.get("formatVersion", 1)
+
+
+def check_format_version(deck):
+    if isinstance(deck.get("formatVersion"), float):
+        return [f"formatVersion {deck['formatVersion']} ist keine ganze Zahl ohne Kommastelle"]
+    return []
 
 
 def check_subdecks(deck):
@@ -71,7 +85,7 @@ def main():
             for e in sorted(validator.iter_errors(deck), key=lambda e: list(e.absolute_path))
         ]
         if not errors:
-            errors = check_subdecks(deck)
+            errors = check_format_version(deck) + check_subdecks(deck)
             decks[name] = deck
         if errors:
             problems[name] = errors
@@ -88,10 +102,14 @@ def main():
         for source_id in deck.get("supersedes") or []:
             if source_id == deck.get("sourceId"):
                 problems.setdefault(name, []).append("supersedes nennt die eigene sourceId")
-            elif source_id in owners:
-                problems.setdefault(name, []).append(
-                    f"supersedes nennt {source_id}, das noch als {', '.join(owners[source_id])} im Katalog steht"
-                )
+                continue
+            for owner in owners.get(source_id, []):
+                if format_version(decks[owner]) >= format_version(deck):
+                    problems.setdefault(name, []).append(
+                        f"supersedes nennt {source_id} ({owner}, Formatversion {format_version(decks[owner])}); "
+                        f"ein abgelöstes Deck braucht eine kleinere Formatversion als das ablösende "
+                        f"({format_version(deck)}), sonst steht es in keinem Index"
+                    )
 
     for name, errors in sorted(problems.items()):
         print(f"✗ {name}")

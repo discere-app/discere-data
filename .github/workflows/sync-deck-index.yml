@@ -1,6 +1,7 @@
 name: Sync deck index
 
-# Regenerates data/decks/index.json after a deck PR is merged to main, and
+# Regenerates the deck indexes (one per format version) after a deck PR is
+# merged to main, or a schema change that may raise the newest format, and
 # lets a maintainer re-run it manually (Actions tab -> "Run workflow").
 # Push-triggered runs of this workflow are skipped automatically via the
 # "[skip ci]" marker in scripts/sync_index.sh's own commit message, so the
@@ -19,6 +20,7 @@ on:
     branches: [main]
     paths:
       - "data/decks/*.json"
+      - "schema/deck.schema.json"
   workflow_dispatch: {}
 
 permissions:
