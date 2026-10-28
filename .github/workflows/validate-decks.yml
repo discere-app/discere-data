@@ -15,6 +15,7 @@ on:
       - "schema/**"
       - "scripts/validate_decks.py"
       - "scripts/build_indexes.sh"
+      - "scripts/list_deck_files.sh"
       - "scripts/deck_index.jq"
       - ".github/workflows/validate-decks.yml"
   workflow_dispatch: {}
@@ -35,6 +36,6 @@ jobs:
       - name: Build indexes (dry run)
         run: |
           out="$(mktemp -d)"
-          find data/decks -maxdepth 1 -name '*.json' ! -name 'index.json' -print0 \
-            | sort -z | xargs -0 jq -s '.' > "$out/decks.json"
+          ./scripts/list_deck_files.sh | tr '\n' '\0' \
+            | xargs -0 jq -s '.' > "$out/decks.json"
           ./scripts/build_indexes.sh "$out/decks.json" "$out"

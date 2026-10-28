@@ -55,7 +55,7 @@ echo "Pulling latest main..."
 git pull --ff-only origin main
 
 list_deck_files() {
-  find "$DECKS_DIR" -maxdepth 1 -name '*.json' ! -name 'index.json' | sort
+  "$SCRIPT_DIR/list_deck_files.sh"
 }
 
 if [ -z "$(list_deck_files)" ]; then
@@ -81,6 +81,8 @@ while IFS= read -r deck_file; do
   jq --arg u "$updated_at" '. + {updatedAt: $u}' "$deck_file"
 done < <(list_deck_files) | jq -s '.' > "$all_decks"
 
+# Relative to REPO_ROOT, the working directory since the cd above, so the
+# log names data/decks/… rather than an absolute path.
 "$SCRIPT_DIR/build_indexes.sh" "$all_decks" "${DECKS_DIR#"$REPO_ROOT/"}"
 rm "$all_decks"
 

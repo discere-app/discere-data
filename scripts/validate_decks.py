@@ -32,6 +32,8 @@ SCHEMA_FILE = os.path.join(ROOT, "schema", "deck.schema.json")
 
 
 def deck_files():
+    # The same selection as scripts/list_deck_files.sh, which holds the rule
+    # for the sync and the index dry run; a change there belongs here too.
     return sorted(
         p for p in glob.glob(os.path.join(DECKS_DIR, "*.json"))
         if os.path.basename(p) != "index.json"
