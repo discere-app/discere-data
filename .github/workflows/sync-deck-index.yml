@@ -8,7 +8,7 @@ name: Sync deck index
 # commit it creates does not re-trigger this workflow.
 #
 # Pushes with an installation token of the repository's GitHub App
-# (vars.DECK_SYNC_APP_ID, secrets.DECK_SYNC_APP_PRIVATE_KEY; contents:
+# (vars.DECK_SYNC_APP_CLIENT_ID, secrets.DECK_SYNC_APP_PRIVATE_KEY; contents:
 # read/write on this repo only) and commits as that app's bot. main is
 # rule-protected ("changes must be made through a pull request"); the app is
 # in that ruleset's bypass list, so it may push to main directly. The token
@@ -37,7 +37,7 @@ jobs:
       - uses: actions/create-github-app-token@v3
         id: app-token
         with:
-          app-id: ${{ vars.DECK_SYNC_APP_ID }}
+          client-id: ${{ vars.DECK_SYNC_APP_CLIENT_ID }}
           private-key: ${{ secrets.DECK_SYNC_APP_PRIVATE_KEY }}
 
       - uses: actions/checkout@v7
