@@ -2,13 +2,20 @@ name: Validate decks
 
 # Checks every deck file against schema/deck.schema.json and the rules
 # the schema cannot express (scripts/validate_decks.py), so a broken deck is
-# caught in its PR rather than silently skipped by the app.
+# caught in its PR rather than silently skipped by the app. Then builds the
+# catalog indexes into a scratch directory with the script the sync after
+# the merge uses (scripts/build_indexes.sh), so a deck, a schema maximum or
+# an index rule the indexes cannot be built from fails here rather than in
+# that sync. The dry run leaves out what only the sync adds (sourceId,
+# updatedAt), which no index rule depends on.
 on:
   pull_request:
     paths:
       - "data/decks/**"
       - "schema/**"
       - "scripts/validate_decks.py"
+      - "scripts/build_indexes.sh"
+      - "scripts/deck_index.jq"
       - ".github/workflows/validate-decks.yml"
   workflow_dispatch: {}
 
@@ -25,3 +32,9 @@ jobs:
           python-version: "3.12"
       - run: pip install "jsonschema[format]==4.23.0"
       - run: python3 scripts/validate_decks.py
+      - name: Build indexes (dry run)
+        run: |
+          out="$(mktemp -d)"
+          find data/decks -maxdepth 1 -name '*.json' ! -name 'index.json' -print0 \
+            | sort -z | xargs -0 jq -s '.' > "$out/decks.json"
+          ./scripts/build_indexes.sh "$out/decks.json" "$out"

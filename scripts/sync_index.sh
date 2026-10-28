@@ -20,11 +20,9 @@
 #      edit, not the last time this script happened to touch the file.
 #   4. Combines the deck files into one index per format version (the app
 #      fetches its index instead of listing + fetching every deck file
-#      individually): data/decks/index.json for format 1, whose path app
-#      versions without format versions read, and data/decks/v<N>/index.json
-#      for every N from 2 up to the schema's formatVersion maximum, so
-#      raising that maximum is all a new format needs. Which decks an index
-#      holds is scripts/deck_index.jq's rule.
+#      individually): data/decks/index.json for format 1 and
+#      data/decks/v<N>/index.json up to the newest format, written by
+#      scripts/build_indexes.sh.
 #   5. Commits and pushes to main if anything changed.
 #
 # Usage:
@@ -38,8 +36,6 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 DECKS_DIR="$REPO_ROOT/data/decks"
-SCHEMA_FILE="$REPO_ROOT/schema/deck.schema.json"
-INDEX_FILTER="$SCRIPT_DIR/deck_index.jq"
 SYNC_COMMIT_MESSAGE="chore: regenerate deck index"
 
 cd "$REPO_ROOT"
@@ -78,17 +74,6 @@ while IFS= read -r deck_file; do
   fi
 done < <(list_deck_files)
 
-index_file_for() {
-  if [ "$1" -eq 1 ]; then
-    echo "$DECKS_DIR/index.json"
-  else
-    echo "$DECKS_DIR/v$1/index.json"
-  fi
-}
-
-newest_format_version="$(jq -e '.properties.formatVersion.maximum' "$SCHEMA_FILE")"
-
-echo "Generating indexes up to format $newest_format_version..."
 all_decks="$(mktemp)"
 while IFS= read -r deck_file; do
   updated_at="$(git log --invert-grep --grep="^${SYNC_COMMIT_MESSAGE}" -1 --format=%cI -- "$deck_file")"
@@ -96,12 +81,7 @@ while IFS= read -r deck_file; do
   jq --arg u "$updated_at" '. + {updatedAt: $u}' "$deck_file"
 done < <(list_deck_files) | jq -s '.' > "$all_decks"
 
-for version in $(seq 1 "$newest_format_version"); do
-  index_file="$(index_file_for "$version")"
-  mkdir -p "$(dirname "$index_file")"
-  jq --argjson version "$version" -f "$INDEX_FILTER" "$all_decks" > "$index_file"
-  echo "Wrote $(jq length "$index_file") decks to ${index_file#"$REPO_ROOT/"}"
-done
+"$SCRIPT_DIR/build_indexes.sh" "$all_decks" "${DECKS_DIR#"$REPO_ROOT/"}"
 rm "$all_decks"
 
 if [ -z "$(git status --porcelain -- "$DECKS_DIR")" ]; then
