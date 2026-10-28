@@ -44,11 +44,6 @@ SYNC_COMMIT_MESSAGE="chore: regenerate deck index"
 
 cd "$REPO_ROOT"
 
-if [ -n "${GITHUB_ACTIONS:-}" ]; then
-  git config user.name "github-actions[bot]"
-  git config user.email "github-actions[bot]@users.noreply.github.com"
-fi
-
 branch="$(git rev-parse --abbrev-ref HEAD)"
 if [ "$branch" != "main" ]; then
   echo "error: expected to be on 'main', currently on '$branch'" >&2
