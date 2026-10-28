@@ -3,6 +3,9 @@
     "name": "Critter",
     "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben.",
     "imageUrl": "https://images.pexels.com/photos/8065536/pexels-photo-8065536.jpeg",
+    "learningMode": "species",
+    "nameType": "commonName",
+    "reviewMode": "multipleChoice",
     "speciesNames": [
       "Chromodoris willani",
       "Chromodoris annae",
@@ -35,12 +38,15 @@
       "Elysia crispata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-07-26T20:04:39+02:00"
+    "updatedAt": "2026-10-27T15:37:27+01:00"
   },
   {
     "name": "Haie und Rochen",
     "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen.",
     "imageUrl": "https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg",
+    "learningMode": "species",
+    "nameType": "commonName",
+    "reviewMode": "flip",
     "speciesNames": [
       "Carcharodon carcharias",
       "Galeocerdo cuvier",
@@ -75,7 +81,7 @@
       "Raja clavata"
     ],
     "sourceId": "ab980617-8600-437d-b33c-d77c015849cf",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-10-27T15:37:27+01:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 1",
@@ -1162,6 +1168,9 @@
     "name": "Kopffüßer",
     "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern.",
     "imageUrl": "https://images.pexels.com/photos/9004403/pexels-photo-9004403.jpeg",
+    "learningMode": "species",
+    "nameType": "commonName",
+    "reviewMode": "flip",
     "speciesNames": [
       "Octopus vulgaris",
       "Octopus cyanea",
@@ -1193,12 +1202,15 @@
       "Dosidicus gigas"
     ],
     "sourceId": "8bfbfa51-7b8f-40f5-9f93-f13053e16e20",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-10-27T15:37:27+01:00"
   },
   {
     "name": "Meeresschildkröten",
     "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet.",
     "imageUrl": "https://images.pexels.com/photos/7001661/pexels-photo-7001661.jpeg",
+    "learningMode": "species",
+    "nameType": "commonName",
+    "reviewMode": "flip",
     "speciesNames": [
       "Caretta caretta",
       "Chelonia mydas",
@@ -1209,7 +1221,7 @@
       "Natator depressus"
     ],
     "sourceId": "fc16b688-fdb0-40b7-abd0-6f10aa1d9575",
-    "updatedAt": "2026-07-16T21:57:34+02:00"
+    "updatedAt": "2026-10-27T15:37:27+01:00"
   },
   {
     "name": "Mittelmeer - Level 1",
