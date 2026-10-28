@@ -1,0 +1,78 @@
+{
+  "name": "Kanare Madeira Azoren - Level 2",
+  "description": "Häufige Arten",
+  "speciesNames": [
+    "Aulostomus strigosus",
+    "Canthigaster capistrata",
+    "Symphodus caeruleus",
+    "Sabella spallanzanii",
+    "Megabalanus azoricus",
+    "Diplodus cervinus",
+    "Bothus podas",
+    "Labrus bergylta",
+    "Paracentrotus lividus",
+    "Centrostephanus longispinus",
+    "Pinna rudis",
+    "Balistes capriscus",
+    "Sphyraena viridensis",
+    "Dardanus calidus",
+    "Marthasterias glacialis",
+    "Bodianus scrofa",
+    "Scyllarides latus",
+    "Pelagia noctiluca",
+    "Synodus saurus",
+    "Trachinotus ovatus",
+    "Plesionika narval",
+    "Octopus vulgaris",
+    "Gymnothorax unicolor",
+    "Myliobatis aquila",
+    "Parablennius ruber",
+    "Oblada melanurus",
+    "Felimare picta",
+    "Phycis phycis",
+    "Chilomycterus reticulatus",
+    "Antipathella wollastoni",
+    "Symphodus mediterraneus",
+    "Charonia lampas",
+    "Aluterus scriptus",
+    "Dasyatis pastinaca",
+    "Enchelycore anatina",
+    "Seriola rivoliana",
+    "Gnatholepis thompsoni",
+    "Taeniurops grabatus",
+    "Tedania anhelans",
+    "Myrichthys pardalis",
+    "Pagellus acarne",
+    "Coscinasterias tenuispina",
+    "Tambja ceutae",
+    "Canthidermis sufflamen",
+    "Heteroconger longissimus",
+    "Diplodus sargus",
+    "Muraena helena",
+    "Anthias anthias",
+    "Conger conger",
+    "Epinephelus marginatus",
+    "Mycteroperca fusca",
+    "Mobula mobular"
+  ],
+  "imageUrl": "https://commons.wikimedia.org/wiki/File:Macaronesia_location_es.svg",
+  "sources": [
+    {
+      "name": "REEF",
+      "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
+    }
+  ],
+  "sourceId": "60974df1-45e0-420e-8c3a-c6adb60f2310"
+}

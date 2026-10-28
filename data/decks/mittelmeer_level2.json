@@ -1,0 +1,70 @@
+{
+  "name": "Mittelmeer - Level 2",
+  "description": "Häufige Arten",
+  "speciesNames": [
+    "Octopus vulgaris",
+    "Gobius incognitus",
+    "Sabella spallanzanii",
+    "Trachinotus ovatus",
+    "Caranx crysos",
+    "Bothus podas",
+    "Tripterygion delaisi",
+    "Tripterygion melanurus",
+    "Belone belone",
+    "Ophidiaster ophidianus",
+    "Atherina presbyter",
+    "Symphodus mediterraneus",
+    "Synodus saurus",
+    "Pagellus acarne",
+    "Xyrichtys novacula",
+    "Dardanus calidus",
+    "Centrostephanus longispinus",
+    "Epinephelus costae",
+    "Spicara maena",
+    "Uranoscopus scaber",
+    "Serranus cabrilla",
+    "Parablennius rouxi",
+    "Scorpaena scrofa",
+    "Tripterygion tripteronotum",
+    "Gobius geniporus",
+    "Symphodus rostratus",
+    "Trachinus draco",
+    "Gobius cobitis",
+    "Parablennius sanguinolentus",
+    "Scartella cristata",
+    "Seriola rivoliana",
+    "Serranus hepatus",
+    "Sphaerechinus granularis",
+    "Chromis limbata",
+    "Coscinasterias tenuispina",
+    "Holothuria sanctori",
+    "Pterois miles",
+    "Scorpaena porcus",
+    "Sciaena umbra",
+    "Anthias anthias",
+    "Pinna nobilis",
+    "Paramuricea clavata",
+    "Eunicella cavolini",
+    "Astroides calycularis"
+  ],
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mediterranean_Sea_16.61811E_38.99124N.jpg",
+  "sources": [
+    {
+      "name": "REEF",
+      "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
+    }
+  ],
+  "sourceId": "27cf727e-c5ff-4a15-8704-fcec88aab559"
+}

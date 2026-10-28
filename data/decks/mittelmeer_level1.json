@@ -1,0 +1,61 @@
+{
+  "name": "Mittelmeer - Level 1",
+  "description": "Sehr häufige Arten",
+  "speciesNames": [
+    "Diplodus vulgaris",
+    "Diplodus sargus",
+    "Sarpa salpa",
+    "Oblada melanurus",
+    "Arbacia lixula",
+    "Mullus surmuletus",
+    "Lithognathus mormyrus",
+    "Mugil cephalus",
+    "Thalassoma pavo",
+    "Diplodus puntazzo",
+    "Charonia lampas",
+    "Pomadasys incisus",
+    "Dicentrarchus labrax",
+    "Symphodus tinca",
+    "Chromis chromis",
+    "Sphyraena pinguis",
+    "Serranus scriba",
+    "Coris julis",
+    "Sparus aurata",
+    "Sparisoma cretense",
+    "Apogon imberbis",
+    "Hermodice carunculata",
+    "Epinephelus marginatus",
+    "Symphodus roissali",
+    "Diplodus annularis",
+    "Umbrina cirrosa",
+    "Boops boops",
+    "Padina pavonica",
+    "Gobius niger",
+    "Sphyraena sphyraena",
+    "Paracentrotus lividus",
+    "Muraena helena",
+    "Posidonia oceanica",
+    "Caretta caretta",
+    "Conger conger"
+  ],
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mediterranean_Sea_16.61811E_38.99124N.jpg",
+  "sources": [
+    {
+      "name": "REEF",
+      "url": "https://www.reef.org/"
+    },
+    {
+      "name": "FishBase",
+      "url": "https://www.fishbase.org/"
+    },
+    {
+      "name": "SeaLifeBase",
+      "url": "https://www.sealifebase.org/"
+    },
+    {
+      "name": "ChatGPT",
+      "url": "https://openai.com/chatgpt"
+    }
+  ],
+  "sourceId": "aaa40845-2dc0-44f5-90f4-6dddd95d7e62"
+}
