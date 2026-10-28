@@ -20,6 +20,9 @@
       "url": "https://openai.com/chatgpt"
     }
   ],
+  "learningMode": "family",
+  "nameType": "commonName",
+  "reviewMode": "flip",
   "speciesNames": [
     "Thalassoma pavo",
     "Sparisoma cretense",

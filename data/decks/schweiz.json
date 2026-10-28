@@ -12,6 +12,9 @@
       "url": "https://www.fishbase.se/"
     }
   ],
+  "learningMode": "species",
+  "nameType": "commonName",
+  "reviewMode": "flip",
   "speciesNames": [
     "Esox lucius",
     "Perca fluviatilis",
