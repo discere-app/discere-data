@@ -107,7 +107,11 @@ class BuildTest(unittest.TestCase):
         make_refdb(
             db_path,
             species=[(sid, name, "fishbase", code, None, None) for sid, name, code, _, _ in SPECIES],
-            synonyms=[("Gammaold three", "s:3"), ("Delta old", "s:4"), ("Delta old", "s:5")],
+            synonyms=[
+                ("Gammaold three", "s:3"), ("Delta old", "s:4"), ("Delta old", "s:5"),
+                ("Alpha one", "s:2", "misapplied name"), ("Beta vague", "s:1", "ambiguous synonym"),
+                ("Beta vague", "s:2", "ambiguous synonym"),
+            ],
             occurrences=[
                 ("s:13", "001", "native", "present"), ("s:14", "001", "extirpated", "absent"),
                 ("s:1", "001", "native", "present"), ("s:3", "001", "endemic", "present"),
@@ -282,6 +286,10 @@ class BuildTest(unittest.TestCase):
         self.assertIn("gleicher Volksname `en` „Alpha fish“: *Alpha one*, *Beta two*", section)
         self.assertIn("gemeinsamer wissenschaftlicher Name *delta old*: *Delta four*, *Epsilon five*", section)
         self.assertNotIn("Regional alpha", section)
+        # A name misapplied to a species, or a synonym of several, does not
+        # make two species one.
+        self.assertNotIn("*alpha one*", section)
+        self.assertNotIn("*beta vague*", section)
 
     def test_image_credit_in_the_report(self):
         recipe = json.loads(json.dumps(RECIPE))

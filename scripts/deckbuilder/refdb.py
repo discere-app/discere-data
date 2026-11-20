@@ -295,15 +295,18 @@ class ReferenceDb:
 
     def shared_scientific_names(self, species_ids):
         """[(id a, id b, normalized name)] for two of the given species that
-        both carry a scientific name (accepted or synonym): the sign of one
-        species under two entries, such as Pterois cincta and Pteropterus
-        cinctus."""
+        both carry a scientific name as their accepted name or a synonym: the
+        sign of one species under two entries, such as Pterois cincta and
+        Pteropterus cinctus. A misapplied name (a valid species' name once
+        used for another) and an ambiguous synonym (one name for several)
+        point at several species by definition, so they do not count."""
         ids = set(species_ids)
         names = {}
         for chunk in _chunks(ids):
             marks = ",".join("?" * len(chunk))
             rows = self._db.execute(
-                f"SELECT species_id, normalized_name FROM species_scientific_names WHERE species_id IN ({marks})",
+                f"""SELECT species_id, normalized_name FROM species_scientific_names
+                    WHERE species_id IN ({marks}) AND name_status IN ('valid', 'synonym')""",
                 chunk,
             )
             for sid, name in rows:

@@ -61,7 +61,7 @@ CREATE TABLE species (
     max_length_cm NUMERIC, depth_min_m NUMERIC, genus TEXT, status TEXT NOT NULL DEFAULT 'active');
 CREATE TABLE species_scientific_names (
     species_id TEXT NOT NULL, name TEXT NOT NULL, normalized_name TEXT NOT NULL, source TEXT NOT NULL,
-    is_preferred INTEGER NOT NULL DEFAULT 0);
+    is_preferred INTEGER NOT NULL DEFAULT 0, name_status TEXT NOT NULL);
 CREATE TABLE species_name_lookup (normalized_name TEXT PRIMARY KEY, species_id TEXT NOT NULL);
 CREATE TABLE taxonomy_distribution_regions (
     entity_id TEXT NOT NULL, source TEXT NOT NULL, region_scope TEXT NOT NULL, region_key TEXT NOT NULL,
@@ -73,7 +73,8 @@ CREATE TABLE orders (id TEXT PRIMARY KEY, external_source TEXT NOT NULL, name TE
 def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=None, common_names=()):
     """A reference DB at `path`.
     species:      (id, "Genus epithet", source, SpecCode, depth_min_m, max_length_cm)
-    synonyms:     ("Other name", species id) — also findable by name
+    synonyms:     ("Other name", species id[, name_status]) — also findable by
+                  name; the status defaults to "synonym"
     occurrences:  (species id, region_key, establishment_status, presence_status)
     orders:       (order name, external_source)
     families:     {genus name: family name}; the family id is "f:<name>"
@@ -88,10 +89,11 @@ def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=N
         db.execute("INSERT OR IGNORE INTO genera VALUES (?, ?, ?)", (f"g:{genus}", genus, family and f"f:{family}"))
         db.execute("INSERT INTO species VALUES (?, ?, ?, ?, ?, ?, ?, 'active')",
                    (sid, code, source, epithet, length, depth, f"g:{genus}"))
-        db.execute("INSERT INTO species_scientific_names VALUES (?, ?, ?, ?, 1)", (sid, name, name.lower(), source))
+        db.execute("INSERT INTO species_scientific_names VALUES (?, ?, ?, ?, 1, 'valid')", (sid, name, name.lower(), source))
         db.execute("INSERT INTO species_name_lookup VALUES (?, ?)", (name.lower(), sid))
-    for name, sid in synonyms:
-        db.execute("INSERT INTO species_scientific_names VALUES (?, ?, ?, 'fishbase', 0)", (sid, name, name.lower()))
+    for name, sid, *status in synonyms:
+        db.execute("INSERT INTO species_scientific_names VALUES (?, ?, ?, 'fishbase', 0, ?)",
+                   (sid, name, name.lower(), status[0] if status else "synonym"))
         # The first species to carry a name gets it in the lookup, as one
         # name resolves to one species in the app.
         db.execute("INSERT OR IGNORE INTO species_name_lookup VALUES (?, ?)", (name.lower(), sid))
