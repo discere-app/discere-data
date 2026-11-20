@@ -1,0 +1,213 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/discere-app/discere-data/main/schema/recipe.schema.json",
+  "title": "Discere deck recipe",
+  "description": "How scripts/build_deck.py builds one catalog deck from observation data: recipes/<base>.json becomes data/decks/<base>.json and the report recipes/<base>.report.md. The deck texts and learning settings use the definitions of deck.schema.json. Relative paths are relative to the recipe file.",
+  "type": "object",
+  "required": ["deck", "order", "region", "taxa", "levelSizes"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "order": { "properties": { "source": { "const": "inat" } } } } },
+      "then": {
+        "properties": {
+          "region": { "required": ["inat"] },
+          "taxa": { "required": ["inat"] }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "order": { "properties": { "source": { "const": "gbif" } } } } },
+      "then": {
+        "properties": {
+          "region": { "required": ["gbif"] },
+          "taxa": { "required": ["gbif"] }
+        }
+      }
+    },
+    {
+      "if": { "properties": { "region": { "required": ["obis"] } } },
+      "then": { "properties": { "taxa": { "required": ["obis"] } } }
+    }
+  ],
+  "properties": {
+    "$schema": {
+      "description": "Reference to this schema, so editors complete and check while writing.",
+      "type": "string"
+    },
+    "deck": {
+      "description": "What the deck says about itself; written to the deck as given. imageUrl and createdBy, if missing here, keep the value of an existing deck file.",
+      "type": "object",
+      "required": ["name", "description", "translations", "learningMode", "nameType", "reviewMode"],
+      "additionalProperties": false,
+      "properties": {
+        "name": { "$ref": "deck.schema.json#/properties/name" },
+        "description": { "$ref": "deck.schema.json#/properties/description" },
+        "translations": { "$ref": "deck.schema.json#/properties/translations" },
+        "imageUrl": { "$ref": "deck.schema.json#/properties/imageUrl" },
+        "createdBy": { "$ref": "deck.schema.json#/properties/createdBy" },
+        "learningMode": { "$ref": "deck.schema.json#/properties/learningMode" },
+        "nameType": { "$ref": "deck.schema.json#/properties/nameType" },
+        "reviewMode": { "$ref": "deck.schema.json#/properties/reviewMode" }
+      }
+    },
+    "order": {
+      "description": "The source whose counts rank the species. inat: iNaturalist research-grade observations, for seas. gbif: GBIF occurrences in a country, for inland waters. reef: the sighting frequency (SF%) of a REEF CSV export, where REEF has survey data.",
+      "oneOf": [
+        {
+          "type": "object",
+          "required": ["source"],
+          "additionalProperties": false,
+          "properties": { "source": { "enum": ["inat", "gbif"] } }
+        },
+        {
+          "type": "object",
+          "required": ["source", "csv"],
+          "additionalProperties": false,
+          "properties": {
+            "source": { "const": "reef" },
+            "csv": { "description": "Path to the REEF CSV export.", "type": "string", "minLength": 1 }
+          }
+        }
+      ]
+    },
+    "region": {
+      "description": "The region, in the terms of each source. Only the sources given here are asked; OBIS and the distribution data only confirm occurrence.",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "inat": {
+          "description": "An iNaturalist place, or a rectangle for seas without a fitting place.",
+          "oneOf": [
+            {
+              "type": "object",
+              "required": ["placeId"],
+              "additionalProperties": false,
+              "properties": { "placeId": { "type": "integer", "minimum": 1 } }
+            },
+            {
+              "type": "object",
+              "required": ["swlat", "swlng", "nelat", "nelng"],
+              "additionalProperties": false,
+              "properties": {
+                "swlat": { "$ref": "#/$defs/latitude" },
+                "swlng": { "$ref": "#/$defs/longitude" },
+                "nelat": { "$ref": "#/$defs/latitude" },
+                "nelng": { "$ref": "#/$defs/longitude" }
+              }
+            }
+          ]
+        },
+        "gbif": {
+          "type": "object",
+          "required": ["country"],
+          "additionalProperties": false,
+          "properties": {
+            "country": { "description": "ISO 3166-1 alpha-2 country code, e.g. CH.", "type": "string", "pattern": "^[A-Z]{2}$" }
+          }
+        },
+        "obis": {
+          "type": "object",
+          "required": ["wkt"],
+          "additionalProperties": false,
+          "properties": {
+            "wkt": { "description": "The sea area as WKT polygon, longitude before latitude.", "type": "string", "pattern": "^\\s*(MULTI)?POLYGON\\s*\\(" }
+          }
+        },
+        "fishbase": {
+          "description": "FishBase/SeaLifeBase distribution regions as the reference DB keys them (taxonomy_distribution_regions.region_key): a FishBase country code, e.g. 756 for Switzerland or 840B for a part of a country FishBase lists on its own, or a subregion, e.g. 840:US-FL for Florida.",
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "string", "pattern": "^[0-9A-Za-z]+(:[A-Za-z0-9-]+)?$" }
+        }
+      }
+    },
+    "taxa": {
+      "description": "Which organisms, in the IDs of each source.",
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": false,
+      "properties": {
+        "inat": {
+          "description": "iNaturalist taxon IDs, e.g. 47178 ray-finned fishes, 47273 sharks and rays, 49232 lampreys (not 47237, which is the angelfish family).",
+          "$ref": "#/$defs/taxonIds"
+        },
+        "obis": {
+          "description": "WoRMS taxon IDs, e.g. 10194 Actinopteri, 10193 Elasmobranchii.",
+          "$ref": "#/$defs/taxonIds"
+        },
+        "gbif": {
+          "description": "The GBIF phylum whose orders are searched; the orders the reference DB knows as FishBase orders are kept, since the GBIF backbone gives the ray-finned fishes no class.",
+          "type": "object",
+          "required": ["phylumKey"],
+          "additionalProperties": false,
+          "properties": { "phylumKey": { "type": "integer", "minimum": 1 } }
+        }
+      }
+    },
+    "filters": {
+      "description": "Conditions a candidate from the order source has to meet; an unknown value never excludes. Highlights are not filtered.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "water": {
+          "description": "salt: the FishBase/SeaLifeBase flag Saltwater is set (brackish alone is not enough); fresh: Fresh is set; any: no condition. A species with all three flags at 0 counts as unknown.",
+          "enum": ["salt", "fresh", "any"]
+        },
+        "minCount": {
+          "description": "Minimum count in the order source: observations, or SF% for REEF.",
+          "type": "number",
+          "minimum": 0
+        },
+        "diveDepthLimitM": {
+          "description": "Leaves out species whose shallowest depth lies below this many meters.",
+          "type": "number",
+          "minimum": 0
+        },
+        "minLengthCm": {
+          "description": "Leaves out species whose maximum length is below this many centimeters.",
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "levelSizes": {
+      "description": "Number of species per level, from level 1; level 1 also holds the highlights on top of its size.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "integer", "minimum": 1 }
+    },
+    "highlights": {
+      "description": "Species worth knowing in the region even if rare, picked by hand; they go on level 1. Each needs evidence in the region (order source, OBIS, distribution data or a guide), or it stays out and the run fails.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": { "$ref": "deck.schema.json#/$defs/scientificName" }
+    },
+    "guides": {
+      "description": "Species lists of field guides, one scientific name per line. They confirm occurrence and are compared with the deck in the report; they never filter.",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["name", "path"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "path": { "type": "string", "minLength": 1 },
+          "url": { "description": "Where the list comes from; listed in the deck's sources.", "type": "string", "format": "uri", "pattern": "^https?://" }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "latitude": { "type": "number", "minimum": -90, "maximum": 90 },
+    "longitude": { "type": "number", "minimum": -180, "maximum": 180 },
+    "taxonIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 1 }
+    }
+  }
+}
