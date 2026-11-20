@@ -1,6 +1,24 @@
 {
   "name": "Haie und Rochen",
   "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen.",
+  "translations": {
+    "de": {
+      "name": "Haie und Rochen",
+      "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen."
+    },
+    "en": {
+      "name": "Sharks and Rays",
+      "description": "Sharks and rays are cartilaginous fishes found in every ocean. They live on coral reefs, in coastal waters, over sandy bottoms and in the open sea. Many species are well-known encounters for divers in tropical and temperate regions."
+    },
+    "fr": {
+      "name": "Requins et raies",
+      "description": "Les requins et les raies sont des poissons cartilagineux présents dans toutes les mers du globe. Ils fréquentent les récifs coralliens, les eaux côtières, les fonds sableux et la haute mer. Beaucoup d'espèces sont des rencontres bien connues des plongeurs en régions tropicales et tempérées."
+    },
+    "es": {
+      "name": "Tiburones y rayas",
+      "description": "Los tiburones y las rayas son peces cartilaginosos presentes en todos los océanos. Habitan arrecifes de coral, aguas costeras, fondos de arena y mar abierto. Muchas especies son encuentros conocidos para los buceadores en regiones tropicales y templadas."
+    }
+  },
   "imageUrl": "https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg",
   "learningMode": "species",
   "nameType": "commonName",

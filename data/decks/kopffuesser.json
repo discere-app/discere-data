@@ -1,6 +1,24 @@
 {
   "name": "Kopffüßer",
   "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern.",
+  "translations": {
+    "de": {
+      "name": "Kopffüßer",
+      "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern."
+    },
+    "en": {
+      "name": "Cephalopods",
+      "description": "Cephalopods are intelligent molluscs such as octopuses, cuttlefish and squid. They occur in every ocean and live on reefs, in seagrass meadows, on sandy bottoms and in open water. Many species are frequent encounters for divers in tropical and temperate waters."
+    },
+    "fr": {
+      "name": "Céphalopodes",
+      "description": "Les céphalopodes sont des mollusques intelligents comme les poulpes, les seiches et les calmars. Présents dans toutes les mers, ils vivent sur les récifs, dans les herbiers, sur les fonds sableux et en pleine eau. Beaucoup d'espèces sont des rencontres fréquentes pour les plongeurs en eaux tropicales et tempérées."
+    },
+    "es": {
+      "name": "Cefalópodos",
+      "description": "Los cefalópodos son moluscos inteligentes como pulpos, sepias y calamares. Viven en todos los océanos, en arrecifes, praderas marinas, fondos de arena y aguas abiertas. Muchas especies son encuentros frecuentes para los buceadores en aguas tropicales y templadas."
+    }
+  },
   "imageUrl": "https://images.pexels.com/photos/9004403/pexels-photo-9004403.jpeg",
   "learningMode": "species",
   "nameType": "commonName",

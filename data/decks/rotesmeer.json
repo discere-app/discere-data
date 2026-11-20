@@ -1,7 +1,25 @@
 {
   "formatVersion": 2,
-  "name": "Rotesmeer",
-  "description": "Level 1: Sehr häufige Arten · Level 2: Häufige Arten · Level 3: Seltene Arten",
+  "name": "Rotes Meer",
+  "description": "Rifffische und auffällige weitere Meerestiere des Roten Meeres, darunter Meeresschildkröten, Riesenmuscheln und Dugongs. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+  "translations": {
+    "de": {
+      "name": "Rotes Meer",
+      "description": "Rifffische und auffällige weitere Meerestiere des Roten Meeres, darunter Meeresschildkröten, Riesenmuscheln und Dugongs. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+    },
+    "en": {
+      "name": "Red Sea",
+      "description": "Reef fish and other striking marine life of the Red Sea, including sea turtles, giant clams and dugongs. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+    },
+    "fr": {
+      "name": "Mer Rouge",
+      "description": "Poissons de récif et autres animaux marins remarquables de la mer Rouge, dont des tortues marines, des bénitiers et des dugongs. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+    },
+    "es": {
+      "name": "Mar Rojo",
+      "description": "Peces de arrecife y otros animales marinos llamativos del mar Rojo, entre ellos tortugas marinas, almejas gigantes y dugongos. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+    }
+  },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Red_Sea_37.95521E_21.41271N.jpg/330px-Red_Sea_37.95521E_21.41271N.jpg",
   "sources": [
     {
@@ -562,6 +580,20 @@
     {
       "id": "level-1",
       "name": "Level 1",
+      "translations": {
+        "de": {
+          "name": "Level 1"
+        },
+        "en": {
+          "name": "Level 1"
+        },
+        "fr": {
+          "name": "Niveau 1"
+        },
+        "es": {
+          "name": "Nivel 1"
+        }
+      },
       "speciesNames": [
         "Chaetodon austriacus",
         "Pycnochromis dimidiatus",
@@ -681,6 +713,20 @@
     {
       "id": "level-2",
       "name": "Level 2",
+      "translations": {
+        "de": {
+          "name": "Level 2"
+        },
+        "en": {
+          "name": "Level 2"
+        },
+        "fr": {
+          "name": "Niveau 2"
+        },
+        "es": {
+          "name": "Nivel 2"
+        }
+      },
       "speciesNames": [
         "Neoglyphidodon melas",
         "Synodus dermatogenys",
@@ -844,6 +890,20 @@
     {
       "id": "level-3",
       "name": "Level 3",
+      "translations": {
+        "de": {
+          "name": "Level 3"
+        },
+        "en": {
+          "name": "Level 3"
+        },
+        "fr": {
+          "name": "Niveau 3"
+        },
+        "es": {
+          "name": "Nivel 3"
+        }
+      },
       "speciesNames": [
         "Malacanthus brevirostris",
         "Valenciennea puellaris",

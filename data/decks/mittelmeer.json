@@ -1,7 +1,25 @@
 {
   "formatVersion": 2,
   "name": "Mittelmeer",
-  "description": "Level 1: Sehr häufige Arten · Level 2: Häufige Arten · Level 3: Seltene Arten",
+  "description": "Rifffische und auffällige weitere Meerestiere des Mittelmeers, darunter Kraken, Seepferdchen, Gorgonien und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+  "translations": {
+    "de": {
+      "name": "Mittelmeer",
+      "description": "Rifffische und auffällige weitere Meerestiere des Mittelmeers, darunter Kraken, Seepferdchen, Gorgonien und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+    },
+    "en": {
+      "name": "Mediterranean Sea",
+      "description": "Reef fish and other striking marine life of the Mediterranean, including octopuses, seahorses, gorgonians and sea turtles. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+    },
+    "fr": {
+      "name": "Méditerranée",
+      "description": "Poissons de récif et autres animaux marins remarquables de Méditerranée, dont des poulpes, des hippocampes, des gorgones et des tortues marines. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+    },
+    "es": {
+      "name": "Mar Mediterráneo",
+      "description": "Peces de arrecife y otros animales marinos llamativos del Mediterráneo, entre ellos pulpos, caballitos de mar, gorgonias y tortugas marinas. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+    }
+  },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mediterranean_Sea_16.61811E_38.99124N.jpg",
   "sources": [
     {
@@ -182,6 +200,20 @@
     {
       "id": "level-1",
       "name": "Level 1",
+      "translations": {
+        "de": {
+          "name": "Level 1"
+        },
+        "en": {
+          "name": "Level 1"
+        },
+        "fr": {
+          "name": "Niveau 1"
+        },
+        "es": {
+          "name": "Nivel 1"
+        }
+      },
       "speciesNames": [
         "Diplodus vulgaris",
         "Diplodus sargus",
@@ -223,6 +255,20 @@
     {
       "id": "level-2",
       "name": "Level 2",
+      "translations": {
+        "de": {
+          "name": "Level 2"
+        },
+        "en": {
+          "name": "Level 2"
+        },
+        "fr": {
+          "name": "Niveau 2"
+        },
+        "es": {
+          "name": "Nivel 2"
+        }
+      },
       "speciesNames": [
         "Octopus vulgaris",
         "Gobius incognitus",
@@ -273,6 +319,20 @@
     {
       "id": "level-3",
       "name": "Level 3",
+      "translations": {
+        "de": {
+          "name": "Level 3"
+        },
+        "en": {
+          "name": "Level 3"
+        },
+        "fr": {
+          "name": "Niveau 3"
+        },
+        "es": {
+          "name": "Nivel 3"
+        }
+      },
       "speciesNames": [
         "Siganus luridus",
         "Corcyrogobius liechtensteini",

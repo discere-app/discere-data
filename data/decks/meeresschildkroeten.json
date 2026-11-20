@@ -1,6 +1,24 @@
 {
   "name": "Meeresschildkröten",
   "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet.",
+  "translations": {
+    "de": {
+      "name": "Meeresschildkröten",
+      "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet."
+    },
+    "en": {
+      "name": "Sea Turtles",
+      "description": "Sea turtles are large, long-lived reptiles of tropical and subtropical seas. Some species also occur in the Mediterranean, where divers occasionally spot them in coastal waters, over seagrass meadows or in open water."
+    },
+    "fr": {
+      "name": "Tortues marines",
+      "description": "Les tortues marines sont de grands reptiles à longue durée de vie des mers tropicales et subtropicales. Certaines espèces vivent aussi en Méditerranée, où les plongeurs les observent parfois dans les eaux côtières, au-dessus des herbiers ou en pleine eau."
+    },
+    "es": {
+      "name": "Tortugas marinas",
+      "description": "Las tortugas marinas son reptiles grandes y longevos de los mares tropicales y subtropicales. Algunas especies viven también en el Mediterráneo, donde los buceadores las observan de vez en cuando en aguas costeras, sobre praderas marinas o en mar abierto."
+    }
+  },
   "imageUrl": "https://images.pexels.com/photos/7001661/pexels-photo-7001661.jpeg",
   "learningMode": "species",
   "nameType": "commonName",
