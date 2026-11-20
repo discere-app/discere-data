@@ -2,7 +2,8 @@
 # deck.py — the deck file a recipe produces
 #
 # Format 2 with one subdeck per level (deckbuilder/levels.py: ids level-1 …,
-# names in every app language). What the recipe sets is written anew on
+# names in every app language), then the recipe's extra subdecks
+# (deckbuilder/extra.py) with the id and names the recipe gives them. What the recipe sets is written anew on
 # every run: name, description, translations, learning settings, sources,
 # speciesNames and subdecks, and imageUrl/createdBy if the recipe has them.
 # Everything else an existing deck file holds stays as it is — above all its
@@ -59,9 +60,18 @@ def deck_sources(recipe, species_sources):
     return sources
 
 
-def build_deck(recipe, levels, sources, existing=None):
-    """The deck for `levels` ([[name]] from level 1), on top of the existing
-    deck file's content if there is one. A level left empty gets no
+def extra_subdeck(spec, species_names):
+    subdeck = {"id": spec["id"], "name": spec["name"]}
+    if "translations" in spec:
+        subdeck["translations"] = spec["translations"]
+    subdeck["speciesNames"] = list(species_names)
+    return subdeck
+
+
+def build_deck(recipe, levels, sources, existing=None, extras=()):
+    """The deck for `levels` ([[name]] from level 1) and `extras` ([(spec,
+    [name])], one per extra subdeck), on top of the existing deck file's
+    content if there is one. A level or extra subdeck left empty gets no
     subdeck."""
     deck = dict(existing or {})
     deck["formatVersion"] = 2
@@ -70,8 +80,9 @@ def build_deck(recipe, levels, sources, existing=None):
             deck[field] = recipe["deck"][field]
     deck.setdefault("imageUrl", "")
     deck["sources"] = sources
-    deck["speciesNames"] = [name for level in levels for name in level]
+    deck["speciesNames"] = [name for level in levels for name in level] + [n for _, names in extras for n in names]
     deck["subdecks"] = [level_subdeck(n, names) for n, names in enumerate(levels, 1) if names]
+    deck["subdecks"] += [extra_subdeck(spec, names) for spec, names in extras if names]
     ordered = {key: deck[key] for key in KEY_ORDER if key in deck}
     ordered.update((key, value) for key, value in deck.items() if key not in ordered)
     return ordered

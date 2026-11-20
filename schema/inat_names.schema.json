@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/discere-app/discere-data/main/schema/inat_names.schema.json",
+  "title": "iNaturalist names the reference DB knows under another name",
+  "description": "recipes/inat_names.json, shared by every recipe with the order source inat. iNaturalist renames and splits taxa before FishBase and SeaLifeBase do; an observation under the new name would then resolve to nothing and the species would silently drop out of a deck. An entry maps such an iNaturalist name to the reference-DB name its observations belong to, and the counts of both add up. Only a rename (TaxonSwap), or a split whose new species takes over a population the reference-DB species still covers, belongs here; a newly described species without such a counterpart, or anything in doubt, stays out.",
+  "type": "object",
+  "required": ["names"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "names": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["inat", "referenceDb", "change", "reason", "evidence"],
+        "additionalProperties": false,
+        "properties": {
+          "inat": { "description": "The name iNaturalist uses now.", "$ref": "deck.schema.json#/$defs/scientificName" },
+          "referenceDb": { "description": "The name the reference DB knows, which takes the observations.", "$ref": "deck.schema.json#/$defs/scientificName" },
+          "change": { "description": "swap: the same taxon renamed; split: a population of the reference-DB taxon now a species of its own.", "enum": ["swap", "split"] },
+          "reason": { "description": "Why the observations belong to the reference-DB species, in one or two sentences; for a split, where the new species lives and that the reference-DB species still covers it.", "type": "string", "minLength": 1 },
+          "evidence": { "description": "The iNaturalist taxon change that says so.", "type": "string", "pattern": "^https://www\\.inaturalist\\.org/taxon_changes/[0-9]+$" }
+        }
+      }
+    }
+  }
+}

@@ -8,8 +8,10 @@
 # (levels, highlights, names, validity against schema/deck.schema.json, what
 # an existing deck keeps), the report (rejected highlights, unresolved
 # names, the guide comparison) and the exit code, and that an invalid
-# recipe stops the run without writing anything. No network. Also checks
-# every recipe under recipes/ against schema/recipe.schema.json.
+# recipe stops the run without writing anything; the mapping of iNaturalist
+# names (recipes/inat_names.json) and the exclusions by hand. No network.
+# Also checks every recipe under recipes/ against schema/recipe.schema.json
+# and recipes/inat_names.json against its schema.
 #
 #   python3 -B -m unittest discover -s tests -v
 # =============================================================================
@@ -23,7 +25,7 @@ import unittest
 
 from deckbuilder_support import ROOT, SCHEMA_DIR, FakeFetcher, make_refdb
 from jsonschema import Draft202012Validator, FormatChecker
-from deckbuilder import build, recipe as recipe_module
+from deckbuilder import build, inat_names, recipe as recipe_module
 from deckbuilder.refdb import ReferenceDb
 
 # (id, name, SpecCode, iNat count or None, water flags (fresh, brack, salt))
@@ -68,8 +70,10 @@ RECIPE = {
     "taxa": {"inat": [47178], "obis": [10194]},
     "filters": {"water": "salt", "minCount": 5},
     "levelSizes": [2, 2, 1],
-    "highlights": ["Beta two", "Delta four", "Kappa ten", "Lambda eleven", "Nu thirteen", "Xi fourteen",
-                   "Fictus name"],
+    "highlights": [
+        {"name": n, "reason": f"Grund für {n}."}
+        for n in ("Beta two", "Delta four", "Kappa ten", "Lambda eleven", "Nu thirteen", "Xi fourteen", "Fictus name")
+    ],
     "guides": [{"name": "Testführer", "path": "guides/test.txt"}],
 }
 
@@ -105,8 +109,24 @@ class BuildTest(unittest.TestCase):
         make_refdb(
             db_path,
             species=[(sid, name, "fishbase", code, None, None) for sid, name, code, _, _ in SPECIES],
-            synonyms=[("Gammaold three", "s:3")],
-            occurrences=[("s:13", "001", "native", "present"), ("s:14", "001", "extirpated", "absent")],
+            synonyms=[
+                ("Gammaold three", "s:3"), ("Delta old", "s:4"), ("Delta old", "s:5"),
+                ("Alpha one", "s:2", "misapplied name"), ("Beta vague", "s:1", "ambiguous synonym"),
+                ("Beta vague", "s:2", "ambiguous synonym"),
+            ],
+            occurrences=[
+                ("s:13", "001", "native", "present"), ("s:14", "001", "extirpated", "absent"),
+                ("s:1", "001", "native", "present"), ("s:3", "001", "endemic", "present"),
+            ],
+            families={"Alpha": "Alphidae", "Beta": "Alphidae", "Gamma": "Gammidae"},
+            common_names=[
+                ("s:1", "de", "Alphafisch", None, 1, 1), ("s:1", "en", "Alpha fish", None, 1, 1),
+                ("s:1", "en", "Regional alpha", "001", 1, 1),
+                ("s:2", "en", "alpha fish", None, 1, 1),
+                ("s:4", "de", "Deltafisch", None, 0, 2), ("s:4", "de", "Bester Deltafisch", None, 1, 1),
+                ("f:Alphidae", "en", "Alpha fishes", None, 1, 1),
+                ("f:Gammidae", "de", "Gammafische", None, 1, 1), ("f:Gammidae", "en", "Gamma fishes", None, 1, 1),
+            ],
         )
         self.db = ReferenceDb(db_path)
         self.addCleanup(self.db.close)
@@ -116,10 +136,11 @@ class BuildTest(unittest.TestCase):
         with open(self.recipe_path, "w", encoding="utf-8") as f:
             json.dump(recipe, f)
 
-    def run_build(self):
+    def run_build(self, name_map=()):
         self.fetcher = FakeFetcher(answer=answer)
-        with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()) as err:
-            code = build.run(self.recipe_path, self.decks_dir, self.fetcher, self.db, self.water)
+        with contextlib.redirect_stdout(io.StringIO()) as out, contextlib.redirect_stderr(io.StringIO()) as err:
+            code = build.run(self.recipe_path, self.decks_dir, self.fetcher, self.db, self.water, (), name_map)
+        self.stdout = out.getvalue()
         self.stderr = err.getvalue()
         return code
 
@@ -166,7 +187,7 @@ class BuildTest(unittest.TestCase):
 
     def test_without_rejected_highlights_the_run_succeeds(self):
         recipe = json.loads(json.dumps(RECIPE))
-        recipe["highlights"] = ["Kappa ten"]
+        recipe["highlights"] = [{"name": "Kappa ten", "reason": "Nur bei OBIS."}]
         self.write_recipe(recipe)
         self.assertEqual(self.run_build(), build.EXIT_OK)
 
@@ -229,6 +250,108 @@ class BuildTest(unittest.TestCase):
         self.assertIn("brackish", self.stderr)
         self.assertFalse(os.path.exists(self.deck_path))
         self.assertFalse(os.path.exists(self.report_path))
+
+    def test_highlights_are_listed_with_their_reason(self):
+        self.run_build()
+        section = self.report().split("## Highlights")[1].split("## Prüfung")[0]
+        self.assertIn("| *Kappa ten* | Grund für Kappa ten. | – | OBIS, Führer | Level 1 |", section)
+        self.assertIn("| *Lambda eleven* | Grund für Lambda eleven. | – | keine | verworfen: kein Nachweis", section)
+        self.assertIn("| *Fictus name* | Grund für Fictus name. | – | – | verworfen: Name in der Referenz-DB", section)
+
+    def checks(self):
+        self.run_build()
+        return self.report().split("## Prüfung")[1].split("## Deck")[0]
+
+    def test_two_independent_sources(self):
+        section = self.checks()
+        # Deck: Alpha Beta Delta Kappa Nu | Gamma Epsilon | Theta; only Alpha
+        # and Gamma have iNaturalist and the distribution.
+        self.assertIn("(Reihenfolge-Quelle und OBIS oder Verbreitung): 2/8 (25 %)", section)
+        single = section.split("**Arten ohne zweite, unabhängige Quelle:**")[1].split("**Eine Art")[0]
+        self.assertIn("- *Beta two*: Reihenfolge-Quelle\n", single)
+        self.assertIn("- *Kappa ten*: OBIS, Führer\n", single)
+        self.assertIn("- *Nu thirteen*: Verbreitung\n", single)
+        self.assertNotIn("*Alpha one*", single)
+        self.assertNotIn("*Gamma three*", single)
+
+    def test_endemics(self):
+        self.assertIn("laut FishBase/SeaLifeBase: 1: *Gamma three*", self.checks())
+
+    def test_common_names_as_the_app_picks_them(self):
+        section = self.checks()
+        self.assertIn("Arten ohne Volksnamen `de` in der Referenz-DB: 6/8 (75 %)", section)
+        self.assertIn("Arten ohne Volksnamen `en` in der Referenz-DB: 6/8 (75 %)", section)
+        self.assertIn("Familien ohne Volksnamen `de`: 1/2 (50 %): *Alphidae*", section)
+        self.assertIn("Familien ohne Volksnamen `en`: 0/2 (0 %)", section)
+
+    def test_one_species_under_two_entries(self):
+        section = self.checks().split("**Eine Art unter zwei Einträgen?**")[1]
+        self.assertIn("gleicher Volksname `en` „Alpha fish“: *Alpha one*, *Beta two*", section)
+        self.assertIn("gemeinsamer wissenschaftlicher Name *delta old*: *Delta four*, *Epsilon five*", section)
+        self.assertNotIn("Regional alpha", section)
+        # A name misapplied to a species, or a synonym of several, does not
+        # make two species one.
+        self.assertNotIn("*alpha one*", section)
+        self.assertNotIn("*beta vague*", section)
+
+    def test_image_credit_in_the_report(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["deck"]["imageUrl"] = "https://upload.wikimedia.org/x/330px-Reef.jpg"
+        recipe["imageCredit"] = {"author": "Jemand", "license": "CC BY-SA 4.0",
+                                 "page": "https://commons.wikimedia.org/wiki/File:Reef.jpg"}
+        self.write_recipe(recipe)
+        self.run_build()
+        self.assertIn("- Bild: https://upload.wikimedia.org/x/330px-Reef.jpg — Jemand, CC BY-SA 4.0, "
+                      "https://commons.wikimedia.org/wiki/File:Reef.jpg", self.report())
+        self.assertEqual(self.deck()["imageUrl"], "https://upload.wikimedia.org/x/330px-Reef.jpg")
+
+    def levels(self):
+        return [s["speciesNames"] for s in self.deck()["subdecks"]]
+
+    MAPPING = [{"inat": "Nomen nudum", "referenceDb": "Mu twelve", "change": "swap",
+                "reason": "Neuer Name derselben Art.", "evidence": "https://www.inaturalist.org/taxon_changes/1"}]
+
+    def test_inat_name_mapping_adds_the_counts(self):
+        self.run_build(self.MAPPING)
+        # Mu twelve: 20 under its own name and 15 as "Nomen nudum"; 35 puts
+        # it ahead of Theta eight (30) onto level 3.
+        self.assertEqual(self.levels()[2], ["Mu twelve"])
+        report = self.report()
+        self.assertIn("| *Nomen nudum* | *Mu twelve* | 15 | Umbenennung | "
+                      "https://www.inaturalist.org/taxon_changes/1 |", report)
+        self.assertNotIn("*Nomen nudum* | 15 |", report.split("## Nicht aufgelöste Namen")[1])
+
+    def test_without_mapping_the_name_stays_unresolved(self):
+        self.run_build()
+        self.assertEqual(self.levels()[2], ["Theta eight"])
+        self.assertIn("| *Nomen nudum* | 15 |", self.report().split("## Nicht aufgelöste Namen")[1])
+        self.assertIn("## iNaturalist-Namen zugeordnet\n\nKeine", self.report())
+
+    def test_exclusion_by_hand(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["exclude"] = [
+            {"name": "Theta eight", "reason": "Lebt nur im Mangrovenschlamm."},
+            {"name": "Zeta six", "reason": "Süßwasser."},
+            {"name": "Fictus name", "reason": "Gibt es nicht."},
+        ]
+        self.write_recipe(recipe)
+        self.run_build()
+        self.assertEqual(self.levels()[2], ["Mu twelve"])
+        section = self.report().split("## Von Hand ausgeschlossen")[1].split("\n## ")[0]
+        self.assertIn("| *Theta eight* | 30 | Lebt nur im Mangrovenschlamm. |", section)
+        self.assertIn("- *Zeta six*: schon ausgeschlossen: kein Meeresfisch", section)
+        self.assertIn("- *Fictus name*: Name in der Referenz-DB nicht gefunden", section)
+        self.assertIn("  - von Hand ausgeschlossen: 1", self.report())
+        self.assertIn("[WARN] Ausschluss Zeta six wirkt nicht", self.stdout)
+
+    def test_a_highlight_cannot_be_excluded(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["exclude"] = [{"name": "Gammaold three", "reason": "x"}]
+        recipe["highlights"] = [{"name": "Gamma three", "reason": "y"}]
+        self.write_recipe(recipe)
+        self.assertEqual(self.run_build(), build.EXIT_STOPPED)
+        self.assertIn("Highlight und von Hand ausgeschlossen zugleich: Gamma three", self.stderr)
+        self.assertFalse(os.path.exists(self.deck_path))
 
     def test_report_names_the_areas(self):
         self.run_build()
@@ -315,10 +438,53 @@ class RecipeSchemaTest(unittest.TestCase):
         self.assertEqual(self.errors(change), [])
 
 
+class InatNamesFileTest(unittest.TestCase):
+    ENTRY = {"inat": "Ascarosepion pfefferi", "referenceDb": "Metasepia pfefferi", "change": "swap",
+             "reason": "Neue Gattung.", "evidence": "https://www.inaturalist.org/taxon_changes/131489"}
+
+    def load(self, names):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "inat_names.json")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump({"names": names}, f)
+            return inat_names.load(path)
+
+    def test_valid_entry(self):
+        self.assertEqual(self.load([self.ENTRY]), [self.ENTRY])
+
+    def test_entry_without_reason_or_evidence_is_rejected(self):
+        for key in ("reason", "evidence"):
+            with self.subTest(missing=key):
+                entry = {k: v for k, v in self.ENTRY.items() if k != key}
+                with self.assertRaisesRegex(recipe_module.RecipeError, f"'{key}' is a required property"):
+                    self.load([entry])
+        with self.assertRaises(recipe_module.RecipeError):
+            self.load([{**self.ENTRY, "reason": ""}])
+        with self.assertRaises(recipe_module.RecipeError):
+            self.load([{**self.ENTRY, "evidence": "https://www.inaturalist.org/taxa/1"}])
+
+    def test_a_name_twice_is_rejected(self):
+        with self.assertRaisesRegex(recipe_module.RecipeError, "zweimal"):
+            self.load([self.ENTRY, {**self.ENTRY, "referenceDb": "Sepia pfefferi"}])
+
+    def test_missing_file_means_no_mapping(self):
+        self.assertEqual(inat_names.load(os.path.join(ROOT, "no", "such.json")), [])
+
+    def test_apply_sums_and_keeps_the_order(self):
+        counts, applied = inat_names.apply([("A b", 5), ("Ascarosepion pfefferi", 7), ("Metasepia pfefferi", 3)],
+                                           [self.ENTRY])
+        self.assertEqual(counts, [("A b", 5), ("Metasepia pfefferi", 10)])
+        self.assertEqual([(a.entry["inat"], a.count) for a in applied], [("Ascarosepion pfefferi", 7)])
+
+    def test_the_repository_file_is_valid(self):
+        self.assertTrue(inat_names.load(os.path.join(ROOT, "recipes", "inat_names.json")))
+
+
 class RecipesTest(unittest.TestCase):
     def test_every_recipe_is_valid_and_its_files_exist(self):
         recipes_dir = os.path.join(ROOT, "recipes")
-        paths = sorted(p for p in os.listdir(recipes_dir) if p.endswith(".json"))
+        # inat_names.json is no recipe; InatNamesFileTest checks it.
+        paths = sorted(p for p in os.listdir(recipes_dir) if p.endswith(".json") and p != "inat_names.json")
         self.assertTrue(paths, "no recipe found")
         for name in paths:
             with self.subTest(recipe=name):

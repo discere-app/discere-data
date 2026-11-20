@@ -11,15 +11,17 @@
 #   0  deck and report written
 #   1  stopped, nothing written: invalid recipe, unreadable input, a source
 #      or the reference DB not reachable
-#   2  deck and report written, but a highlight stayed out for lack of
+#   2  deck and report written, but a highlight (of a level or an extra
+#      subdeck) stayed out for lack of
 #      evidence or of a name the reference DB knows. The deck is written
 #      anyway: it holds only species with evidence, and the report, which is
 #      what it takes to decide about the highlight, is complete only with
 #      the deck it describes. The exit code keeps the run from passing
 #      unnoticed.
 #
-# run() takes the fetcher, the reference DB and the water flags as
-# arguments, so the tests hand in recorded answers and a small database.
+# run() takes the fetcher, the reference DB, the water flags and the
+# entries of recipes/inat_names.json as arguments, so the tests hand in
+# recorded answers and a small database.
 # =============================================================================
 
 import json
@@ -28,12 +30,16 @@ import sys
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-from . import gbif, guide, inat, obis, reef_csv
+from . import gbif, guide, inat, inat_names, obis, reef_csv
+from .checks import LANGUAGES, run_checks
 from .deck import build_deck, deck_name, deck_sources
 from .recipe import SCHEMA_DIR, RecipeError
+from .recipe import exclude_names, highlight_names
 from .recipe import load as load_recipe
 from .report import Report
-from .selection import Evidence, select
+from .extra import build_extra
+from .selection import Evidence, counts_by_id, select
+from .sources import SourceResult
 
 EXIT_OK, EXIT_STOPPED, EXIT_HIGHLIGHT_REJECTED = 0, 1, 2
 
@@ -70,15 +76,6 @@ def read_guides(recipe):
     return guides
 
 
-def counts_by_id(counts, resolution):
-    by_id = {}
-    for name, count in counts:
-        species_id = resolution.get(name)
-        if species_id is not None:
-            by_id[species_id] = by_id.get(species_id, 0) + count
-    return by_id
-
-
 def describe_areas(recipe, fetcher):
     """[(source, areas)] for the report, the iNaturalist places by name."""
     region = recipe.get("region")
@@ -111,9 +108,10 @@ def check_deck(deck):
                          + "; ".join(e.message for e in errors))
 
 
-def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
+def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
     """Builds the deck of the recipe at `recipe_path`; returns the exit
-    code. `water` maps (source, SpecCode) to the flag triple."""
+    code. `water` maps (source, SpecCode) to the flag triple, `name_map`
+    holds the entries of recipes/inat_names.json."""
     try:
         recipe = load_recipe(recipe_path)
         base = os.path.splitext(os.path.basename(recipe_path))[0]
@@ -126,6 +124,10 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
 
         order, combine = order_counts(recipe, fetcher, db)
         notes = list(order.notes)
+        mapped = None
+        if recipe["order"]["source"] == "inat":
+            counts, mapped = inat_names.apply(order.counts, name_map)
+            order = SourceResult(counts, order.notes)
         obis_counts = []
         region = recipe.get("region", {})
         if "obis" in region:
@@ -135,17 +137,22 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         guides = read_guides(recipe)
 
         all_names = {name for name, _ in order.counts} | {name for name, _ in obis_counts}
-        all_names |= set(recipe.get("highlights", []))
+        all_names |= set(highlight_names(recipe)) | set(exclude_names(recipe))
         for _, names in guides:
             all_names |= set(names)
         resolution = db.resolve(all_names)
+        both = {resolution[n] for n in highlight_names(recipe) if resolution[n]} \
+            & {resolution[n] for n in exclude_names(recipe) if resolution[n]}
+        if both:
+            raise BuildError("Highlight und von Hand ausgeschlossen zugleich: "
+                             + ", ".join(sorted(n for n in highlight_names(recipe) if resolution[n] in both)))
         facts = db.species(i for i in resolution.values() if i)
         flags = {i: water.get((f.source, f.external_id)) for i, f in facts.items()}
 
         order_by_id = counts_by_id(order.counts, resolution)
         obis_by_id = counts_by_id(obis_counts, resolution)
         guide_ids = [{resolution[n] for n in names if resolution[n]} for _, names in guides]
-        relevant = set(order_by_id) | {resolution[h] for h in recipe.get("highlights", []) if resolution[h]}
+        relevant = set(order_by_id) | {resolution[h] for h in highlight_names(recipe) if resolution[h]}
         occurrences = db.occurrences(relevant, region.get("fishbase", []))
         evidence = {
             i: Evidence(
@@ -159,15 +166,34 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
 
         selection = select(order.counts, resolution, facts, flags, evidence, recipe, combine)
         source_names = {i: c.names for i, c in selection.candidates.items()}
-        for name in recipe.get("highlights", []):
+        for name in highlight_names(recipe):
             if resolution[name]:
                 source_names.setdefault(resolution[name], [name])
         names = {i: deck_name(f, source_names.get(i, [])) for i, f in facts.items()}
 
+        taken = {i: f"level-{n}" for n, level in enumerate(selection.levels, 1) for i in level}
+        extras = []
+        extra_ids = [spec["id"] for spec in recipe.get("extraSubdecks", [])]
+        if len(set(extra_ids)) < len(extra_ids):
+            raise BuildError("zwei zusätzliche Subdecks mit derselben id: " + ", ".join(extra_ids))
+        for spec in recipe.get("extraSubdecks", []):
+            extra = build_extra(recipe, spec, fetcher, db, water, name_map, taken)
+            taken.update((i, spec["id"]) for i in extra.ids)
+            extras.append(extra)
+
         levels = [[names[i] for i in level] for level in selection.levels]
         used = {facts[i].source for level in selection.levels for i in level}
-        deck = build_deck(recipe, levels, deck_sources(recipe, used), existing)
+        used |= {e.facts[i].source for e in extras for i in e.ids}
+        deck = build_deck(recipe, levels, deck_sources(recipe, used), existing,
+                          [(e.spec, [e.names[i] for i in e.ids]) for e in extras])
         check_deck(deck)
+
+        deck_ids = [i for level in selection.levels for i in level]
+        family_of = db.families(deck_ids)
+        checks = run_checks(
+            deck_ids, evidence, db.common_names(deck_ids, LANGUAGES), family_of,
+            db.common_names({f for f, _ in family_of.values()}, LANGUAGES), db.shared_scientific_names(deck_ids),
+        )
 
         guide_reports = [
             (g, ids, [n for n in names_ if not resolution[n]], len(names_))
@@ -176,6 +202,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         report = Report(
             recipe, base, selection, names, facts, flags, evidence, guide_reports, notes, list(meta),
             existing.get("speciesNames") if existing else None, describe_areas(recipe, fetcher),
+            resolution, checks, mapped, extras,
         ).render()
     except (RecipeError, BuildError, RuntimeError) as e:
         print(f"[ERROR] {e}", file=sys.stderr)
@@ -189,14 +216,22 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         f.write(report)
 
     counts = "/".join(str(len(level)) for level in selection.levels)
+    counts += "".join(f" + {e.spec['id']} {len(e.ids)}" for e in extras)
     print(f"{deck_path}: {len(deck['speciesNames'])} Arten ({counts})")
     print(f"{report_path}: Bericht")
+    for name, why in selection.unused_excludes:
+        print(f"[WARN] Ausschluss {name} wirkt nicht: {why}")
+    for e in extras:
+        for name, why in e.selection.unused_excludes:
+            print(f"[WARN] Subdeck {e.spec['id']}: Ausschluss {name} wirkt nicht: {why}")
     if selection.unresolved:
         print(f"[WARN] {len(selection.unresolved)} Namen der Reihenfolge-Quelle nicht aufgelöst (siehe Bericht)")
     if existing is None:
         print(f"[TODO] {base}.json ist neu: Vor dem PR die Grenzfälle im Bericht durchsehen.")
-    if selection.rejected_highlights:
-        for name, reason in selection.rejected_highlights:
+    rejected = list(selection.rejected_highlights)
+    rejected += [(f"{name} (Subdeck {e.spec['id']})", reason) for e in extras for name, reason in e.selection.rejected_highlights]
+    if rejected:
+        for name, reason in rejected:
             print(f"[ERROR] Highlight {name} nicht im Deck: {reason}", file=sys.stderr)
         return EXIT_HIGHLIGHT_REJECTED
     return EXIT_OK

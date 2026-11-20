@@ -34,6 +34,16 @@ def validator():
     return Draft202012Validator(recipe_schema, registry=registry, format_checker=FormatChecker())
 
 
+def highlight_names(recipe):
+    """The scientific names of the recipe's highlights, in recipe order."""
+    return [h["name"] for h in recipe.get("highlights", [])]
+
+
+def exclude_names(recipe):
+    """The scientific names the recipe excludes by hand."""
+    return [e["name"] for e in recipe.get("exclude", [])]
+
+
 def load(path):
     """The recipe at `path`, checked, with its file paths made absolute."""
     try:

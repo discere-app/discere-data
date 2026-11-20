@@ -260,6 +260,79 @@ class ReferenceDb:
                 result.setdefault(sid, []).append(Occurrence(source, key, establishment, presence))
         return result
 
+    def common_names(self, entity_ids, languages):
+        """entity id → {language: name}: per language the name the app
+        shows, i.e. the global name before a country's, then the preferred,
+        then the lowest rank (locale_aware_common_name_sql.dart in the app,
+        without a user country)."""
+        result = {}
+        lang_marks = ",".join("?" * len(languages))
+        for chunk in _chunks(set(entity_ids)):
+            marks = ",".join("?" * len(chunk))
+            rows = self._db.execute(
+                f"""SELECT entity_id, language, name FROM common_names
+                    WHERE entity_id IN ({marks}) AND language IN ({lang_marks})
+                    ORDER BY entity_id, language, (country IS NULL) DESC, is_preferred DESC, rank ASC""",
+                chunk + list(languages),
+            )
+            for entity_id, language, name in rows:
+                result.setdefault(entity_id, {}).setdefault(language, name)
+        return result
+
+    def families(self, species_ids):
+        """species id → (family id, family name), for species with a family."""
+        result = {}
+        for chunk in _chunks(set(species_ids)):
+            marks = ",".join("?" * len(chunk))
+            rows = self._db.execute(
+                f"""SELECT s.id, f.id, f.name FROM species s
+                    JOIN genera g ON g.id = s.genus JOIN families f ON f.id = g.family
+                    WHERE s.id IN ({marks})""",
+                chunk,
+            )
+            result.update((sid, (fid, name)) for sid, fid, name in rows)
+        return result
+
+    def classes(self, species_ids):
+        """species id → class name, for species whose genus, family and
+        order lead to a class."""
+        result = {}
+        for chunk in _chunks(set(species_ids)):
+            marks = ",".join("?" * len(chunk))
+            rows = self._db.execute(
+                f"""SELECT s.id, c.name FROM species s
+                    JOIN genera g ON g.id = s.genus JOIN families f ON f.id = g.family
+                    JOIN orders o ON o.id = f."order" JOIN classes c ON c.id = o.class
+                    WHERE s.id IN ({marks})""",
+                chunk,
+            )
+            result.update(rows)
+        return result
+
+    def shared_scientific_names(self, species_ids):
+        """[(id a, id b, normalized name)] for two of the given species that
+        both carry a scientific name as their accepted name or a synonym: the
+        sign of one species under two entries, such as Pterois cincta and
+        Pteropterus cinctus. A misapplied name (a valid species' name once
+        used for another) and an ambiguous synonym (one name for several)
+        point at several species by definition, so they do not count."""
+        ids = set(species_ids)
+        names = {}
+        for chunk in _chunks(ids):
+            marks = ",".join("?" * len(chunk))
+            rows = self._db.execute(
+                f"""SELECT species_id, normalized_name FROM species_scientific_names
+                    WHERE species_id IN ({marks}) AND name_status IN ('valid', 'synonym')""",
+                chunk,
+            )
+            for sid, name in rows:
+                names.setdefault(name, set()).add(sid)
+        pairs = []
+        for name, owners in sorted(names.items()):
+            owners = sorted(owners)
+            pairs += [(a, b, name) for i, a in enumerate(owners) for b in owners[i + 1:]]
+        return pairs
+
     def fishbase_order_names(self):
         """Names of the orders FishBase describes, i.e. the fish orders."""
         rows = self._db.execute("SELECT name FROM orders WHERE external_source = 'fishbase'")
