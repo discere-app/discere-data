@@ -1,4 +1,4 @@
-# Bericht: Korallendreieck (`recipes/korallendreieck.json`)
+# Bericht: Korallendreieck (`recipes/coral_triangle.json`)
 
 Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitungsdaten und Führer bestätigen das Vorkommen, die Highlights sind von Hand gewählt.
 
@@ -363,8 +363,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 1: *Pseudanthias squamipinnis*
-- entfallen: 1: *Thalassoma amblycephalum*
+- neu: 0
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 

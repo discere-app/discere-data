@@ -45,7 +45,7 @@ DEFAULT_CACHE = os.path.join(os.path.expanduser("~"), ".cache", "discere-deckbui
 
 def main():
     parser = argparse.ArgumentParser(description="Deck aus einem Rezept und Beobachtungsdaten bauen")
-    parser.add_argument("recipe", help="Rezept, z. B. recipes/karibik.json")
+    parser.add_argument("recipe", help="Rezept, z. B. recipes/caribbean.json")
     parser.add_argument("--decks-dir", default=os.path.join(ROOT, "data", "decks"))
     parser.add_argument("--cache-dir", default=DEFAULT_CACHE, help="Caches außerhalb des Repos")
     parser.add_argument("--refresh", action="store_true",

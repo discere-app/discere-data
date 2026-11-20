@@ -354,8 +354,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 1: *Coris batuensis*
-- entfallen: 1: *Diagramma labiosum*
+- neu: 0
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 

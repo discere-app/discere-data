@@ -1,4 +1,4 @@
-# Bericht: Tropischer Ostpazifik (`recipes/ostpazifik.json`)
+# Bericht: Tropischer Ostpazifik (`recipes/tropical_eastern_pacific.json`)
 
 Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitungsdaten und Führer bestätigen das Vorkommen, die Highlights sind von Hand gewählt.
 
