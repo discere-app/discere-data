@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/recipe.schema.json",
+  "deck": {
+    "name": "Karibik",
+    "description": "Rifffische, Haie und Rochen der Karibik von Florida bis Venezuela. Level 1 enthält die häufigsten Arten und besondere Highlights wie Walhai und Seepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit.",
+    "translations": {
+      "de": {
+        "name": "Karibik",
+        "description": "Rifffische, Haie und Rochen der Karibik von Florida bis Venezuela. Level 1 enthält die häufigsten Arten und besondere Highlights wie Walhai und Seepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit."
+      },
+      "en": {
+        "name": "Caribbean",
+        "description": "Reef fish, sharks and rays of the Caribbean from Florida to Venezuela. Level 1 holds the most common species and special highlights such as the whale shark and seahorses, Levels 2 and 3 further species by frequency."
+      },
+      "fr": {
+        "name": "Caraïbes",
+        "description": "Poissons de récif, requins et raies des Caraïbes, de la Floride au Venezuela. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine et les hippocampes, les niveaux 2 et 3 d'autres espèces par fréquence."
+      },
+      "es": {
+        "name": "Caribe",
+        "description": "Peces de arrecife, tiburones y rayas del Caribe, de Florida a Venezuela. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena y los caballitos de mar, los niveles 2 y 3 otras especies por frecuencia."
+      }
+    },
+    "learningMode": "family",
+    "nameType": "commonName",
+    "reviewMode": "flip"
+  },
+  "order": { "source": "inat" },
+  "region": {
+    "inat": { "swlat": 9.0, "swlng": -88.5, "nelat": 27.5, "nelng": -59.0 },
+    "obis": { "wkt": "POLYGON((-88.5 9.0, -59.0 9.0, -59.0 27.5, -88.5 27.5, -88.5 9.0))" },
+    "fishbase": [
+      "028", "044", "052", "084", "092", "136", "192", "212", "214", "308", "312", "332", "388",
+      "474", "500", "531", "533", "534", "535", "630", "652", "659", "660", "662", "663", "670",
+      "780", "796", "850", "862", "840:US-FL"
+    ]
+  },
+  "taxa": {
+    "inat": [47178, 47273],
+    "obis": [10194, 10193]
+  },
+  "filters": {
+    "water": "salt",
+    "minCount": 5,
+    "diveDepthLimitM": 40,
+    "minLengthCm": 4
+  },
+  "levelSizes": [40, 60, 50],
+  "highlights": [
+    "Rhincodon typus",
+    "Mobula birostris",
+    "Sphyrna mokarran",
+    "Hippocampus reidi",
+    "Antennarius multiocellatus",
+    "Equetus punctatus",
+    "Opistognathus aurifrons"
+  ],
+  "guides": [
+    {
+      "name": "Smithsonian: Shorefishes of the Greater Caribbean",
+      "path": "guides/karibik_smithsonian.txt",
+      "url": "https://biogeodb.stri.si.edu/caribbean/en/thefishes/systematic"
+    }
+  ]
+}
