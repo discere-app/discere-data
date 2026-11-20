@@ -232,6 +232,10 @@ schreiben. Ein Rezept legt fest:
 
 - `deck`: Name, Beschreibung, `translations` und die Lerneinstellungen, wie
   im Deck-Format (optional `imageUrl`, `createdBy`)
+- `imageCredit` zum Bild: Urheber, Lizenz und Dateiseite; das Deck-Format
+  hat dafür kein Feld, der Bericht nennt sie. Die Lizenz muss Bearbeitung
+  und kommerzielle Nutzung erlauben (CC0, CC BY, CC BY-SA, gemeinfrei),
+  nicht NC oder ND
 - `order`: die Quelle der Reihenfolge, `inat`, `gbif` oder `reef` (mit Pfad
   zur REEF-CSV in `csv`)
 - `region` je Quelle, jeweils aus mehreren Gebieten: iNat-Orte
@@ -244,7 +248,8 @@ schreiben. Ein Rezept legt fest:
 - `filters`: Wasser (`salt`, `fresh`, `any`), Mindestzahl Nachweise,
   Tauchgrenze, Mindestgröße
 - `levelSizes`: Umfang je Level
-- `highlights` und optional `guides` (Namenslisten von Führern)
+- `highlights`, je mit Namen und einem Satz Begründung, und optional
+  `guides` (Namenslisten von Führern)
 
 Mehrere Gebiete fragt das Werkzeug je Quelle in einer Abfrage ab (iNat-Orte
 als Komma-Liste, OBIS-Gebiete als ein `MULTIPOLYGON`), sodass eine
@@ -275,9 +280,15 @@ Arten unter dem bevorzugten Namen der Referenz-DB) und den Bericht
 `recipes/<base>.report.md`. Gibt es das Deck schon, bleiben `sourceId`,
 `supersedes` und alles, was das Rezept nicht festlegt, erhalten. Der Bericht
 enthält je Art die Belege (Zählung je Quelle, FishBase/SeaLifeBase-Status in
-den Regionen, Salz/Süß, Treffer im Führer), die verworfenen Highlights, die
-Arten um jede Level-Grenze, den Abgleich mit den Führern, die
-ausgeschlossenen Kandidaten mit Grund und die nicht aufgelösten Namen.
+den Regionen, Salz/Süß, Treffer im Führer), die Highlights mit Begründung
+und Belegen, die Arten um jede Level-Grenze, den Abgleich mit den Führern,
+die ausgeschlossenen Kandidaten mit Grund und die nicht aufgelösten Namen.
+Dazu prüft er das Deck: welche Arten nur eine Quelle belegt (die
+Reihenfolge-Quelle ohne OBIS oder Verbreitungsdaten), welche endemisch
+sind, welchen Arten und Familien ein deutscher oder englischer Volksname
+fehlt (so ausgewählt wie in der App) und welche zwei Arten einen Volksnamen
+oder einen gültigen Namen oder ein Synonym teilen, also vielleicht eine Art
+unter zwei Einträgen sind.
 
 Namen löst das Werkzeug so auf wie die App: gegen die Referenz-DB, die
 neueste Version eines Schemas, das es liest, laut
