@@ -217,8 +217,8 @@ Bei Bedarf lässt sich der Lauf auch manuell anstoßen (Tab "Actions" ->
 
 ## Decks aus Beobachtungsdaten erzeugen
 
-`scripts/build_deck.py` stellt für eine Region eine belegte Artenauswahl mit
-Level-Subdecks zusammen. Grundsatz: **Daten bestimmen die Reihenfolge,
+`scripts/build_deck.py` stellt für eine Region, oder weltweit für eine
+Tiergruppe, eine belegte Artenauswahl mit Level-Subdecks zusammen. Grundsatz: **Daten bestimmen die Reihenfolge,
 Führer und Verbreitungsdaten bestätigen das Vorkommen, ein Mensch wählt nur
 die Highlights.**
 
@@ -234,15 +234,30 @@ schreiben. Ein Rezept legt fest:
   im Deck-Format (optional `imageUrl`, `createdBy`)
 - `order`: die Quelle der Reihenfolge, `inat`, `gbif` oder `reef` (mit Pfad
   zur REEF-CSV in `csv`)
-- `region` je Quelle: iNat-`placeId` oder Rechteck
-  (`swlat`/`swlng`/`nelat`/`nelng`), GBIF-Land, OBIS-WKT-Polygon und die
-  FishBase/SeaLifeBase-Regionen der Referenz-DB (dreistelliger Ländercode
-  wie `756`, Teilregion wie `840:US-FL`)
-- `taxa` je Quelle: iNat-Taxon-IDs, WoRMS-IDs für OBIS, für GBIF den Stamm
+- `region` je Quelle, jeweils aus mehreren Gebieten: iNat-Orte
+  (`placeIds`) oder ein Rechteck (`swlat`/`swlng`/`nelat`/`nelng`),
+  GBIF-Länder (`countries`), OBIS-Gebiete mit Namen und WKT-Polygon und die
+  FishBase/SeaLifeBase-Regionen der Referenz-DB (Ländercode wie `756`,
+  Teilregion wie `840:US-FL`)
+- `taxa` je Quelle: iNat-Taxon-IDs, WoRMS-IDs für OBIS, für GBIF den Stamm;
+  eine REEF-CSV braucht keine
 - `filters`: Wasser (`salt`, `fresh`, `any`), Mindestzahl Nachweise,
   Tauchgrenze, Mindestgröße
 - `levelSizes`: Umfang je Level
 - `highlights` und optional `guides` (Namenslisten von Führern)
+
+Mehrere Gebiete fragt das Werkzeug je Quelle in einer Abfrage ab (iNat-Orte
+als Komma-Liste, OBIS-Gebiete als ein `MULTIPOLYGON`), sodass eine
+Beobachtung in zwei Gebieten nur einmal zählt. Eine Region aus Orten ist
+einem Rechteck vorzuziehen: Ein Rechteck holt Fremdes herein, beim
+Karibik-Deck etwa die Pazifikküste Mittelamerikas. Von Festlandsländern mit
+zwei Küsten gehören darum nur die Teilgebiete an der richtigen Küste in die
+Region. Der Bericht nennt die Gebiete, iNat-Orte mit Namen.
+
+Ohne `region` gilt das Deck als weltweit, etwa für ein thematisches Deck
+(Seepferdchen, Wale): iNaturalist zählt dann weltweit, und ein Highlight
+belegt nur die Reihenfolge-Quelle oder ein Führer. Mit der Reihenfolge
+`gbif` sind Länder Pflicht.
 
 Relative Pfade gelten vom Rezept aus. Führerlisten liegen unter
 `recipes/guides/`, ein wissenschaftlicher Name pro Zeile, `#` für
@@ -294,7 +309,8 @@ in der Region kennen will, auch wenn sie selten sind (Walhai, Seepferdchen,
 Anglerfisch …). Level 2 und 3 folgen nur nach Häufigkeit, bis zum Umfang
 aus dem Rezept.
 
-Jedes Highlight braucht einen Nachweis in der Region: einen Eintrag in der
+Jedes Highlight braucht einen Nachweis in der Region (bei einem weltweiten
+Deck: irgendwo): einen Eintrag in der
 Reihenfolge-Quelle oder bei OBIS, einen Eintrag der Verbreitungsdaten, der
 nicht „nicht vorhanden“ sagt, oder eine Zeile in einem Führer. Fehlt er,
 kommt es nicht ins Deck, steht oben im Bericht, und der Lauf endet mit

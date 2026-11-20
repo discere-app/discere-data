@@ -2,7 +2,8 @@
 # report.py — the report of a deckbuilder run (recipes/<base>.report.md)
 #
 # The deck says which species; the report says why, so a reviewer can check
-# the deck in its PR without running anything: the evidence for every deck
+# the deck in its PR without running anything: the areas each source was
+# asked for (iNaturalist places by name), the evidence for every deck
 # species (count per source, FishBase/SeaLifeBase distribution in the recipe
 # regions, water type, guide), the highlights that stayed out, the species
 # around each level boundary, the comparison with the guides both ways, the
@@ -52,7 +53,8 @@ def escape(text):
 
 
 class Report:
-    def __init__(self, recipe, base, selection, names, facts, flags, evidence, guides, notes, meta, existing_names):
+    def __init__(self, recipe, base, selection, names, facts, flags, evidence, guides, notes, meta, existing_names,
+                 areas):
         self.recipe = recipe
         self.base = base
         self.s = selection
@@ -64,6 +66,7 @@ class Report:
         self.notes = notes
         self.meta = meta              # [(label, value)] for the header
         self.existing_names = existing_names
+        self.areas = areas            # [(source, areas)]
         self.order_label = ORDER_LABELS[recipe["order"]["source"]]
         self.level_of = {i: n for n, level in enumerate(selection.levels, 1) for i in level}
         self.rank_of = {i: n for n, i in enumerate(selection.ranked, 1)}
@@ -116,6 +119,12 @@ class Report:
             self.out(f"- {label}: {value}")
         for note in self.notes:
             self.out(f"- {note}")
+        self.out()
+
+        self.out("## Gebiete")
+        self.out()
+        for source, text in self.areas:
+            self.out(f"- {source}: {escape(text)}")
         self.out()
 
         self.out("## Übersicht")

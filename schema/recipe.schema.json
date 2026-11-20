@@ -2,14 +2,15 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/discere-app/discere-data/main/schema/recipe.schema.json",
   "title": "Discere deck recipe",
-  "description": "How scripts/build_deck.py builds one catalog deck from observation data: recipes/<base>.json becomes data/decks/<base>.json and the report recipes/<base>.report.md. The deck texts and learning settings use the definitions of deck.schema.json. Relative paths are relative to the recipe file.",
+  "description": "How scripts/build_deck.py builds one catalog deck from observation data: recipes/<base>.json becomes data/decks/<base>.json and the report recipes/<base>.report.md. The deck texts and learning settings use the definitions of deck.schema.json. Relative paths are relative to the recipe file. Without region, the deck is worldwide.",
   "type": "object",
-  "required": ["deck", "order", "region", "taxa", "levelSizes"],
+  "required": ["deck", "order", "levelSizes"],
   "additionalProperties": false,
   "allOf": [
     {
       "if": { "properties": { "order": { "properties": { "source": { "const": "inat" } } } } },
       "then": {
+        "required": ["taxa"],
         "properties": {
           "region": { "required": ["inat"] },
           "taxa": { "required": ["inat"] }
@@ -19,6 +20,7 @@
     {
       "if": { "properties": { "order": { "properties": { "source": { "const": "gbif" } } } } },
       "then": {
+        "required": ["region", "taxa"],
         "properties": {
           "region": { "required": ["gbif"] },
           "taxa": { "required": ["gbif"] }
@@ -26,8 +28,8 @@
       }
     },
     {
-      "if": { "properties": { "region": { "required": ["obis"] } } },
-      "then": { "properties": { "taxa": { "required": ["obis"] } } }
+      "if": { "required": ["region"], "properties": { "region": { "required": ["obis"] } } },
+      "then": { "required": ["taxa"], "properties": { "taxa": { "required": ["obis"] } } }
     }
   ],
   "properties": {
@@ -72,19 +74,26 @@
       ]
     },
     "region": {
-      "description": "The region, in the terms of each source. Only the sources given here are asked; OBIS and the distribution data only confirm occurrence.",
+      "description": "The region, in the terms of each source; each may name several areas. Only the sources given here are asked; OBIS and the distribution data only confirm occurrence. Leave the whole region out for a worldwide deck (e.g. a group of animals): iNaturalist then counts worldwide, and only the order source and the guides confirm occurrence. With a region and order inat, region.inat is required, so a region never silently means worldwide.",
       "type": "object",
       "minProperties": 1,
       "additionalProperties": false,
       "properties": {
         "inat": {
-          "description": "An iNaturalist place, or a rectangle for seas without a fitting place.",
+          "description": "iNaturalist places, counted together in one query without counting an observation twice, or a rectangle for seas without fitting places.",
           "oneOf": [
             {
               "type": "object",
-              "required": ["placeId"],
+              "required": ["placeIds"],
               "additionalProperties": false,
-              "properties": { "placeId": { "type": "integer", "minimum": 1 } }
+              "properties": {
+                "placeIds": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": { "type": "integer", "minimum": 1 }
+                }
+              }
             },
             {
               "type": "object",
@@ -101,18 +110,30 @@
         },
         "gbif": {
           "type": "object",
-          "required": ["country"],
+          "required": ["countries"],
           "additionalProperties": false,
           "properties": {
-            "country": { "description": "ISO 3166-1 alpha-2 country code, e.g. CH.", "type": "string", "pattern": "^[A-Z]{2}$" }
+            "countries": {
+              "description": "ISO 3166-1 alpha-2 country codes, e.g. CH; the occurrences of all of them count together.",
+              "type": "array",
+              "minItems": 1,
+              "uniqueItems": true,
+              "items": { "type": "string", "pattern": "^[A-Z]{2}$" }
+            }
           }
         },
         "obis": {
-          "type": "object",
-          "required": ["wkt"],
-          "additionalProperties": false,
-          "properties": {
-            "wkt": { "description": "The sea area as WKT polygon, longitude before latitude.", "type": "string", "pattern": "^\\s*(MULTI)?POLYGON\\s*\\(" }
+          "description": "Sea areas, asked together as one MULTIPOLYGON, so a record in two overlapping areas counts once.",
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["name", "wkt"],
+            "additionalProperties": false,
+            "properties": {
+              "name": { "description": "Name of the area, for the report.", "type": "string", "minLength": 1 },
+              "wkt": { "description": "The area as WKT POLYGON or MULTIPOLYGON, longitude before latitude.", "type": "string", "pattern": "^\\s*(MULTI)?POLYGON\\s*\\(" }
+            }
           }
         },
         "fishbase": {
@@ -125,7 +146,7 @@
       }
     },
     "taxa": {
-      "description": "Which organisms, in the IDs of each source.",
+      "description": "Which organisms, in the IDs of each source asked: required for an iNaturalist or GBIF order and for OBIS; a REEF CSV needs none.",
       "type": "object",
       "minProperties": 1,
       "additionalProperties": false,

@@ -46,10 +46,11 @@ def order_counts(recipe, fetcher, db):
     """The order source's counts and how two names of one species combine."""
     source = recipe["order"]["source"]
     if source == "inat":
-        return inat.species_counts(fetcher, recipe["region"]["inat"], recipe["taxa"]["inat"]), sum
+        region = recipe["region"]["inat"] if "region" in recipe else None
+        return inat.species_counts(fetcher, region, recipe["taxa"]["inat"]), sum
     if source == "gbif":
         result = gbif.species_counts(
-            fetcher, recipe["region"]["gbif"]["country"], recipe["taxa"]["gbif"]["phylumKey"],
+            fetcher, recipe["region"]["gbif"]["countries"], recipe["taxa"]["gbif"]["phylumKey"],
             db.fishbase_order_names(),
         )
         return result, sum
@@ -78,6 +79,29 @@ def counts_by_id(counts, resolution):
     return by_id
 
 
+def describe_areas(recipe, fetcher):
+    """[(source, areas)] for the report, the iNaturalist places by name."""
+    region = recipe.get("region")
+    if region is None:
+        return [("Region", "weltweit (iNaturalist ohne Ort; keine Verbreitungsdaten als Nachweis)")]
+    areas = []
+    if "inat" in region:
+        if "placeIds" in region["inat"]:
+            names = inat.place_names(fetcher, region["inat"]["placeIds"])
+            text = ", ".join(f"{names.get(i, '?')} ({i})" for i in region["inat"]["placeIds"])
+        else:
+            r = region["inat"]
+            text = f"Rechteck {r['swlat']}/{r['swlng']} bis {r['nelat']}/{r['nelng']} (Breite/Länge)"
+        areas.append(("iNaturalist", text))
+    if "gbif" in region:
+        areas.append(("GBIF", ", ".join(region["gbif"]["countries"])))
+    if "obis" in region:
+        areas.append(("OBIS", ", ".join(area["name"] for area in region["obis"])))
+    if "fishbase" in region:
+        areas.append(("FishBase/SeaLifeBase-Verbreitung", ", ".join(region["fishbase"])))
+    return areas
+
+
 def check_deck(deck):
     with open(os.path.join(SCHEMA_DIR, "deck.schema.json"), encoding="utf-8") as f:
         schema = json.load(f)
@@ -103,8 +127,9 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         order, combine = order_counts(recipe, fetcher, db)
         notes = list(order.notes)
         obis_counts = []
-        if "obis" in recipe["region"]:
-            result = obis.checklist(fetcher, recipe["region"]["obis"]["wkt"], recipe["taxa"]["obis"])
+        region = recipe.get("region", {})
+        if "obis" in region:
+            result = obis.checklist(fetcher, [area["wkt"] for area in region["obis"]], recipe["taxa"]["obis"])
             obis_counts = result.counts
             notes += result.notes
         guides = read_guides(recipe)
@@ -121,7 +146,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         obis_by_id = counts_by_id(obis_counts, resolution)
         guide_ids = [{resolution[n] for n in names if resolution[n]} for _, names in guides]
         relevant = set(order_by_id) | {resolution[h] for h in recipe.get("highlights", []) if resolution[h]}
-        occurrences = db.occurrences(relevant, recipe["region"].get("fishbase", []))
+        occurrences = db.occurrences(relevant, region.get("fishbase", []))
         evidence = {
             i: Evidence(
                 order_count=order_by_id.get(i),
@@ -150,7 +175,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         ]
         report = Report(
             recipe, base, selection, names, facts, flags, evidence, guide_reports, notes, list(meta),
-            existing.get("speciesNames") if existing else None,
+            existing.get("speciesNames") if existing else None, describe_areas(recipe, fetcher),
         ).render()
     except (RecipeError, BuildError, RuntimeError) as e:
         print(f"[ERROR] {e}", file=sys.stderr)
