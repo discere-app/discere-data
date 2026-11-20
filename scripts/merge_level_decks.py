@@ -14,6 +14,12 @@
 # Format of the result (see docs/architecture-overview.md §7.5 in the
 # app repo):
 #   formatVersion 2 — subdecks and supersedes need it.
+#   learningMode, nameType, reviewMode
+#                 what the deck starts with after import, from the required
+#                 arguments; the level files do not carry them, and the
+#                 regional decks differ (family or species), so there is no
+#                 default. The allowed values are read from
+#                 schema/deck.schema.json.
 #   speciesNames  union of all levels — app versions without subdecks
 #                 import the deck from it as a flat list.
 #   description   the level descriptions as a legend ("Level 1: … · …"),
@@ -35,10 +41,15 @@
 # before the PR is opened.
 #
 # Usage:
-#   python scripts/merge_level_decks.py <base> [<base> …] [--decks-dir DIR]
+#   python scripts/merge_level_decks.py <base> [<base> …]
+#       --learning-mode MODE --name-type TYPE --review-mode MODE
+#       [--decks-dir DIR]
+#
+# The three settings apply to every base of the call.
 #
 # Example:
-#   python scripts/merge_level_decks.py mittelmeer rotesmeer
+#   python scripts/merge_level_decks.py mittelmeer rotesmeer \
+#       --learning-mode family --name-type commonName --review-mode flip
 # =============================================================================
 
 import argparse
@@ -53,6 +64,21 @@ LEVEL_SUFFIX = re.compile(r"\s*-\s*Level\s*\d+\s*$")
 # Subdeck name per language; "de" is also the base name, since the base
 # fields of the catalog decks are German.
 LEVEL_NAMES = {"de": "Level {n}", "en": "Level {n}", "fr": "Niveau {n}", "es": "Nivel {n}"}
+
+SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "..", "schema", "deck.schema.json")
+
+# Deck field, command-line option and help text of each learning setting, in
+# the order the fields appear in the deck.
+SETTINGS = (
+    ("learningMode", "--learning-mode", "Lernmodus, mit dem das Deck nach dem Import startet"),
+    ("nameType", "--name-type", "Namensart, mit der das Deck nach dem Import startet"),
+    ("reviewMode", "--review-mode", "Abfrageart, mit der das Deck nach dem Import startet"),
+)
+
+
+def allowed_values(field):
+    with open(SCHEMA_PATH, encoding="utf-8") as f:
+        return json.load(f)["properties"][field]["enum"]
 
 
 def load_levels(decks_dir, base):
@@ -76,7 +102,7 @@ def merged_description(decks):
     return " · ".join(f"Level {i}: {text}" for i, text in enumerate(descriptions, 1))
 
 
-def merge(decks, base):
+def merge(decks, base, settings):
     first = decks[0]
     for key in ("imageUrl", "sources", "createdBy"):
         if any(d.get(key) != first.get(key) for d in decks):
@@ -111,6 +137,7 @@ def merge(decks, base):
     }
     if first.get("createdBy"):
         merged["createdBy"] = first["createdBy"]
+    merged.update(settings)
     merged["speciesNames"] = union
     merged["subdecks"] = subdecks
     merged["supersedes"] = [d["sourceId"] for d in decks]
@@ -121,10 +148,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("bases", nargs="+", help="Dateiname ohne _levelN.json")
     parser.add_argument("--decks-dir", default=os.path.join(os.path.dirname(__file__), "..", "data", "decks"))
+    for field, option, help_text in SETTINGS:
+        parser.add_argument(option, dest=field, required=True, choices=allowed_values(field), help=help_text)
     args = parser.parse_args()
+    settings = {field: getattr(args, field) for field, _, _ in SETTINGS}
 
     for base in args.bases:
-        merged = merge(load_levels(args.decks_dir, base), base)
+        merged = merge(load_levels(args.decks_dir, base), base, settings)
         out = os.path.join(args.decks_dir, f"{base}.json")
         if os.path.exists(out):
             sys.exit(f"[ERROR] {out} existiert bereits")

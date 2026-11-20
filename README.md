@@ -174,11 +174,15 @@ Die Generatoren unter `scripts/reef/` erzeugen weiterhin Level-Dateien
 (`<base>_level1.json` …). Liegen diese in `data/decks/`, macht
 
 ```
-python3 scripts/merge_level_decks.py <base>
+python3 scripts/merge_level_decks.py <base> \
+    --learning-mode family --name-type commonName --review-mode flip
 ```
 
 daraus ein Deck `<base>.json` mit `formatVersion` 2, Subdecks und
-`supersedes`; die Level-Dateien bleiben liegen. Das Skript ist nur für
+`supersedes`; die Level-Dateien bleiben liegen. Die Startwerte
+`learningMode`, `nameType` und `reviewMode` sind anzugeben, weil die
+Level-Dateien sie nicht tragen (bestehende REEF-Regionaldecks:
+`family`/`commonName`/`flip`). Das Skript ist nur für
 Level-Dateien, die schon auf `main` waren: Es braucht ihre `sourceId`, die
 erst `scripts/sync_index.sh` nach dem Merge vergibt, und bricht ohne sie ab.
 Ein ganz neues Deck mit Levels wird direkt als ein Deck mit `subdecks`
