@@ -178,9 +178,12 @@ python3 scripts/merge_level_decks.py <base>
 ```
 
 daraus ein Deck `<base>.json` mit `formatVersion` 2, Subdecks und
-`supersedes`; die Level-Dateien bleiben liegen. Sie brauchen dafür ihre
-`sourceId`, also müssen sie schon einmal auf `main` gewesen sein. Für ein
-ganz neues Deck reicht es, `supersedes` wegzulassen.
+`supersedes`; die Level-Dateien bleiben liegen. Das Skript ist nur für
+Level-Dateien, die schon auf `main` waren: Es braucht ihre `sourceId`, die
+erst `scripts/sync_index.sh` nach dem Merge vergibt, und bricht ohne sie ab.
+Ein ganz neues Deck mit Levels wird direkt als ein Deck mit `subdecks`
+geschrieben (siehe [Subdecks](#subdecks-levels)), ohne Level-Dateien und
+ohne `supersedes`.
 
 Die Subdecks bekommen ihre Namen dabei in allen App-Sprachen, das Deck selbst
 nicht: Als Beschreibung setzt das Skript die Legende der Levels. Vor dem PR
