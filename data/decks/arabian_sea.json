@@ -197,7 +197,47 @@
     "Gymnura poecilura",
     "Istiblennius edentulus",
     "Lutjanus indicus",
-    "Lutjanus sapphirolineatus"
+    "Lutjanus sapphirolineatus",
+    "Hypselodoris pulchella",
+    "Catostylus perezi",
+    "Goniobranchus annulatus",
+    "Diadema setosum",
+    "Conomurex persicus",
+    "Astropecten polyacanthus",
+    "Cassiopea andromeda",
+    "Culcita coriacea",
+    "Cotylorhiza erythraea",
+    "Entacmaea quadricolor",
+    "Panulirus versicolor",
+    "Aquilonastra iranica",
+    "Caloria indica",
+    "Dardanus tinctor",
+    "Conus textile",
+    "Echinometra mathaei",
+    "Jorunna funebris",
+    "Mauritia grayana",
+    "Clypeaster humilis",
+    "Goniobranchus obsoletus",
+    "Thor amboinensis",
+    "Asaphis violascens",
+    "Hexaplex kuesterianus",
+    "Hypselodoris dollfusi",
+    "Hypselodoris nigrostriata",
+    "Clanculus pharaonius",
+    "Holothuria atra",
+    "Holothuria leucospilota",
+    "Lunella coronata",
+    "Toxopneustes pileolus",
+    "Sculpsitechinus auritus",
+    "Clibanarius signatus",
+    "Euapta godeffroyi",
+    "Gymnodoris impudica",
+    "Zoanthus sansibaricus",
+    "Barbatia setigera",
+    "Hypselodoris infucata",
+    "Ophiocoma scolopendrina",
+    "Stenopus hispidus",
+    "Acanthaster planci"
   ],
   "subdecks": [
     {
@@ -413,6 +453,66 @@
         "Istiblennius edentulus",
         "Lutjanus indicus",
         "Lutjanus sapphirolineatus"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Hypselodoris pulchella",
+        "Catostylus perezi",
+        "Goniobranchus annulatus",
+        "Diadema setosum",
+        "Conomurex persicus",
+        "Astropecten polyacanthus",
+        "Cassiopea andromeda",
+        "Culcita coriacea",
+        "Cotylorhiza erythraea",
+        "Entacmaea quadricolor",
+        "Panulirus versicolor",
+        "Aquilonastra iranica",
+        "Caloria indica",
+        "Dardanus tinctor",
+        "Conus textile",
+        "Echinometra mathaei",
+        "Jorunna funebris",
+        "Mauritia grayana",
+        "Clypeaster humilis",
+        "Goniobranchus obsoletus",
+        "Thor amboinensis",
+        "Asaphis violascens",
+        "Hexaplex kuesterianus",
+        "Hypselodoris dollfusi",
+        "Hypselodoris nigrostriata",
+        "Clanculus pharaonius",
+        "Holothuria atra",
+        "Holothuria leucospilota",
+        "Lunella coronata",
+        "Toxopneustes pileolus",
+        "Sculpsitechinus auritus",
+        "Clibanarius signatus",
+        "Euapta godeffroyi",
+        "Gymnodoris impudica",
+        "Zoanthus sansibaricus",
+        "Barbatia setigera",
+        "Hypselodoris infucata",
+        "Ophiocoma scolopendrina",
+        "Stenopus hispidus",
+        "Acanthaster planci"
       ]
     }
   ]

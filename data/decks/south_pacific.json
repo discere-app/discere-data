@@ -200,7 +200,47 @@
     "Scolopsis trilineata",
     "Echeneis naucrates",
     "Lutjanus kasmira",
-    "Parupeneus cyclostomus"
+    "Parupeneus cyclostomus",
+    "Tridacna maxima",
+    "Linckia laevigata",
+    "Bohadschia argus",
+    "Echinometra mathaei",
+    "Culcita novaeguineae",
+    "Acanthaster planci",
+    "Chromodoris lochi",
+    "Holothuria atra",
+    "Synapta maculata",
+    "Tridacna squamosa",
+    "Pearsonothuria graeffei",
+    "Stichopus chloronotus",
+    "Holothuria leucospilota",
+    "Cypraea tigris",
+    "Diploastrea heliopora",
+    "Linckia multifora",
+    "Pocillopora grandis",
+    "Herpolitha limax",
+    "Tripneustes gratilla",
+    "Rochia nilotica",
+    "Thelenota ananas",
+    "Monetaria moneta",
+    "Stenopus hispidus",
+    "Porites rus",
+    "Pteraeolidia ianthina",
+    "Ophiocoma scolopendrina",
+    "Phyllidia ocellata",
+    "Panulirus versicolor",
+    "Tridacna noae",
+    "Entacmaea quadricolor",
+    "Lambis truncata",
+    "Conus ebraeus",
+    "Anneissia bennetti",
+    "Dardanus megistos",
+    "Monetaria obvelata",
+    "Pocillopora verrucosa",
+    "Calcinus latens",
+    "Odontodactylus scyllarus",
+    "Charonia tritonis",
+    "Hexabranchus sanguineus"
   ],
   "subdecks": [
     {
@@ -419,6 +459,66 @@
         "Echeneis naucrates",
         "Lutjanus kasmira",
         "Parupeneus cyclostomus"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Tridacna maxima",
+        "Linckia laevigata",
+        "Bohadschia argus",
+        "Echinometra mathaei",
+        "Culcita novaeguineae",
+        "Acanthaster planci",
+        "Chromodoris lochi",
+        "Holothuria atra",
+        "Synapta maculata",
+        "Tridacna squamosa",
+        "Pearsonothuria graeffei",
+        "Stichopus chloronotus",
+        "Holothuria leucospilota",
+        "Cypraea tigris",
+        "Diploastrea heliopora",
+        "Linckia multifora",
+        "Pocillopora grandis",
+        "Herpolitha limax",
+        "Tripneustes gratilla",
+        "Rochia nilotica",
+        "Thelenota ananas",
+        "Monetaria moneta",
+        "Stenopus hispidus",
+        "Porites rus",
+        "Pteraeolidia ianthina",
+        "Ophiocoma scolopendrina",
+        "Phyllidia ocellata",
+        "Panulirus versicolor",
+        "Tridacna noae",
+        "Entacmaea quadricolor",
+        "Lambis truncata",
+        "Conus ebraeus",
+        "Anneissia bennetti",
+        "Dardanus megistos",
+        "Monetaria obvelata",
+        "Pocillopora verrucosa",
+        "Calcinus latens",
+        "Odontodactylus scyllarus",
+        "Charonia tritonis",
+        "Hexabranchus sanguineus"
       ]
     }
   ]

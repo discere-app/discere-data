@@ -198,7 +198,47 @@
     "Naso unicornis",
     "Pomacentrus chrysurus",
     "Centropyge eibli",
-    "Gymnothorax fimbriatus"
+    "Gymnothorax fimbriatus",
+    "Tridacna crocea",
+    "Acanthaster planci",
+    "Diadema setosum",
+    "Linckia laevigata",
+    "Pteraeolidia ianthina",
+    "Phyllidia varicosa",
+    "Holothuria atra",
+    "Holothuria leucospilota",
+    "Echinothrix calamaris",
+    "Pearsonothuria graeffei",
+    "Culcita schmideliana",
+    "Xestospongia testudinaria",
+    "Panulirus versicolor",
+    "Tridacna maxima",
+    "Archaster typicus",
+    "Plakobranchus ocellatus",
+    "Tridacna squamosa",
+    "Stichopus chloronotus",
+    "Hypselodoris pulchella",
+    "Diploastrea heliopora",
+    "Actinopyga mauritiana",
+    "Ophiocoma scolopendrina",
+    "Pedum spondyloideum",
+    "Phyllidiella nigra",
+    "Plerogyra sinuosa",
+    "Stenopus hispidus",
+    "Galaxea fascicularis",
+    "Phyllidiella zeylanica",
+    "Goniobranchus annulatus",
+    "Protoreaster nodosus",
+    "Dardanus megistos",
+    "Echinometra mathaei",
+    "Porpita porpita",
+    "Neopetrolisthes maculatus",
+    "Phyllidia elegans",
+    "Phyllidia coelestis",
+    "Goniobranchus geminus",
+    "Gonodactylus chiragra",
+    "Odontodactylus scyllarus",
+    "Hymenocera picta"
   ],
   "subdecks": [
     {
@@ -415,6 +455,66 @@
         "Pomacentrus chrysurus",
         "Centropyge eibli",
         "Gymnothorax fimbriatus"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Tridacna crocea",
+        "Acanthaster planci",
+        "Diadema setosum",
+        "Linckia laevigata",
+        "Pteraeolidia ianthina",
+        "Phyllidia varicosa",
+        "Holothuria atra",
+        "Holothuria leucospilota",
+        "Echinothrix calamaris",
+        "Pearsonothuria graeffei",
+        "Culcita schmideliana",
+        "Xestospongia testudinaria",
+        "Panulirus versicolor",
+        "Tridacna maxima",
+        "Archaster typicus",
+        "Plakobranchus ocellatus",
+        "Tridacna squamosa",
+        "Stichopus chloronotus",
+        "Hypselodoris pulchella",
+        "Diploastrea heliopora",
+        "Actinopyga mauritiana",
+        "Ophiocoma scolopendrina",
+        "Pedum spondyloideum",
+        "Phyllidiella nigra",
+        "Plerogyra sinuosa",
+        "Stenopus hispidus",
+        "Galaxea fascicularis",
+        "Phyllidiella zeylanica",
+        "Goniobranchus annulatus",
+        "Protoreaster nodosus",
+        "Dardanus megistos",
+        "Echinometra mathaei",
+        "Porpita porpita",
+        "Neopetrolisthes maculatus",
+        "Phyllidia elegans",
+        "Phyllidia coelestis",
+        "Goniobranchus geminus",
+        "Gonodactylus chiragra",
+        "Odontodactylus scyllarus",
+        "Hymenocera picta"
       ]
     }
   ]

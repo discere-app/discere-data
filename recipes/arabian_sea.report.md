@@ -2,8 +2,6 @@
 
 Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitungsdaten und Führer bestätigen das Vorkommen, die Highlights sind von Hand gewählt.
 
-- Referenz-DB: v3 (FishBase v26.06, SeaLifeBase v26.06)
-- Salz/Süß: FishBase/SeaLifeBase v25.04 (species.parquet)
 - iNaturalist: 507 Taxa (Seiten: 2)
 - OBIS: 1013 Arten
 - Bild: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Pez_mariposa_ar%C3%A1bigo_%28Chaetodon_melapterus%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_77.jpg/330px-Pez_mariposa_ar%C3%A1bigo_%28Chaetodon_melapterus%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_77.jpg — Diego Delso, CC BY-SA 4.0, https://commons.wikimedia.org/wiki/File:Pez_mariposa_ar%C3%A1bigo_(Chaetodon_melapterus),_islas_Ad_Dimaniyat,_Om%C3%A1n,_2024-08-13,_DD_77.jpg
@@ -339,11 +337,6 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 ## Abgleich mit Führern
 
 Das Rezept nennt keinen Führer.
-## Änderungen gegenüber dem bestehenden Deck
-
-- neu: 0
-- entfallen: 0
-
 ## Ausgeschlossene Kandidaten
 
 <details><summary>314 Arten</summary>
@@ -664,6 +657,480 @@ Das Rezept nennt keinen Führer.
 | *Upeneus guttatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Upeneus heemstra* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Upeneus sulphureus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+
+</details>
+
+## Subdeck `invertebrates` (40)
+
+Eigene Taxa, Größe und Filter, Reihenfolge-Quelle und Region des Rezepts. Arten, die schon in einem Level oder einem früheren Subdeck stehen, bleiben draußen; die Führer werden nicht abgeglichen.
+
+- iNaturalist: 533 Taxa (Seiten: 2)
+- OBIS: 2998 Arten
+
+### iNaturalist-Namen zugeordnet
+
+Laut `recipes/inat_names.json`: iNaturalist nennt die Art anders als die Referenz-DB; die Zählung kommt zu der der Referenz-DB-Art.
+
+| iNaturalist | Referenz-DB | iNat | Art | Beleg |
+|---|---|---|---|---|
+| *Pinnoctopus ornatus* | *Callistoctopus ornatus* | 3 | Umbenennung | https://www.inaturalist.org/taxon_changes/172615 |
+| *Pinnoctopus luteus* | *Callistoctopus luteus* | 1 | Umbenennung | https://www.inaturalist.org/taxon_changes/172616 |
+
+### Von Hand ausgeschlossen
+
+| Art | iNat | Grund |
+|---|---|---|
+| *Metopograpsus messor* | 103 | Uferkrabbe der Mangroven und Felsküste, lebt in der Gezeitenzone über dem Wasser. |
+| *Cardites bicolor* | 99 | Fast nur als leere Schale am Strand beobachtet (iNaturalist: 7 von 7 Beobachtungen mit Angabe „tot“). |
+| *Coenobita scaevola* | 80 | Landeinsiedlerkrebs, lebt an Land und geht nur zur Eiablage ans Meer. |
+| *Oliva bulbosa* | 74 | Fast nur als leere Schale am Strand beobachtet (iNaturalist: 16 von 17 Beobachtungen mit Angabe „tot“). |
+| *Portunus pelagicus* | 72 | Schwimmkrabbe der Lagunen und Flussmündungen, vor allem als Fang auf Märkten beobachtet. |
+| *Grapsus albolineatus* | 70 | Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen. |
+| *Eurycarcinus orientalis* | 53 | Krabbe der Mangroven und Gezeitenzone, lebt bei Ebbe über dem Wasser. |
+| *Ocypode rotundata* | 53 | Geisterkrabbe, lebt am trockenen Sandstrand. |
+| *Acanthopleura vaillantii* | 52 | Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
+| *Amphibalanus amphitrite* | 33 | Seepocke der Gezeitenzone, sitzt an Hafenmauern und Mangrovenwurzeln. |
+| *Ocypode saratan* | 29 | Geisterkrabbe, lebt am trockenen Sandstrand. |
+| *Scylla serrata* | 29 | Mangrovenkrabbe, lebt in Mangroven und Schlick, vor allem als Fang auf Märkten beobachtet. |
+| *Portunus segnis* | 24 | Schwimmkrabbe der Lagunen und Flussmündungen, vor allem als Fang auf Märkten beobachtet. |
+| *Porcellio evansi* | 20 | Landassel, kein Meerestier. |
+| *Cellana karachiensis* | 15 | Napfschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
+| *Gelasimus hesperiae* | 14 | Winkerkrabbe des Schlickwatts, lebt bei Ebbe an Land. |
+| *Terebralia palustris* | 13 | Mangrovenschnecke, lebt auf dem Schlick der Mangroven. |
+
+### Highlights
+
+| Highlight | Begründung | Rang | Belege | Status |
+|---|---|---|---|---|
+| *Acanthaster planci* | Die Dornenkrone frisst Korallen; ihre Massenvermehrungen zerstören ganze Riffe, und ihre Stacheln sind giftig. | 55 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Toxopneustes pileolus* | Der Blumenseeigel trägt zwischen den Stacheln giftige Greifzangen, die zu den gefährlichsten des Meeres zählen. | 30 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Stenopus hispidus* | Die Gebänderte Scherengarnele putzt Fische vor ihrer Höhle und ist eine der auffälligsten Garnelen des Riffs. | 41 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+
+### Prüfung
+
+- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS oder Verbreitung): 40/40 (100 %)
+- Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: 0
+- Arten ohne Volksnamen `de` in der Referenz-DB: 31/40 (78 %)
+- Arten ohne Volksnamen `en` in der Referenz-DB: 7/40 (18 %)
+- Familien ohne Volksnamen `de`: 33/33 (100 %): *Acanthasteridae*, *Actiniidae*, *Arcidae*, *Asterinidae*, *Astriclypeidae*, *Astropectinidae*, *Cassiopeidae*, *Catostylidae*, *Cepheidae*, *Chromodorididae*, *Clypeasteridae*, *Conidae*, *Cypraeidae*, *Diadematidae*, *Diogenidae*, *Discodorididae*, *Echinometridae*, *Facelinidae*, *Gymnodorididae*, *Holothuriidae*, *Muricidae*, *Ophiocomidae*, *Oreasteridae*, *Palinuridae*, *Psammobiidae*, *Stenopodidae*, *Strombidae*, *Synaptidae*, *Thoridae*, *Toxopneustidae*, *Trochidae*, *Turbinidae*, *Zoanthidae*
+- Familien ohne Volksnamen `en`: 20/33 (61 %): *Actiniidae*, *Arcidae*, *Astriclypeidae*, *Astropectinidae*, *Cassiopeidae*, *Catostylidae*, *Cepheidae*, *Chromodorididae*, *Clypeasteridae*, *Diadematidae*, *Discodorididae*, *Echinometridae*, *Facelinidae*, *Gymnodorididae*, *Ophiocomidae*, *Oreasteridae*, *Synaptidae*, *Thoridae*, *Toxopneustidae*, *Zoanthidae*
+
+Volksnamen wie die App sie wählt (ohne Landesbezug; zur Laufzeit kann die App Namen aus iNaturalist ergänzen). Im Lernmodus Familie fragt die App den Familiennamen ab und fällt ohne Namen in der App-Sprache auf Englisch, dann auf den wissenschaftlichen Namen zurück.
+
+**Arten ohne zweite, unabhängige Quelle:**
+
+Keine.
+
+**Eine Art unter zwei Einträgen?** Deck-Arten mit gleichem Volksnamen oder gemeinsamem wissenschaftlichem Namen:
+
+- gleicher Volksname `en` „Echinoid“: *Clypeaster humilis*, *Sculpsitechinus auritus*
+
+### Arten
+
+| Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Klasse |
+|---|---|---|---|---|---|---|
+| 1 | *Hypselodoris pulchella* | 65 | 71 | native ×2 | Meer | Gastropoda |
+| 2 | *Catostylus perezi* | 48 | 36 | native ×5 | Meer | Scyphozoa |
+| 3 | *Goniobranchus annulatus* | 40 | 56 | native ×1 | Meer | Gastropoda |
+| 4 | *Diadema setosum* | 38 | 44 | native ×4 | Meer | Echinoidea |
+| 5 | *Conomurex persicus* | 37 | 46 | native ×5 | Meer | Gastropoda |
+| 6 | *Astropecten polyacanthus* | 36 | 27 | native ×2 | Meer | Asteroidea |
+| 7 | *Cassiopea andromeda* | 35 | 28 | native ×2 | Meer | Scyphozoa |
+| 8 | *Culcita coriacea* | 35 | 30 | native ×1 | Meer | Asteroidea |
+| 9 | *Cotylorhiza erythraea* | 22 | 11 | – | Meer | Scyphozoa |
+| 10 | *Entacmaea quadricolor* | 21 | 28 | native ×1 | Meer | Hexacorallia |
+| 11 | *Panulirus versicolor* | 21 | 20 | native ×5 | Meer | Malacostraca |
+| 12 | *Aquilonastra iranica* | 20 | 16 | native ×1 | Meer | Asteroidea |
+| 13 | *Caloria indica* | 20 | 25 | – | Meer | Gastropoda |
+| 14 | *Dardanus tinctor* | 20 | 28 | native ×4 | Meer | Malacostraca |
+| 15 | *Conus textile* | 18 | 25 | – | Meer | Gastropoda |
+| 16 | *Echinometra mathaei* | 18 | 29 | native ×4 | Meer | Echinoidea |
+| 17 | *Jorunna funebris* | 18 | 18 | native ×2 | Meer | Gastropoda |
+| 18 | *Mauritia grayana* | 18 | 45 | native ×1 | Meer | Gastropoda |
+| 19 | *Clypeaster humilis* | 17 | 21 | native ×3 | Meer | Echinoidea |
+| 20 | *Goniobranchus obsoletus* | 17 | 21 | – | Meer | Gastropoda |
+| 21 | *Thor amboinensis* | 17 | 16 | native ×2 | Meer | Malacostraca |
+| 22 | *Asaphis violascens* | 16 | 13 | native ×5 | Brack/Meer | Bivalvia |
+| 23 | *Hexaplex kuesterianus* | 16 | 36 | native ×4 | Meer | Gastropoda |
+| 24 | *Hypselodoris dollfusi* | 16 | 26 | native ×2 | Meer | Gastropoda |
+| 25 | *Hypselodoris nigrostriata* | 16 | 27 | native ×1 | Meer | Gastropoda |
+| 26 | *Clanculus pharaonius* | 15 | 27 | native ×5 | Meer | Gastropoda |
+| 27 | *Holothuria atra* | 15 | 15 | native ×4 | Meer | Holothuroidea |
+| 28 | *Holothuria leucospilota* | 15 | 21 | native ×2 | Meer | Holothuroidea |
+| 29 | *Lunella coronata* | 15 | 27 | native ×5 | Meer | Gastropoda |
+| 30 | *Toxopneustes pileolus* (Highlight) | 15 | 12 | native ×1 | Meer | Echinoidea |
+| 31 | *Sculpsitechinus auritus* | 14 | 10 | native ×3 | Meer | Echinoidea |
+| 32 | *Clibanarius signatus* | 13 | 31 | native ×2 | Meer | Malacostraca |
+| 33 | *Euapta godeffroyi* | 13 | 21 | native ×1 | Meer | Holothuroidea |
+| 34 | *Gymnodoris impudica* | 13 | 19 | – | Meer | Gastropoda |
+| 35 | *Zoanthus sansibaricus* | 13 | 22 | – | Meer | Hexacorallia |
+| 36 | *Barbatia setigera* | 12 | 21 | native ×4 | Meer | Bivalvia |
+| 37 | *Hypselodoris infucata* | 12 | 30 | native ×3 | Meer | Gastropoda |
+| 38 | *Ophiocoma scolopendrina* | 12 | 21 | native ×1 | Meer | Ophiuroidea |
+| 41 | *Stenopus hispidus* (Highlight) | 12 | 9 | native ×1 | Meer | Malacostraca |
+| 55 | *Acanthaster planci* (Highlight) | 8 | 38 | native ×2 | Meer | Asteroidea |
+
+### Grenzfälle
+
+Je 10 Arten vor und nach der Grenze (Highlights übersprungen).
+
+| Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Klasse | Im Subdeck |
+|---|---|---|---|---|---|---|---|
+| 28 | *Holothuria leucospilota* | 15 | 21 | native ×2 | Meer | Holothuroidea | ja |
+| 29 | *Lunella coronata* | 15 | 27 | native ×5 | Meer | Gastropoda | ja |
+| 31 | *Sculpsitechinus auritus* | 14 | 10 | native ×3 | Meer | Echinoidea | ja |
+| 32 | *Clibanarius signatus* | 13 | 31 | native ×2 | Meer | Malacostraca | ja |
+| 33 | *Euapta godeffroyi* | 13 | 21 | native ×1 | Meer | Holothuroidea | ja |
+| 34 | *Gymnodoris impudica* | 13 | 19 | – | Meer | Gastropoda | ja |
+| 35 | *Zoanthus sansibaricus* | 13 | 22 | – | Meer | Hexacorallia | ja |
+| 36 | *Barbatia setigera* | 12 | 21 | native ×4 | Meer | Bivalvia | ja |
+| 37 | *Hypselodoris infucata* | 12 | 30 | native ×3 | Meer | Gastropoda | ja |
+| 38 | *Ophiocoma scolopendrina* | 12 | 21 | native ×1 | Meer | Ophiuroidea | ja |
+| | **Grenze** | | | | | | |
+| 39 | *Petrolisthes rufescens* | 12 | 23 | native ×5 | Meer | ? | nein |
+| 40 | *Pinctada radiata* | 12 | 26 | native ×4 | Meer | ? | nein |
+| 42 | *Linckia multifora* | 11 | 19 | native ×3 | Meer | ? | nein |
+| 43 | *Ceratosoma gracillimum* | 10 | 9 | – | Meer | ? | nein |
+| 44 | *Clibanarius longitarsus* | 10 | 10 | native ×2 | Brack/Meer | ? | nein |
+| 45 | *Conus betulinus* | 10 | 9 | – | Meer | ? | nein |
+| 46 | *Eriphia smithii* | 10 | 48 | native ×2 | Meer | ? | nein |
+| 47 | *Chelonibia testudinaria* | 9 | 9 | – | Meer | ? | nein |
+| 48 | *Conus coronatus* (Quelle: *Conus aristophanes*) | 9 | 6 | – | Meer | ? | nein |
+| 49 | *Goniobranchus tinctorius* | 9 | 11 | – | Meer | ? | nein |
+
+### Ausgeschlossene Kandidaten
+
+<details><summary>319 Arten</summary>
+
+| Art | iNat | Wasser | Grund |
+|---|---|---|---|
+| *Metopograpsus messor* | 103 | Brack/Meer | von Hand ausgeschlossen (Uferkrabbe der Mangroven und Felsküste, lebt in der Gezeitenzone über dem Wasser.) |
+| *Cardites bicolor* | 99 | Meer | von Hand ausgeschlossen (Fast nur als leere Schale am Strand beobachtet (iNaturalist: 7 von 7 Beobachtungen mit Angabe „tot“).) |
+| *Acanthosepion pharaonis* | 85 | Meer | schon in einem anderen Subdeck (level-1) |
+| *Coenobita scaevola* | 80 | Meer | von Hand ausgeschlossen (Landeinsiedlerkrebs, lebt an Land und geht nur zur Eiablage ans Meer.) |
+| *Oliva bulbosa* | 74 | Meer | von Hand ausgeschlossen (Fast nur als leere Schale am Strand beobachtet (iNaturalist: 16 von 17 Beobachtungen mit Angabe „tot“).) |
+| *Portunus pelagicus* | 72 | Brack/Meer | von Hand ausgeschlossen (Schwimmkrabbe der Lagunen und Flussmündungen, vor allem als Fang auf Märkten beobachtet.) |
+| *Grapsus albolineatus* | 70 | Meer | von Hand ausgeschlossen (Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen.) |
+| *Eurycarcinus orientalis* | 53 | Brack/Meer | von Hand ausgeschlossen (Krabbe der Mangroven und Gezeitenzone, lebt bei Ebbe über dem Wasser.) |
+| *Ocypode rotundata* | 53 | Meer | von Hand ausgeschlossen (Geisterkrabbe, lebt am trockenen Sandstrand.) |
+| *Acanthopleura vaillantii* | 52 | Meer | von Hand ausgeschlossen (Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
+| *Amphibalanus amphitrite* | 33 | Brack/Meer | von Hand ausgeschlossen (Seepocke der Gezeitenzone, sitzt an Hafenmauern und Mangrovenwurzeln.) |
+| *Octopus cyanea* | 31 | Meer | schon in einem anderen Subdeck (level-2) |
+| *Ocypode saratan* | 29 | Meer | von Hand ausgeschlossen (Geisterkrabbe, lebt am trockenen Sandstrand.) |
+| *Scylla serrata* | 29 | Brack/Meer | von Hand ausgeschlossen (Mangrovenkrabbe, lebt in Mangroven und Schlick, vor allem als Fang auf Märkten beobachtet.) |
+| *Portunus segnis* | 24 | Meer | von Hand ausgeschlossen (Schwimmkrabbe der Lagunen und Flussmündungen, vor allem als Fang auf Märkten beobachtet.) |
+| *Porcellio evansi* | 20 | ? | von Hand ausgeschlossen (Landassel, kein Meerestier.) |
+| *Cellana karachiensis* | 15 | Meer | von Hand ausgeschlossen (Napfschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
+| *Gelasimus hesperiae* | 14 | Brack/Meer | von Hand ausgeschlossen (Winkerkrabbe des Schlickwatts, lebt bei Ebbe an Land.) |
+| *Terebralia palustris* | 13 | Brack/Meer | von Hand ausgeschlossen (Mangrovenschnecke, lebt auf dem Schlick der Mangroven.) |
+| *Austruca iranica* | 11 | Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Sepioteuthis lessoniana* | 11 | Brack/Meer | schon in einem anderen Subdeck (level-3) |
+| *Argonauta hians* | 9 | Meer | schon in einem anderen Subdeck (level-3) |
+| *Melanoides tuberculatus* | 6 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Anadara ehrenbergi* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Balanus trigonus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Bullia mauritiana* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Calappa hepatica* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Catostylus mosaicus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Ceratosoma trilobatum* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Cypraea caurica* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Glycymeris arabica* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Goniobranchus setoensis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Halocynthia spinosa* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Hiatula rosea* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Hydatina physis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Lepas anserifera* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Murex scolopax* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Nerita textilis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Parasesarma persicum* | 4 | Brack/Meer | zu wenige Nachweise (4 < 5) |
+| *Pinna bicolor* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Pyura gangelion* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Rapana rapiformis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Trapezia cymodoce* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Tubastraea diaphana* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Turbo radiatus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Alpheus djiboutensis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Amphioctopus aegina* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Aquilonastra burtoni* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Aquilonastra watersi* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Astropecten indicus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Calcinus latens* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Callistoctopus ornatus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Cardisoma carnifex* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Carpilius convexus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Chrysaora chinensis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Circenita callipyga* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Conus tessulatus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Cuapetes tenuipes* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Cucullaea labiata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Cypraea carneola* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Grapsus granulosus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Gyractis sesere* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Hastula hectica* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Holothuria hilla* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Monetaria annulus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Natica alapapilionis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Ovula ovum* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Palythoa mutuki* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Physalia physalis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Pleurobranchus grandis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Pocillopora damicornis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Polinices mammilla* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Proporcellio vulcanius* | 3 | ? | zu wenige Nachweise (3 < 5) |
+| *Saccostrea cuccullata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Salmacis bicolor* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Scyllarides squammosus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Trapania aurata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Tubastraea micranthus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Acropora downingi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Actinopyga mauritiana* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Anachis fauroti* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Anadara uropigimelana* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Atergatis integerrimus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Barbatia obliquata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Bulla arabica* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Cadlinella ornatissima* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Calcinus rosaceus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Callyspongia biru* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Cherax quadricarinatus* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Chromodoris hamiltoni* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Cladopsammia gracilis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Clathrina maremeccae* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Clibanarius rhabdodactylus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Clypeomorus bifasciata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Conus ardisiaceus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Conus frigidus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Conus melvilli* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Culcita schmideliana* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Dardanus woodmasoni* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Donax scalpellum* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Elysia marginata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Engina mendicaria* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Etisus laevimanus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Fromia indica* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Fulvia fragilis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Fusinus arabicus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Glycymeris livida* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Goniobranchus alius* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Gymnodoris ceylonica* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Heliacus variegatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Herdmania momus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Heterocentrotus mamillatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Leiaster speciosus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Leptastrea purpurea* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Linckia laevigata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Lissocarcinus orbicularis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Lomanotus vermiformis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Luidia maculata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Luria pulchra* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Megalactis hemprichii* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Mithrodia clavigera* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Monetaria caputserpentis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Monoplex pilearis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Nerita sanguinolenta* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Paratapes textile* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Petrolisthes leptocheles* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Phestilla lugubris* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Pilumnus vespertilio* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Pinna muricata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Portunus sanguinolentus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Punctacteon eloiseae* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Saron neglectus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Siderastrea savignyana* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Siphonaria belcheri* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Tanea lineata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Trapania scurra* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Turritella maculata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Tylothais savignyi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Vasticardium assimile* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Xenocarcinus tuberculatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Xenophora corrugata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Acanthaster mauritiensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Agabiformius obtusus* | 1 | ? | zu wenige Nachweise (1 < 5) |
+| *Alpheus djeddensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Alpheus ochrostriatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Amorphinopsis excavans* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ancilla ovalis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Arca navicularis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Arcuatula senhousia* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ardeadoris symmetrica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Artemia salina* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Asteronotus cespitosus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Asteronotus hepaticus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Astropecten pugnax* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Atagema spongiosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Atergatis floridus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Atergatis roseus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Atrina vexillum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Berthellina citrina* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Biemna fistulosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Boloceroides mcmurrichi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Botrylloides niger* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Bufonaria echinata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Bulbaeolidia alba* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Bulla ampulla* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Calappa lophos* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Callistoctopus luteus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Cardita variegata* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Ceratosoma tenue* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Chama pacifica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Charybdis annulata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Charybdis feriata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Charybdis smithii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Chelidonura punctata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Chondrosia corticata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Chromodoris quadricolor* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Chthamalus barnesi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Clibanarius striolatus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Clibanarius virescens* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Conus pennaceus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Conus striatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Conus taeniatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Conus vexillum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Corbula sulculosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Cypraea mauritiana* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dardanus lagopodes* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dardanus pedunculatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dasycaris zanzibarica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dendrodoris coronata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dendrodoris nigra* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dentalium octangulatum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Didemnum membranaceum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Diminovula aurantiomacula* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dipsastraea lacuna* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dofleinia armata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dosinia histrio* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Duncanopsammia peltata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Echinophyllia aspera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Echinopora hirsutissima* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ergalatax junionae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Etisus splendidus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Favites pentagona* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Favorinus tsuruganus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Gafrarium pectinatum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Geograpsus crinipes* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Goniobranchus geminus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Goniodoris savignyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Goniosupradens acutifrons* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Halgerda willeyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Haliclona caerulea* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Haloa pemphis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hamopontonia corallicola* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Heteractis aurora* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hexaplex rileyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hipponix ticaonicus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Holothuria nobilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Holothuria scabra* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Homalacantha anatomica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hydatina zonata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hydra oligactis* | 1 | Süß/Meer | zu wenige Nachweise (1 < 5) |
+| *Hymenocera picta* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hypselodoris kanga* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Indothais lacera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Lambis truncata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Leptodius exaratus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ligia exotica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Limacia langavi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Lophozozymus pulchellus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Lybia caestifera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Lydia tenax* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Lyncina vitellus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Malleus regula* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Melampus castaneus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Melicerona felina* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Mexichromis lemniscata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Microcyphus rousseaui* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Mitra litterata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Modiolus auriculatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Morula aspera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Murex troscheli* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Muricodrupa anaxares* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Mycale grandis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Nassarius arcularia* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Natica cincta* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Nembrotha aurea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Neotrapezium sublaevigatum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Nerita adenensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Niso venosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ophiactis savignyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ophiocoma erinaceus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ophiothela mirabilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ophiothela venusta* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Palmadusta lentiginosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Paracondylactis hertwigi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Paraiptasia radiata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Paraxanthodes cumatodes* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Patiriella paradoxa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pavona varians* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Penaeus latisulcatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pennaria disticha* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Peronia peronii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Peronia verruculata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Petrolisthes boscii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Phestilla melanobrachia* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Phyllacanthus imperialis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Phyllidia varicosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Phyllognathia ceratophthalma* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Physella acuta* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pilumnus incanus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pilumnus propinquus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pirenella conica* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Placamen lamellata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Platydoris formosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Platypodia pseudogranulosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pleurobranchus forskalii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Plocamopherus ocellatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Plocamopherus tilesii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Polinices sebae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Psammocora contigua* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pterelectroma physoides* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pupa affinis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pupa sulcata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Purpuradusta gracilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ranularia boschi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Rhodactis rhodostoma* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Rhynchocinetes brucei* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Rhynchocinetes durbanensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sabellastarte spectabilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sansibia claereboudti* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Schizophrys aspera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Scutellastra flexuosa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Semicassis bisulcata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Semiricinula tissoti* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sphaerechinus granularis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Spondylus exilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Stichodactyla tapetum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Stomatella impertusa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Styela canopus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Suberites aurantiacus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sunetta effossa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Taringa sublutea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Tegula gallina* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Temnopleurus toreumaticus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Terebellum terebellum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Terebra babylonia* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Terebra cingulifera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Thalamita savignyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Thaumoctopus mimicus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Thenus orientalis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Tibia curta* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Timoides agassizii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Tonna dolium* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Trapania japonica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Trapania naeva* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Trochus erithreus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Turritella cochlea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Verconia norba* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Xanthias sinensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Xenophora pallidula* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+
+</details>
+
+### Nicht aufgelöste Namen
+
+<details><summary>107 Namen</summary>
+
+*Euryptyxis latireflexa* (71), *Polygyra cereolus* (71), *Naria turdus* (28), *Laevicaulis alte* (24), *Phyllidia rueppelii* (23), *Zootecus insularis* (22), *Austruca albimana* (21), *Caloria militaris* (15), *Thranita crenata* (13), *Laevicaulis haroldi* (11), *Rumina decollata* (11), *Vasticardium lacunosum* (10), *Cranuca inversa* (8), *Pupoides coenopictus* (8), *Babylonia valentiana* (7), *Pirenella cingulata* (7), *Plocamopherus margaretae* (7), *Coryphellina rubrolineata* (6), *Dendrodoris krusensternii* (6), *Hexabranchus lacer* (5), *Kabeiro rubroreticulata* (5), *Maoricardium pseudolima* (5), *Naria nebrites* (5), *Spirobranchus sinuspersicus* (5), *Tambja zulu* (5), *Bullia semiplicata* (4), *Dermatobranchus caeruleomaculatus* (4), *Laevicaulis stuhlmanni* (4), *Naria ocellata* (4), *Siphonaria asghar* (4), *Zoanthus vietnamensis* (4), *Echinolittorina omanensis* (3), *Haliclona qatari* (3), *Periscyphis omanensis* (3), *Pione mussae* (3), *Pirenella arabica* (3), *Pseudobiceros gloriosus* (3), *Rhyssoplax peregrina* (3), *Actinimenes ornatus* (2), *Arakawania granulata* (2), *Armadillidium vulgare* (2), *Austruca sindensis* (2), *Clathrina luteoculcitella* (2), *Cubaris murina* (2), *Cymatium ranzanii* (2), *Gelasimus tetragonon* (2), *Gelastocaris paronai* (2), *Hypselodoris ghardaqana* (2), *Hypselodoris rudmani* (2), *Lissachatina fulica* (2), *Maculastrombus mutabilis* (2), *Plesiastrea peroni* (2), *Psammotreta angulata* (2), *Pseudoceros scintillatus* (2), *Siliqua polita* (2), *Tanychlamys indica* (2), *Thranita prymna* (2), *Tivela stefaninii* (2), *Tylos maindroni* (2), *Aequorea* (1), *Allopeas gracile* (1), *Ancilla scaphella* (1), *Argulus* (1), *Aurelia dubia* (1), *Babylonia umbilifusca* (1), *Calappa dumortieri* (1), *Calcinus tropidomanus* (1), *Callyspongia siphonella* (1), *Cantharus tranquebaricus* (1), *Conus adenensis* (1), *Conus koukae* (1), *Conus quasimagnificus* (1), *Cornu aspersum* (1), *Costacallista erycina* (1), *Dermatobranchus tuberculatus* (1), *Diodora townsendi* (1), *Diogenes nitidimanus* (1), *Donax erythraeensis* (1), *Donax townsendi* (1), *Dulcerana granularis* (1), *Edwardsianthus pudicus* (1), *Exolaternula erythraea* (1), *Hexabranchus giganteus* (1), *Hypselodoris yarae* (1), *Iranopsis omanensis* (1), *Lissachatina immaculata* (1), *Mexichromis katalexis* (1), *Nerita lianae* (1), *Percnon sinense* (1), *Phenacovolva barbieri* (1), *Prionocidaris pistillaris* (1), *Pseudonapaeus jousseaumei* (1), *Radianthus crispa* (1), *Rochebrunia bentiana* (1), *Sagittalia brinkae* (1), *Samla bicolor* (1), *Scutellastra exusta* (1), *Sigatica pomatiella* (1), *Tenellia goniophaga* (1), *Tetraclita ehsani* (1), *Tivela mulawana* (1), *Tomoberthella martensi* (1), *Triops granarius* (1), *Trisidos torta* (1), *Trochita dhofarensis* (1), *Tutufa bardeyi* (1), *Xeroniscus siegfriedhuberi* (1)
 
 </details>
 

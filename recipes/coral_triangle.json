@@ -92,6 +92,44 @@
       "reason": "Der Wunderpus ist der gestreifte Krake, wegen dem viele Taucher nach Lembeh kommen."
     }
   ],
+  "extraSubdecks": [
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": { "name": "Wirbellose & Korallen" },
+        "en": { "name": "Invertebrates & Corals" },
+        "fr": { "name": "Invertébrés et coraux" },
+        "es": { "name": "Invertebrados y corales" }
+      },
+      "taxa": {
+        "inat": [47534, 47115, 85493, 47549, 48824, 130868, 52318, 47490],
+        "obis": [1267, 51, 1066, 1806, 558, 146420, 2853, 883]
+      },
+      "size": 40,
+      "filters": { "minLengthCm": 0 },
+      "highlights": [
+        {
+          "name": "Hexabranchus sanguineus",
+          "reason": "Die Spanische Tänzerin ist die größte Nacktschnecke des Riffs und schwimmt bei Nacht mit wehendem Mantel."
+        },
+        {
+          "name": "Hymenocera picta",
+          "reason": "Die Harlekingarnele frisst nur Seesterne und ist einer der begehrtesten Funde für Unterwasserfotografen."
+        },
+        {
+          "name": "Acanthaster planci",
+          "reason": "Die Dornenkrone frisst Korallen; ihre Massenvermehrungen zerstören ganze Riffe, und ihre Stacheln sind giftig."
+        }
+      ],
+      "exclude": [
+        {
+          "name": "Coenobita rugosus",
+          "reason": "Landeinsiedlerkrebs, lebt an Land und geht nur zur Eiablage ans Meer."
+        }
+      ]
+    }
+  ],
   "imageCredit": {
     "author": "Akbar raf",
     "license": "CC BY-SA 4.0",

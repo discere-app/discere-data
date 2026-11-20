@@ -97,6 +97,116 @@
       "reason": "Der Gelbkopf-Kieferfisch brütet die Eier im Maul aus und ist an jedem Sandgrund zu beobachten."
     }
   ],
+  "extraSubdecks": [
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": { "name": "Wirbellose & Korallen" },
+        "en": { "name": "Invertebrates & Corals" },
+        "fr": { "name": "Invertébrés et coraux" },
+        "es": { "name": "Invertebrados y corales" }
+      },
+      "taxa": {
+        "inat": [47534, 47115, 85493, 47549, 48824, 130868, 52318, 47490],
+        "obis": [1267, 51, 1066, 1806, 558, 146420, 2853, 883]
+      },
+      "size": 40,
+      "filters": { "minLengthCm": 0 },
+      "highlights": [
+        {
+          "name": "Acropora cervicornis",
+          "reason": "Die Hirschgeweihkoralle baute einst die Flachriffe der Karibik und ist heute vom Aussterben bedroht; sie wird in Riffgärten nachgezüchtet."
+        },
+        {
+          "name": "Ancylomenes pedersoni",
+          "reason": "Die Pederson-Putzergarnele betreibt in Anemonen Putzerstationen, an denen Fische Schlange stehen."
+        },
+        {
+          "name": "Astrophyton muricatum",
+          "reason": "Das Gorgonenhaupt entfaltet nachts seine verzweigten Arme auf Gorgonien, ein Höhepunkt jedes Nachttauchgangs."
+        }
+      ],
+      "exclude": [
+        {
+          "name": "Coenobita clypeatus",
+          "reason": "Landeinsiedlerkrebs, lebt an Land und geht nur zur Eiablage ans Meer."
+        },
+        {
+          "name": "Cardisoma guanhumi",
+          "reason": "Landkrabbe, lebt an Land und geht nur zum Laichen ans Meer."
+        },
+        {
+          "name": "Gecarcinus ruricola",
+          "reason": "Landkrabbe, lebt an Land und geht nur zum Laichen ans Meer."
+        },
+        {
+          "name": "Grapsus grapsus",
+          "reason": "Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen."
+        },
+        {
+          "name": "Ocypode quadrata",
+          "reason": "Geisterkrabbe, lebt am trockenen Sandstrand."
+        },
+        {
+          "name": "Acanthopleura granulata",
+          "reason": "Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Nerita versicolor",
+          "reason": "Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Nerita tessellata",
+          "reason": "Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Nerita peloronta",
+          "reason": "Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Cenchritis muricatus",
+          "reason": "Strandschnecke der Spritzwasserzone, sitzt über dem Wasser auf den Uferfelsen."
+        },
+        {
+          "name": "Cittarium pica",
+          "reason": "Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Aratus pisonii",
+          "reason": "Mangrovenbaumkrabbe, klettert über dem Wasser in den Mangroven."
+        },
+        {
+          "name": "Glycymeris spectralis",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 358 von 358 Beobachtungen mit Angabe „tot“)."
+        },
+        {
+          "name": "Arca zebra",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 314 von 320 Beobachtungen mit Angabe „tot“)."
+        },
+        {
+          "name": "Chione elevata",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 438 von 442 Beobachtungen mit Angabe „tot“)."
+        },
+        {
+          "name": "Bulla striata",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 179 von 191 Beobachtungen mit Angabe „tot“)."
+        },
+        {
+          "name": "Codakia orbicularis",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 262 von 266 Beobachtungen mit Angabe „tot“)."
+        },
+        {
+          "name": "Columbella mercatoria",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 137 von 144 Beobachtungen mit Angabe „tot“)."
+        },
+        {
+          "name": "Barbatia cancellaria",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 261 von 261 Beobachtungen mit Angabe „tot“)."
+        }
+      ]
+    }
+  ],
   "imageCredit": {
     "author": "SNORKELINGDIVES.COM",
     "license": "CC BY 2.0",

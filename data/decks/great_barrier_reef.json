@@ -198,7 +198,47 @@
     "Cirripectes chelomatus",
     "Anampses neoguinaicus",
     "Diploprion bifasciatus",
-    "Scarus niger"
+    "Scarus niger",
+    "Tridacna maxima",
+    "Linckia laevigata",
+    "Tridacna gigas",
+    "Tridacna crocea",
+    "Stichopus chloronotus",
+    "Echinaster luzonicus",
+    "Stichopus herrmanni",
+    "Bohadschia argus",
+    "Holothuria atra",
+    "Hypselodoris tryoni",
+    "Nardoa novaecaledoniae",
+    "Tridacna squamosa",
+    "Thelenota ananas",
+    "Echinometra mathaei",
+    "Holothuria leucospilota",
+    "Tridacna derasa",
+    "Hypselodoris infucata",
+    "Acanthaster planci",
+    "Goniobranchus fabulus",
+    "Protoreaster nodosus",
+    "Pteraeolidia ianthina",
+    "Culcita novaeguineae",
+    "Entacmaea quadricolor",
+    "Cypraea tigris",
+    "Holothuria edulis",
+    "Monetaria annulus",
+    "Pocillopora damicornis",
+    "Goniobranchus fidelis",
+    "Hippopus hippopus",
+    "Ascarosepion latimanus",
+    "Sepioteuthis lessoniana",
+    "Aplysia argus",
+    "Lambis lambis",
+    "Plakobranchus ocellatus",
+    "Erronea errones",
+    "Fromia indica",
+    "Diadema setosum",
+    "Charonia tritonis",
+    "Odontodactylus scyllarus",
+    "Hexabranchus sanguineus"
   ],
   "subdecks": [
     {
@@ -415,6 +455,66 @@
         "Anampses neoguinaicus",
         "Diploprion bifasciatus",
         "Scarus niger"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Tridacna maxima",
+        "Linckia laevigata",
+        "Tridacna gigas",
+        "Tridacna crocea",
+        "Stichopus chloronotus",
+        "Echinaster luzonicus",
+        "Stichopus herrmanni",
+        "Bohadschia argus",
+        "Holothuria atra",
+        "Hypselodoris tryoni",
+        "Nardoa novaecaledoniae",
+        "Tridacna squamosa",
+        "Thelenota ananas",
+        "Echinometra mathaei",
+        "Holothuria leucospilota",
+        "Tridacna derasa",
+        "Hypselodoris infucata",
+        "Acanthaster planci",
+        "Goniobranchus fabulus",
+        "Protoreaster nodosus",
+        "Pteraeolidia ianthina",
+        "Culcita novaeguineae",
+        "Entacmaea quadricolor",
+        "Cypraea tigris",
+        "Holothuria edulis",
+        "Monetaria annulus",
+        "Pocillopora damicornis",
+        "Goniobranchus fidelis",
+        "Hippopus hippopus",
+        "Ascarosepion latimanus",
+        "Sepioteuthis lessoniana",
+        "Aplysia argus",
+        "Lambis lambis",
+        "Plakobranchus ocellatus",
+        "Erronea errones",
+        "Fromia indica",
+        "Diadema setosum",
+        "Charonia tritonis",
+        "Odontodactylus scyllarus",
+        "Hexabranchus sanguineus"
       ]
     }
   ]

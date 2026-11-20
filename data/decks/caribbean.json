@@ -203,7 +203,47 @@
     "Strongylura notata",
     "Albula vulpes",
     "Mycteroperca tigris",
-    "Acanthemblemaria aspera"
+    "Acanthemblemaria aspera",
+    "Gorgonia ventalina",
+    "Aliger gigas",
+    "Panulirus argus",
+    "Oreaster reticulatus",
+    "Physalia physalis",
+    "Condylactis gigantea",
+    "Diadema antillarum",
+    "Echinometra lucunter",
+    "Porites astreoides",
+    "Cyphoma gibbosum",
+    "Acropora palmata",
+    "Pseudodiploria strigosa",
+    "Spirobranchus giganteus",
+    "Elysia crispata",
+    "Hermodice carunculata",
+    "Montastraea cavernosa",
+    "Stenorhynchus seticornis",
+    "Xestospongia muta",
+    "Tripneustes ventricosus",
+    "Diploria labyrinthiformis",
+    "Stenopus hispidus",
+    "Siderastrea siderea",
+    "Orbicella faveolata",
+    "Orbicella annularis",
+    "Sabellastarte magnifica",
+    "Agaricia agaricites",
+    "Aplysina fistularis",
+    "Palythoa caribaeorum",
+    "Aplysia dactylomela",
+    "Millepora alcicornis",
+    "Porites porites",
+    "Aiolochroia crassa",
+    "Colpophyllia natans",
+    "Clibanarius tricolor",
+    "Callyspongia plicifera",
+    "Millepora complanata",
+    "Ancylomenes pedersoni",
+    "Aplysina archeri",
+    "Acropora cervicornis",
+    "Astrophyton muricatum"
   ],
   "subdecks": [
     {
@@ -421,6 +461,66 @@
         "Albula vulpes",
         "Mycteroperca tigris",
         "Acanthemblemaria aspera"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Gorgonia ventalina",
+        "Aliger gigas",
+        "Panulirus argus",
+        "Oreaster reticulatus",
+        "Physalia physalis",
+        "Condylactis gigantea",
+        "Diadema antillarum",
+        "Echinometra lucunter",
+        "Porites astreoides",
+        "Cyphoma gibbosum",
+        "Acropora palmata",
+        "Pseudodiploria strigosa",
+        "Spirobranchus giganteus",
+        "Elysia crispata",
+        "Hermodice carunculata",
+        "Montastraea cavernosa",
+        "Stenorhynchus seticornis",
+        "Xestospongia muta",
+        "Tripneustes ventricosus",
+        "Diploria labyrinthiformis",
+        "Stenopus hispidus",
+        "Siderastrea siderea",
+        "Orbicella faveolata",
+        "Orbicella annularis",
+        "Sabellastarte magnifica",
+        "Agaricia agaricites",
+        "Aplysina fistularis",
+        "Palythoa caribaeorum",
+        "Aplysia dactylomela",
+        "Millepora alcicornis",
+        "Porites porites",
+        "Aiolochroia crassa",
+        "Colpophyllia natans",
+        "Clibanarius tricolor",
+        "Callyspongia plicifera",
+        "Millepora complanata",
+        "Ancylomenes pedersoni",
+        "Aplysina archeri",
+        "Acropora cervicornis",
+        "Astrophyton muricatum"
       ]
     }
   ]

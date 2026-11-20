@@ -205,7 +205,47 @@
     "Archosargus pourtalesii",
     "Chromis alta",
     "Elacatinus puncticulatus",
-    "Thunnus albacares"
+    "Thunnus albacares",
+    "Pentaceraster cumingi",
+    "Eucidaris thouarsii",
+    "Phataria unifascialis",
+    "Nidorellia armata",
+    "Tripneustes depressus",
+    "Elysia diomedea",
+    "Physalia physalis",
+    "Echinometra vanbrunti",
+    "Pharia pyramidata",
+    "Diadema mexicanum",
+    "Isostichopus fuscus",
+    "Tubastraea coccinea",
+    "Panulirus inflatus",
+    "Aplysia californica",
+    "Acanthaster planci",
+    "Toxopneustes roseus",
+    "Hexaplex princeps",
+    "Holothuria lubrica",
+    "Titanostrombus galeatus",
+    "Panulirus penicillatus",
+    "Panulirus gracilis",
+    "Porpita porpita",
+    "Ophiocoma aethiops",
+    "Macrocypraea cervinetta",
+    "Tambja mullineri",
+    "Spurilla braziliana",
+    "Triplofusus princeps",
+    "Megapitaria squalida",
+    "Pinctada mazatlanica",
+    "Stenorhynchus debilis",
+    "Strombus gracilior",
+    "Calcinus explorator",
+    "Turbo fluctuosus",
+    "Conus purpurascens",
+    "Conus nux",
+    "Pavona gigantea",
+    "Hexaplex erythrostomus",
+    "Chama echinata",
+    "Hymenocera picta",
+    "Pocillopora damicornis"
   ],
   "subdecks": [
     {
@@ -425,6 +465,66 @@
         "Chromis alta",
         "Elacatinus puncticulatus",
         "Thunnus albacares"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Pentaceraster cumingi",
+        "Eucidaris thouarsii",
+        "Phataria unifascialis",
+        "Nidorellia armata",
+        "Tripneustes depressus",
+        "Elysia diomedea",
+        "Physalia physalis",
+        "Echinometra vanbrunti",
+        "Pharia pyramidata",
+        "Diadema mexicanum",
+        "Isostichopus fuscus",
+        "Tubastraea coccinea",
+        "Panulirus inflatus",
+        "Aplysia californica",
+        "Acanthaster planci",
+        "Toxopneustes roseus",
+        "Hexaplex princeps",
+        "Holothuria lubrica",
+        "Titanostrombus galeatus",
+        "Panulirus penicillatus",
+        "Panulirus gracilis",
+        "Porpita porpita",
+        "Ophiocoma aethiops",
+        "Macrocypraea cervinetta",
+        "Tambja mullineri",
+        "Spurilla braziliana",
+        "Triplofusus princeps",
+        "Megapitaria squalida",
+        "Pinctada mazatlanica",
+        "Stenorhynchus debilis",
+        "Strombus gracilior",
+        "Calcinus explorator",
+        "Turbo fluctuosus",
+        "Conus purpurascens",
+        "Conus nux",
+        "Pavona gigantea",
+        "Hexaplex erythrostomus",
+        "Chama echinata",
+        "Hymenocera picta",
+        "Pocillopora damicornis"
       ]
     }
   ]

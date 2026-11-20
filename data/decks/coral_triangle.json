@@ -200,7 +200,47 @@
     "Epinephelus merra",
     "Valenciennea puellaris",
     "Cymbacephalus beauforti",
-    "Sufflamen chrysopterum"
+    "Sufflamen chrysopterum",
+    "Linckia laevigata",
+    "Chromodoris annae",
+    "Pteraeolidia ianthina",
+    "Odontodactylus scyllarus",
+    "Protoreaster nodosus",
+    "Phyllidia varicosa",
+    "Hypselodoris tryoni",
+    "Nembrotha kubaryana",
+    "Chromodoris willani",
+    "Stenopus hispidus",
+    "Neopetrolisthes maculatus",
+    "Thor amboinensis",
+    "Phyllidia ocellata",
+    "Polycarpa aurata",
+    "Doriprismatica atromarginata",
+    "Culcita novaeguineae",
+    "Chromodoris lochi",
+    "Goniobranchus geometricus",
+    "Echinaster luzonicus",
+    "Echinothrix calamaris",
+    "Tridacna squamosa",
+    "Didemnum molle",
+    "Chromodoris magnifica",
+    "Halgerda batangas",
+    "Cypraea tigris",
+    "Phyllidia elegans",
+    "Caloria indica",
+    "Nembrotha cristata",
+    "Pearsonothuria graeffei",
+    "Nembrotha chamberlaini",
+    "Tridacna crocea",
+    "Phyllidia coelestis",
+    "Panulirus versicolor",
+    "Diadema setosum",
+    "Jorunna funebris",
+    "Choriaster granulatus",
+    "Dardanus pedunculatus",
+    "Hymenocera picta",
+    "Acanthaster planci",
+    "Hexabranchus sanguineus"
   ],
   "subdecks": [
     {
@@ -419,6 +459,66 @@
         "Valenciennea puellaris",
         "Cymbacephalus beauforti",
         "Sufflamen chrysopterum"
+      ]
+    },
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": {
+          "name": "Wirbellose & Korallen"
+        },
+        "en": {
+          "name": "Invertebrates & Corals"
+        },
+        "fr": {
+          "name": "Invertébrés et coraux"
+        },
+        "es": {
+          "name": "Invertebrados y corales"
+        }
+      },
+      "speciesNames": [
+        "Linckia laevigata",
+        "Chromodoris annae",
+        "Pteraeolidia ianthina",
+        "Odontodactylus scyllarus",
+        "Protoreaster nodosus",
+        "Phyllidia varicosa",
+        "Hypselodoris tryoni",
+        "Nembrotha kubaryana",
+        "Chromodoris willani",
+        "Stenopus hispidus",
+        "Neopetrolisthes maculatus",
+        "Thor amboinensis",
+        "Phyllidia ocellata",
+        "Polycarpa aurata",
+        "Doriprismatica atromarginata",
+        "Culcita novaeguineae",
+        "Chromodoris lochi",
+        "Goniobranchus geometricus",
+        "Echinaster luzonicus",
+        "Echinothrix calamaris",
+        "Tridacna squamosa",
+        "Didemnum molle",
+        "Chromodoris magnifica",
+        "Halgerda batangas",
+        "Cypraea tigris",
+        "Phyllidia elegans",
+        "Caloria indica",
+        "Nembrotha cristata",
+        "Pearsonothuria graeffei",
+        "Nembrotha chamberlaini",
+        "Tridacna crocea",
+        "Phyllidia coelestis",
+        "Panulirus versicolor",
+        "Diadema setosum",
+        "Jorunna funebris",
+        "Choriaster granulatus",
+        "Dardanus pedunculatus",
+        "Hymenocera picta",
+        "Acanthaster planci",
+        "Hexabranchus sanguineus"
       ]
     }
   ]
