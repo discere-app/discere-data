@@ -61,8 +61,8 @@ RECIPE = {
     },
     "order": {"source": "inat"},
     "region": {
-        "inat": {"placeId": 1},
-        "obis": {"wkt": "POLYGON((0 0, 1 0, 1 1, 0 0))"},
+        "inat": {"placeIds": [1, 2]},
+        "obis": [{"name": "Testbucht", "wkt": "POLYGON((0 0, 1 0, 1 1, 0 0))"}],
         "fishbase": ["001"],
     },
     "taxa": {"inat": [47178], "obis": [10194]},
@@ -75,6 +75,9 @@ RECIPE = {
 
 
 def answer(base, params):
+    if base.startswith("https://api.inaturalist.org/v1/places/"):
+        ids = base.rsplit("/", 1)[1].split(",")
+        return {"results": [{"id": int(i), "display_name": f"Ort {i}"} for i in ids]}
     if "inaturalist" in base:
         return {"total_results": len(INAT_RESULTS),
                 "results": [{"count": c, "taxon": {"name": n}} for n, c in INAT_RESULTS]}
@@ -114,8 +117,9 @@ class BuildTest(unittest.TestCase):
             json.dump(recipe, f)
 
     def run_build(self):
+        self.fetcher = FakeFetcher(answer=answer)
         with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()) as err:
-            code = build.run(self.recipe_path, self.decks_dir, FakeFetcher(answer=answer), self.db, self.water)
+            code = build.run(self.recipe_path, self.decks_dir, self.fetcher, self.db, self.water)
         self.stderr = err.getvalue()
         return code
 
@@ -226,6 +230,33 @@ class BuildTest(unittest.TestCase):
         self.assertFalse(os.path.exists(self.deck_path))
         self.assertFalse(os.path.exists(self.report_path))
 
+    def test_report_names_the_areas(self):
+        self.run_build()
+        areas = self.report().split("## Gebiete")[1].split("## Übersicht")[0]
+        self.assertIn("- iNaturalist: Ort 1 (1), Ort 2 (2)", areas)
+        self.assertIn("- OBIS: Testbucht", areas)
+        self.assertIn("- FishBase/SeaLifeBase-Verbreitung: 001", areas)
+
+    def test_without_region_the_deck_is_worldwide(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        del recipe["region"]
+        del recipe["taxa"]["obis"]
+        self.write_recipe(recipe)
+        self.run_build()
+        inat_queries = [u for u in self.fetcher.requested if "species_counts" in u]
+        self.assertEqual(len(inat_queries), 1)
+        self.assertNotIn("place_id", inat_queries[0])
+        self.assertNotIn("swlat", inat_queries[0])
+        self.assertFalse([u for u in self.fetcher.requested if "obis" in u])
+        self.assertIn("- Region: weltweit", self.report())
+        # Without OBIS and distribution data, only iNaturalist and the guide
+        # confirm a highlight: Kappa ten (guide) stays, Nu thirteen
+        # (distribution only) goes.
+        names = self.deck()["speciesNames"]
+        self.assertIn("Kappa ten", names)
+        self.assertNotIn("Nu thirteen", names)
+        self.assertNotIn("OBIS", [s["name"] for s in self.deck()["sources"]])
+
     # (g)
     def test_guide_comparison_both_ways(self):
         self.run_build()
@@ -240,6 +271,48 @@ class BuildTest(unittest.TestCase):
         self.assertNotIn("*Alpha one*", candidates)
         self.assertIn("6 Namen, 5 Arten aufgelöst, 1 Namen nicht aufgelöst", section)
         self.assertIn("*Omega unknown*", section)
+
+
+class RecipeSchemaTest(unittest.TestCase):
+    def errors(self, change):
+        recipe = json.loads(json.dumps(RECIPE))
+        change(recipe)
+        return [e.message for e in recipe_module.validator().iter_errors(recipe)]
+
+    def test_example_recipe_is_valid(self):
+        self.assertEqual(self.errors(lambda r: None), [])
+
+    def test_empty_place_list_is_rejected(self):
+        def change(recipe):
+            recipe["region"]["inat"] = {"placeIds": []}
+        self.assertTrue(self.errors(change))
+
+    def test_inat_order_needs_taxa(self):
+        self.assertIn("'taxa' is a required property", self.errors(lambda r: r.pop("taxa")))
+
+    def test_region_with_inat_order_needs_inat_area(self):
+        def change(recipe):
+            del recipe["region"]["inat"]
+        self.assertIn("'inat' is a required property", self.errors(change))
+
+    def test_gbif_order_needs_countries(self):
+        def without_region(recipe):
+            recipe["order"] = {"source": "gbif"}
+            recipe["taxa"] = {"gbif": {"phylumKey": 44}}
+            del recipe["region"]
+        self.assertIn("'region' is a required property", self.errors(without_region))
+
+        def with_countries(recipe):
+            without_region(recipe)
+            recipe["region"] = {"gbif": {"countries": ["CH", "AT"]}}
+        self.assertEqual(self.errors(with_countries), [])
+
+    def test_reef_order_needs_no_region(self):
+        def change(recipe):
+            recipe["order"] = {"source": "reef", "csv": "reef.csv"}
+            del recipe["taxa"]
+            del recipe["region"]
+        self.assertEqual(self.errors(change), [])
 
 
 class RecipesTest(unittest.TestCase):

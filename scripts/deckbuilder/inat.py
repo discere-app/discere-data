@@ -4,8 +4,11 @@
 # The order source for most seas: how often each species was observed in the
 # region (GET /v1/observations/species_counts). Only research-grade
 # observations count, which also leaves out captive and cultivated ones. The
-# region is an iNaturalist place (placeId) or a rectangle
-# (swlat/swlng/nelat/nelng), for seas without a fitting place.
+# region is one or more iNaturalist places (placeIds, asked as one
+# comma-separated place_id, which iNaturalist counts together without
+# counting an observation twice) or a rectangle (swlat/swlng/nelat/nelng).
+# Without a region the counts are worldwide, the order for a deck about a
+# group of animals rather than a region.
 #
 # The taxa are iNaturalist taxon IDs, e.g. 47178 ray-finned fishes (class
 # Actinopterygii), 47273 sharks and rays (subclass Elasmobranchii), 49232
@@ -16,15 +19,32 @@
 from .sources import SourceResult
 
 API = "https://api.inaturalist.org/v1/observations/species_counts"
+PLACES = "https://api.inaturalist.org/v1/places/{ids}"
 PER_PAGE = 500
 # iNaturalist pages no further than this many results.
 MAX_RESULTS = 10_000
+# Places per request to /v1/places/{ids}.
+PER_PLACES_REQUEST = 50
 
 
 def region_params(region):
-    if "placeId" in region:
-        return {"place_id": region["placeId"]}
+    """Query parameters of a recipe's region.inat; None means worldwide."""
+    if region is None:
+        return {}
+    if "placeIds" in region:
+        return {"place_id": ",".join(str(i) for i in region["placeIds"])}
     return {key: region[key] for key in ("swlat", "swlng", "nelat", "nelng")}
+
+
+def place_names(fetcher, place_ids):
+    """place id → display name, for the report."""
+    names = {}
+    ids = list(place_ids)
+    for i in range(0, len(ids), PER_PLACES_REQUEST):
+        chunk = ids[i:i + PER_PLACES_REQUEST]
+        body = fetcher.get_json(PLACES.format(ids=",".join(str(p) for p in chunk)))
+        names.update((p["id"], p["display_name"]) for p in body.get("results") or [])
+    return names
 
 
 def species_counts(fetcher, region, taxon_ids):

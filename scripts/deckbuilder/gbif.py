@@ -2,8 +2,9 @@
 # gbif.py — species counts from GBIF for a country
 #
 # The order source for inland waters, where iNaturalist is too sparse:
-# occurrences per species in a country (GET /v1/occurrence/search with
-# facet=speciesKey).
+# occurrences per species in one or more countries (GET
+# /v1/occurrence/search with facet=speciesKey; country repeated, which GBIF
+# reads as "any of them").
 #
 # In the current GBIF backbone the ray-finned fishes have no class, so a
 # class key finds nothing. The way that works goes through the orders: facet
@@ -55,8 +56,8 @@ def canonical_name(fetcher, key):
     return fetcher.get_json(SPECIES.format(key=key)).get("canonicalName")
 
 
-def species_counts(fetcher, country, phylum_key, fish_orders):
-    base = {"country": country, "occurrenceStatus": "PRESENT", "basisOfRecord": BASIS_OF_RECORD}
+def species_counts(fetcher, countries, phylum_key, fish_orders):
+    base = {"country": list(countries), "occurrenceStatus": "PRESENT", "basisOfRecord": BASIS_OF_RECORD}
     orders = facet_counts(fetcher, {**base, "phylumKey": phylum_key}, "orderKey")
     kept = [key for key, _ in orders if canonical_name(fetcher, key) in fish_orders]
     notes = [f"GBIF: {len(kept)} von {len(orders)} Ordnungen als Fischordnungen behalten"]

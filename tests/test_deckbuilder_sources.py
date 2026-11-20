@@ -31,7 +31,7 @@ class INatTest(unittest.TestCase):
         pages = {1: fixture("inat_page1.json"), 2: fixture("inat_page2.json")}
         fetcher = FakeFetcher(answer=lambda base, params: pages.get(params["page"]))
         with mock.patch.object(inat, "PER_PAGE", 2):
-            result = inat.species_counts(fetcher, {"placeId": 96795}, [47178, 47273])
+            result = inat.species_counts(fetcher, {"placeIds": [96795]}, [47178, 47273])
         self.assertEqual(result.counts, [
             ("Abudefduf saxatilis", 120), ("Thalassoma bifasciatum", 80), ("Hippocampus reidi", 5),
         ])
@@ -40,6 +40,26 @@ class INatTest(unittest.TestCase):
         self.assertEqual(first["place_id"], ["96795"])
         self.assertEqual(first["taxon_id"], ["47178,47273"])
         self.assertEqual(first["quality_grade"], ["research"])
+
+    def test_several_places_in_one_query(self):
+        fetcher = FakeFetcher(answer=lambda base, params: {"total_results": 0, "results": []})
+        inat.species_counts(fetcher, {"placeIds": [7313, 8638]}, [47178])
+        self.assertEqual(len(fetcher.requested), 1)
+        self.assertEqual(query(fetcher.requested[0])["place_id"], ["7313,8638"])
+
+    def test_worldwide_without_region(self):
+        fetcher = FakeFetcher(answer=lambda base, params: {"total_results": 0, "results": []})
+        inat.species_counts(fetcher, None, [47178])
+        q = query(fetcher.requested[0])
+        self.assertEqual(q["taxon_id"], ["47178"])
+        for key in ("place_id", "swlat", "swlng", "nelat", "nelng"):
+            self.assertNotIn(key, q)
+
+    def test_place_names(self):
+        fetcher = FakeFetcher(answer=lambda base, params: {"results": [
+            {"id": 7313, "display_name": "Bahamas"}, {"id": 8638, "display_name": "Bermuda"}]})
+        self.assertEqual(inat.place_names(fetcher, [7313, 8638]), {7313: "Bahamas", 8638: "Bermuda"})
+        self.assertEqual(fetcher.requested, ["https://api.inaturalist.org/v1/places/7313,8638"])
 
     def test_rectangle(self):
         fetcher = FakeFetcher(answer=lambda base, params: {"total_results": 0, "results": []})
@@ -64,12 +84,12 @@ class GbifTest(unittest.TestCase):
             return None
 
         fetcher = FakeFetcher(answer=answer)
-        result = gbif.species_counts(fetcher, "CH", 44, {"Cypriniformes", "Perciformes"})
+        result = gbif.species_counts(fetcher, ["CH", "AT"], 44, {"Cypriniformes", "Perciformes"})
         self.assertEqual(result.counts, [("Neogobius melanostomus", 914), ("Telestes souffia", 300)])
 
         species_query = query(next(u for u in fetcher.requested if "facet=speciesKey" in u))
         self.assertEqual(species_query["orderKey"], ["1153", "549"])   # Passeriformes left out
-        self.assertEqual(species_query["country"], ["CH"])
+        self.assertEqual(species_query["country"], ["CH", "AT"])
         self.assertNotIn("FOSSIL_SPECIMEN", species_query["basisOfRecord"])
         self.assertNotIn("LIVING_SPECIMEN", species_query["basisOfRecord"])
         self.assertIn("HUMAN_OBSERVATION", species_query["basisOfRecord"])
@@ -82,9 +102,21 @@ class ObisTest(unittest.TestCase):
     def test_only_species_over_all_pages(self):
         pages = {0: fixture("obis_page1.json"), 2: fixture("obis_page2.json")}
         fetcher = FakeFetcher(answer=lambda base, params: pages.get(params["skip"]))
-        result = obis.checklist(fetcher, "POLYGON((0 0, 1 0, 1 1, 0 0))", [10194, 10193])
+        result = obis.checklist(fetcher, ["POLYGON((0 0, 1 0, 1 1, 0 0))"], [10194, 10193])
         self.assertEqual(result.counts, [("Epinephelus itajara", 324678), ("Elops smithi", 147498)])
         self.assertEqual(query(fetcher.requested[0])["taxonid"], ["10194,10193"])
+        self.assertEqual(query(fetcher.requested[0])["geometry"], ["POLYGON((0 0, 1 0, 1 1, 0 0))"])
+
+    def test_several_areas_in_one_multipolygon(self):
+        fetcher = FakeFetcher(answer=lambda base, params: {"total": 0, "results": []})
+        obis.checklist(fetcher, [
+            "POLYGON((0 0, 1 0, 1 1, 0 0))",
+            " MULTIPOLYGON(((5 5, 6 5, 6 6, 5 5)),((8 8, 9 8, 9 9, 8 8)))",
+        ], [10194])
+        self.assertEqual(len(fetcher.requested), 1)
+        self.assertEqual(query(fetcher.requested[0])["geometry"], [
+            "MULTIPOLYGON(((0 0, 1 0, 1 1, 0 0)),((5 5, 6 5, 6 6, 5 5)),((8 8, 9 8, 9 9, 8 8)))"
+        ])
 
 
 class TextSourcesTest(unittest.TestCase):
