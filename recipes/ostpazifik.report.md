@@ -16,19 +16,27 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Übersicht
 
-- Arten der Reihenfolge-Quelle, aufgelöst: 961; nicht aufgelöst: 11
+- Arten der Reihenfolge-Quelle, aufgelöst: 962; nicht aufgelöst: 10
 - ausgeschlossen: 513
   - zu wenige Nachweise: 319
   - kein Meeresfisch: 173
   - zu klein: 11
   - nur tiefer als die Tauchgrenze: 10
-- Kandidaten nach den Filtern: 448
+- Kandidaten nach den Filtern: 449
 - Deck: 159 Arten (Level 1: 49, Level 2: 60, Level 3: 50); Umfang laut Rezept 40/60/50 plus Highlights
 - Highlights: 9 im Deck, 0 verworfen
 
 ## Verworfene Highlights
 
 Keine.
+
+## iNaturalist-Namen zugeordnet
+
+Laut `recipes/inat_names.json`: iNaturalist nennt die Art anders als die Referenz-DB; die Zählung kommt zu der der Referenz-DB-Art.
+
+| iNaturalist | Referenz-DB | iNat | Art | Beleg |
+|---|---|---|---|---|
+| *Haemulopsis elongata* | *Haemulopsis elongatus* | 12 | Umbenennung | https://www.inaturalist.org/taxon_changes/119848 |
 
 ## Highlights
 
@@ -335,7 +343,7 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
   - Level 1: 44/49
   - Level 2: 59/60
   - Level 3: 49/50
-- Kandidaten im Führer, aber nicht im Deck: 277
+- Kandidaten im Führer, aber nicht im Deck: 278
 
 **Im Deck, nicht im Führer** (Verdacht: Fehlbestimmung, falsch verortet oder Süßwasser):
 
@@ -925,7 +933,6 @@ Die Referenz-DB der App kennt diese Namen nicht; die App fände sie auch nicht.
 |---|---|
 | *Micropterus nigricans* | 77 |
 | *Pterygoplichthys* | 77 |
-| *Haemulopsis elongata* | 12 |
 | *Coralliozetus clausus* | 3 |
 | *Eretmobrycon scleroparius* | 3 |
 | *Elacatinus rubrifrons* | 2 |

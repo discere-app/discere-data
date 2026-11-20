@@ -171,6 +171,7 @@
     "Forcipiger flavissimus",
     "Acanthurus nigricans",
     "Bodianus mesothorax",
+    "Pseudanthias squamipinnis",
     "Dischistodus perspicillatus",
     "Platax teira",
     "Chaetodon trifascialis",
@@ -199,8 +200,7 @@
     "Epinephelus merra",
     "Valenciennea puellaris",
     "Cymbacephalus beauforti",
-    "Sufflamen chrysopterum",
-    "Thalassoma amblycephalum"
+    "Sufflamen chrysopterum"
   ],
   "subdecks": [
     {
@@ -389,6 +389,7 @@
         "Forcipiger flavissimus",
         "Acanthurus nigricans",
         "Bodianus mesothorax",
+        "Pseudanthias squamipinnis",
         "Dischistodus perspicillatus",
         "Platax teira",
         "Chaetodon trifascialis",
@@ -417,8 +418,7 @@
         "Epinephelus merra",
         "Valenciennea puellaris",
         "Cymbacephalus beauforti",
-        "Sufflamen chrysopterum",
-        "Thalassoma amblycephalum"
+        "Sufflamen chrysopterum"
       ]
     }
   ]

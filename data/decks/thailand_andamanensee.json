@@ -79,17 +79,16 @@
     "Chaetodon decussatus",
     "Carcharhinus melanopterus",
     "Chaetodon andamanensis",
-    "Boleophthalmus boddarti",
     "Heniochus singularius",
     "Scolopsis bilineata",
     "Diodon liturosus",
+    "Lutjanus biguttatus",
     "Rhincodon typus",
     "Mobula birostris",
     "Stegostoma tigrinum",
     "Hippocampus histrix",
     "Solenostomus paradoxus",
     "Dugong dugon",
-    "Lutjanus biguttatus",
     "Cephalopholis argus",
     "Ostracion cubicum",
     "Balistapus undulatus",
@@ -148,7 +147,6 @@
     "Heniochus pleurotaenia",
     "Parupeneus macronemus",
     "Pomacanthus annularis",
-    "Zenarchopterus buffonis",
     "Salarias fasciatus",
     "Echidna nebulosa",
     "Parupeneus barberinus",
@@ -198,7 +196,9 @@
     "Chlorurus strongylocephalus",
     "Monotaxis grandoculis",
     "Naso unicornis",
-    "Pomacentrus chrysurus"
+    "Pomacentrus chrysurus",
+    "Centropyge eibli",
+    "Gymnothorax fimbriatus"
   ],
   "subdecks": [
     {
@@ -255,10 +255,10 @@
         "Chaetodon decussatus",
         "Carcharhinus melanopterus",
         "Chaetodon andamanensis",
-        "Boleophthalmus boddarti",
         "Heniochus singularius",
         "Scolopsis bilineata",
         "Diodon liturosus",
+        "Lutjanus biguttatus",
         "Rhincodon typus",
         "Mobula birostris",
         "Stegostoma tigrinum",
@@ -285,7 +285,6 @@
         }
       },
       "speciesNames": [
-        "Lutjanus biguttatus",
         "Cephalopholis argus",
         "Ostracion cubicum",
         "Balistapus undulatus",
@@ -344,7 +343,8 @@
         "Heniochus pleurotaenia",
         "Parupeneus macronemus",
         "Pomacanthus annularis",
-        "Zenarchopterus buffonis"
+        "Salarias fasciatus",
+        "Echidna nebulosa"
       ]
     },
     {
@@ -365,8 +365,6 @@
         }
       },
       "speciesNames": [
-        "Salarias fasciatus",
-        "Echidna nebulosa",
         "Parupeneus barberinus",
         "Ctenochaetus striatus",
         "Octopus cyanea",
@@ -414,7 +412,9 @@
         "Chlorurus strongylocephalus",
         "Monotaxis grandoculis",
         "Naso unicornis",
-        "Pomacentrus chrysurus"
+        "Pomacentrus chrysurus",
+        "Centropyge eibli",
+        "Gymnothorax fimbriatus"
       ]
     }
   ]

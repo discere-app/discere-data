@@ -44,6 +44,7 @@
   "reviewMode": "flip",
   "speciesNames": [
     "Chelonia mydas",
+    "Acanthurus triostegus",
     "Zanclus cornutus",
     "Thalassoma duperrey",
     "Zebrasoma flavescens",
@@ -82,12 +83,12 @@
     "Acanthurus blochii",
     "Melichthys vidua",
     "Echidna nebulosa",
-    "Sufflamen bursa",
     "Mobula alfredi",
     "Monachus schauinslandi",
     "Galeocerdo cuvier",
     "Stenella longirostris",
     "Megaptera novaeangliae",
+    "Sufflamen bursa",
     "Gymnothorax flavimarginatus",
     "Abudefduf abdominalis",
     "Gymnothorax eurostus",
@@ -196,8 +197,7 @@
     "Chanos chanos",
     "Echidna polyzona",
     "Conger marginatus",
-    "Pteropterus sphex",
-    "Ctenochaetus hawaiiensis"
+    "Pteropterus sphex"
   ],
   "subdecks": [
     {
@@ -219,6 +219,7 @@
       },
       "speciesNames": [
         "Chelonia mydas",
+        "Acanthurus triostegus",
         "Zanclus cornutus",
         "Thalassoma duperrey",
         "Zebrasoma flavescens",
@@ -257,7 +258,6 @@
         "Acanthurus blochii",
         "Melichthys vidua",
         "Echidna nebulosa",
-        "Sufflamen bursa",
         "Mobula alfredi",
         "Monachus schauinslandi",
         "Galeocerdo cuvier",
@@ -283,6 +283,7 @@
         }
       },
       "speciesNames": [
+        "Sufflamen bursa",
         "Gymnothorax flavimarginatus",
         "Abudefduf abdominalis",
         "Gymnothorax eurostus",
@@ -341,8 +342,7 @@
         "Pristiapogon kallopterus",
         "Neochirus barberi",
         "Diodon holocanthus",
-        "Platybelone platyura",
-        "Gymnothorax melatremus"
+        "Platybelone platyura"
       ]
     },
     {
@@ -363,6 +363,7 @@
         }
       },
       "speciesNames": [
+        "Gymnothorax melatremus",
         "Bodianus albotaeniatus",
         "Scorpaenopsis diabolus",
         "Thalassoma purpureum",
@@ -411,8 +412,7 @@
         "Chanos chanos",
         "Echidna polyzona",
         "Conger marginatus",
-        "Pteropterus sphex",
-        "Ctenochaetus hawaiiensis"
+        "Pteropterus sphex"
       ]
     }
   ]

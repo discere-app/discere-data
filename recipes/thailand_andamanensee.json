@@ -76,6 +76,16 @@
       "reason": "Vor Trang und Ko Libong weidet die größte Dugong-Gruppe Thailands in den Seegraswiesen."
     }
   ],
+  "exclude": [
+    {
+      "name": "Boleophthalmus boddarti",
+      "reason": "Schlammspringer, lebt auf dem Schlickwatt der Mangroven außerhalb des Wassers."
+    },
+    {
+      "name": "Zenarchopterus buffonis",
+      "reason": "Halbschnabelhecht der Mangrovenkanäle und Flussmündungen, keine Begegnung am Riff."
+    }
+  ],
   "imageCredit": {
     "author": "Reinhard Link",
     "license": "CC BY-SA 2.0",

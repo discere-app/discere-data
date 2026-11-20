@@ -16,13 +16,13 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Übersicht
 
-- Arten der Reihenfolge-Quelle, aufgelöst: 1123; nicht aufgelöst: 18
-- ausgeschlossen: 386
-  - zu wenige Nachweise: 340
-  - zu klein: 27
+- Arten der Reihenfolge-Quelle, aufgelöst: 1134; nicht aufgelöst: 7
+- ausgeschlossen: 394
+  - zu wenige Nachweise: 342
+  - zu klein: 33
   - kein Meeresfisch: 16
   - nur tiefer als die Tauchgrenze: 3
-- Kandidaten nach den Filtern: 737
+- Kandidaten nach den Filtern: 740
 - Deck: 158 Arten (Level 1: 48, Level 2: 60, Level 3: 50); Umfang laut Rezept 40/60/50 plus Highlights
 - Highlights: 8 im Deck, 0 verworfen
 
@@ -30,27 +30,45 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 Keine.
 
+## iNaturalist-Namen zugeordnet
+
+Laut `recipes/inat_names.json`: iNaturalist nennt die Art anders als die Referenz-DB; die Zählung kommt zu der der Referenz-DB-Art.
+
+| iNaturalist | Referenz-DB | iNat | Art | Beleg |
+|---|---|---|---|---|
+| *Pseudanthias cheirospilos* | *Pseudanthias squamipinnis* | 405 | Abspaltung | https://www.inaturalist.org/taxon_changes/147467 |
+| *Coris schroederii* | *Coris batuensis* | 71 | Abspaltung | https://www.inaturalist.org/taxon_changes/157302 |
+| *Eviotops sebreei* | *Eviota sebreei* | 50 | Umbenennung | https://www.inaturalist.org/taxon_changes/178922 |
+| *Eviotops oculineatus* | *Eviota oculineata* | 33 | Umbenennung | https://www.inaturalist.org/taxon_changes/178909 |
+| *Eviotops prasites* | *Eviota prasites* | 22 | Umbenennung | https://www.inaturalist.org/taxon_changes/178916 |
+| *Eviotops sigillatus* | *Eviota sigillata* | 22 | Umbenennung | https://www.inaturalist.org/taxon_changes/178924 |
+| *Eviotops cometa* | *Eviota cometa* | 16 | Umbenennung | https://www.inaturalist.org/taxon_changes/178892 |
+| *Pinnoctopus aspilosomatis* | *Callistoctopus aspilosomatis* | 10 | Umbenennung | https://www.inaturalist.org/taxon_changes/172611 |
+| *Eviotops dorsogilvus* | *Eviota dorsogilva* | 7 | Umbenennung | https://www.inaturalist.org/taxon_changes/178893 |
+| *Filistriatus sexfilis* | *Polydactylus sexfilis* | 3 | Umbenennung | https://www.inaturalist.org/taxon_changes/165559 |
+| *Pinnoctopus ornatus* | *Callistoctopus ornatus* | 2 | Umbenennung | https://www.inaturalist.org/taxon_changes/172615 |
+
 ## Highlights
 
 | Highlight | Begründung | Rang | Belege | Status |
 |---|---|---|---|---|
-| *Carcharhinus amblyrhynchos* | Hunderte Graue Riffhaie stehen im Südpass von Fakarava, die bekannte Haiwand. | 78 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
-| *Sphyrna mokarran* | Der Große Hammerhai erscheint im Tiputa-Pass von Rangiroa und vor Bora Bora. | 583 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
-| *Negaprion acutidens* | Der Sichelflossen-Zitronenhai ist in den Lagunen von Moorea und Bora Bora eine sichere Begegnung. | 181 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
-| *Carcharhinus leucas* | Der Bullenhai ist das Ziel des bekannten Haitauchgangs in der Beqa-Lagune auf Fidschi. | 154 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
-| *Mobula alfredi* | Der Riffmanta besucht Putzerstationen in Bora Bora, Tikehau und an Fidschis Manta Reef. | 105 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
-| *Epinephelus polyphekadion* | Tausende Tarnfleck-Zackenbarsche laichen jedes Jahr gemeinsam im Südpass von Fakarava. | 157 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
-| *Cheilinus undulatus* | Der Napoleon ist an vielen Pässen zutraulich und gehört zu den größten Riffbewohnern. | 90 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Carcharhinus amblyrhynchos* | Hunderte Graue Riffhaie stehen im Südpass von Fakarava, die bekannte Haiwand. | 79 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Sphyrna mokarran* | Der Große Hammerhai erscheint im Tiputa-Pass von Rangiroa und vor Bora Bora. | 585 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Negaprion acutidens* | Der Sichelflossen-Zitronenhai ist in den Lagunen von Moorea und Bora Bora eine sichere Begegnung. | 182 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Carcharhinus leucas* | Der Bullenhai ist das Ziel des bekannten Haitauchgangs in der Beqa-Lagune auf Fidschi. | 155 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Mobula alfredi* | Der Riffmanta besucht Putzerstationen in Bora Bora, Tikehau und an Fidschis Manta Reef. | 106 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Epinephelus polyphekadion* | Tausende Tarnfleck-Zackenbarsche laichen jedes Jahr gemeinsam im Südpass von Fakarava. | 158 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
+| *Cheilinus undulatus* | Der Napoleon ist an vielen Pässen zutraulich und gehört zu den größten Riffbewohnern. | 91 | Reihenfolge-Quelle, OBIS, Verbreitung | Level 1 |
 | *Megaptera novaeangliae* | Buckelwale kalben von Juli bis Oktober vor Tonga und Rurutu, wo man mit ihnen schnorcheln darf. | – | Verbreitung | Level 1 |
 
 ## Prüfung
 
 - Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS oder Verbreitung): 157/158 (99 %)
 - Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: 0
-- Arten ohne Volksnamen `de` in der Referenz-DB: 75/158 (47 %)
+- Arten ohne Volksnamen `de` in der Referenz-DB: 74/158 (47 %)
 - Arten ohne Volksnamen `en` in der Referenz-DB: 3/158 (2 %)
-- Familien ohne Volksnamen `de`: 6/41 (15 %): *Aetobatidae*, *Balaenopteridae*, *Cheloniidae*, *Epinephelidae*, *Mobulidae*, *Octopodidae*
-- Familien ohne Volksnamen `en`: 0/41 (0 %)
+- Familien ohne Volksnamen `de`: 7/42 (17 %): *Aetobatidae*, *Anthiadidae*, *Balaenopteridae*, *Cheloniidae*, *Epinephelidae*, *Mobulidae*, *Octopodidae*
+- Familien ohne Volksnamen `en`: 0/42 (0 %)
 
 Volksnamen wie die App sie wählt (ohne Landesbezug; zur Laufzeit kann die App Namen aus iNaturalist ergänzen). Im Lernmodus Familie fragt die App den Familiennamen ab und fällt ohne Namen in der App-Sprache auf Englisch, dann auf den wissenschaftlichen Namen zurück.
 
@@ -110,13 +128,13 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 | 38 | *Abudefduf septemfasciatus* | 456 | 365 | native ×7 | Meer |
 | 39 | *Pomacentrus pavo* | 454 | 474 | native ×9 | Meer |
 | 40 | *Pygoplites diacanthus* | 454 | 2153 | native ×9 | Meer |
-| 78 | *Carcharhinus amblyrhynchos* (Highlight) | 290 | 319 | native ×11 | Meer |
-| 583 | *Sphyrna mokarran* (Highlight) | 13 | 19 | native ×3 | Brack/Meer |
-| 181 | *Negaprion acutidens* (Highlight) | 136 | 126 | native ×10 | Brack/Meer |
-| 154 | *Carcharhinus leucas* (Highlight) | 163 | 138 | native ×6 | Süß/Brack/Meer |
-| 105 | *Mobula alfredi* (Highlight) | 228 | 170 | native ×2 | Süß/Meer |
-| 157 | *Epinephelus polyphekadion* (Highlight) | 162 | 375 | native ×10 | Meer |
-| 90 | *Cheilinus undulatus* (Highlight) | 251 | 611 | native ×11 | Meer |
+| 79 | *Carcharhinus amblyrhynchos* (Highlight) | 290 | 319 | native ×11 | Meer |
+| 585 | *Sphyrna mokarran* (Highlight) | 13 | 19 | native ×3 | Brack/Meer |
+| 182 | *Negaprion acutidens* (Highlight) | 136 | 126 | native ×10 | Brack/Meer |
+| 155 | *Carcharhinus leucas* (Highlight) | 163 | 138 | native ×6 | Süß/Brack/Meer |
+| 106 | *Mobula alfredi* (Highlight) | 228 | 170 | native ×2 | Süß/Meer |
+| 158 | *Epinephelus polyphekadion* (Highlight) | 162 | 375 | native ×10 | Meer |
+| 91 | *Cheilinus undulatus* (Highlight) | 251 | 611 | native ×11 | Meer |
 | – | *Megaptera novaeangliae* (Highlight) | – | – | native ×10 | Meer |
 
 ### Level 2 (60)
@@ -130,114 +148,114 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 | 45 | *Epibulus insidiator* | 424 | 1701 | native ×10 | Meer |
 | 46 | *Ellochelon vaigiensis* | 416 | 356 | native ×10 | Süß/Brack/Meer |
 | 47 | *Caranx melampygus* | 415 | 1335 | native ×10 | Brack/Meer |
-| 48 | *Chaetodon ornatissimus* | 403 | 1305 | native ×10 | Meer |
-| 49 | *Paracirrhites arcatus* | 391 | 4263 | native ×10 | Meer |
-| 50 | *Lutjanus fulvus* | 385 | 1389 | native ×11 | Süß/Brack/Meer |
-| 51 | *Paracirrhites forsteri* | 385 | 1719 | native ×10 | Meer |
-| 52 | *Triaenodon obesus* | 378 | 617 | native ×11 | Meer |
-| 53 | *Chaetodon unimaculatus* | 377 | 1330 | native ×11 | Meer |
-| 54 | *Thalassoma lutescens* | 375 | 3663 | native ×10 | Meer |
-| 55 | *Aulostomus chinensis* | 367 | 796 | native ×11 | Meer |
-| 56 | *Monotaxis grandoculis* | 367 | 2471 | native ×11 | Meer |
-| 57 | *Chaetodon trifascialis* | 361 | 1442 | native ×10 | Meer |
-| 58 | *Gnathodentex aureolineatus* | 361 | 1114 | native ×11 | Meer |
-| 59 | *Balistoides viridescens* | 357 | 564 | native ×11 | Meer |
-| 60 | *Chaetodon reticulatus* | 346 | 3655 | native ×10 | Meer |
-| 61 | *Oxymonacanthus longirostris* | 345 | 647 | native ×2 | Meer |
-| 62 | *Coris aygula* | 329 | 1161 | native ×10 | Meer |
-| 63 | *Dascyllus reticulatus* | 327 | 1425 | native ×4 | Meer |
-| 64 | *Scarus schlegeli* | 319 | 3096 | native ×10 | Meer |
-| 65 | *Neoniphon sammara* | 318 | 1080 | native ×10 | Meer |
-| 66 | *Cephalopholis argus* | 310 | 4127 | native ×11 | Meer |
-| 67 | *Naso lituratus* | 309 | 3618 | native ×11 | Meer |
-| 68 | *Chaetodon pelewensis* | 308 | 4066 | native ×10 | Meer |
-| 69 | *Stethojulis bandanensis* | 307 | 1331 | native ×10 | Meer |
-| 70 | *Chaetodon baronessa* | 306 | 788 | native ×2 | Meer |
-| 71 | *Parupeneus barberinus* | 305 | 924 | native ×11 | Meer |
-| 72 | *Arothron meleagris* | 302 | 363 | native ×10 | Meer |
-| 73 | *Scolopsis bilineata* | 302 | 1116 | native ×2 | Meer |
-| 74 | *Arothron nigropunctatus* | 298 | 489 | native ×4 | Meer |
-| 75 | *Centropyge bicolor* | 295 | 840 | native ×4 | Meer |
-| 76 | *Aetobatus ocellatus* | 294 | 234 | native ×7 | Brack/Meer |
-| 77 | *Chlorurus bleekeri* | 291 | 860 | native ×3 | Meer |
-| 79 | *Ostracion cubicum* | 290 | 334 | native ×10 | Meer |
-| 80 | *Scarus psittacus* | 285 | 2139 | native ×10 | Meer |
-| 81 | *Forcipiger flavissimus* | 284 | 1334 | native ×10 | Meer |
-| 82 | *Pomacentrus vaiuli* | 282 | 9204 | native ×3 | Meer |
-| 83 | *Chaetodon rafflesii* | 272 | 727 | native ×6 | Brack/Meer |
-| 84 | *Siganus spinus* | 270 | 950 | native ×8 | Meer |
-| 85 | *Amphiprion perideraion* | 268 | 280 | native ×4 | Brack/Meer |
-| 86 | *Chrysiptera brownriggii* (Quelle: *Chrysiptera leucopoma*) | 266 | 1508 | native ×9 | Meer |
-| 87 | *Amphiprion maohiensis* | 261 | 3 | native ×1 | ? |
-| 88 | *Coris gaimard* | 260 | 1068 | native ×9, questionable ×1 | Meer |
-| 89 | *Myripristis violacea* | 255 | 473 | native ×11 | Meer |
-| 91 | *Sargocentron spiniferum* | 251 | 1111 | native ×11 | Meer |
-| 92 | *Centropyge bispinosa* | 248 | 3229 | native ×8 | Meer |
-| 93 | *Cheilinus trilobatus* | 248 | 1394 | native ×10 | Brack/Meer |
-| 94 | *Monotaxis heterodon* | 248 | 517 | – | Meer |
-| 95 | *Acanthurus pyroferus* | 242 | 1251 | native ×11 | Meer |
-| 96 | *Dascyllus flavicaudus* | 242 | 326 | native ×6 | Meer |
-| 97 | *Lutjanus gibbus* | 241 | 1383 | native ×10 | Meer |
-| 98 | *Eretmochelys imbricata* | 240 | 202 | native ×7 | Brack/Meer |
-| 99 | *Melichthys vidua* | 240 | 4117 | native ×10 | Meer |
-| 100 | *Scarus oviceps* | 238 | 1691 | native ×8 | Meer |
-| 101 | *Diodon hystrix* | 233 | 296 | native ×11 | Meer |
-| 102 | *Valenciennea strigata* | 233 | 638 | native ×9 | Meer |
+| 48 | *Pseudanthias squamipinnis* | 405 | 97 | native ×2 | Meer |
+| 49 | *Chaetodon ornatissimus* | 403 | 1305 | native ×10 | Meer |
+| 50 | *Paracirrhites arcatus* | 391 | 4263 | native ×10 | Meer |
+| 51 | *Lutjanus fulvus* | 385 | 1389 | native ×11 | Süß/Brack/Meer |
+| 52 | *Paracirrhites forsteri* | 385 | 1719 | native ×10 | Meer |
+| 53 | *Triaenodon obesus* | 378 | 617 | native ×11 | Meer |
+| 54 | *Chaetodon unimaculatus* | 377 | 1330 | native ×11 | Meer |
+| 55 | *Thalassoma lutescens* | 375 | 3663 | native ×10 | Meer |
+| 56 | *Aulostomus chinensis* | 367 | 796 | native ×11 | Meer |
+| 57 | *Monotaxis grandoculis* | 367 | 2471 | native ×11 | Meer |
+| 58 | *Chaetodon trifascialis* | 361 | 1442 | native ×10 | Meer |
+| 59 | *Gnathodentex aureolineatus* | 361 | 1114 | native ×11 | Meer |
+| 60 | *Balistoides viridescens* | 357 | 564 | native ×11 | Meer |
+| 61 | *Chaetodon reticulatus* | 346 | 3655 | native ×10 | Meer |
+| 62 | *Oxymonacanthus longirostris* | 345 | 647 | native ×2 | Meer |
+| 63 | *Coris aygula* | 329 | 1161 | native ×10 | Meer |
+| 64 | *Dascyllus reticulatus* | 327 | 1425 | native ×4 | Meer |
+| 65 | *Scarus schlegeli* | 319 | 3096 | native ×10 | Meer |
+| 66 | *Neoniphon sammara* | 318 | 1080 | native ×10 | Meer |
+| 67 | *Cephalopholis argus* | 310 | 4127 | native ×11 | Meer |
+| 68 | *Naso lituratus* | 309 | 3618 | native ×11 | Meer |
+| 69 | *Chaetodon pelewensis* | 308 | 4066 | native ×10 | Meer |
+| 70 | *Stethojulis bandanensis* | 307 | 1331 | native ×10 | Meer |
+| 71 | *Chaetodon baronessa* | 306 | 788 | native ×2 | Meer |
+| 72 | *Parupeneus barberinus* | 305 | 924 | native ×11 | Meer |
+| 73 | *Arothron meleagris* | 302 | 363 | native ×10 | Meer |
+| 74 | *Scolopsis bilineata* | 302 | 1116 | native ×2 | Meer |
+| 75 | *Arothron nigropunctatus* | 298 | 489 | native ×4 | Meer |
+| 76 | *Centropyge bicolor* | 295 | 840 | native ×4 | Meer |
+| 77 | *Aetobatus ocellatus* | 294 | 234 | native ×7 | Brack/Meer |
+| 78 | *Chlorurus bleekeri* | 291 | 860 | native ×3 | Meer |
+| 80 | *Ostracion cubicum* | 290 | 334 | native ×10 | Meer |
+| 81 | *Scarus psittacus* | 285 | 2139 | native ×10 | Meer |
+| 82 | *Forcipiger flavissimus* | 284 | 1334 | native ×10 | Meer |
+| 83 | *Pomacentrus vaiuli* | 282 | 9204 | native ×3 | Meer |
+| 84 | *Chaetodon rafflesii* | 272 | 727 | native ×6 | Brack/Meer |
+| 85 | *Siganus spinus* | 270 | 950 | native ×8 | Meer |
+| 86 | *Amphiprion perideraion* | 268 | 280 | native ×4 | Brack/Meer |
+| 87 | *Chrysiptera brownriggii* (Quelle: *Chrysiptera leucopoma*) | 266 | 1508 | native ×9 | Meer |
+| 88 | *Amphiprion maohiensis* | 261 | 3 | native ×1 | ? |
+| 89 | *Coris gaimard* | 260 | 1068 | native ×9, questionable ×1 | Meer |
+| 90 | *Myripristis violacea* | 255 | 473 | native ×11 | Meer |
+| 92 | *Sargocentron spiniferum* | 251 | 1111 | native ×11 | Meer |
+| 93 | *Centropyge bispinosa* | 248 | 3229 | native ×8 | Meer |
+| 94 | *Cheilinus trilobatus* | 248 | 1394 | native ×10 | Brack/Meer |
+| 95 | *Monotaxis heterodon* | 248 | 517 | – | Meer |
+| 96 | *Acanthurus pyroferus* | 242 | 1251 | native ×11 | Meer |
+| 97 | *Dascyllus flavicaudus* | 242 | 326 | native ×6 | Meer |
+| 98 | *Lutjanus gibbus* | 241 | 1383 | native ×10 | Meer |
+| 99 | *Eretmochelys imbricata* | 240 | 202 | native ×7 | Brack/Meer |
+| 100 | *Melichthys vidua* | 240 | 4117 | native ×10 | Meer |
+| 101 | *Scarus oviceps* | 238 | 1691 | native ×8 | Meer |
+| 102 | *Diodon hystrix* | 233 | 296 | native ×11 | Meer |
 
 ### Level 3 (50)
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser |
 |---|---|---|---|---|---|
-| 103 | *Chromis atripectoralis* | 230 | 448 | native ×9 | Meer |
-| 104 | *Abudefduf sordidus* | 228 | 266 | native ×10 | Brack/Meer |
-| 106 | *Heniochus varius* | 225 | 852 | native ×5 | Meer |
-| 107 | *Nemateleotris magnifica* | 223 | 849 | native ×11 | Meer |
-| 108 | *Cirrhilabrus punctatus* | 219 | 913 | native ×2 | Meer |
-| 109 | *Mulloidichthys vanicolensis* | 214 | 983 | native ×11 | Meer |
-| 110 | *Amblyglyphidodon curacao* | 212 | 205 | native ×3 | Meer |
-| 111 | *Parapercis xanthogramma* | 212 | 179 | native ×3 | Meer |
-| 112 | *Thalassoma amblycephalum* | 212 | 1288 | native ×10 | Meer |
-| 113 | *Terapon jarbua* | 210 | 205 | native ×4 | Süß/Brack/Meer |
-| 114 | *Oxycheilinus digramma* | 209 | 1891 | native ×5 | Brack/Meer |
-| 115 | *Octopus cyanea* | 206 | 224 | native ×9 | Meer |
-| 116 | *Acanthurus nigricans* | 205 | 6752 | native ×9 | Meer |
-| 117 | *Acanthurus olivaceus* | 205 | 1317 | native ×8, ~~misidentification ×1~~ | Meer |
-| 118 | *Synodus variegatus* | 205 | 505 | native ×9 | Meer |
-| 119 | *Ostracion meleagris* | 204 | 535 | native ×10 | Meer |
-| 120 | *Stegastes lacrymatus* | 204 | 3550 | native ×9, questionable ×1 | Meer |
-| 121 | *Amblyglyphidodon aureus* | 203 | 243 | native ×3 | Meer |
-| 122 | *Pomacentrus callainus* | 196 | 2483 | native ×2 | Meer |
-| 123 | *Heniochus monoceros* | 195 | 526 | native ×10 | Meer |
-| 124 | *Pomacanthus imperator* | 194 | 546 | native ×9 | Meer |
-| 125 | *Lutjanus bohar* | 190 | 2667 | native ×11 | Süß/Brack/Meer |
-| 126 | *Amblygobius phalaena* | 189 | 514 | native ×8 | Meer |
-| 127 | *Hemigymnus melapterus* | 189 | 1158 | native ×4 | Meer |
-| 128 | *Novaculichthys taeniourus* | 189 | 340 | native ×8 | Meer |
-| 129 | *Pteropterus antennatus* | 188 | 169 | native ×9 | Meer |
-| 130 | *Caesio caerulaurea* | 186 | 414 | native ×4 | Meer |
-| 131 | *Chaetodon plebeius* | 186 | 546 | native ×2 | Meer |
-| 132 | *Plectroglyphidodon dickii* | 186 | 3589 | native ×9 | Meer |
-| 133 | *Naso brevirostris* | 185 | 558 | native ×11 | Meer |
-| 134 | *Sufflamen bursa* | 185 | 1644 | native ×11 | Meer |
-| 135 | *Siganus doliatus* | 181 | 498 | native ×2 | Meer |
-| 136 | *Cheilio inermis* | 178 | 222 | native ×7 | Meer |
-| 137 | *Halichoeres margaritaceus* | 178 | 1032 | native ×10 | Meer |
-| 138 | *Thalassoma lunare* | 177 | 908 | native ×2 | Meer |
-| 139 | *Gymnothorax pictus* | 175 | 261 | native ×11 | Brack/Meer |
-| 140 | *Anguilla marmorata* | 174 | 162 | native ×11 | Süß/Brack/Meer |
-| 141 | *Pterois volitans* | 172 | 207 | native ×10 | Meer |
-| 142 | *Acanthurus nigrofuscus* | 171 | 7429 | native ×10 | Meer |
-| 143 | *Pycnochromis margaritifer* | 171 | 4354 | native ×8 | Meer |
-| 144 | *Acanthurus nigricauda* | 170 | 667 | native ×10 | Brack/Meer |
-| 145 | *Amblyglyphidodon orbicularis* | 167 | 173 | native ×3 | Meer |
-| 146 | *Nebrius ferrugineus* | 167 | 144 | native ×11 | Meer |
-| 147 | *Arothron hispidus* | 166 | 194 | native ×10 | Brack/Meer |
-| 148 | *Chlorurus microrhinos* | 166 | 2182 | native ×11 | Meer |
-| 149 | *Scolopsis trilineata* | 166 | 253 | native ×3 | Meer |
-| 150 | *Echeneis naucrates* | 165 | 175 | native ×10 | Brack/Meer |
-| 151 | *Lutjanus kasmira* | 165 | 1518 | native ×11 | Meer |
-| 152 | *Parupeneus cyclostomus* | 165 | 1990 | native ×11 | Meer |
-| 153 | *Cetoscarus ocellatus* | 164 | 472 | native ×10 | Meer |
+| 103 | *Valenciennea strigata* | 233 | 638 | native ×9 | Meer |
+| 104 | *Chromis atripectoralis* | 230 | 448 | native ×9 | Meer |
+| 105 | *Abudefduf sordidus* | 228 | 266 | native ×10 | Brack/Meer |
+| 107 | *Heniochus varius* | 225 | 852 | native ×5 | Meer |
+| 108 | *Nemateleotris magnifica* | 223 | 849 | native ×11 | Meer |
+| 109 | *Cirrhilabrus punctatus* | 219 | 913 | native ×2 | Meer |
+| 110 | *Mulloidichthys vanicolensis* | 214 | 983 | native ×11 | Meer |
+| 111 | *Amblyglyphidodon curacao* | 212 | 205 | native ×3 | Meer |
+| 112 | *Parapercis xanthogramma* | 212 | 179 | native ×3 | Meer |
+| 113 | *Thalassoma amblycephalum* | 212 | 1288 | native ×10 | Meer |
+| 114 | *Terapon jarbua* | 210 | 205 | native ×4 | Süß/Brack/Meer |
+| 115 | *Oxycheilinus digramma* | 209 | 1891 | native ×5 | Brack/Meer |
+| 116 | *Octopus cyanea* | 206 | 224 | native ×9 | Meer |
+| 117 | *Acanthurus nigricans* | 205 | 6752 | native ×9 | Meer |
+| 118 | *Acanthurus olivaceus* | 205 | 1317 | native ×8, ~~misidentification ×1~~ | Meer |
+| 119 | *Synodus variegatus* | 205 | 505 | native ×9 | Meer |
+| 120 | *Ostracion meleagris* | 204 | 535 | native ×10 | Meer |
+| 121 | *Stegastes lacrymatus* | 204 | 3550 | native ×9, questionable ×1 | Meer |
+| 122 | *Amblyglyphidodon aureus* | 203 | 243 | native ×3 | Meer |
+| 123 | *Pomacentrus callainus* | 196 | 2483 | native ×2 | Meer |
+| 124 | *Heniochus monoceros* | 195 | 526 | native ×10 | Meer |
+| 125 | *Pomacanthus imperator* | 194 | 546 | native ×9 | Meer |
+| 126 | *Lutjanus bohar* | 190 | 2667 | native ×11 | Süß/Brack/Meer |
+| 127 | *Amblygobius phalaena* | 189 | 514 | native ×8 | Meer |
+| 128 | *Hemigymnus melapterus* | 189 | 1158 | native ×4 | Meer |
+| 129 | *Novaculichthys taeniourus* | 189 | 340 | native ×8 | Meer |
+| 130 | *Pteropterus antennatus* | 188 | 169 | native ×9 | Meer |
+| 131 | *Caesio caerulaurea* | 186 | 414 | native ×4 | Meer |
+| 132 | *Chaetodon plebeius* | 186 | 546 | native ×2 | Meer |
+| 133 | *Plectroglyphidodon dickii* | 186 | 3589 | native ×9 | Meer |
+| 134 | *Naso brevirostris* | 185 | 558 | native ×11 | Meer |
+| 135 | *Sufflamen bursa* | 185 | 1644 | native ×11 | Meer |
+| 136 | *Siganus doliatus* | 181 | 498 | native ×2 | Meer |
+| 137 | *Cheilio inermis* | 178 | 222 | native ×7 | Meer |
+| 138 | *Halichoeres margaritaceus* | 178 | 1032 | native ×10 | Meer |
+| 139 | *Thalassoma lunare* | 177 | 908 | native ×2 | Meer |
+| 140 | *Gymnothorax pictus* | 175 | 261 | native ×11 | Brack/Meer |
+| 141 | *Anguilla marmorata* | 174 | 162 | native ×11 | Süß/Brack/Meer |
+| 142 | *Pterois volitans* | 172 | 207 | native ×10 | Meer |
+| 143 | *Acanthurus nigrofuscus* | 171 | 7429 | native ×10 | Meer |
+| 144 | *Pycnochromis margaritifer* | 171 | 4354 | native ×8 | Meer |
+| 145 | *Acanthurus nigricauda* | 170 | 667 | native ×10 | Brack/Meer |
+| 146 | *Amblyglyphidodon orbicularis* | 167 | 173 | native ×3 | Meer |
+| 147 | *Nebrius ferrugineus* | 167 | 144 | native ×11 | Meer |
+| 148 | *Arothron hispidus* | 166 | 194 | native ×10 | Brack/Meer |
+| 149 | *Chlorurus microrhinos* | 166 | 2182 | native ×11 | Meer |
+| 150 | *Scolopsis trilineata* | 166 | 253 | native ×3 | Meer |
+| 151 | *Echeneis naucrates* | 165 | 175 | native ×10 | Brack/Meer |
+| 152 | *Lutjanus kasmira* | 165 | 1518 | native ×11 | Meer |
+| 153 | *Parupeneus cyclostomus* | 165 | 1990 | native ×11 | Meer |
 
 ## Grenzfälle
 
@@ -265,90 +283,95 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 45 | *Epibulus insidiator* | 424 | 1701 | native ×10 | Meer | 2 |
 | 46 | *Ellochelon vaigiensis* | 416 | 356 | native ×10 | Süß/Brack/Meer | 2 |
 | 47 | *Caranx melampygus* | 415 | 1335 | native ×10 | Brack/Meer | 2 |
-| 48 | *Chaetodon ornatissimus* | 403 | 1305 | native ×10 | Meer | 2 |
-| 49 | *Paracirrhites arcatus* | 391 | 4263 | native ×10 | Meer | 2 |
-| 50 | *Lutjanus fulvus* | 385 | 1389 | native ×11 | Süß/Brack/Meer | 2 |
+| 48 | *Pseudanthias squamipinnis* | 405 | 97 | native ×2 | Meer | 2 |
+| 49 | *Chaetodon ornatissimus* | 403 | 1305 | native ×10 | Meer | 2 |
+| 50 | *Paracirrhites arcatus* | 391 | 4263 | native ×10 | Meer | 2 |
 
 ### Level 2/3
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Level |
 |---|---|---|---|---|---|---|
-| 93 | *Cheilinus trilobatus* | 248 | 1394 | native ×10 | Brack/Meer | 2 |
-| 94 | *Monotaxis heterodon* | 248 | 517 | – | Meer | 2 |
-| 95 | *Acanthurus pyroferus* | 242 | 1251 | native ×11 | Meer | 2 |
-| 96 | *Dascyllus flavicaudus* | 242 | 326 | native ×6 | Meer | 2 |
-| 97 | *Lutjanus gibbus* | 241 | 1383 | native ×10 | Meer | 2 |
-| 98 | *Eretmochelys imbricata* | 240 | 202 | native ×7 | Brack/Meer | 2 |
-| 99 | *Melichthys vidua* | 240 | 4117 | native ×10 | Meer | 2 |
-| 100 | *Scarus oviceps* | 238 | 1691 | native ×8 | Meer | 2 |
-| 101 | *Diodon hystrix* | 233 | 296 | native ×11 | Meer | 2 |
-| 102 | *Valenciennea strigata* | 233 | 638 | native ×9 | Meer | 2 |
+| 93 | *Centropyge bispinosa* | 248 | 3229 | native ×8 | Meer | 2 |
+| 94 | *Cheilinus trilobatus* | 248 | 1394 | native ×10 | Brack/Meer | 2 |
+| 95 | *Monotaxis heterodon* | 248 | 517 | – | Meer | 2 |
+| 96 | *Acanthurus pyroferus* | 242 | 1251 | native ×11 | Meer | 2 |
+| 97 | *Dascyllus flavicaudus* | 242 | 326 | native ×6 | Meer | 2 |
+| 98 | *Lutjanus gibbus* | 241 | 1383 | native ×10 | Meer | 2 |
+| 99 | *Eretmochelys imbricata* | 240 | 202 | native ×7 | Brack/Meer | 2 |
+| 100 | *Melichthys vidua* | 240 | 4117 | native ×10 | Meer | 2 |
+| 101 | *Scarus oviceps* | 238 | 1691 | native ×8 | Meer | 2 |
+| 102 | *Diodon hystrix* | 233 | 296 | native ×11 | Meer | 2 |
 | | **Grenze** | | | | | |
-| 103 | *Chromis atripectoralis* | 230 | 448 | native ×9 | Meer | 3 |
-| 104 | *Abudefduf sordidus* | 228 | 266 | native ×10 | Brack/Meer | 3 |
-| 106 | *Heniochus varius* | 225 | 852 | native ×5 | Meer | 3 |
-| 107 | *Nemateleotris magnifica* | 223 | 849 | native ×11 | Meer | 3 |
-| 108 | *Cirrhilabrus punctatus* | 219 | 913 | native ×2 | Meer | 3 |
-| 109 | *Mulloidichthys vanicolensis* | 214 | 983 | native ×11 | Meer | 3 |
-| 110 | *Amblyglyphidodon curacao* | 212 | 205 | native ×3 | Meer | 3 |
-| 111 | *Parapercis xanthogramma* | 212 | 179 | native ×3 | Meer | 3 |
-| 112 | *Thalassoma amblycephalum* | 212 | 1288 | native ×10 | Meer | 3 |
-| 113 | *Terapon jarbua* | 210 | 205 | native ×4 | Süß/Brack/Meer | 3 |
+| 103 | *Valenciennea strigata* | 233 | 638 | native ×9 | Meer | 3 |
+| 104 | *Chromis atripectoralis* | 230 | 448 | native ×9 | Meer | 3 |
+| 105 | *Abudefduf sordidus* | 228 | 266 | native ×10 | Brack/Meer | 3 |
+| 107 | *Heniochus varius* | 225 | 852 | native ×5 | Meer | 3 |
+| 108 | *Nemateleotris magnifica* | 223 | 849 | native ×11 | Meer | 3 |
+| 109 | *Cirrhilabrus punctatus* | 219 | 913 | native ×2 | Meer | 3 |
+| 110 | *Mulloidichthys vanicolensis* | 214 | 983 | native ×11 | Meer | 3 |
+| 111 | *Amblyglyphidodon curacao* | 212 | 205 | native ×3 | Meer | 3 |
+| 112 | *Parapercis xanthogramma* | 212 | 179 | native ×3 | Meer | 3 |
+| 113 | *Thalassoma amblycephalum* | 212 | 1288 | native ×10 | Meer | 3 |
 
 ### Level 3/nicht im Deck
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Level |
 |---|---|---|---|---|---|---|
-| 144 | *Acanthurus nigricauda* | 170 | 667 | native ×10 | Brack/Meer | 3 |
-| 145 | *Amblyglyphidodon orbicularis* | 167 | 173 | native ×3 | Meer | 3 |
-| 146 | *Nebrius ferrugineus* | 167 | 144 | native ×11 | Meer | 3 |
-| 147 | *Arothron hispidus* | 166 | 194 | native ×10 | Brack/Meer | 3 |
-| 148 | *Chlorurus microrhinos* | 166 | 2182 | native ×11 | Meer | 3 |
-| 149 | *Scolopsis trilineata* | 166 | 253 | native ×3 | Meer | 3 |
-| 150 | *Echeneis naucrates* | 165 | 175 | native ×10 | Brack/Meer | 3 |
-| 151 | *Lutjanus kasmira* | 165 | 1518 | native ×11 | Meer | 3 |
-| 152 | *Parupeneus cyclostomus* | 165 | 1990 | native ×11 | Meer | 3 |
-| 153 | *Cetoscarus ocellatus* | 164 | 472 | native ×10 | Meer | 3 |
+| 144 | *Pycnochromis margaritifer* | 171 | 4354 | native ×8 | Meer | 3 |
+| 145 | *Acanthurus nigricauda* | 170 | 667 | native ×10 | Brack/Meer | 3 |
+| 146 | *Amblyglyphidodon orbicularis* | 167 | 173 | native ×3 | Meer | 3 |
+| 147 | *Nebrius ferrugineus* | 167 | 144 | native ×11 | Meer | 3 |
+| 148 | *Arothron hispidus* | 166 | 194 | native ×10 | Brack/Meer | 3 |
+| 149 | *Chlorurus microrhinos* | 166 | 2182 | native ×11 | Meer | 3 |
+| 150 | *Scolopsis trilineata* | 166 | 253 | native ×3 | Meer | 3 |
+| 151 | *Echeneis naucrates* | 165 | 175 | native ×10 | Brack/Meer | 3 |
+| 152 | *Lutjanus kasmira* | 165 | 1518 | native ×11 | Meer | 3 |
+| 153 | *Parupeneus cyclostomus* | 165 | 1990 | native ×11 | Meer | 3 |
 | | **Grenze** | | | | | |
-| 155 | *Echidna nebulosa* | 163 | 218 | native ×10 | Meer | – |
-| 156 | *Odonus niger* | 163 | 404 | native ×9 | Meer | – |
-| 158 | *Plectorhinchus vittatus* | 162 | 304 | native ×3 | Meer | – |
-| 159 | *Chaetodon mertensii* | 158 | 1168 | native ×10 | Meer | – |
-| 160 | *Thalassoma quinquevittatum* | 157 | 5770 | native ×8 | Meer | – |
-| 161 | *Sufflamen chrysopterum* | 154 | 1103 | native ×4 | Meer | – |
-| 162 | *Naso vlamingii* | 153 | 586 | native ×10 | Meer | – |
-| 163 | *Acanthurus xanthopterus* | 152 | 304 | native ×11 | Meer | – |
-| 164 | *Chaetodon melannotus* | 149 | 692 | native ×4 | Meer | – |
-| 165 | *Labroides bicolor* | 149 | 1050 | native ×9 | Meer | – |
+| 154 | *Cetoscarus ocellatus* | 164 | 472 | native ×10 | Meer | – |
+| 156 | *Echidna nebulosa* | 163 | 218 | native ×10 | Meer | – |
+| 157 | *Odonus niger* | 163 | 404 | native ×9 | Meer | – |
+| 159 | *Plectorhinchus vittatus* | 162 | 304 | native ×3 | Meer | – |
+| 160 | *Chaetodon mertensii* | 158 | 1168 | native ×10 | Meer | – |
+| 161 | *Thalassoma quinquevittatum* | 157 | 5770 | native ×8 | Meer | – |
+| 162 | *Sufflamen chrysopterum* | 154 | 1103 | native ×4 | Meer | – |
+| 163 | *Naso vlamingii* | 153 | 586 | native ×10 | Meer | – |
+| 164 | *Acanthurus xanthopterus* | 152 | 304 | native ×11 | Meer | – |
+| 165 | *Chaetodon melannotus* | 149 | 692 | native ×4 | Meer | – |
 
 ## Abgleich mit Führern
 
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 0
-- entfallen: 0
+- neu: 1: *Pseudanthias squamipinnis*
+- entfallen: 1: *Cetoscarus ocellatus*
 
 ## Ausgeschlossene Kandidaten
 
-<details><summary>386 Arten</summary>
+<details><summary>394 Arten</summary>
 
 | Art | iNat | Wasser | Grund |
 |---|---|---|---|
 | *Eviota teresae* | 97 | Meer | zu klein (höchstens 2.11 cm) |
 | *Ecsenius fijiensis* | 91 | Meer | zu klein (höchstens 3.9 cm) |
+| *Eviota sebreei* | 50 | Meer | zu klein (höchstens 2.5 cm) |
 | *Trimma benjamini* | 47 | Meer | zu klein (höchstens 3 cm) |
 | *Trimma anaima* | 46 | Meer | zu klein (höchstens 3 cm) |
 | *Eviota karaspila* | 44 | Meer | zu klein (höchstens 1.79 cm) |
 | *Bryaninops yongei* | 42 | Meer | zu klein (höchstens 3.5 cm) |
 | *Fusigobius melacron* | 40 | Meer | zu klein (höchstens 3.52 cm) |
+| *Eviota oculineata* | 33 | Meer | zu klein (höchstens 1.09 cm) |
 | *Hippocampus pontohi* | 30 | Meer | zu klein (höchstens 1.69 cm) |
 | *Trimma macrophthalmus* | 27 | Meer | zu klein (höchstens 2.5 cm) |
+| *Eviota prasites* | 22 | Meer | zu klein (höchstens 3 cm) |
+| *Eviota sigillata* | 22 | Meer | zu klein (höchstens 3 cm) |
 | *Sicyopterus pugnans* | 21 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Trimma caesiura* | 21 | Meer | zu klein (höchstens 3.5 cm) |
 | *Asterropteryx striata* | 20 | Meer | zu klein (höchstens 2.32 cm) |
 | *Eviota albolineata* | 19 | Meer | zu klein (höchstens 3.6 cm) |
 | *Oreochromis mossambicus* | 19 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Eviota cometa* | 16 | Meer | zu klein (höchstens 1.64 cm) |
 | *Kuhlia marginata* | 16 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Eviota infulata* | 15 | Meer | zu klein (höchstens 2.5 cm) |
 | *Poecilia reticulata* | 15 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
@@ -363,6 +386,7 @@ Das Rezept nennt keinen Führer.
 | *Nautilus vitiensis* | 10 | Meer | nur tiefer als die Tauchgrenze (erst ab 200 m) |
 | *Lotilia klausewitzi* | 9 | Meer | zu klein (höchstens 2.71 cm) |
 | *Eviota punctulata* | 8 | Meer | zu klein (höchstens 2.07 cm) |
+| *Eviota dorsogilva* | 7 | Meer | zu klein (höchstens 1.25 cm) |
 | *Pelmatolapia mariae* | 7 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Priolepis semidoliata* | 7 | Meer | zu klein (höchstens 2.4 cm) |
 | *Spirula spirula* | 7 | Meer | nur tiefer als die Tauchgrenze (erst ab 100 m) |
@@ -455,6 +479,7 @@ Das Rezept nennt keinen Führer.
 | *Periophthalmus kalolo* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Pleurosicya mossambica* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Pleurosicya plicata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Polydactylus sexfilis* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Pseudanthias hiva* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Pseudochromis jamesi* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Pycnochromis bami* | 3 | Meer | zu wenige Nachweise (3 < 5) |
@@ -483,6 +508,7 @@ Das Rezept nennt keinen Führer.
 | *Bolbometopon muricatum* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Brachaluteres taylori* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Brachysomophis crocodilinus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Callistoctopus ornatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Carcharhinus falciformis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Cheilopogon pitcairnensis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Chromis flavapicis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
@@ -731,18 +757,7 @@ Die Referenz-DB der App kennt diese Namen nicht; die App fände sie auch nicht.
 | Name | iNat |
 |---|---|
 | *Dascyllus emamo* | 409 |
-| *Pseudanthias cheirospilos* | 405 |
 | *Pomacentrus maafu* | 361 |
-| *Coris schroederii* | 71 |
-| *Eviotops sebreei* | 50 |
-| *Eviotops oculineatus* | 33 |
-| *Eviotops prasites* | 22 |
-| *Eviotops sigillatus* | 22 |
-| *Eviotops cometa* | 16 |
-| *Pinnoctopus aspilosomatis* | 10 |
-| *Eviotops dorsogilvus* | 7 |
-| *Filistriatus sexfilis* | 3 |
-| *Pinnoctopus ornatus* | 2 |
 | *Priacanthus starnesi* | 2 |
 | *Cylix* | 1 |
 | *Eviota atrinasa* | 1 |

@@ -80,6 +80,20 @@
       "reason": "Vor Oman lebt die einzige Buckelwal-Population, die nie wandert."
     }
   ],
+  "exclude": [
+    {
+      "name": "Aphaniops stoliczkanus",
+      "reason": "Kärpfling der Küstenlagunen, Salzmarschen und Khors, keine Begegnung am Riff."
+    },
+    {
+      "name": "Boleophthalmus dussumieri",
+      "reason": "Schlammspringer, lebt auf dem Schlickwatt außerhalb des Wassers."
+    },
+    {
+      "name": "Alticus kirkii",
+      "reason": "Springschleimfisch, lebt auf Felsen in der Spritzwasserzone über der Wasserlinie."
+    }
+  ],
   "imageCredit": {
     "author": "Diego Delso",
     "license": "CC BY-SA 4.0",

@@ -170,6 +170,7 @@
     "Poecilia latipinna",
     "Epinephelus guttatus",
     "Dajaus monticola",
+    "Neoniphon vexillarium",
     "Octopus briareus",
     "Halichoeres maculipinna",
     "Caranx hippos",
@@ -202,8 +203,7 @@
     "Strongylura notata",
     "Albula vulpes",
     "Mycteroperca tigris",
-    "Acanthemblemaria aspera",
-    "Lophogobius cyprinoides"
+    "Acanthemblemaria aspera"
   ],
   "subdecks": [
     {
@@ -387,6 +387,7 @@
         "Poecilia latipinna",
         "Epinephelus guttatus",
         "Dajaus monticola",
+        "Neoniphon vexillarium",
         "Octopus briareus",
         "Halichoeres maculipinna",
         "Caranx hippos",
@@ -419,8 +420,7 @@
         "Strongylura notata",
         "Albula vulpes",
         "Mycteroperca tigris",
-        "Acanthemblemaria aspera",
-        "Lophogobius cyprinoides"
+        "Acanthemblemaria aspera"
       ]
     }
   ]

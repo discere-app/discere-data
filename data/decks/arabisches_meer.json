@@ -47,7 +47,6 @@
     "Pomacanthus maculosus",
     "Abudefduf vaigiensis",
     "Scolopsis ghanam",
-    "Aphaniops stoliczkanus",
     "Ostracion cyanurus",
     "Lutjanus argentimaculatus",
     "Gymnothorax undulatus",
@@ -83,12 +82,12 @@
     "Carcharhinus limbatus",
     "Parupeneus margaritatus",
     "Caretta caretta",
+    "Epinephelus stoliczkae",
     "Rhincodon typus",
     "Dugong dugon",
     "Mobula birostris",
     "Amphiprion omanensis",
     "Megaptera novaeangliae",
-    "Epinephelus stoliczkae",
     "Caesio varilineata",
     "Carcharhinus melanopterus",
     "Labroides dimidiatus",
@@ -133,7 +132,6 @@
     "Cirrhitichthys calliurus",
     "Plotosus lineatus",
     "Scuticaria tigrina",
-    "Alticus kirkii",
     "Antennablennius adenensis",
     "Gymnothorax pictus",
     "Maculabatis randalli",
@@ -166,6 +164,7 @@
     "Argonauta hians",
     "Arothron immaculatus",
     "Carcharhinus brevipinna",
+    "Eviota punyit",
     "Istigobius decoratus",
     "Scarus ghobban",
     "Bothus pantherinus",
@@ -191,13 +190,14 @@
     "Upeneus oligospilus",
     "Ablennes hians",
     "Aetomylaeus wafickii",
-    "Boleophthalmus dussumieri",
     "Carcharhinus amboinensis",
     "Cheilodipterus novemstriatus",
     "Coris formosa",
     "Echeneis naucrates",
     "Gymnura poecilura",
-    "Istiblennius edentulus"
+    "Istiblennius edentulus",
+    "Lutjanus indicus",
+    "Lutjanus sapphirolineatus"
   ],
   "subdecks": [
     {
@@ -222,7 +222,6 @@
         "Pomacanthus maculosus",
         "Abudefduf vaigiensis",
         "Scolopsis ghanam",
-        "Aphaniops stoliczkanus",
         "Ostracion cyanurus",
         "Lutjanus argentimaculatus",
         "Gymnothorax undulatus",
@@ -258,6 +257,7 @@
         "Carcharhinus limbatus",
         "Parupeneus margaritatus",
         "Caretta caretta",
+        "Epinephelus stoliczkae",
         "Rhincodon typus",
         "Dugong dugon",
         "Mobula birostris",
@@ -283,7 +283,6 @@
         }
       },
       "speciesNames": [
-        "Epinephelus stoliczkae",
         "Caesio varilineata",
         "Carcharhinus melanopterus",
         "Labroides dimidiatus",
@@ -328,7 +327,6 @@
         "Cirrhitichthys calliurus",
         "Plotosus lineatus",
         "Scuticaria tigrina",
-        "Alticus kirkii",
         "Antennablennius adenensis",
         "Gymnothorax pictus",
         "Maculabatis randalli",
@@ -342,7 +340,9 @@
         "Cheilodipterus persicus",
         "Cryptocentroides arabicus",
         "Diplodus kotschyi",
-        "Himantura uarnak"
+        "Himantura uarnak",
+        "Rhabdosargus sarba",
+        "Scolopsis taeniata"
       ]
     },
     {
@@ -363,8 +363,6 @@
         }
       },
       "speciesNames": [
-        "Rhabdosargus sarba",
-        "Scolopsis taeniata",
         "Zanclus cornutus",
         "Acanthopagrus berda",
         "Hippocampus kuda",
@@ -381,6 +379,7 @@
         "Argonauta hians",
         "Arothron immaculatus",
         "Carcharhinus brevipinna",
+        "Eviota punyit",
         "Istigobius decoratus",
         "Scarus ghobban",
         "Bothus pantherinus",
@@ -406,13 +405,14 @@
         "Upeneus oligospilus",
         "Ablennes hians",
         "Aetomylaeus wafickii",
-        "Boleophthalmus dussumieri",
         "Carcharhinus amboinensis",
         "Cheilodipterus novemstriatus",
         "Coris formosa",
         "Echeneis naucrates",
         "Gymnura poecilura",
-        "Istiblennius edentulus"
+        "Istiblennius edentulus",
+        "Lutjanus indicus",
+        "Lutjanus sapphirolineatus"
       ]
     }
   ]

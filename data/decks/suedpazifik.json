@@ -98,6 +98,7 @@
     "Epibulus insidiator",
     "Ellochelon vaigiensis",
     "Caranx melampygus",
+    "Pseudanthias squamipinnis",
     "Chaetodon ornatissimus",
     "Paracirrhites arcatus",
     "Lutjanus fulvus",
@@ -199,8 +200,7 @@
     "Scolopsis trilineata",
     "Echeneis naucrates",
     "Lutjanus kasmira",
-    "Parupeneus cyclostomus",
-    "Cetoscarus ocellatus"
+    "Parupeneus cyclostomus"
   ],
   "subdecks": [
     {
@@ -296,6 +296,7 @@
         "Epibulus insidiator",
         "Ellochelon vaigiensis",
         "Caranx melampygus",
+        "Pseudanthias squamipinnis",
         "Chaetodon ornatissimus",
         "Paracirrhites arcatus",
         "Lutjanus fulvus",
@@ -347,8 +348,7 @@
         "Eretmochelys imbricata",
         "Melichthys vidua",
         "Scarus oviceps",
-        "Diodon hystrix",
-        "Valenciennea strigata"
+        "Diodon hystrix"
       ]
     },
     {
@@ -369,6 +369,7 @@
         }
       },
       "speciesNames": [
+        "Valenciennea strigata",
         "Chromis atripectoralis",
         "Abudefduf sordidus",
         "Heniochus varius",
@@ -417,8 +418,7 @@
         "Scolopsis trilineata",
         "Echeneis naucrates",
         "Lutjanus kasmira",
-        "Parupeneus cyclostomus",
-        "Cetoscarus ocellatus"
+        "Parupeneus cyclostomus"
       ]
     }
   ]
