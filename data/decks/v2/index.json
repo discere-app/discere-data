@@ -2,6 +2,24 @@
   {
     "name": "Critter",
     "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben.",
+    "translations": {
+      "de": {
+        "name": "Critter",
+        "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben."
+      },
+      "en": {
+        "name": "Critters",
+        "description": "Small, often hidden marine animals that macro divers love. They include nudibranchs, shrimps, crabs and other invertebrates living on reefs, sandy bottoms, seagrass meadows or among corals."
+      },
+      "fr": {
+        "name": "Petites bestioles",
+        "description": "Petits animaux marins, souvent cachés, très appréciés des plongeurs macro. On y trouve des nudibranches, des crevettes, des crabes et d'autres invertébrés qui vivent sur les récifs, les fonds sableux, les herbiers ou parmi les coraux."
+      },
+      "es": {
+        "name": "Bichos",
+        "description": "Pequeños animales marinos, a menudo escondidos, muy apreciados por los buceadores de macro. Entre ellos hay nudibranquios, gambas, cangrejos y otros invertebrados que viven en arrecifes, fondos de arena, praderas marinas o entre los corales."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/8065536/pexels-photo-8065536.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -38,11 +56,29 @@
       "Elysia crispata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "name": "Haie und Rochen",
     "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen.",
+    "translations": {
+      "de": {
+        "name": "Haie und Rochen",
+        "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen."
+      },
+      "en": {
+        "name": "Sharks and Rays",
+        "description": "Sharks and rays are cartilaginous fishes found in every ocean. They live on coral reefs, in coastal waters, over sandy bottoms and in the open sea. Many species are well-known encounters for divers in tropical and temperate regions."
+      },
+      "fr": {
+        "name": "Requins et raies",
+        "description": "Les requins et les raies sont des poissons cartilagineux présents dans toutes les mers du globe. Ils fréquentent les récifs coralliens, les eaux côtières, les fonds sableux et la haute mer. Beaucoup d'espèces sont des rencontres bien connues des plongeurs en régions tropicales et tempérées."
+      },
+      "es": {
+        "name": "Tiburones y rayas",
+        "description": "Los tiburones y las rayas son peces cartilaginosos presentes en todos los océanos. Habitan arrecifes de coral, aguas costeras, fondos de arena y mar abierto. Muchas especies son encuentros conocidos para los buceadores en regiones tropicales y templadas."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -81,12 +117,30 @@
       "Raja clavata"
     ],
     "sourceId": "ab980617-8600-437d-b33c-d77c015849cf",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "formatVersion": 2,
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen",
-    "description": "Reef: IORS Regions 2 and 6",
+    "description": "Rifffische und auffällige weitere Meerestiere der Malediven, Madagaskars und der Seychellen, darunter Meeresschildkröten, Riesenmuscheln und Seegurken. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+    "translations": {
+      "de": {
+        "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen",
+        "description": "Rifffische und auffällige weitere Meerestiere der Malediven, Madagaskars und der Seychellen, darunter Meeresschildkröten, Riesenmuscheln und Seegurken. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+      },
+      "en": {
+        "name": "Indian Ocean: Maldives, Madagascar, Seychelles",
+        "description": "Reef fish and other striking marine life of the Maldives, Madagascar and the Seychelles, including sea turtles, giant clams and sea cucumbers. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+      },
+      "fr": {
+        "name": "Océan Indien : Maldives, Madagascar, Seychelles",
+        "description": "Poissons de récif et autres animaux marins remarquables des Maldives, de Madagascar et des Seychelles, dont des tortues marines, des bénitiers et des holothuries. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+      },
+      "es": {
+        "name": "Océano Índico: Maldivas, Madagascar, Seychelles",
+        "description": "Peces de arrecife y otros animales marinos llamativos de Maldivas, Madagascar y Seychelles, entre ellos tortugas marinas, almejas gigantes y pepinos de mar. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+      }
+    },
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/1_Maldives%2C_Indian_Ocean%2C_Asia.jpg",
     "sources": [
       {
@@ -880,6 +934,20 @@
       {
         "id": "level-1",
         "name": "Level 1",
+        "translations": {
+          "de": {
+            "name": "Level 1"
+          },
+          "en": {
+            "name": "Level 1"
+          },
+          "fr": {
+            "name": "Niveau 1"
+          },
+          "es": {
+            "name": "Nivel 1"
+          }
+        },
         "speciesNames": [
           "Zanclus cornutus",
           "Labroides dimidiatus",
@@ -1051,6 +1119,20 @@
       {
         "id": "level-2",
         "name": "Level 2",
+        "translations": {
+          "de": {
+            "name": "Level 2"
+          },
+          "en": {
+            "name": "Level 2"
+          },
+          "fr": {
+            "name": "Niveau 2"
+          },
+          "es": {
+            "name": "Nivel 2"
+          }
+        },
         "speciesNames": [
           "Parapercis hexophtalma",
           "Halichoeres scapularis",
@@ -1284,6 +1366,20 @@
       {
         "id": "level-3",
         "name": "Level 3",
+        "translations": {
+          "de": {
+            "name": "Level 3"
+          },
+          "en": {
+            "name": "Level 3"
+          },
+          "fr": {
+            "name": "Niveau 3"
+          },
+          "es": {
+            "name": "Nivel 3"
+          }
+        },
         "speciesNames": [
           "Gymnothorax breedeni",
           "Gymnothorax griseus",
@@ -1666,13 +1762,31 @@
       "1d914b12-fd12-4b83-b2f7-c79399108434"
     ],
     "sourceId": "ba9ac9c5-b831-4463-a7a6-22875695fd6b",
-    "updatedAt": "2026-10-28T20:40:44+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "formatVersion": 2,
     "name": "Kanaren, Madeira, Azoren",
-    "description": "Level 1: Sehr häufige Arten · Level 2: Häufige Arten · Level 3: Seltene Arten",
-    "imageUrl": "https://commons.wikimedia.org/wiki/File:Macaronesia_location_es.svg",
+    "description": "Rifffische und auffällige weitere Meerestiere der Kanarischen Inseln, Madeiras und der Azoren, darunter Kraken, Seeigel und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+    "translations": {
+      "de": {
+        "name": "Kanaren, Madeira, Azoren",
+        "description": "Rifffische und auffällige weitere Meerestiere der Kanarischen Inseln, Madeiras und der Azoren, darunter Kraken, Seeigel und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+      },
+      "en": {
+        "name": "Canary Islands, Madeira, Azores",
+        "description": "Reef fish and other striking marine life of the Canary Islands, Madeira and the Azores, including octopuses, sea urchins and sea turtles. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+      },
+      "fr": {
+        "name": "Canaries, Madère, Açores",
+        "description": "Poissons de récif et autres animaux marins remarquables des Canaries, de Madère et des Açores, dont des poulpes, des oursins et des tortues marines. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+      },
+      "es": {
+        "name": "Canarias, Madeira, Azores",
+        "description": "Peces de arrecife y otros animales marinos llamativos de Canarias, Madeira y Azores, entre ellos pulpos, erizos de mar y tortugas marinas. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+      }
+    },
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Macaronesia_location.svg/330px-Macaronesia_location.svg.png",
     "sources": [
       {
         "name": "REEF",
@@ -1852,6 +1966,20 @@
       {
         "id": "level-1",
         "name": "Level 1",
+        "translations": {
+          "de": {
+            "name": "Level 1"
+          },
+          "en": {
+            "name": "Level 1"
+          },
+          "fr": {
+            "name": "Niveau 1"
+          },
+          "es": {
+            "name": "Nivel 1"
+          }
+        },
         "speciesNames": [
           "Thalassoma pavo",
           "Sparisoma cretense",
@@ -1889,6 +2017,20 @@
       {
         "id": "level-2",
         "name": "Level 2",
+        "translations": {
+          "de": {
+            "name": "Level 2"
+          },
+          "en": {
+            "name": "Level 2"
+          },
+          "fr": {
+            "name": "Niveau 2"
+          },
+          "es": {
+            "name": "Nivel 2"
+          }
+        },
         "speciesNames": [
           "Aulostomus strigosus",
           "Canthigaster capistrata",
@@ -1947,6 +2089,20 @@
       {
         "id": "level-3",
         "name": "Level 3",
+        "translations": {
+          "de": {
+            "name": "Level 3"
+          },
+          "en": {
+            "name": "Level 3"
+          },
+          "fr": {
+            "name": "Niveau 3"
+          },
+          "es": {
+            "name": "Nivel 3"
+          }
+        },
         "speciesNames": [
           "Seriola dumerili",
           "Heteropriacanthus cruentatus",
@@ -2026,11 +2182,29 @@
       "3a8b8329-4499-4d1d-ac51-f010b3b1c15c"
     ],
     "sourceId": "95e4950b-6fdf-412e-9c5e-6a1b9fff9325",
-    "updatedAt": "2026-10-28T20:40:44+01:00"
+    "updatedAt": "2026-11-20T12:17:35+01:00"
   },
   {
     "name": "Kopffüßer",
     "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern.",
+    "translations": {
+      "de": {
+        "name": "Kopffüßer",
+        "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern."
+      },
+      "en": {
+        "name": "Cephalopods",
+        "description": "Cephalopods are intelligent molluscs such as octopuses, cuttlefish and squid. They occur in every ocean and live on reefs, in seagrass meadows, on sandy bottoms and in open water. Many species are frequent encounters for divers in tropical and temperate waters."
+      },
+      "fr": {
+        "name": "Céphalopodes",
+        "description": "Les céphalopodes sont des mollusques intelligents comme les poulpes, les seiches et les calmars. Présents dans toutes les mers, ils vivent sur les récifs, dans les herbiers, sur les fonds sableux et en pleine eau. Beaucoup d'espèces sont des rencontres fréquentes pour les plongeurs en eaux tropicales et tempérées."
+      },
+      "es": {
+        "name": "Cefalópodos",
+        "description": "Los cefalópodos son moluscos inteligentes como pulpos, sepias y calamares. Viven en todos los océanos, en arrecifes, praderas marinas, fondos de arena y aguas abiertas. Muchas especies son encuentros frecuentes para los buceadores en aguas tropicales y templadas."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/9004403/pexels-photo-9004403.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -2066,11 +2240,29 @@
       "Dosidicus gigas"
     ],
     "sourceId": "8bfbfa51-7b8f-40f5-9f93-f13053e16e20",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "name": "Meeresschildkröten",
     "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet.",
+    "translations": {
+      "de": {
+        "name": "Meeresschildkröten",
+        "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet."
+      },
+      "en": {
+        "name": "Sea Turtles",
+        "description": "Sea turtles are large, long-lived reptiles of tropical and subtropical seas. Some species also occur in the Mediterranean, where divers occasionally spot them in coastal waters, over seagrass meadows or in open water."
+      },
+      "fr": {
+        "name": "Tortues marines",
+        "description": "Les tortues marines sont de grands reptiles à longue durée de vie des mers tropicales et subtropicales. Certaines espèces vivent aussi en Méditerranée, où les plongeurs les observent parfois dans les eaux côtières, au-dessus des herbiers ou en pleine eau."
+      },
+      "es": {
+        "name": "Tortugas marinas",
+        "description": "Las tortugas marinas son reptiles grandes y longevos de los mares tropicales y subtropicales. Algunas especies viven también en el Mediterráneo, donde los buceadores las observan de vez en cuando en aguas costeras, sobre praderas marinas o en mar abierto."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/7001661/pexels-photo-7001661.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -2085,12 +2277,30 @@
       "Natator depressus"
     ],
     "sourceId": "fc16b688-fdb0-40b7-abd0-6f10aa1d9575",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "formatVersion": 2,
     "name": "Mittelmeer",
-    "description": "Level 1: Sehr häufige Arten · Level 2: Häufige Arten · Level 3: Seltene Arten",
+    "description": "Rifffische und auffällige weitere Meerestiere des Mittelmeers, darunter Kraken, Seepferdchen, Gorgonien und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+    "translations": {
+      "de": {
+        "name": "Mittelmeer",
+        "description": "Rifffische und auffällige weitere Meerestiere des Mittelmeers, darunter Kraken, Seepferdchen, Gorgonien und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+      },
+      "en": {
+        "name": "Mediterranean Sea",
+        "description": "Reef fish and other striking marine life of the Mediterranean, including octopuses, seahorses, gorgonians and sea turtles. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+      },
+      "fr": {
+        "name": "Méditerranée",
+        "description": "Poissons de récif et autres animaux marins remarquables de Méditerranée, dont des poulpes, des hippocampes, des gorgones et des tortues marines. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+      },
+      "es": {
+        "name": "Mar Mediterráneo",
+        "description": "Peces de arrecife y otros animales marinos llamativos del Mediterráneo, entre ellos pulpos, caballitos de mar, gorgonias y tortugas marinas. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+      }
+    },
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1c/Mediterranean_Sea_16.61811E_38.99124N.jpg",
     "sources": [
       {
@@ -2271,6 +2481,20 @@
       {
         "id": "level-1",
         "name": "Level 1",
+        "translations": {
+          "de": {
+            "name": "Level 1"
+          },
+          "en": {
+            "name": "Level 1"
+          },
+          "fr": {
+            "name": "Niveau 1"
+          },
+          "es": {
+            "name": "Nivel 1"
+          }
+        },
         "speciesNames": [
           "Diplodus vulgaris",
           "Diplodus sargus",
@@ -2312,6 +2536,20 @@
       {
         "id": "level-2",
         "name": "Level 2",
+        "translations": {
+          "de": {
+            "name": "Level 2"
+          },
+          "en": {
+            "name": "Level 2"
+          },
+          "fr": {
+            "name": "Niveau 2"
+          },
+          "es": {
+            "name": "Nivel 2"
+          }
+        },
         "speciesNames": [
           "Octopus vulgaris",
           "Gobius incognitus",
@@ -2362,6 +2600,20 @@
       {
         "id": "level-3",
         "name": "Level 3",
+        "translations": {
+          "de": {
+            "name": "Level 3"
+          },
+          "en": {
+            "name": "Level 3"
+          },
+          "fr": {
+            "name": "Niveau 3"
+          },
+          "es": {
+            "name": "Nivel 3"
+          }
+        },
         "speciesNames": [
           "Siganus luridus",
           "Corcyrogobius liechtensteini",
@@ -2445,12 +2697,30 @@
       "ce8cf577-92af-485e-a516-1103eb85e86e"
     ],
     "sourceId": "19068955-70d6-43f0-b97d-e17a19b3e1af",
-    "updatedAt": "2026-10-28T20:40:44+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "formatVersion": 2,
-    "name": "Rotesmeer",
-    "description": "Level 1: Sehr häufige Arten · Level 2: Häufige Arten · Level 3: Seltene Arten",
+    "name": "Rotes Meer",
+    "description": "Rifffische und auffällige weitere Meerestiere des Roten Meeres, darunter Meeresschildkröten, Riesenmuscheln und Dugongs. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+    "translations": {
+      "de": {
+        "name": "Rotes Meer",
+        "description": "Rifffische und auffällige weitere Meerestiere des Roten Meeres, darunter Meeresschildkröten, Riesenmuscheln und Dugongs. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+      },
+      "en": {
+        "name": "Red Sea",
+        "description": "Reef fish and other striking marine life of the Red Sea, including sea turtles, giant clams and dugongs. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+      },
+      "fr": {
+        "name": "Mer Rouge",
+        "description": "Poissons de récif et autres animaux marins remarquables de la mer Rouge, dont des tortues marines, des bénitiers et des dugongs. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+      },
+      "es": {
+        "name": "Mar Rojo",
+        "description": "Peces de arrecife y otros animales marinos llamativos del mar Rojo, entre ellos tortugas marinas, almejas gigantes y dugongos. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+      }
+    },
     "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Red_Sea_37.95521E_21.41271N.jpg/330px-Red_Sea_37.95521E_21.41271N.jpg",
     "sources": [
       {
@@ -3011,6 +3281,20 @@
       {
         "id": "level-1",
         "name": "Level 1",
+        "translations": {
+          "de": {
+            "name": "Level 1"
+          },
+          "en": {
+            "name": "Level 1"
+          },
+          "fr": {
+            "name": "Niveau 1"
+          },
+          "es": {
+            "name": "Nivel 1"
+          }
+        },
         "speciesNames": [
           "Chaetodon austriacus",
           "Pycnochromis dimidiatus",
@@ -3130,6 +3414,20 @@
       {
         "id": "level-2",
         "name": "Level 2",
+        "translations": {
+          "de": {
+            "name": "Level 2"
+          },
+          "en": {
+            "name": "Level 2"
+          },
+          "fr": {
+            "name": "Niveau 2"
+          },
+          "es": {
+            "name": "Nivel 2"
+          }
+        },
         "speciesNames": [
           "Neoglyphidodon melas",
           "Synodus dermatogenys",
@@ -3293,6 +3591,20 @@
       {
         "id": "level-3",
         "name": "Level 3",
+        "translations": {
+          "de": {
+            "name": "Level 3"
+          },
+          "en": {
+            "name": "Level 3"
+          },
+          "fr": {
+            "name": "Niveau 3"
+          },
+          "es": {
+            "name": "Nivel 3"
+          }
+        },
         "speciesNames": [
           "Malacanthus brevirostris",
           "Valenciennea puellaris",
@@ -3565,12 +3877,30 @@
       "6d55ef16-167d-4519-9e76-cb7ac0da3f74"
     ],
     "sourceId": "5fc6d75e-7cf9-466c-822b-598c07b1a9b4",
-    "updatedAt": "2026-10-28T20:40:44+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "formatVersion": 2,
-    "name": "Switzerland Fish",
-    "description": "Level 1: Einsteiger: markante und leicht unterscheidbare Arten · Level 2: Fortgeschritten: häufige Arten mit ähnlicher Morphologie · Level 3: Experten: seltene, endemische oder schwer unterscheidbare Arten",
+    "name": "Fische der Schweiz",
+    "description": "Einheimische und eingebürgerte Süßwasserfische der Schweiz, dazu die Neunaugen. Level 1 (Einsteiger) enthält markante, leicht unterscheidbare Arten, Level 2 (Fortgeschritten) häufige Arten mit ähnlichem Körperbau, Level 3 (Experten) seltene, endemische oder schwer unterscheidbare Arten wie die Felchen.",
+    "translations": {
+      "de": {
+        "name": "Fische der Schweiz",
+        "description": "Einheimische und eingebürgerte Süßwasserfische der Schweiz, dazu die Neunaugen. Level 1 (Einsteiger) enthält markante, leicht unterscheidbare Arten, Level 2 (Fortgeschritten) häufige Arten mit ähnlichem Körperbau, Level 3 (Experten) seltene, endemische oder schwer unterscheidbare Arten wie die Felchen."
+      },
+      "en": {
+        "name": "Fish of Switzerland",
+        "description": "Native and introduced freshwater fish of Switzerland, plus the lampreys. Level 1 (beginner) holds distinctive species that are easy to tell apart, Level 2 (intermediate) common species with similar body shapes, Level 3 (expert) rare, endemic or hard-to-distinguish species such as the whitefish."
+      },
+      "fr": {
+        "name": "Poissons de Suisse",
+        "description": "Poissons d'eau douce indigènes et introduits de Suisse, ainsi que les lamproies. Le niveau 1 (débutant) réunit des espèces caractéristiques et faciles à distinguer, le niveau 2 (avancé) des espèces communes à la morphologie semblable, le niveau 3 (expert) des espèces rares, endémiques ou difficiles à distinguer comme les corégones."
+      },
+      "es": {
+        "name": "Peces de Suiza",
+        "description": "Peces de agua dulce autóctonos e introducidos de Suiza, además de las lampreas. El nivel 1 (principiante) reúne especies llamativas y fáciles de distinguir, el nivel 2 (avanzado) especies comunes de morfología parecida y el nivel 3 (experto) especies raras, endémicas o difíciles de distinguir, como los coregonos."
+      }
+    },
     "imageUrl": "https://publicdomainvectors.org/photos/Switzerland-Map-Flag.png",
     "sources": [
       {
@@ -3695,6 +4025,20 @@
       {
         "id": "level-1",
         "name": "Level 1",
+        "translations": {
+          "de": {
+            "name": "Level 1"
+          },
+          "en": {
+            "name": "Level 1"
+          },
+          "fr": {
+            "name": "Niveau 1"
+          },
+          "es": {
+            "name": "Nivel 1"
+          }
+        },
         "speciesNames": [
           "Esox lucius",
           "Perca fluviatilis",
@@ -3716,6 +4060,20 @@
       {
         "id": "level-2",
         "name": "Level 2",
+        "translations": {
+          "de": {
+            "name": "Level 2"
+          },
+          "en": {
+            "name": "Level 2"
+          },
+          "fr": {
+            "name": "Niveau 2"
+          },
+          "es": {
+            "name": "Nivel 2"
+          }
+        },
         "speciesNames": [
           "Rutilus rutilus",
           "Scardinius erythrophthalmus",
@@ -3754,6 +4112,20 @@
       {
         "id": "level-3",
         "name": "Level 3",
+        "translations": {
+          "de": {
+            "name": "Level 3"
+          },
+          "en": {
+            "name": "Level 3"
+          },
+          "fr": {
+            "name": "Niveau 3"
+          },
+          "es": {
+            "name": "Nivel 3"
+          }
+        },
         "speciesNames": [
           "Coregonus albellus",
           "Coregonus alpinus",
@@ -3821,6 +4193,6 @@
       "1a44f5c9-eed4-4b35-bf4a-2b0f7d175af7"
     ],
     "sourceId": "465b7e74-2c42-46ec-8893-c24d9b51a9c0",
-    "updatedAt": "2026-10-28T20:40:44+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   }
 ]

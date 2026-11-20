@@ -2,6 +2,24 @@
   {
     "name": "Critter",
     "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben.",
+    "translations": {
+      "de": {
+        "name": "Critter",
+        "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben."
+      },
+      "en": {
+        "name": "Critters",
+        "description": "Small, often hidden marine animals that macro divers love. They include nudibranchs, shrimps, crabs and other invertebrates living on reefs, sandy bottoms, seagrass meadows or among corals."
+      },
+      "fr": {
+        "name": "Petites bestioles",
+        "description": "Petits animaux marins, souvent cachés, très appréciés des plongeurs macro. On y trouve des nudibranches, des crevettes, des crabes et d'autres invertébrés qui vivent sur les récifs, les fonds sableux, les herbiers ou parmi les coraux."
+      },
+      "es": {
+        "name": "Bichos",
+        "description": "Pequeños animales marinos, a menudo escondidos, muy apreciados por los buceadores de macro. Entre ellos hay nudibranquios, gambas, cangrejos y otros invertebrados que viven en arrecifes, fondos de arena, praderas marinas o entre los corales."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/8065536/pexels-photo-8065536.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -38,11 +56,29 @@
       "Elysia crispata"
     ],
     "sourceId": "1ac25e7b-286c-4a49-b9bc-f1eb5f5e2124",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "name": "Haie und Rochen",
     "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen.",
+    "translations": {
+      "de": {
+        "name": "Haie und Rochen",
+        "description": "Haie und Rochen gehören zu den Knorpelfischen und kommen in allen Weltmeeren vor. Sie bewohnen Korallenriffe, Küstengewässer, Sandböden und das offene Meer. Viele Arten sind bekannte Begegnungen für Taucher in tropischen und gemäßigten Regionen."
+      },
+      "en": {
+        "name": "Sharks and Rays",
+        "description": "Sharks and rays are cartilaginous fishes found in every ocean. They live on coral reefs, in coastal waters, over sandy bottoms and in the open sea. Many species are well-known encounters for divers in tropical and temperate regions."
+      },
+      "fr": {
+        "name": "Requins et raies",
+        "description": "Les requins et les raies sont des poissons cartilagineux présents dans toutes les mers du globe. Ils fréquentent les récifs coralliens, les eaux côtières, les fonds sableux et la haute mer. Beaucoup d'espèces sont des rencontres bien connues des plongeurs en régions tropicales et tempérées."
+      },
+      "es": {
+        "name": "Tiburones y rayas",
+        "description": "Los tiburones y las rayas son peces cartilaginosos presentes en todos los océanos. Habitan arrecifes de coral, aguas costeras, fondos de arena y mar abierto. Muchas especies son encuentros conocidos para los buceadores en regiones tropicales y templadas."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/726478/pexels-photo-726478.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -81,7 +117,7 @@
       "Raja clavata"
     ],
     "sourceId": "ab980617-8600-437d-b33c-d77c015849cf",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen - Level 1",
@@ -1167,6 +1203,24 @@
   {
     "name": "Kopffüßer",
     "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern.",
+    "translations": {
+      "de": {
+        "name": "Kopffüßer",
+        "description": "Kopffüßer sind intelligente Weichtiere wie Kraken, Sepien und Kalmare. Sie kommen in allen Weltmeeren vor und bewohnen Riffe, Seegraswiesen, Sandböden und das Freiwasser. Viele Arten sind häufige Begegnungen für Taucher in tropischen und gemäßigten Gewässern."
+      },
+      "en": {
+        "name": "Cephalopods",
+        "description": "Cephalopods are intelligent molluscs such as octopuses, cuttlefish and squid. They occur in every ocean and live on reefs, in seagrass meadows, on sandy bottoms and in open water. Many species are frequent encounters for divers in tropical and temperate waters."
+      },
+      "fr": {
+        "name": "Céphalopodes",
+        "description": "Les céphalopodes sont des mollusques intelligents comme les poulpes, les seiches et les calmars. Présents dans toutes les mers, ils vivent sur les récifs, dans les herbiers, sur les fonds sableux et en pleine eau. Beaucoup d'espèces sont des rencontres fréquentes pour les plongeurs en eaux tropicales et tempérées."
+      },
+      "es": {
+        "name": "Cefalópodos",
+        "description": "Los cefalópodos son moluscos inteligentes como pulpos, sepias y calamares. Viven en todos los océanos, en arrecifes, praderas marinas, fondos de arena y aguas abiertas. Muchas especies son encuentros frecuentes para los buceadores en aguas tropicales y templadas."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/9004403/pexels-photo-9004403.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -1202,11 +1256,29 @@
       "Dosidicus gigas"
     ],
     "sourceId": "8bfbfa51-7b8f-40f5-9f93-f13053e16e20",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "name": "Meeresschildkröten",
     "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet.",
+    "translations": {
+      "de": {
+        "name": "Meeresschildkröten",
+        "description": "Meeresschildkröten sind große, langlebige Reptilien der tropischen und subtropischen Meere. Einige Arten kommen auch im Mittelmeer vor und werden von Tauchern gelegentlich in Küstengewässern, über Seegraswiesen oder im offenen Wasser beobachtet."
+      },
+      "en": {
+        "name": "Sea Turtles",
+        "description": "Sea turtles are large, long-lived reptiles of tropical and subtropical seas. Some species also occur in the Mediterranean, where divers occasionally spot them in coastal waters, over seagrass meadows or in open water."
+      },
+      "fr": {
+        "name": "Tortues marines",
+        "description": "Les tortues marines sont de grands reptiles à longue durée de vie des mers tropicales et subtropicales. Certaines espèces vivent aussi en Méditerranée, où les plongeurs les observent parfois dans les eaux côtières, au-dessus des herbiers ou en pleine eau."
+      },
+      "es": {
+        "name": "Tortugas marinas",
+        "description": "Las tortugas marinas son reptiles grandes y longevos de los mares tropicales y subtropicales. Algunas especies viven también en el Mediterráneo, donde los buceadores las observan de vez en cuando en aguas costeras, sobre praderas marinas o en mar abierto."
+      }
+    },
     "imageUrl": "https://images.pexels.com/photos/7001661/pexels-photo-7001661.jpeg",
     "learningMode": "species",
     "nameType": "commonName",
@@ -1221,7 +1293,7 @@
       "Natator depressus"
     ],
     "sourceId": "fc16b688-fdb0-40b7-abd0-6f10aa1d9575",
-    "updatedAt": "2026-10-27T15:37:27+01:00"
+    "updatedAt": "2026-11-20T12:14:42+01:00"
   },
   {
     "name": "Mittelmeer - Level 1",
