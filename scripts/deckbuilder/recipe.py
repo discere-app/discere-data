@@ -1,0 +1,53 @@
+# =============================================================================
+# recipe.py — read a recipe and check it against schema/recipe.schema.json
+#
+# The recipe schema takes the deck texts and learning settings from
+# schema/deck.schema.json by reference, so both are loaded into one
+# registry; nothing is fetched from the network. Relative paths in the
+# recipe (REEF CSV, guides) are resolved against the recipe's directory.
+# =============================================================================
+
+import json
+import os
+
+from jsonschema import Draft202012Validator, FormatChecker
+from referencing import Registry, Resource
+
+SCHEMA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "schema")
+
+
+class RecipeError(Exception):
+    pass
+
+
+def _schema(name):
+    with open(os.path.join(SCHEMA_DIR, name), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def validator():
+    recipe_schema = _schema("recipe.schema.json")
+    deck_schema = _schema("deck.schema.json")
+    registry = Registry().with_resources([
+        (s["$id"], Resource.from_contents(s)) for s in (recipe_schema, deck_schema)
+    ])
+    return Draft202012Validator(recipe_schema, registry=registry, format_checker=FormatChecker())
+
+
+def load(path):
+    """The recipe at `path`, checked, with its file paths made absolute."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            recipe = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        raise RecipeError(f"{path}: {e}") from e
+    errors = sorted(validator().iter_errors(recipe), key=lambda e: list(e.absolute_path))
+    if errors:
+        lines = [f"  {'/'.join(map(str, e.absolute_path)) or '(Wurzel)'}: {e.message}" for e in errors]
+        raise RecipeError(f"{path} passt nicht zu schema/recipe.schema.json:\n" + "\n".join(lines))
+    base = os.path.dirname(os.path.abspath(path))
+    if recipe["order"]["source"] == "reef":
+        recipe["order"]["csv"] = os.path.join(base, recipe["order"]["csv"])
+    for guide in recipe.get("guides", []):
+        guide["path"] = os.path.join(base, guide["path"])
+    return recipe

@@ -1,0 +1,7 @@
+{
+  "offset": 0, "limit": 0, "endOfRecords": false, "count": 500, "results": [],
+  "facets": [{"field": "SPECIES_KEY", "counts": [
+    {"name": "2363020", "count": 914},
+    {"name": "8251050", "count": 300}
+  ]}]
+}

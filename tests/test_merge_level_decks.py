@@ -11,7 +11,8 @@
 #
 # Runs in CI (.github/workflows/test-scripts.yml) and locally:
 #   pip install "jsonschema[format]"
-#   python3 -m unittest discover -s tests -v
+#   python3 -B -m unittest discover -s tests -v
+# (-B: the repository ignores no __pycache__, so the tests write none.)
 # =============================================================================
 
 import importlib.util
@@ -28,6 +29,9 @@ ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 SCRIPT = os.path.join(ROOT, "scripts", "merge_level_decks.py")
 SCHEMA_FILE = os.path.join(ROOT, "schema", "deck.schema.json")
 
+# The script imports deckbuilder.levels from its own directory, which is on
+# the path when it runs as a script, but not when a test loads it.
+sys.path.insert(0, os.path.dirname(SCRIPT))
 _spec = importlib.util.spec_from_file_location("merge_level_decks", SCRIPT)
 merge_level_decks = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(merge_level_decks)

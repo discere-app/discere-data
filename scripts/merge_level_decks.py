@@ -26,7 +26,9 @@
 #                 or their one text if all levels share it.
 #   subdecks      [{id, name, translations, speciesNames}] per level; the id
 #                 is stable ("level-1" …), an update recognizes the subdeck
-#                 by it. The name is "Level N", translated from LEVEL_NAMES.
+#                 by it. The name is "Level N" in every app language; the
+#                 subdecks come from deckbuilder/levels.py, which the
+#                 deckbuilder shares, so both name levels the same way.
 #   supersedes    the sourceIds of the level decks: whoever imported them
 #                 is offered to merge them in the app and keeps their
 #                 learning progress.
@@ -59,11 +61,13 @@ import os
 import re
 import sys
 
-LEVEL_SUFFIX = re.compile(r"\s*-\s*Level\s*\d+\s*$")
+# The repository ignores no __pycache__; importing deckbuilder must not leave
+# one under scripts/.
+sys.dont_write_bytecode = True
 
-# Subdeck name per language; "de" is also the base name, since the base
-# fields of the catalog decks are German.
-LEVEL_NAMES = {"de": "Level {n}", "en": "Level {n}", "fr": "Niveau {n}", "es": "Nivel {n}"}
+from deckbuilder.levels import level_subdeck  # noqa: E402
+
+LEVEL_SUFFIX = re.compile(r"\s*-\s*Level\s*\d+\s*$")
 
 SCHEMA_PATH = os.path.join(os.path.dirname(__file__), "..", "schema", "deck.schema.json")
 
@@ -121,12 +125,7 @@ def merge(decks, base, settings):
             seen.add(name)
             names.append(name)
         union.extend(names)
-        subdecks.append({
-            "id": f"level-{level}",
-            "name": LEVEL_NAMES["de"].format(n=level),
-            "translations": {lang: {"name": text.format(n=level)} for lang, text in LEVEL_NAMES.items()},
-            "speciesNames": names,
-        })
+        subdecks.append(level_subdeck(level, names))
 
     merged = {
         "formatVersion": 2,
