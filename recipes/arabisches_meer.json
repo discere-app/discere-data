@@ -1,0 +1,88 @@
+{
+  "$schema": "../schema/recipe.schema.json",
+  "deck": {
+    "name": "Arabisches Meer & Golf von Oman",
+    "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer von Oman, den Vereinigten Arabischen Emiraten, Katar, Bahrain und Kuwait, mit Golf von Oman, Arabischem Meer und Persischem Golf, ohne Rotes Meer. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Dugong und den Oman-Anemonenfisch, Level 2 und 3 weitere Arten nach Häufigkeit.",
+    "translations": {
+      "de": {
+        "name": "Arabisches Meer & Golf von Oman",
+        "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer von Oman, den Vereinigten Arabischen Emiraten, Katar, Bahrain und Kuwait, mit Golf von Oman, Arabischem Meer und Persischem Golf, ohne Rotes Meer. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Dugong und den Oman-Anemonenfisch, Level 2 und 3 weitere Arten nach Häufigkeit."
+      },
+      "en": {
+        "name": "Arabian Sea & Gulf of Oman",
+        "description": "Reef fish, sharks, rays, sea turtles and cephalopods of Oman, the United Arab Emirates, Qatar, Bahrain and Kuwait, covering the Gulf of Oman, the Arabian Sea and the Persian Gulf, not the Red Sea. Level 1 holds the most common species and highlights such as the whale shark, dugong and Oman anemonefish, Levels 2 and 3 further species by frequency."
+      },
+      "fr": {
+        "name": "Mer d'Arabie et golfe d'Oman",
+        "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes d'Oman, des Émirats arabes unis, du Qatar, de Bahreïn et du Koweït, du golfe d'Oman, de la mer d'Arabie et du golfe Persique, sans la mer Rouge. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine, le dugong et le poisson-clown d'Oman, les niveaux 2 et 3 d'autres espèces par fréquence."
+      },
+      "es": {
+        "name": "Mar Arábigo y golfo de Omán",
+        "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de Omán, los Emiratos Árabes Unidos, Catar, Baréin y Kuwait, en el golfo de Omán, el mar Arábigo y el golfo Pérsico, sin el mar Rojo. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena, el dugongo y el pez payaso de Omán, los niveles 2 y 3 otras especies por frecuencia."
+      }
+    },
+    "learningMode": "family",
+    "nameType": "commonName",
+    "reviewMode": "flip",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Pez_mariposa_ar%C3%A1bigo_%28Chaetodon_melapterus%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_77.jpg/330px-Pez_mariposa_ar%C3%A1bigo_%28Chaetodon_melapterus%29%2C_islas_Ad_Dimaniyat%2C_Om%C3%A1n%2C_2024-08-13%2C_DD_77.jpg"
+  },
+  "order": { "source": "inat" },
+  "region": {
+    "inat": {
+      "placeIds": [7356, 7359, 7357, 10284, 7355]
+    },
+    "obis": [
+      {
+        "name": "Persischer Golf (schließt die iranische Küste ein)",
+        "wkt": "POLYGON((47.5 30.5, 56.5 30.5, 56.5 23.5, 47.5 23.5, 47.5 30.5))"
+      },
+      {
+        "name": "Golf von Oman und Arabisches Meer vor Nordoman (schließt die iranische Küste ein)",
+        "wkt": "POLYGON((56.5 26.6, 60.5 26.6, 60.5 16.5, 56.5 16.5, 56.5 26.6))"
+      },
+      {
+        "name": "Arabisches Meer vor Zentral- und Südoman",
+        "wkt": "POLYGON((52 21, 56.5 21, 56.5 16.3, 52 16.3, 52 21))"
+      }
+    ],
+    "fishbase": ["512", "784", "634", "048", "414"]
+  },
+  "taxa": {
+    "inat": [47178, 47273, 372234, 47459],
+    "obis": [10194, 10193, 987094, 11707]
+  },
+  "filters": {
+    "water": "salt",
+    "minCount": 5,
+    "diveDepthLimitM": 40,
+    "minLengthCm": 4
+  },
+  "levelSizes": [40, 60, 50],
+  "highlights": [
+    {
+      "name": "Rhincodon typus",
+      "reason": "Walhaie sammeln sich vor Katar (Al Shaheen) und ziehen durch die Daymaniyat-Inseln."
+    },
+    {
+      "name": "Dugong dugon",
+      "reason": "Im Persischen Golf lebt die zweitgrößte Dugong-Population der Welt."
+    },
+    {
+      "name": "Mobula birostris",
+      "reason": "Riesenmantas besuchen im Herbst die Riffe vor Musandam und den Daymaniyat-Inseln."
+    },
+    {
+      "name": "Amphiprion omanensis",
+      "reason": "Der Oman-Anemonenfisch kommt nur an der Küste Omans und des Jemen vor."
+    },
+    {
+      "name": "Megaptera novaeangliae",
+      "reason": "Vor Oman lebt die einzige Buckelwal-Population, die nie wandert."
+    }
+  ],
+  "imageCredit": {
+    "author": "Diego Delso",
+    "license": "CC BY-SA 4.0",
+    "page": "https://commons.wikimedia.org/wiki/File:Pez_mariposa_ar%C3%A1bigo_(Chaetodon_melapterus),_islas_Ad_Dimaniyat,_Om%C3%A1n,_2024-08-13,_DD_77.jpg"
+  }
+}
