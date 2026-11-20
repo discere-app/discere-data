@@ -16,12 +16,23 @@
 #   formatVersion 2 — subdecks and supersedes need it.
 #   speciesNames  union of all levels — app versions without subdecks
 #                 import the deck from it as a flat list.
-#   subdecks      [{id, name, speciesNames}] per level; the id is stable
-#                 ("level-1" …), an update recognizes the subdeck by it.
+#   description   the level descriptions as a legend ("Level 1: … · …"),
+#                 or their one text if all levels share it.
+#   subdecks      [{id, name, translations, speciesNames}] per level; the id
+#                 is stable ("level-1" …), an update recognizes the subdeck
+#                 by it. The name is "Level N", translated from LEVEL_NAMES.
 #   supersedes    the sourceIds of the level decks: whoever imported them
 #                 is offered to merge them in the app and keeps their
 #                 learning progress.
 # scripts/sync_index.sh assigns a new sourceId after the merge into main.
+#
+# The deck itself gets no translations: the script cannot translate a name or
+# description, and translations without en and the base text's language
+# would show readers the wrong language (see README, "Übersetzungen"). The
+# legend stays as the base description, so the deck is valid and says at
+# least what its subdecks hold; after writing, the script reminds to replace
+# it with a real description and to add translations for at least de and en
+# before the PR is opened.
 #
 # Usage:
 #   python scripts/merge_level_decks.py <base> [<base> …] [--decks-dir DIR]
@@ -38,6 +49,10 @@ import re
 import sys
 
 LEVEL_SUFFIX = re.compile(r"\s*-\s*Level\s*\d+\s*$")
+
+# Subdeck name per language; "de" is also the base name, since the base
+# fields of the catalog decks are German.
+LEVEL_NAMES = {"de": "Level {n}", "en": "Level {n}", "fr": "Niveau {n}", "es": "Nivel {n}"}
 
 
 def load_levels(decks_dir, base):
@@ -80,7 +95,12 @@ def merge(decks, base):
             seen.add(name)
             names.append(name)
         union.extend(names)
-        subdecks.append({"id": f"level-{level}", "name": f"Level {level}", "speciesNames": names})
+        subdecks.append({
+            "id": f"level-{level}",
+            "name": LEVEL_NAMES["de"].format(n=level),
+            "translations": {lang: {"name": text.format(n=level)} for lang, text in LEVEL_NAMES.items()},
+            "speciesNames": names,
+        })
 
     merged = {
         "formatVersion": 2,
@@ -113,6 +133,11 @@ def main():
             f.write("\n")
         counts = "/".join(str(len(s["speciesNames"])) for s in merged["subdecks"])
         print(f"{base}.json: {merged['name']} — {len(merged['speciesNames'])} Arten ({counts})")
+        print(
+            f"[TODO] {base}.json vor dem PR: die Beschreibung durch einen echten Text\n"
+            f"       ersetzen und dem Deck translations mit mindestens de und en geben\n"
+            f"       (README, Abschnitt „Übersetzungen“)."
+        )
 
 
 if __name__ == "__main__":

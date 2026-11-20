@@ -182,6 +182,12 @@ daraus ein Deck `<base>.json` mit `formatVersion` 2, Subdecks und
 `sourceId`, also müssen sie schon einmal auf `main` gewesen sein. Für ein
 ganz neues Deck reicht es, `supersedes` wegzulassen.
 
+Die Subdecks bekommen ihre Namen dabei in allen App-Sprachen, das Deck selbst
+nicht: Als Beschreibung setzt das Skript die Legende der Levels. Vor dem PR
+also die Beschreibung durch einen echten Text ersetzen und dem Deck
+`translations` mit mindestens `de` und `en` geben (siehe
+[Übersetzungen](#übersetzungen)); das Skript erinnert daran.
+
 Die App lädt Decks über den Index ihres Formats (siehe
 [Formatversion](#formatversion)), eine generierte Datei, die die einzelnen
 Deck-Dateien zusammenfasst (ein Request statt einer pro Deck). Ein
