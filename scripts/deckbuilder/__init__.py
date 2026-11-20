@@ -8,10 +8,11 @@
 # only the highlights.
 #
 # One module per source (inat, gbif, obis, reef_csv, water_flags, refdb,
-# guide), the selection as pure functions without network or files
-# (selection), the deck and the report on their own (deck, report), and the
-# run that ties them together (build). Entry point: scripts/build_deck.py.
+# guide; the HTTP cache in fetch), the recipe and its schema check (recipe),
+# the selection as pure functions without network or files (selection), the
+# deck and the report on their own (deck with levels, report), and the run
+# that ties them together (build). Entry point: scripts/build_deck.py.
 #
-# This file stays empty on purpose: scripts/merge_level_decks.py imports
+# This file holds no code on purpose: scripts/merge_level_decks.py imports
 # deckbuilder.levels, and must not pull in the rest of the package with it.
 # =============================================================================

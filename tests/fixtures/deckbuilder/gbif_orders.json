@@ -1,0 +1,8 @@
+{
+  "offset": 0, "limit": 0, "endOfRecords": false, "count": 1500, "results": [],
+  "facets": [{"field": "ORDER_KEY", "counts": [
+    {"name": "729", "count": 1000},
+    {"name": "1153", "count": 400},
+    {"name": "549", "count": 100}
+  ]}]
+}

@@ -46,5 +46,5 @@ def species_counts(fetcher, region, taxon_ids):
         page += 1
     if total > MAX_RESULTS:
         notes.append(f"iNaturalist liefert nur die ersten {MAX_RESULTS} von {total} Taxa")
-    notes.append(f"iNaturalist: {len(counts)} Taxa ({page} Seiten)")
+    notes.append(f"iNaturalist: {len(counts)} Taxa (Seiten: {page})")
     return SourceResult(counts, notes)
