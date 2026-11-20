@@ -197,7 +197,8 @@ also die Beschreibung durch einen echten Text ersetzen und dem Deck
 
 Die Tests des Skripts liegen unter `tests/` und laufen im Check „Test
 scripts“ (`.github/workflows/test-scripts.yml`); lokal, mit `jsonschema` wie
-oben, mit `python3 -m unittest discover -s tests -v`.
+oben, mit `python3 -B -m unittest discover -s tests -v` (`-B`, weil das
+Repository kein `__pycache__` ignoriert).
 
 Die App lädt Decks über den Index ihres Formats (siehe
 [Formatversion](#formatversion)), eine generierte Datei, die die einzelnen
@@ -213,5 +214,98 @@ Bei Bedarf lässt sich der Lauf auch manuell anstoßen (Tab "Actions" ->
 ```
 ./scripts/sync_index.sh
 ```
+
+## Decks aus Beobachtungsdaten erzeugen
+
+`scripts/build_deck.py` stellt für eine Region eine belegte Artenauswahl mit
+Level-Subdecks zusammen. Grundsatz: **Daten bestimmen die Reihenfolge,
+Führer und Verbreitungsdaten bestätigen das Vorkommen, ein Mensch wählt nur
+die Highlights.**
+
+### Rezept
+
+Jedes Deck hat ein Rezept `recipes/<base>.json`, versioniert, damit das Deck
+reproduzierbar und sein Aufbau im PR prüfbar ist. Das Format ist
+[`schema/recipe.schema.json`](schema/recipe.schema.json); das Werkzeug prüft
+jedes Rezept dagegen und bricht bei einem Fehler ab, ohne etwas zu
+schreiben. Ein Rezept legt fest:
+
+- `deck`: Name, Beschreibung, `translations` und die Lerneinstellungen, wie
+  im Deck-Format (optional `imageUrl`, `createdBy`)
+- `order`: die Quelle der Reihenfolge, `inat`, `gbif` oder `reef` (mit Pfad
+  zur REEF-CSV in `csv`)
+- `region` je Quelle: iNat-`placeId` oder Rechteck
+  (`swlat`/`swlng`/`nelat`/`nelng`), GBIF-Land, OBIS-WKT-Polygon und die
+  FishBase/SeaLifeBase-Regionen der Referenz-DB (dreistelliger Ländercode
+  wie `756`, Teilregion wie `840:US-FL`)
+- `taxa` je Quelle: iNat-Taxon-IDs, WoRMS-IDs für OBIS, für GBIF den Stamm
+- `filters`: Wasser (`salt`, `fresh`, `any`), Mindestzahl Nachweise,
+  Tauchgrenze, Mindestgröße
+- `levelSizes`: Umfang je Level
+- `highlights` und optional `guides` (Namenslisten von Führern)
+
+Relative Pfade gelten vom Rezept aus. Führerlisten liegen unter
+`recipes/guides/`, ein wissenschaftlicher Name pro Zeile, `#` für
+Kommentare (Quelle im Kopf nennen).
+
+### Aufruf und Ausgabe
+
+```
+pip install "jsonschema[format]" duckdb
+python3 scripts/build_deck.py recipes/<base>.json
+```
+
+Das schreibt `data/decks/<base>.json` (Format 2, Subdecks `level-1` …, die
+Arten unter dem bevorzugten Namen der Referenz-DB) und den Bericht
+`recipes/<base>.report.md`. Gibt es das Deck schon, bleiben `sourceId`,
+`supersedes` und alles, was das Rezept nicht festlegt, erhalten. Der Bericht
+enthält je Art die Belege (Zählung je Quelle, FishBase/SeaLifeBase-Status in
+den Regionen, Salz/Süß, Treffer im Führer), die verworfenen Highlights, die
+Arten um jede Level-Grenze, den Abgleich mit den Führern, die
+ausgeschlossenen Kandidaten mit Grund und die nicht aufgelösten Namen.
+
+Namen löst das Werkzeug so auf wie die App: gegen die Referenz-DB, die
+neueste Version eines Schemas, das es liest, laut
+`data/reference-db/manifest.json`. Sie wird einmal geladen und unter
+`~/.cache/discere-deckbuilder/` abgelegt, ebenso die Antworten von iNat,
+GBIF und OBIS und die Salz/Süß-Angaben; ein zweiter Lauf fragt nichts neu
+ab. `--refresh` fragt die Quellen neu, `--cache-dir` und `--reference-db`
+ändern die Orte. Exit-Code 0: geschrieben; 1: abgebrochen, nichts
+geschrieben; 2: geschrieben, aber ein Highlight blieb draußen.
+
+### Welche Quelle wofür
+
+| Zweck | Meer / Tauchregion | Süßwasser / Binnenland |
+|---|---|---|
+| Reihenfolge (Häufigkeit) | REEF `SF%`, wo vorhanden; sonst iNaturalist (nur `research`) | GBIF über die Fischordnungen, ohne Fossilien und gehaltene Tiere |
+| Vorkommen bestätigen | Führer, OBIS, FishBase/SeaLifeBase-Verbreitung | FishBase/SeaLifeBase-Verbreitung, Führer |
+| Filter | `Saltwater` aus FishBase/SeaLifeBase, Tiefe, Größe | `Fresh` aus FishBase/SeaLifeBase |
+
+OBIS spiegelt Forschungsaufwand und bestimmt darum nie die Reihenfolge. Ein
+Führer filtert nicht, er wird im Bericht abgeglichen. Die Verbreitungsdaten
+hinken bei eingeschleppten Arten hinterher und filtern deshalb ebenfalls
+nicht. Für ein Meeresdeck reicht `Brack` nicht, und Arten ohne jede
+Salz/Süß-Angabe bleiben drin.
+
+### Highlights und Levels
+
+Level 1 enthält die häufigsten Arten und dazu die Highlights: Arten, die man
+in der Region kennen will, auch wenn sie selten sind (Walhai, Seepferdchen,
+Anglerfisch …). Level 2 und 3 folgen nur nach Häufigkeit, bis zum Umfang
+aus dem Rezept.
+
+Jedes Highlight braucht einen Nachweis in der Region: einen Eintrag in der
+Reihenfolge-Quelle oder bei OBIS, einen Eintrag der Verbreitungsdaten, der
+nicht „nicht vorhanden“ sagt, oder eine Zeile in einem Führer. Fehlt er,
+kommt es nicht ins Deck, steht oben im Bericht, und der Lauf endet mit
+Exit-Code 2. Automatisch ermittelte Highlights lieferten vor allem
+Fehlbestimmungen, etwa Indopazifik-Arten in der Karibik.
+
+### Danach
+
+Ein erzeugtes Deck kommt in einem eigenen PR, zusammen mit Rezept und
+Bericht. Dort sehen Autor und Review die Grenzfälle im Bericht durch: die
+Arten um die Level-Grenzen, „im Deck, nicht im Führer“ und „im Führer, nicht
+im Deck“.
 
 Daten dürfen nicht-kommerziell genutzt werden; Attribution bei Bildern empfohlen (z. B. iNaturalist, FishBase)
