@@ -174,11 +174,15 @@ Die Generatoren unter `scripts/reef/` erzeugen weiterhin Level-Dateien
 (`<base>_level1.json` …). Liegen diese in `data/decks/`, macht
 
 ```
-python3 scripts/merge_level_decks.py <base>
+python3 scripts/merge_level_decks.py <base> \
+    --learning-mode family --name-type commonName --review-mode flip
 ```
 
 daraus ein Deck `<base>.json` mit `formatVersion` 2, Subdecks und
-`supersedes`; die Level-Dateien bleiben liegen. Das Skript ist nur für
+`supersedes`; die Level-Dateien bleiben liegen. Die Startwerte
+`learningMode`, `nameType` und `reviewMode` sind anzugeben, weil die
+Level-Dateien sie nicht tragen (bestehende REEF-Regionaldecks:
+`family`/`commonName`/`flip`). Das Skript ist nur für
 Level-Dateien, die schon auf `main` waren: Es braucht ihre `sourceId`, die
 erst `scripts/sync_index.sh` nach dem Merge vergibt, und bricht ohne sie ab.
 Ein ganz neues Deck mit Levels wird direkt als ein Deck mit `subdecks`
@@ -190,6 +194,10 @@ nicht: Als Beschreibung setzt das Skript die Legende der Levels. Vor dem PR
 also die Beschreibung durch einen echten Text ersetzen und dem Deck
 `translations` mit mindestens `de` und `en` geben (siehe
 [Übersetzungen](#übersetzungen)); das Skript erinnert daran.
+
+Die Tests des Skripts liegen unter `tests/` und laufen im Check „Test
+scripts“ (`.github/workflows/test-scripts.yml`); lokal, mit `jsonschema` wie
+oben, mit `python3 -m unittest discover -s tests -v`.
 
 Die App lädt Decks über den Index ihres Formats (siehe
 [Formatversion](#formatversion)), eine generierte Datei, die die einzelnen
