@@ -39,6 +39,7 @@ schon beim Schreiben.
 |---|---|---|
 | `name` | ja | Name des Decks in der App |
 | `description` | ja | Kurzbeschreibung, darf leer sein |
+| `translations` | nein | Name und Beschreibung je Sprache, siehe [Übersetzungen](#übersetzungen) |
 | `speciesNames` | ja | Wissenschaftliche Namen aller Arten, ohne Doppelte |
 | `imageUrl` | nein | Titelbild (`http(s)://…`) oder leer |
 | `sources` | nein | Datenquellen, je `name` und optional `url` |
@@ -92,6 +93,43 @@ Format heißt: dieses `maximum` heben – der nächste Lauf von
 `scripts/sync_index.sh` legt dann den Index des neuen Formats an. Der muss
 stehen, bevor eine App-Version erscheint, die ihn liest.
 
+### Übersetzungen
+
+Name und Beschreibung eines Decks und der Name eines Subdecks lassen sich in
+`translations` je Sprache angeben, Schlüssel ist der zweibuchstabige
+Sprachcode (ISO 639-1):
+
+```json
+{
+  "name": "Haie und Rochen",
+  "description": "Haie und Rochen gehören zu den Knorpelfischen …",
+  "translations": {
+    "de": {"name": "Haie und Rochen", "description": "Haie und Rochen gehören zu den Knorpelfischen …"},
+    "en": {"name": "Sharks and Rays", "description": "Sharks and rays are cartilaginous fishes …"}
+  },
+  "subdecks": [
+    {"id": "level-1", "name": "Level 1", "translations": {"de": {"name": "Level 1"}, "en": {"name": "Level 1"}, "fr": {"name": "Niveau 1"}}, "speciesNames": ["…"]}
+  ]
+}
+```
+
+Die App wählt jedes Feld einzeln: zuerst die Sprache der App, dann `en`,
+zuletzt das Basisfeld (`name`, `description`). Deshalb ist `en` Pflicht, und
+wer übersetzt, gibt **immer auch die Sprache des Basistexts** an: Steht bei
+einem deutschen Basistext nur `en` in `translations`, sieht ein deutscher
+Nutzer den englischen Text. Die Katalog-Decks tragen `de`, `en`, `fr` und
+`es`, `de` auch dann, wenn es dem Basistext gleicht.
+
+Sprachen, die eine App nicht kennt, übergeht sie; der Katalog darf also
+Sprachen tragen, die erst eine spätere App-Version anbietet. App-Versionen
+ohne Übersetzungen zeigen die Basisfelder, die deshalb in der Sprache bleiben,
+die deren Nutzer lesen. `translations` hebt die
+[Formatversion](#formatversion) nicht und ist in jedem Format zulässig.
+
+Die App übernimmt den Text in der Sprache, die beim Import gilt, und schreibt
+ihn fest: Ein importiertes Deck behält seinen Namen, auch wenn der Nutzer
+später die Sprache wechselt.
+
 ### Subdecks (Levels)
 
 Ein Deck kann in Subdecks unterteilt sein, z. B. nach Schwierigkeitsgrad. In
@@ -140,9 +178,18 @@ python3 scripts/merge_level_decks.py <base>
 ```
 
 daraus ein Deck `<base>.json` mit `formatVersion` 2, Subdecks und
-`supersedes`; die Level-Dateien bleiben liegen. Sie brauchen dafür ihre
-`sourceId`, also müssen sie schon einmal auf `main` gewesen sein. Für ein
-ganz neues Deck reicht es, `supersedes` wegzulassen.
+`supersedes`; die Level-Dateien bleiben liegen. Das Skript ist nur für
+Level-Dateien, die schon auf `main` waren: Es braucht ihre `sourceId`, die
+erst `scripts/sync_index.sh` nach dem Merge vergibt, und bricht ohne sie ab.
+Ein ganz neues Deck mit Levels wird direkt als ein Deck mit `subdecks`
+geschrieben (siehe [Subdecks](#subdecks-levels)), ohne Level-Dateien und
+ohne `supersedes`.
+
+Die Subdecks bekommen ihre Namen dabei in allen App-Sprachen, das Deck selbst
+nicht: Als Beschreibung setzt das Skript die Legende der Levels. Vor dem PR
+also die Beschreibung durch einen echten Text ersetzen und dem Deck
+`translations` mit mindestens `de` und `en` geben (siehe
+[Übersetzungen](#übersetzungen)); das Skript erinnert daran.
 
 Die App lädt Decks über den Index ihres Formats (siehe
 [Formatversion](#formatversion)), eine generierte Datei, die die einzelnen

@@ -1,8 +1,26 @@
 {
   "formatVersion": 2,
   "name": "Kanaren, Madeira, Azoren",
-  "description": "Level 1: Sehr häufige Arten · Level 2: Häufige Arten · Level 3: Seltene Arten",
-  "imageUrl": "https://commons.wikimedia.org/wiki/File:Macaronesia_location_es.svg",
+  "description": "Rifffische und auffällige weitere Meerestiere der Kanarischen Inseln, Madeiras und der Azoren, darunter Kraken, Seeigel und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+  "translations": {
+    "de": {
+      "name": "Kanaren, Madeira, Azoren",
+      "description": "Rifffische und auffällige weitere Meerestiere der Kanarischen Inseln, Madeiras und der Azoren, darunter Kraken, Seeigel und Meeresschildkröten. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+    },
+    "en": {
+      "name": "Canary Islands, Madeira, Azores",
+      "description": "Reef fish and other striking marine life of the Canary Islands, Madeira and the Azores, including octopuses, sea urchins and sea turtles. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+    },
+    "fr": {
+      "name": "Canaries, Madère, Açores",
+      "description": "Poissons de récif et autres animaux marins remarquables des Canaries, de Madère et des Açores, dont des poulpes, des oursins et des tortues marines. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+    },
+    "es": {
+      "name": "Canarias, Madeira, Azores",
+      "description": "Peces de arrecife y otros animales marinos llamativos de Canarias, Madeira y Azores, entre ellos pulpos, erizos de mar y tortugas marinas. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+    }
+  },
+  "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Macaronesia_location.svg/330px-Macaronesia_location.svg.png",
   "sources": [
     {
       "name": "REEF",
@@ -182,6 +200,20 @@
     {
       "id": "level-1",
       "name": "Level 1",
+      "translations": {
+        "de": {
+          "name": "Level 1"
+        },
+        "en": {
+          "name": "Level 1"
+        },
+        "fr": {
+          "name": "Niveau 1"
+        },
+        "es": {
+          "name": "Nivel 1"
+        }
+      },
       "speciesNames": [
         "Thalassoma pavo",
         "Sparisoma cretense",
@@ -219,6 +251,20 @@
     {
       "id": "level-2",
       "name": "Level 2",
+      "translations": {
+        "de": {
+          "name": "Level 2"
+        },
+        "en": {
+          "name": "Level 2"
+        },
+        "fr": {
+          "name": "Niveau 2"
+        },
+        "es": {
+          "name": "Nivel 2"
+        }
+      },
       "speciesNames": [
         "Aulostomus strigosus",
         "Canthigaster capistrata",
@@ -277,6 +323,20 @@
     {
       "id": "level-3",
       "name": "Level 3",
+      "translations": {
+        "de": {
+          "name": "Level 3"
+        },
+        "en": {
+          "name": "Level 3"
+        },
+        "fr": {
+          "name": "Niveau 3"
+        },
+        "es": {
+          "name": "Nivel 3"
+        }
+      },
       "speciesNames": [
         "Seriola dumerili",
         "Heteropriacanthus cruentatus",

@@ -1,6 +1,24 @@
 {
   "name": "Critter",
   "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben.",
+  "translations": {
+    "de": {
+      "name": "Critter",
+      "description": "Kleine, oft versteckte Meerestiere, die besonders bei Makro-Tauchern beliebt sind. Dazu gehören Nacktschnecken, Garnelen, Krabben und andere wirbellose Tiere, die auf Riffen, Sandböden, Seegraswiesen oder zwischen Korallen leben."
+    },
+    "en": {
+      "name": "Critters",
+      "description": "Small, often hidden marine animals that macro divers love. They include nudibranchs, shrimps, crabs and other invertebrates living on reefs, sandy bottoms, seagrass meadows or among corals."
+    },
+    "fr": {
+      "name": "Petites bestioles",
+      "description": "Petits animaux marins, souvent cachés, très appréciés des plongeurs macro. On y trouve des nudibranches, des crevettes, des crabes et d'autres invertébrés qui vivent sur les récifs, les fonds sableux, les herbiers ou parmi les coraux."
+    },
+    "es": {
+      "name": "Bichos",
+      "description": "Pequeños animales marinos, a menudo escondidos, muy apreciados por los buceadores de macro. Entre ellos hay nudibranquios, gambas, cangrejos y otros invertebrados que viven en arrecifes, fondos de arena, praderas marinas o entre los corales."
+    }
+  },
   "imageUrl": "https://images.pexels.com/photos/8065536/pexels-photo-8065536.jpeg",
   "learningMode": "species",
   "nameType": "commonName",

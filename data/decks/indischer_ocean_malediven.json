@@ -1,7 +1,25 @@
 {
   "formatVersion": 2,
   "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen",
-  "description": "Reef: IORS Regions 2 and 6",
+  "description": "Rifffische und auffällige weitere Meerestiere der Malediven, Madagaskars und der Seychellen, darunter Meeresschildkröten, Riesenmuscheln und Seegurken. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten.",
+  "translations": {
+    "de": {
+      "name": "Indischer Ozean: Malediven, Madagaskar, Seychellen",
+      "description": "Rifffische und auffällige weitere Meerestiere der Malediven, Madagaskars und der Seychellen, darunter Meeresschildkröten, Riesenmuscheln und Seegurken. Level 1 enthält sehr häufige, Level 2 häufige und Level 3 seltene Arten."
+    },
+    "en": {
+      "name": "Indian Ocean: Maldives, Madagascar, Seychelles",
+      "description": "Reef fish and other striking marine life of the Maldives, Madagascar and the Seychelles, including sea turtles, giant clams and sea cucumbers. Level 1 holds very common species, Level 2 common and Level 3 rare ones."
+    },
+    "fr": {
+      "name": "Océan Indien : Maldives, Madagascar, Seychelles",
+      "description": "Poissons de récif et autres animaux marins remarquables des Maldives, de Madagascar et des Seychelles, dont des tortues marines, des bénitiers et des holothuries. Le niveau 1 réunit les espèces très communes, le niveau 2 les espèces communes et le niveau 3 les espèces rares."
+    },
+    "es": {
+      "name": "Océano Índico: Maldivas, Madagascar, Seychelles",
+      "description": "Peces de arrecife y otros animales marinos llamativos de Maldivas, Madagascar y Seychelles, entre ellos tortugas marinas, almejas gigantes y pepinos de mar. El nivel 1 reúne las especies muy comunes, el nivel 2 las comunes y el nivel 3 las raras."
+    }
+  },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/e/eb/1_Maldives%2C_Indian_Ocean%2C_Asia.jpg",
   "sources": [
     {
@@ -795,6 +813,20 @@
     {
       "id": "level-1",
       "name": "Level 1",
+      "translations": {
+        "de": {
+          "name": "Level 1"
+        },
+        "en": {
+          "name": "Level 1"
+        },
+        "fr": {
+          "name": "Niveau 1"
+        },
+        "es": {
+          "name": "Nivel 1"
+        }
+      },
       "speciesNames": [
         "Zanclus cornutus",
         "Labroides dimidiatus",
@@ -966,6 +998,20 @@
     {
       "id": "level-2",
       "name": "Level 2",
+      "translations": {
+        "de": {
+          "name": "Level 2"
+        },
+        "en": {
+          "name": "Level 2"
+        },
+        "fr": {
+          "name": "Niveau 2"
+        },
+        "es": {
+          "name": "Nivel 2"
+        }
+      },
       "speciesNames": [
         "Parapercis hexophtalma",
         "Halichoeres scapularis",
@@ -1199,6 +1245,20 @@
     {
       "id": "level-3",
       "name": "Level 3",
+      "translations": {
+        "de": {
+          "name": "Level 3"
+        },
+        "en": {
+          "name": "Level 3"
+        },
+        "fr": {
+          "name": "Niveau 3"
+        },
+        "es": {
+          "name": "Nivel 3"
+        }
+      },
       "speciesNames": [
         "Gymnothorax breedeni",
         "Gymnothorax griseus",
