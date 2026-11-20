@@ -33,6 +33,11 @@
       "description": "Short description, shown below the name in the app.",
       "type": "string"
     },
+    "translations": {
+      "description": "Name and description per language (ISO 639-1 code); the app picks each field on its own as app language, then en, then the base field, so whoever translates also lists the base text's own language, or its readers get the English text.",
+      "$ref": "#/$defs/translations",
+      "additionalProperties": { "$ref": "#/$defs/deckTranslation" }
+    },
     "imageUrl": {
       "description": "Cover image of the deck; empty if there is none.",
       "anyOf": [
@@ -95,10 +100,33 @@
     }
   },
   "$defs": {
-    "scientificName": {
+    "scientificName": { "$ref": "#/$defs/nonBlankText" },
+    "nonBlankText": {
       "type": "string",
       "pattern": "^\\S(.*\\S)?$",
       "minLength": 1
+    },
+    "translations": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z]{2}$" },
+      "required": ["en"]
+    },
+    "deckTranslation": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "name": { "$ref": "#/$defs/nonBlankText" },
+        "description": { "$ref": "#/$defs/nonBlankText" }
+      }
+    },
+    "subdeckTranslation": {
+      "type": "object",
+      "additionalProperties": false,
+      "minProperties": 1,
+      "properties": {
+        "name": { "$ref": "#/$defs/nonBlankText" }
+      }
     },
     "sourceId": {
       "type": "string",
@@ -118,6 +146,11 @@
           "description": "Name in the app; may change.",
           "type": "string",
           "minLength": 1
+        },
+        "translations": {
+          "description": "Name per language (ISO 639-1 code); the app picks app language, then en, then the base name, so whoever translates also lists the base name's own language, or its readers get the English name.",
+          "$ref": "#/$defs/translations",
+          "additionalProperties": { "$ref": "#/$defs/subdeckTranslation" }
         },
         "speciesNames": {
           "type": "array",
