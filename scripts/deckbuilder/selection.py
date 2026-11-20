@@ -8,7 +8,10 @@
 #    reference DB (names that resolve to one species count together) and
 #    filtered: water type, minimum count, not only deeper than the dive
 #    limit, not smaller than the minimum length. Every exclusion keeps its
-#    reason for the report; an unknown value never excludes.
+#    reason for the report; an unknown value never excludes. Beyond the
+#    filters, a person may exclude a species by name with a reason (the
+#    recipe's exclude), say a mudskipper that passes as a sea fish but is
+#    no encounter on a dive; the tool itself takes nothing out by kind.
 # 2. The candidates are ranked by their count, descending; a tie goes by
 #    name, so a run gives the same order every time.
 # 3. Level 1 holds the first N1 candidates plus every highlight not already
@@ -71,6 +74,10 @@ class Selection:
     cuts: list                 # index into sequence where each level ends
     highlights: list           # ids of the accepted highlights, in recipe order
     rejected_highlights: list  # [(name, reason)]
+    unused_excludes: list = field(default_factory=list)  # [(name, why)] exclusions that took nothing out
+
+
+HAND_EXCLUDED = "von Hand ausgeschlossen"
 
 
 def aggregate(counts, resolution, combine=sum):
@@ -165,11 +172,24 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     triple if known, Evidence)."""
     candidates, unresolved = aggregate(order_counts, resolution, combine)
     filters = recipe.get("filters", {})
+    by_hand, unused = {}, []
+    for entry in recipe.get("exclude", []):
+        species_id = resolution.get(entry["name"])
+        if species_id is None:
+            unused.append((entry["name"], "Name in der Referenz-DB nicht gefunden"))
+        elif species_id not in candidates:
+            unused.append((entry["name"], "nicht unter den Arten der Reihenfolge-Quelle"))
+        else:
+            by_hand[species_id] = (entry["name"], entry["reason"])
     passed, excluded = [], []
     for candidate in candidates.values():
         reason = exclusion_reason(candidate, facts[candidate.id], flags.get(candidate.id), filters)
         if reason:
             excluded.append((candidate.id, *reason))
+            if candidate.id in by_hand:
+                unused.append((by_hand[candidate.id][0], f"schon ausgeschlossen: {reason[0]}"))
+        elif candidate.id in by_hand:
+            excluded.append((candidate.id, HAND_EXCLUDED, by_hand[candidate.id][1]))
         else:
             passed.append(candidate)
     names = {i: f.preferred_name for i, f in facts.items()}
@@ -177,7 +197,7 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     ranked = rank(passed, names)
     highlights, rejected = check_highlights([h["name"] for h in recipe.get("highlights", [])], resolution, evidence)
     levels, sequence, cuts = split_levels(ranked, highlights, recipe["levelSizes"])
-    return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected)
+    return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected, unused)
 
 
 def boundaries(selection, width=BOUNDARY_WIDTH):

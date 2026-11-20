@@ -214,6 +214,20 @@
         }
       }
     },
+    "exclude": {
+      "description": "Species a person takes out although they pass the filters, each with the reason, e.g. a mudskipper or a killifish of the mangroves in a dive deck. The report lists them with the reason; the tool itself takes out nothing by kind. A highlight cannot be excluded.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["name", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "deck.schema.json#/$defs/scientificName" },
+          "reason": { "description": "Why it is no encounter for the deck's audience, in one sentence.", "type": "string", "minLength": 1 }
+        }
+      }
+    },
     "imageCredit": {
       "description": "Author, license and source page of deck.imageUrl, for the report; the deck format has no field for them. The license has to allow reuse without restriction to non-commercial use or to unchanged copies (CC0, CC BY, CC BY-SA, public domain).",
       "type": "object",

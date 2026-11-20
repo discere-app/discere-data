@@ -39,6 +39,11 @@ def highlight_names(recipe):
     return [h["name"] for h in recipe.get("highlights", [])]
 
 
+def exclude_names(recipe):
+    """The scientific names the recipe excludes by hand."""
+    return [e["name"] for e in recipe.get("exclude", [])]
+
+
 def load(path):
     """The recipe at `path`, checked, with its file paths made absolute."""
     try:

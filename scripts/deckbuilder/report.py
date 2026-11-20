@@ -16,7 +16,7 @@
 from collections import Counter
 
 from .checks import LANGUAGES, evidence_sources
-from .selection import BOUNDARY_WIDTH, boundaries, compare_with_guide
+from .selection import BOUNDARY_WIDTH, HAND_EXCLUDED, boundaries, compare_with_guide
 
 ORDER_LABELS = {"inat": "iNat", "gbif": "GBIF", "reef": "REEF SF%"}
 
@@ -55,7 +55,7 @@ def escape(text):
 
 class Report:
     def __init__(self, recipe, base, selection, names, facts, flags, evidence, guides, notes, meta, existing_names,
-                 areas, resolution, checks):
+                 areas, resolution, checks, mapped=None):
         self.recipe = recipe
         self.base = base
         self.s = selection
@@ -70,6 +70,7 @@ class Report:
         self.areas = areas            # [(source, areas)]
         self.resolution = resolution  # name → species id or None
         self.checks = checks          # checks.Checks
+        self.mapped = mapped          # [inat_names.Applied], None if the order source is not inat
         self.order_label = ORDER_LABELS[recipe["order"]["source"]]
         self.level_of = {i: n for n, level in enumerate(selection.levels, 1) for i in level}
         self.rank_of = {i: n for n, i in enumerate(selection.ranked, 1)}
@@ -159,6 +160,8 @@ class Report:
             self.out("Keine.")
         self.out()
 
+        self.render_mapped()
+        self.render_hand_excluded()
         self.render_highlights()
         self.render_checks(deck_ids)
 
@@ -343,3 +346,42 @@ class Report:
             self.out(f"- gemeinsamer wissenschaftlicher Name *{escape(name)}*: {self.species_list([a, b])}")
         self.out()
 
+    def render_mapped(self):
+        if self.mapped is None:
+            return
+        self.out("## iNaturalist-Namen zugeordnet")
+        self.out()
+        if not self.mapped:
+            self.out("Keine (`recipes/inat_names.json`).")
+            self.out()
+            return
+        self.out("Laut `recipes/inat_names.json`: iNaturalist nennt die Art anders als die Referenz-DB; "
+                 "die Zählung kommt zu der der Referenz-DB-Art.")
+        self.out()
+        self.out(f"| iNaturalist | Referenz-DB | {self.order_label} | Art | Beleg |")
+        self.out("|---|---|---|---|---|")
+        for applied in self.mapped:
+            entry = applied.entry
+            kind = "Umbenennung" if entry["change"] == "swap" else "Abspaltung"
+            self.out(f"| *{escape(entry['inat'])}* | *{escape(entry['referenceDb'])}* | {number(applied.count)} | "
+                     f"{kind} | {entry['evidence']} |")
+        self.out()
+
+    def render_hand_excluded(self):
+        if "exclude" not in self.recipe:
+            return
+        self.out("## Von Hand ausgeschlossen")
+        self.out()
+        self.out(f"| Art | {self.order_label} | Grund |")
+        self.out("|---|---|---|")
+        for species_id, reason, detail in self.s.excluded:
+            if reason == HAND_EXCLUDED:
+                self.out(f"| *{escape(self.names[species_id])}* | {number(self.s.candidates[species_id].count)} | "
+                         f"{escape(detail)} |")
+        self.out()
+        if self.s.unused_excludes:
+            self.out("Ohne Wirkung:")
+            self.out()
+            for name, why in self.s.unused_excludes:
+                self.out(f"- *{escape(name)}*: {why}")
+            self.out()

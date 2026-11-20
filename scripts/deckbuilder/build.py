@@ -18,8 +18,9 @@
 #      the deck it describes. The exit code keeps the run from passing
 #      unnoticed.
 #
-# run() takes the fetcher, the reference DB and the water flags as
-# arguments, so the tests hand in recorded answers and a small database.
+# run() takes the fetcher, the reference DB, the water flags and the
+# entries of recipes/inat_names.json as arguments, so the tests hand in
+# recorded answers and a small database.
 # =============================================================================
 
 import json
@@ -28,14 +29,15 @@ import sys
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-from . import gbif, guide, inat, obis, reef_csv
+from . import gbif, guide, inat, inat_names, obis, reef_csv
 from .checks import LANGUAGES, run_checks
 from .deck import build_deck, deck_name, deck_sources
 from .recipe import SCHEMA_DIR, RecipeError
-from .recipe import highlight_names
+from .recipe import exclude_names, highlight_names
 from .recipe import load as load_recipe
 from .report import Report
 from .selection import Evidence, select
+from .sources import SourceResult
 
 EXIT_OK, EXIT_STOPPED, EXIT_HIGHLIGHT_REJECTED = 0, 1, 2
 
@@ -113,9 +115,10 @@ def check_deck(deck):
                          + "; ".join(e.message for e in errors))
 
 
-def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
+def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
     """Builds the deck of the recipe at `recipe_path`; returns the exit
-    code. `water` maps (source, SpecCode) to the flag triple."""
+    code. `water` maps (source, SpecCode) to the flag triple, `name_map`
+    holds the entries of recipes/inat_names.json."""
     try:
         recipe = load_recipe(recipe_path)
         base = os.path.splitext(os.path.basename(recipe_path))[0]
@@ -128,6 +131,10 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
 
         order, combine = order_counts(recipe, fetcher, db)
         notes = list(order.notes)
+        mapped = None
+        if recipe["order"]["source"] == "inat":
+            counts, mapped = inat_names.apply(order.counts, name_map)
+            order = SourceResult(counts, order.notes)
         obis_counts = []
         region = recipe.get("region", {})
         if "obis" in region:
@@ -137,10 +144,15 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         guides = read_guides(recipe)
 
         all_names = {name for name, _ in order.counts} | {name for name, _ in obis_counts}
-        all_names |= set(highlight_names(recipe))
+        all_names |= set(highlight_names(recipe)) | set(exclude_names(recipe))
         for _, names in guides:
             all_names |= set(names)
         resolution = db.resolve(all_names)
+        both = {resolution[n] for n in highlight_names(recipe) if resolution[n]} \
+            & {resolution[n] for n in exclude_names(recipe) if resolution[n]}
+        if both:
+            raise BuildError("Highlight und von Hand ausgeschlossen zugleich: "
+                             + ", ".join(sorted(n for n in highlight_names(recipe) if resolution[n] in both)))
         facts = db.species(i for i in resolution.values() if i)
         flags = {i: water.get((f.source, f.external_id)) for i, f in facts.items()}
 
@@ -185,7 +197,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         report = Report(
             recipe, base, selection, names, facts, flags, evidence, guide_reports, notes, list(meta),
             existing.get("speciesNames") if existing else None, describe_areas(recipe, fetcher),
-            resolution, checks,
+            resolution, checks, mapped,
         ).render()
     except (RecipeError, BuildError, RuntimeError) as e:
         print(f"[ERROR] {e}", file=sys.stderr)
@@ -201,6 +213,8 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
     counts = "/".join(str(len(level)) for level in selection.levels)
     print(f"{deck_path}: {len(deck['speciesNames'])} Arten ({counts})")
     print(f"{report_path}: Bericht")
+    for name, why in selection.unused_excludes:
+        print(f"[WARN] Ausschluss {name} wirkt nicht: {why}")
     if selection.unresolved:
         print(f"[WARN] {len(selection.unresolved)} Namen der Reihenfolge-Quelle nicht aufgelöst (siehe Bericht)")
     if existing is None:

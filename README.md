@@ -250,6 +250,9 @@ schreiben. Ein Rezept legt fest:
 - `levelSizes`: Umfang je Level
 - `highlights`, je mit Namen und einem Satz Begründung, und optional
   `guides` (Namenslisten von Führern)
+- optional `exclude`: Arten, die ein Mensch trotz bestandener Filter
+  herausnimmt, je mit Grund, etwa Schlammspringer in einem Taucherdeck. Das
+  Werkzeug selbst nimmt nichts nach Art heraus
 
 Mehrere Gebiete fragt das Werkzeug je Quelle in einer Abfrage ab (iNat-Orte
 als Komma-Liste, OBIS-Gebiete als ein `MULTIPOLYGON`), sodass eine
@@ -263,6 +266,17 @@ Ohne `region` gilt das Deck als weltweit, etwa für ein thematisches Deck
 (Seepferdchen, Wale): iNaturalist zählt dann weltweit, und ein Highlight
 belegt nur die Reihenfolge-Quelle oder ein Führer. Mit der Reihenfolge
 `gbif` sind Länder Pflicht.
+
+iNaturalist übernimmt Umbenennungen und Abspaltungen früher als FishBase
+und SeaLifeBase. Eine Beobachtung unter dem neuen Namen fände die
+Referenz-DB nicht, und die Art fiele still aus dem Deck. Für alle Rezepte
+gemeinsam ordnet `recipes/inat_names.json`
+([Schema](schema/inat_names.schema.json)) solche Namen dem Namen der
+Referenz-DB zu, die Zählungen beider addieren sich. Jeder Eintrag nennt
+Begründung und die iNaturalist-Taxonänderung als Beleg. Hinein gehören nur
+Umbenennungen und Abspaltungen, deren Population die Art der Referenz-DB
+noch umfasst, keine neu beschriebenen Arten und nichts Zweifelhaftes. Der
+Bericht zeigt jede angewandte Zuordnung mit ihrer Zählung.
 
 Relative Pfade gelten vom Rezept aus. Führerlisten liegen unter
 `recipes/guides/`, ein wissenschaftlicher Name pro Zeile, `#` für
