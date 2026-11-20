@@ -15,6 +15,7 @@
 
 from collections import Counter
 
+from .checks import LANGUAGES, evidence_sources
 from .selection import BOUNDARY_WIDTH, boundaries, compare_with_guide
 
 ORDER_LABELS = {"inat": "iNat", "gbif": "GBIF", "reef": "REEF SF%"}
@@ -54,7 +55,7 @@ def escape(text):
 
 class Report:
     def __init__(self, recipe, base, selection, names, facts, flags, evidence, guides, notes, meta, existing_names,
-                 areas):
+                 areas, resolution, checks):
         self.recipe = recipe
         self.base = base
         self.s = selection
@@ -67,6 +68,8 @@ class Report:
         self.meta = meta              # [(label, value)] for the header
         self.existing_names = existing_names
         self.areas = areas            # [(source, areas)]
+        self.resolution = resolution  # name → species id or None
+        self.checks = checks          # checks.Checks
         self.order_label = ORDER_LABELS[recipe["order"]["source"]]
         self.level_of = {i: n for n, level in enumerate(selection.levels, 1) for i in level}
         self.rank_of = {i: n for n, i in enumerate(selection.ranked, 1)}
@@ -119,6 +122,10 @@ class Report:
             self.out(f"- {label}: {value}")
         for note in self.notes:
             self.out(f"- {note}")
+        credit = self.recipe.get("imageCredit")
+        if credit:
+            self.out(f"- Bild: {self.recipe['deck'].get('imageUrl', '')} — {escape(credit['author'])}, "
+                     f"{escape(credit['license'])}, {credit['page']}")
         self.out()
 
         self.out("## Gebiete")
@@ -151,6 +158,9 @@ class Report:
         else:
             self.out("Keine.")
         self.out()
+
+        self.render_highlights()
+        self.render_checks(deck_ids)
 
         self.out("## Deck")
         self.out()
@@ -264,4 +274,72 @@ class Report:
         else:
             self.out("Keine.")
         return "\n".join(self.lines) + "\n"
+
+    def render_highlights(self):
+        self.out("## Highlights")
+        self.out()
+        if not self.recipe.get("highlights"):
+            self.out("Das Rezept nennt keine.")
+            self.out()
+            return
+        rejected = dict(self.s.rejected_highlights)
+        self.out("| Highlight | Begründung | Rang | Belege | Status |")
+        self.out("|---|---|---|---|---|")
+        for highlight in self.recipe["highlights"]:
+            name = highlight["name"]
+            species_id = self.resolution.get(name)
+            shown = f"*{escape(self.names[species_id])}*" if species_id else f"*{escape(name)}*"
+            if species_id and self.names[species_id] != name:
+                shown += f" (Rezept: *{escape(name)}*)"
+            ev = self.evidence.get(species_id)
+            status = f"verworfen: {rejected[name]}" if name in rejected else "Level 1"
+            self.out(f"| {shown} | {escape(highlight['reason'])} | {number(self.rank_of.get(species_id))} | "
+                     f"{(', '.join(evidence_sources(ev)) or 'keine') if ev else '–'} | {status} |")
+        self.out()
+
+    def species_list(self, ids):
+        return ", ".join(f"*{escape(self.names[i])}*" for i in ids) or "keine"
+
+    def render_checks(self, deck_ids):
+        c = self.checks
+        total = len(deck_ids) or 1
+        self.out("## Prüfung")
+        self.out()
+        self.out(f"- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS oder Verbreitung): "
+                 f"{len(c.two_sources)}/{len(deck_ids)} ({100 * len(c.two_sources) / total:.0f} %)")
+        self.out(f"- Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: {len(c.endemic)}"
+                 + (f": {self.species_list(c.endemic)}" if c.endemic else ""))
+        for lang in LANGUAGES:
+            missing = c.species_without_name[lang]
+            self.out(f"- Arten ohne Volksnamen `{lang}` in der Referenz-DB: {len(missing)}/{len(deck_ids)} "
+                     f"({100 * len(missing) / total:.0f} %)")
+        families = len(c.families) or 1
+        for lang in LANGUAGES:
+            missing = c.families_without_name[lang]
+            listed = ", ".join(f"*{escape(c.families[f][0])}*" for f in missing)
+            self.out(f"- Familien ohne Volksnamen `{lang}`: {len(missing)}/{len(c.families)} "
+                     f"({100 * len(missing) / families:.0f} %)" + (f": {listed}" if missing else ""))
+        self.out()
+        self.out("Volksnamen wie die App sie wählt (ohne Landesbezug; zur Laufzeit kann die App Namen aus "
+                 "iNaturalist ergänzen). Im Lernmodus Familie fragt die App den Familiennamen ab und fällt "
+                 "ohne Namen in der App-Sprache auf Englisch, dann auf den wissenschaftlichen Namen zurück.")
+        self.out()
+        self.out("**Arten ohne zweite, unabhängige Quelle:**")
+        self.out()
+        if c.single_source:
+            for species_id, sources in c.single_source:
+                self.out(f"- *{escape(self.names[species_id])}*: {sources}")
+        else:
+            self.out("Keine.")
+        self.out()
+        self.out("**Eine Art unter zwei Einträgen?** Deck-Arten mit gleichem Volksnamen oder gemeinsamem "
+                 "wissenschaftlichem Namen:")
+        self.out()
+        if not c.same_common_name and not c.shared_scientific:
+            self.out("Keine.")
+        for lang, name, ids in c.same_common_name:
+            self.out(f"- gleicher Volksname `{lang}` „{escape(name)}“: {self.species_list(ids)}")
+        for a, b, name in c.shared_scientific:
+            self.out(f"- gemeinsamer wissenschaftlicher Name *{escape(name)}*: {self.species_list([a, b])}")
+        self.out()
 

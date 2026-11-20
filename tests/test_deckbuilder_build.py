@@ -68,8 +68,10 @@ RECIPE = {
     "taxa": {"inat": [47178], "obis": [10194]},
     "filters": {"water": "salt", "minCount": 5},
     "levelSizes": [2, 2, 1],
-    "highlights": ["Beta two", "Delta four", "Kappa ten", "Lambda eleven", "Nu thirteen", "Xi fourteen",
-                   "Fictus name"],
+    "highlights": [
+        {"name": n, "reason": f"Grund für {n}."}
+        for n in ("Beta two", "Delta four", "Kappa ten", "Lambda eleven", "Nu thirteen", "Xi fourteen", "Fictus name")
+    ],
     "guides": [{"name": "Testführer", "path": "guides/test.txt"}],
 }
 
@@ -105,8 +107,20 @@ class BuildTest(unittest.TestCase):
         make_refdb(
             db_path,
             species=[(sid, name, "fishbase", code, None, None) for sid, name, code, _, _ in SPECIES],
-            synonyms=[("Gammaold three", "s:3")],
-            occurrences=[("s:13", "001", "native", "present"), ("s:14", "001", "extirpated", "absent")],
+            synonyms=[("Gammaold three", "s:3"), ("Delta old", "s:4"), ("Delta old", "s:5")],
+            occurrences=[
+                ("s:13", "001", "native", "present"), ("s:14", "001", "extirpated", "absent"),
+                ("s:1", "001", "native", "present"), ("s:3", "001", "endemic", "present"),
+            ],
+            families={"Alpha": "Alphidae", "Beta": "Alphidae", "Gamma": "Gammidae"},
+            common_names=[
+                ("s:1", "de", "Alphafisch", None, 1, 1), ("s:1", "en", "Alpha fish", None, 1, 1),
+                ("s:1", "en", "Regional alpha", "001", 1, 1),
+                ("s:2", "en", "alpha fish", None, 1, 1),
+                ("s:4", "de", "Deltafisch", None, 0, 2), ("s:4", "de", "Bester Deltafisch", None, 1, 1),
+                ("f:Alphidae", "en", "Alpha fishes", None, 1, 1),
+                ("f:Gammidae", "de", "Gammafische", None, 1, 1), ("f:Gammidae", "en", "Gamma fishes", None, 1, 1),
+            ],
         )
         self.db = ReferenceDb(db_path)
         self.addCleanup(self.db.close)
@@ -166,7 +180,7 @@ class BuildTest(unittest.TestCase):
 
     def test_without_rejected_highlights_the_run_succeeds(self):
         recipe = json.loads(json.dumps(RECIPE))
-        recipe["highlights"] = ["Kappa ten"]
+        recipe["highlights"] = [{"name": "Kappa ten", "reason": "Nur bei OBIS."}]
         self.write_recipe(recipe)
         self.assertEqual(self.run_build(), build.EXIT_OK)
 
@@ -229,6 +243,56 @@ class BuildTest(unittest.TestCase):
         self.assertIn("brackish", self.stderr)
         self.assertFalse(os.path.exists(self.deck_path))
         self.assertFalse(os.path.exists(self.report_path))
+
+    def test_highlights_are_listed_with_their_reason(self):
+        self.run_build()
+        section = self.report().split("## Highlights")[1].split("## Prüfung")[0]
+        self.assertIn("| *Kappa ten* | Grund für Kappa ten. | – | OBIS, Führer | Level 1 |", section)
+        self.assertIn("| *Lambda eleven* | Grund für Lambda eleven. | – | keine | verworfen: kein Nachweis", section)
+        self.assertIn("| *Fictus name* | Grund für Fictus name. | – | – | verworfen: Name in der Referenz-DB", section)
+
+    def checks(self):
+        self.run_build()
+        return self.report().split("## Prüfung")[1].split("## Deck")[0]
+
+    def test_two_independent_sources(self):
+        section = self.checks()
+        # Deck: Alpha Beta Delta Kappa Nu | Gamma Epsilon | Theta; only Alpha
+        # and Gamma have iNaturalist and the distribution.
+        self.assertIn("(Reihenfolge-Quelle und OBIS oder Verbreitung): 2/8 (25 %)", section)
+        single = section.split("**Arten ohne zweite, unabhängige Quelle:**")[1].split("**Eine Art")[0]
+        self.assertIn("- *Beta two*: Reihenfolge-Quelle\n", single)
+        self.assertIn("- *Kappa ten*: OBIS, Führer\n", single)
+        self.assertIn("- *Nu thirteen*: Verbreitung\n", single)
+        self.assertNotIn("*Alpha one*", single)
+        self.assertNotIn("*Gamma three*", single)
+
+    def test_endemics(self):
+        self.assertIn("laut FishBase/SeaLifeBase: 1: *Gamma three*", self.checks())
+
+    def test_common_names_as_the_app_picks_them(self):
+        section = self.checks()
+        self.assertIn("Arten ohne Volksnamen `de` in der Referenz-DB: 6/8 (75 %)", section)
+        self.assertIn("Arten ohne Volksnamen `en` in der Referenz-DB: 6/8 (75 %)", section)
+        self.assertIn("Familien ohne Volksnamen `de`: 1/2 (50 %): *Alphidae*", section)
+        self.assertIn("Familien ohne Volksnamen `en`: 0/2 (0 %)", section)
+
+    def test_one_species_under_two_entries(self):
+        section = self.checks().split("**Eine Art unter zwei Einträgen?**")[1]
+        self.assertIn("gleicher Volksname `en` „Alpha fish“: *Alpha one*, *Beta two*", section)
+        self.assertIn("gemeinsamer wissenschaftlicher Name *delta old*: *Delta four*, *Epsilon five*", section)
+        self.assertNotIn("Regional alpha", section)
+
+    def test_image_credit_in_the_report(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["deck"]["imageUrl"] = "https://upload.wikimedia.org/x/330px-Reef.jpg"
+        recipe["imageCredit"] = {"author": "Jemand", "license": "CC BY-SA 4.0",
+                                 "page": "https://commons.wikimedia.org/wiki/File:Reef.jpg"}
+        self.write_recipe(recipe)
+        self.run_build()
+        self.assertIn("- Bild: https://upload.wikimedia.org/x/330px-Reef.jpg — Jemand, CC BY-SA 4.0, "
+                      "https://commons.wikimedia.org/wiki/File:Reef.jpg", self.report())
+        self.assertEqual(self.deck()["imageUrl"], "https://upload.wikimedia.org/x/330px-Reef.jpg")
 
     def test_report_names_the_areas(self):
         self.run_build()

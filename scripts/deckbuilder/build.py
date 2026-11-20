@@ -29,8 +29,10 @@ import sys
 from jsonschema import Draft202012Validator, FormatChecker
 
 from . import gbif, guide, inat, obis, reef_csv
+from .checks import LANGUAGES, run_checks
 from .deck import build_deck, deck_name, deck_sources
 from .recipe import SCHEMA_DIR, RecipeError
+from .recipe import highlight_names
 from .recipe import load as load_recipe
 from .report import Report
 from .selection import Evidence, select
@@ -135,7 +137,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         guides = read_guides(recipe)
 
         all_names = {name for name, _ in order.counts} | {name for name, _ in obis_counts}
-        all_names |= set(recipe.get("highlights", []))
+        all_names |= set(highlight_names(recipe))
         for _, names in guides:
             all_names |= set(names)
         resolution = db.resolve(all_names)
@@ -145,7 +147,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         order_by_id = counts_by_id(order.counts, resolution)
         obis_by_id = counts_by_id(obis_counts, resolution)
         guide_ids = [{resolution[n] for n in names if resolution[n]} for _, names in guides]
-        relevant = set(order_by_id) | {resolution[h] for h in recipe.get("highlights", []) if resolution[h]}
+        relevant = set(order_by_id) | {resolution[h] for h in highlight_names(recipe) if resolution[h]}
         occurrences = db.occurrences(relevant, region.get("fishbase", []))
         evidence = {
             i: Evidence(
@@ -159,7 +161,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
 
         selection = select(order.counts, resolution, facts, flags, evidence, recipe, combine)
         source_names = {i: c.names for i, c in selection.candidates.items()}
-        for name in recipe.get("highlights", []):
+        for name in highlight_names(recipe):
             if resolution[name]:
                 source_names.setdefault(resolution[name], [name])
         names = {i: deck_name(f, source_names.get(i, [])) for i, f in facts.items()}
@@ -169,6 +171,13 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         deck = build_deck(recipe, levels, deck_sources(recipe, used), existing)
         check_deck(deck)
 
+        deck_ids = [i for level in selection.levels for i in level]
+        family_of = db.families(deck_ids)
+        checks = run_checks(
+            deck_ids, evidence, db.common_names(deck_ids, LANGUAGES), family_of,
+            db.common_names({f for f, _ in family_of.values()}, LANGUAGES), db.shared_scientific_names(deck_ids),
+        )
+
         guide_reports = [
             (g, ids, [n for n in names_ if not resolution[n]], len(names_))
             for (g, names_), ids in zip(guides, guide_ids)
@@ -176,6 +185,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=()):
         report = Report(
             recipe, base, selection, names, facts, flags, evidence, guide_reports, notes, list(meta),
             existing.get("speciesNames") if existing else None, describe_areas(recipe, fetcher),
+            resolution, checks,
         ).render()
     except (RecipeError, BuildError, RuntimeError) as e:
         print(f"[ERROR] {e}", file=sys.stderr)

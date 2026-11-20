@@ -201,10 +201,29 @@
       "items": { "type": "integer", "minimum": 1 }
     },
     "highlights": {
-      "description": "Species worth knowing in the region even if rare, picked by hand; they go on level 1. Each needs evidence in the region (order source, OBIS, distribution data or a guide), or it stays out and the run fails.",
+      "description": "Species worth knowing in the region even if rare, picked by hand; they go on level 1. Each needs evidence in the region (order source, OBIS, distribution data or a guide), or it stays out and the run fails. Not limited to the taxa: a dolphin or a nudibranch may be a highlight if the reference DB knows it.",
       "type": "array",
       "uniqueItems": true,
-      "items": { "$ref": "deck.schema.json#/$defs/scientificName" }
+      "items": {
+        "type": "object",
+        "required": ["name", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "deck.schema.json#/$defs/scientificName" },
+          "reason": { "description": "Why a diver there wants to know it, in one sentence; shown in the report.", "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "imageCredit": {
+      "description": "Author, license and source page of deck.imageUrl, for the report; the deck format has no field for them. The license has to allow reuse without restriction to non-commercial use or to unchanged copies (CC0, CC BY, CC BY-SA, public domain).",
+      "type": "object",
+      "required": ["author", "license", "page"],
+      "additionalProperties": false,
+      "properties": {
+        "author": { "type": "string", "minLength": 1 },
+        "license": { "type": "string", "minLength": 1 },
+        "page": { "type": "string", "format": "uri", "pattern": "^https?://" }
+      }
     },
     "guides": {
       "description": "Species lists of field guides, one scientific name per line. They confirm occurrence and are compared with the deck in the report; they never filter.",

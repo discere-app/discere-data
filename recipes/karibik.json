@@ -64,13 +64,13 @@
   },
   "levelSizes": [40, 60, 50],
   "highlights": [
-    "Rhincodon typus",
-    "Mobula birostris",
-    "Sphyrna mokarran",
-    "Hippocampus reidi",
-    "Antennarius multiocellatus",
-    "Equetus punctatus",
-    "Opistognathus aurifrons"
+    {"name": "Rhincodon typus", "reason": "Der Walhai, größter Fisch der Welt, zieht im Frühsommer vor Isla Mujeres und Utila vorbei."},
+    {"name": "Mobula birostris", "reason": "Der Riesenmanta ist selten, aber eine der Begegnungen, auf die Taucher hoffen."},
+    {"name": "Sphyrna mokarran", "reason": "Der Große Hammerhai ist der Großhai, den Taucher auf den Bahamas (Bimini) gezielt suchen."},
+    {"name": "Hippocampus reidi", "reason": "Das Langschnauzen-Seepferdchen ist die Seepferdchen-Art, die man in der Karibik am ehesten findet."},
+    {"name": "Antennarius multiocellatus", "reason": "Der Langstachel-Anglerfisch ist ein Meister der Tarnung und ein Ziel jedes Makrotauchgangs."},
+    {"name": "Equetus punctatus", "reason": "Der Gefleckte Umberfisch mit seinen langen Flossen gehört zu den Ikonen des karibischen Riffs."},
+    {"name": "Opistognathus aurifrons", "reason": "Der Gelbkopf-Kieferfisch brütet die Eier im Maul aus und ist an jedem Sandgrund zu beobachten."}
   ],
   "guides": [
     {

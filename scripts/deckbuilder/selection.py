@@ -175,7 +175,7 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     names = {i: f.preferred_name for i, f in facts.items()}
     excluded.sort(key=lambda item: (-candidates[item[0]].count, names[item[0]]))
     ranked = rank(passed, names)
-    highlights, rejected = check_highlights(recipe.get("highlights", []), resolution, evidence)
+    highlights, rejected = check_highlights([h["name"] for h in recipe.get("highlights", [])], resolution, evidence)
     levels, sequence, cuts = split_levels(ranked, highlights, recipe["levelSizes"])
     return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected)
 
