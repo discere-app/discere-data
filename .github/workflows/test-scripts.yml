@@ -1,0 +1,29 @@
+name: Test scripts
+
+# Runs the unit tests under tests/ for the scripts that write deck files
+# (so far scripts/merge_level_decks.py), so a change that writes a deck the
+# app or the schema does not accept fails in its PR rather than in the deck
+# PR that uses the script next. The tests build their own level files and do
+# not read data/decks/.
+on:
+  pull_request:
+    paths:
+      - "scripts/merge_level_decks.py"
+      - "tests/**"
+      - "schema/**"
+      - ".github/workflows/test-scripts.yml"
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install "jsonschema[format]==4.23.0"
+      - run: python3 -m unittest discover -s tests -v

@@ -195,6 +195,10 @@ also die Beschreibung durch einen echten Text ersetzen und dem Deck
 `translations` mit mindestens `de` und `en` geben (siehe
 [Übersetzungen](#übersetzungen)); das Skript erinnert daran.
 
+Die Tests des Skripts liegen unter `tests/` und laufen im Check „Test
+scripts“ (`.github/workflows/test-scripts.yml`); lokal, mit `jsonschema` wie
+oben, mit `python3 -m unittest discover -s tests -v`.
+
 Die App lädt Decks über den Index ihres Formats (siehe
 [Formatversion](#formatversion)), eine generierte Datei, die die einzelnen
 Deck-Dateien zusammenfasst (ein Request statt einer pro Deck). Ein
