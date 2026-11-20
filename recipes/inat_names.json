@@ -1,0 +1,306 @@
+{
+  "$schema": "../schema/inat_names.schema.json",
+  "names": [
+    {
+      "inat": "Acanthosepion ellipticum",
+      "referenceDb": "Sepia elliptica",
+      "change": "swap",
+      "reason": "Sepia-Arten in die Gattungen Ascarosepion und Acanthosepion gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/131475"
+    },
+    {
+      "inat": "Acanthosepion recurvirostrum",
+      "referenceDb": "Sepia recurvirostra",
+      "change": "swap",
+      "reason": "Sepia-Arten in die Gattungen Ascarosepion und Acanthosepion gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/131450"
+    },
+    {
+      "inat": "Acanthurus sandvicensis",
+      "referenceDb": "Acanthurus triostegus",
+      "change": "split",
+      "reason": "iNaturalist trennt die Population von Hawaii und Johnston als eigene Art ab; FishBase führt sie als Unterart A. triostegus sandvicensis unter A. triostegus.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/162767"
+    },
+    {
+      "inat": "Ascarosepion bandense",
+      "referenceDb": "Sepia bandensis",
+      "change": "swap",
+      "reason": "Sepia-Arten in die Gattungen Ascarosepion und Acanthosepion gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/131481"
+    },
+    {
+      "inat": "Ascarosepion papuense",
+      "referenceDb": "Sepia papuensis",
+      "change": "swap",
+      "reason": "Sepia-Arten in die Gattungen Ascarosepion und Acanthosepion gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/131455"
+    },
+    {
+      "inat": "Ascarosepion pfefferi",
+      "referenceDb": "Metasepia pfefferi",
+      "change": "swap",
+      "reason": "Sepia-Arten in die Gattungen Ascarosepion und Acanthosepion gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/131489"
+    },
+    {
+      "inat": "Ascarosepion plangon",
+      "referenceDb": "Sepia plangon",
+      "change": "swap",
+      "reason": "Sepia-Arten in die Gattungen Ascarosepion und Acanthosepion gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/131452"
+    },
+    {
+      "inat": "Coris schroederii",
+      "referenceDb": "Coris batuensis",
+      "change": "split",
+      "reason": "Nach Catalog of Fishes gilt C. batuensis nur noch im Indischen Ozean bis Westsumatra, C. schroederii für Java und Kleine Sundainseln bis Samoa; FishBase führt beide Populationen als C. batuensis.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/157302"
+    },
+    {
+      "inat": "Eviota bryozophila",
+      "referenceDb": "Sueviota bryozophila",
+      "change": "swap",
+      "reason": "Sueviota in Eviota aufgegangen; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178948"
+    },
+    {
+      "inat": "Eviota lachneri",
+      "referenceDb": "Sueviota lachneri",
+      "change": "swap",
+      "reason": "Sueviota in Eviota aufgegangen; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178945"
+    },
+    {
+      "inat": "Eviotops ancora",
+      "referenceDb": "Eviota ancora",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178883"
+    },
+    {
+      "inat": "Eviotops atriventris",
+      "referenceDb": "Eviota atriventris",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178886"
+    },
+    {
+      "inat": "Eviotops bacatus",
+      "referenceDb": "Eviota bacata",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178887"
+    },
+    {
+      "inat": "Eviotops bellus",
+      "referenceDb": "Eviota bella",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178888"
+    },
+    {
+      "inat": "Eviotops bifasciatus",
+      "referenceDb": "Eviota bifasciata",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178889"
+    },
+    {
+      "inat": "Eviotops brahmi",
+      "referenceDb": "Eviota brahmi",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178891"
+    },
+    {
+      "inat": "Eviotops cometa",
+      "referenceDb": "Eviota cometa",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178892"
+    },
+    {
+      "inat": "Eviotops dorsogilvus",
+      "referenceDb": "Eviota dorsogilva",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178893"
+    },
+    {
+      "inat": "Eviotops imitatus",
+      "referenceDb": "Eviota imitata",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178898"
+    },
+    {
+      "inat": "Eviotops longirostris",
+      "referenceDb": "Eviota longirostris",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178903"
+    },
+    {
+      "inat": "Eviotops nigriventris",
+      "referenceDb": "Eviota nigriventris",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178908"
+    },
+    {
+      "inat": "Eviotops oculineatus",
+      "referenceDb": "Eviota oculineata",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178909"
+    },
+    {
+      "inat": "Eviotops prasites",
+      "referenceDb": "Eviota prasites",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178916"
+    },
+    {
+      "inat": "Eviotops punyit",
+      "referenceDb": "Eviota punyit",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178918"
+    },
+    {
+      "inat": "Eviotops raja",
+      "referenceDb": "Eviota raja",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178919"
+    },
+    {
+      "inat": "Eviotops rubriceps",
+      "referenceDb": "Eviota rubriceps",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178920"
+    },
+    {
+      "inat": "Eviotops sebreei",
+      "referenceDb": "Eviota sebreei",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178922"
+    },
+    {
+      "inat": "Eviotops shimadai",
+      "referenceDb": "Eviota shimadai",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178923"
+    },
+    {
+      "inat": "Eviotops sigillatus",
+      "referenceDb": "Eviota sigillata",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178924"
+    },
+    {
+      "inat": "Eviotops spilotus",
+      "referenceDb": "Eviota spilota",
+      "change": "swap",
+      "reason": "Eviota-Arten in die Gattung Eviotops gestellt, das Epitheton dem Geschlecht angepasst; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/178925"
+    },
+    {
+      "inat": "Filistriatus sexfilis",
+      "referenceDb": "Polydactylus sexfilis",
+      "change": "swap",
+      "reason": "Neue Gattung für den Pazifischen Fädlerfisch (Moi); dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/165559"
+    },
+    {
+      "inat": "Haemulopsis elongata",
+      "referenceDb": "Haemulopsis elongatus",
+      "change": "swap",
+      "reason": "Epitheton dem Geschlecht der Gattung angepasst; dieselbe Art.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/119848"
+    },
+    {
+      "inat": "Neoniphon coruscus",
+      "referenceDb": "Neoniphon coruscum",
+      "change": "swap",
+      "reason": "Epitheton dem Geschlecht der Gattung angepasst; dieselbe Art.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/161494"
+    },
+    {
+      "inat": "Neoniphon vexillarius",
+      "referenceDb": "Neoniphon vexillarium",
+      "change": "swap",
+      "reason": "Epitheton dem Geschlecht der Gattung angepasst; dieselbe Art.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/161493"
+    },
+    {
+      "inat": "Pinnoctopus alpheus",
+      "referenceDb": "Callistoctopus alpheus",
+      "change": "swap",
+      "reason": "Callistoctopus-Arten in die Gattung Pinnoctopus gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/172612"
+    },
+    {
+      "inat": "Pinnoctopus aspilosomatis",
+      "referenceDb": "Callistoctopus aspilosomatis",
+      "change": "swap",
+      "reason": "Callistoctopus-Arten in die Gattung Pinnoctopus gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/172611"
+    },
+    {
+      "inat": "Pinnoctopus dierythraeus",
+      "referenceDb": "Callistoctopus dierythraeus",
+      "change": "swap",
+      "reason": "Callistoctopus-Arten in die Gattung Pinnoctopus gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/172610"
+    },
+    {
+      "inat": "Pinnoctopus luteus",
+      "referenceDb": "Callistoctopus luteus",
+      "change": "swap",
+      "reason": "Callistoctopus-Arten in die Gattung Pinnoctopus gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/172616"
+    },
+    {
+      "inat": "Pinnoctopus macropus",
+      "referenceDb": "Callistoctopus macropus",
+      "change": "swap",
+      "reason": "Callistoctopus-Arten in die Gattung Pinnoctopus gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/172613"
+    },
+    {
+      "inat": "Pinnoctopus ornatus",
+      "referenceDb": "Callistoctopus ornatus",
+      "change": "swap",
+      "reason": "Callistoctopus-Arten in die Gattung Pinnoctopus gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/172615"
+    },
+    {
+      "inat": "Pseudanthias cheirospilos",
+      "referenceDb": "Pseudanthias squamipinnis",
+      "change": "split",
+      "reason": "Nach Catalog of Fishes gilt P. squamipinnis nur noch für Rotes Meer und westlichen Indischen Ozean, P. cheirospilos für den östlichen Indischen Ozean und Westpazifik; FishBase führt beide als P. squamipinnis.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/147467"
+    },
+    {
+      "inat": "Rhonciscus approximans",
+      "referenceDb": "Rhonciscus pauco",
+      "change": "swap",
+      "reason": "Nach Catalog of Fishes ist R. pauco ein jüngeres Synonym von R. approximans; dieselbe Art.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/152389"
+    },
+    {
+      "inat": "Sphoeroides psittacus",
+      "referenceDb": "Colomesus psittacus",
+      "change": "swap",
+      "reason": "Colomesus in Sphoeroides gestellt; dieselbe Art, nur umbenannt.",
+      "evidence": "https://www.inaturalist.org/taxon_changes/134193"
+    }
+  ]
+}

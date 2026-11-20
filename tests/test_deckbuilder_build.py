@@ -476,6 +476,9 @@ class InatNamesFileTest(unittest.TestCase):
         self.assertEqual(counts, [("A b", 5), ("Metasepia pfefferi", 10)])
         self.assertEqual([(a.entry["inat"], a.count) for a in applied], [("Ascarosepion pfefferi", 7)])
 
+    def test_the_repository_file_is_valid(self):
+        self.assertTrue(inat_names.load(os.path.join(ROOT, "recipes", "inat_names.json")))
+
 
 class RecipesTest(unittest.TestCase):
     def test_every_recipe_is_valid_and_its_files_exist(self):
