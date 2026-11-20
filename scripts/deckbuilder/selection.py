@@ -64,7 +64,7 @@ class Evidence:
 class Selection:
     candidates: dict           # id → Candidate, every resolved species of the order source
     unresolved: list           # [(name, count)] the reference DB does not know
-    excluded: list             # [(id, reason)]
+    excluded: list             # [(id, reason, detail)]
     ranked: list               # ids of the candidates that passed, best first
     levels: list               # [[id]] per level
     sequence: list             # the ranked ids as the levels take them, highlights out of order
@@ -101,19 +101,22 @@ def water_verdict(flags, water):
 
 
 def exclusion_reason(candidate, facts, flags, filters):
-    """Why a candidate stays out, or None if it passes every filter."""
+    """Why a candidate stays out, as (reason, detail), or None if it passes
+    every filter. The reason is one of a few fixed texts, so the report can
+    count by it; the detail gives the species' own value."""
     water = filters.get("water", "any")
     if not water_verdict(flags, water):
-        return "Süßwasser" if water == "salt" else "nicht Süßwasser"
+        return ("kein Meeresfisch", "Saltwater nicht gesetzt") if water == "salt" \
+            else ("kein Süßwasserfisch", "Fresh nicht gesetzt")
     min_count = filters.get("minCount")
     if min_count is not None and candidate.count < min_count:
-        return f"weniger als {min_count:g} Nachweise"
+        return "zu wenige Nachweise", f"{candidate.count:g} < {min_count:g}"
     depth_limit = filters.get("diveDepthLimitM")
     if depth_limit is not None and facts.depth_min_m is not None and facts.depth_min_m > depth_limit:
-        return f"erst ab {facts.depth_min_m:g} m, tiefer als {depth_limit:g} m"
+        return "nur tiefer als die Tauchgrenze", f"erst ab {facts.depth_min_m:g} m"
     min_length = filters.get("minLengthCm")
     if min_length is not None and facts.max_length_cm is not None and facts.max_length_cm < min_length:
-        return f"höchstens {facts.max_length_cm:g} cm, kleiner als {min_length:g} cm"
+        return "zu klein", f"höchstens {facts.max_length_cm:g} cm"
     return None
 
 
@@ -166,7 +169,7 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     for candidate in candidates.values():
         reason = exclusion_reason(candidate, facts[candidate.id], flags.get(candidate.id), filters)
         if reason:
-            excluded.append((candidate.id, reason))
+            excluded.append((candidate.id, *reason))
         else:
             passed.append(candidate)
     names = {i: f.preferred_name for i, f in facts.items()}

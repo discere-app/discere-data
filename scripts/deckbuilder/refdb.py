@@ -159,6 +159,13 @@ COALESCE(
 """
 
 
+def _number(value):
+    """A NUMERIC column as float; NULL and "" (both occur) mean unknown."""
+    if value is None or value == "":
+        return None
+    return float(value)
+
+
 def _chunks(items):
     items = list(items)
     for i in range(0, len(items), CHUNK):
@@ -172,6 +179,21 @@ class ReferenceDb:
 
     def close(self):
         self._db.close()
+
+    def describe(self):
+        """Release and data versions, e.g. "v3 (FishBase v26.06,
+        SeaLifeBase v26.06)"; the release is known from the cache directory
+        name only."""
+        folder = os.path.basename(os.path.dirname(os.path.abspath(self.path)))
+        release = folder if folder[:1] == "v" and folder[1:].isdigit() else "eigene Datei"
+        try:
+            meta = dict(self._db.execute(
+                "SELECT key, value FROM metadata WHERE key IN ('fishbase', 'sealifebase')"))
+        except sqlite3.Error:
+            meta = {}
+        data = ", ".join(f"{label} {meta[key]}" for key, label in (("fishbase", "FishBase"), ("sealifebase", "SeaLifeBase"))
+                         if key in meta)
+        return f"{release} ({data})" if data else release
 
     def lookup(self, normalized_names):
         """normalized name → species id, for the names the DB knows."""
@@ -212,8 +234,8 @@ class ReferenceDb:
                     source=source,
                     external_id=str(external_id),
                     status=status,
-                    depth_min_m=float(depth_min) if depth_min is not None else None,
-                    max_length_cm=float(length) if length is not None else None,
+                    depth_min_m=_number(depth_min),
+                    max_length_cm=_number(length),
                 )
         return facts
 
