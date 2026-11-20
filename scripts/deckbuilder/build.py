@@ -11,7 +11,8 @@
 #   0  deck and report written
 #   1  stopped, nothing written: invalid recipe, unreadable input, a source
 #      or the reference DB not reachable
-#   2  deck and report written, but a highlight stayed out for lack of
+#   2  deck and report written, but a highlight (of a level or an extra
+#      subdeck) stayed out for lack of
 #      evidence or of a name the reference DB knows. The deck is written
 #      anyway: it holds only species with evidence, and the report, which is
 #      what it takes to decide about the highlight, is complete only with
@@ -36,7 +37,8 @@ from .recipe import SCHEMA_DIR, RecipeError
 from .recipe import exclude_names, highlight_names
 from .recipe import load as load_recipe
 from .report import Report
-from .selection import Evidence, select
+from .extra import build_extra
+from .selection import Evidence, counts_by_id, select
 from .sources import SourceResult
 
 EXIT_OK, EXIT_STOPPED, EXIT_HIGHLIGHT_REJECTED = 0, 1, 2
@@ -72,15 +74,6 @@ def read_guides(recipe):
         except OSError as e:
             raise BuildError(f"Führer '{entry['name']}': {e}") from e
     return guides
-
-
-def counts_by_id(counts, resolution):
-    by_id = {}
-    for name, count in counts:
-        species_id = resolution.get(name)
-        if species_id is not None:
-            by_id[species_id] = by_id.get(species_id, 0) + count
-    return by_id
 
 
 def describe_areas(recipe, fetcher):
@@ -178,9 +171,21 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
                 source_names.setdefault(resolution[name], [name])
         names = {i: deck_name(f, source_names.get(i, [])) for i, f in facts.items()}
 
+        taken = {i: f"level-{n}" for n, level in enumerate(selection.levels, 1) for i in level}
+        extras = []
+        extra_ids = [spec["id"] for spec in recipe.get("extraSubdecks", [])]
+        if len(set(extra_ids)) < len(extra_ids):
+            raise BuildError("zwei zusätzliche Subdecks mit derselben id: " + ", ".join(extra_ids))
+        for spec in recipe.get("extraSubdecks", []):
+            extra = build_extra(recipe, spec, fetcher, db, water, name_map, taken)
+            taken.update((i, spec["id"]) for i in extra.ids)
+            extras.append(extra)
+
         levels = [[names[i] for i in level] for level in selection.levels]
         used = {facts[i].source for level in selection.levels for i in level}
-        deck = build_deck(recipe, levels, deck_sources(recipe, used), existing)
+        used |= {e.facts[i].source for e in extras for i in e.ids}
+        deck = build_deck(recipe, levels, deck_sources(recipe, used), existing,
+                          [(e.spec, [e.names[i] for i in e.ids]) for e in extras])
         check_deck(deck)
 
         deck_ids = [i for level in selection.levels for i in level]
@@ -197,7 +202,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
         report = Report(
             recipe, base, selection, names, facts, flags, evidence, guide_reports, notes, list(meta),
             existing.get("speciesNames") if existing else None, describe_areas(recipe, fetcher),
-            resolution, checks, mapped,
+            resolution, checks, mapped, extras,
         ).render()
     except (RecipeError, BuildError, RuntimeError) as e:
         print(f"[ERROR] {e}", file=sys.stderr)
@@ -211,16 +216,22 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
         f.write(report)
 
     counts = "/".join(str(len(level)) for level in selection.levels)
+    counts += "".join(f" + {e.spec['id']} {len(e.ids)}" for e in extras)
     print(f"{deck_path}: {len(deck['speciesNames'])} Arten ({counts})")
     print(f"{report_path}: Bericht")
     for name, why in selection.unused_excludes:
         print(f"[WARN] Ausschluss {name} wirkt nicht: {why}")
+    for e in extras:
+        for name, why in e.selection.unused_excludes:
+            print(f"[WARN] Subdeck {e.spec['id']}: Ausschluss {name} wirkt nicht: {why}")
     if selection.unresolved:
         print(f"[WARN] {len(selection.unresolved)} Namen der Reihenfolge-Quelle nicht aufgelöst (siehe Bericht)")
     if existing is None:
         print(f"[TODO] {base}.json ist neu: Vor dem PR die Grenzfälle im Bericht durchsehen.")
-    if selection.rejected_highlights:
-        for name, reason in selection.rejected_highlights:
+    rejected = list(selection.rejected_highlights)
+    rejected += [(f"{name} (Subdeck {e.spec['id']})", reason) for e in extras for name, reason in e.selection.rejected_highlights]
+    if rejected:
+        for name, reason in rejected:
             print(f"[ERROR] Highlight {name} nicht im Deck: {reason}", file=sys.stderr)
         return EXIT_HIGHLIGHT_REJECTED
     return EXIT_OK

@@ -78,6 +78,7 @@ class Selection:
 
 
 HAND_EXCLUDED = "von Hand ausgeschlossen"
+IN_OTHER_SUBDECK = "schon in einem anderen Subdeck"
 
 
 def aggregate(counts, resolution, combine=sum):
@@ -95,6 +96,15 @@ def aggregate(counts, resolution, combine=sum):
         candidate.names.append(name)
     unresolved.sort(key=lambda item: (-item[1], item[0]))
     return by_id, unresolved
+
+
+def counts_by_id(counts, resolution):
+    by_id = {}
+    for name, count in counts:
+        species_id = resolution.get(name)
+        if species_id is not None:
+            by_id[species_id] = by_id.get(species_id, 0) + count
+    return by_id
 
 
 def water_verdict(flags, water):
@@ -150,14 +160,16 @@ def split_levels(ranked, highlights, sizes):
     return levels, sequence, [min(c, len(sequence)) for c in cuts]
 
 
-def check_highlights(names, resolution, evidence):
+def check_highlights(names, resolution, evidence, taken=None):
     """Accepted highlight ids in recipe order, and the rejected names with
-    their reason."""
+    their reason. `taken` maps ids already in another subdeck to its id."""
     accepted, rejected = [], []
     for name in names:
         species_id = resolution.get(name)
         if species_id is None:
             rejected.append((name, "Name in der Referenz-DB nicht gefunden"))
+        elif species_id in (taken or {}):
+            rejected.append((name, f"schon im Subdeck {taken[species_id]}"))
         elif not evidence.get(species_id, Evidence()).found():
             rejected.append((name, "kein Nachweis in der Region"))
         elif species_id not in accepted:
@@ -165,11 +177,26 @@ def check_highlights(names, resolution, evidence):
     return accepted, rejected
 
 
-def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum):
+def split_extra(ranked, highlights, size):
+    """The one level of an extra subdeck, the sequence it is cut from and
+    the cut: its highlights count towards `size`, so the most frequent
+    species fill what they leave."""
+    picked = set(highlights)
+    sequence = [i for i in ranked if i not in picked]
+    cut = max(0, size - len(highlights))
+    chosen = set(sequence[:cut])
+    level = [i for i in ranked if i in picked or i in chosen] + [h for h in highlights if h not in ranked]
+    return [level], sequence, [min(cut, len(sequence))]
+
+
+def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum, taken=None, split=None):
     """The whole selection of a recipe. `resolution` maps every name (order
     source and highlights) to a species id or None; `facts`, `flags` and
     `evidence` are per species id (refdb.SpeciesFacts, the water flag
-    triple if known, Evidence)."""
+    triple if known, Evidence). `taken` maps the ids already in another
+    subdeck to its id; they stay out. `split(ranked, highlights)` cuts the
+    levels, by default by the recipe's levelSizes."""
+    taken = taken or {}
     candidates, unresolved = aggregate(order_counts, resolution, combine)
     filters = recipe.get("filters", {})
     by_hand, unused = {}, []
@@ -184,6 +211,8 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     passed, excluded = [], []
     for candidate in candidates.values():
         reason = exclusion_reason(candidate, facts[candidate.id], flags.get(candidate.id), filters)
+        if candidate.id in taken:
+            reason = IN_OTHER_SUBDECK, taken[candidate.id]
         if reason:
             excluded.append((candidate.id, *reason))
             if candidate.id in by_hand:
@@ -195,8 +224,10 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     names = {i: f.preferred_name for i, f in facts.items()}
     excluded.sort(key=lambda item: (-candidates[item[0]].count, names[item[0]]))
     ranked = rank(passed, names)
-    highlights, rejected = check_highlights([h["name"] for h in recipe.get("highlights", [])], resolution, evidence)
-    levels, sequence, cuts = split_levels(ranked, highlights, recipe["levelSizes"])
+    highlights, rejected = check_highlights([h["name"] for h in recipe.get("highlights", [])], resolution, evidence,
+                                            taken)
+    split = split or (lambda r, h: split_levels(r, h, recipe["levelSizes"]))
+    levels, sequence, cuts = split(ranked, highlights)
     return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected, unused)
 
 

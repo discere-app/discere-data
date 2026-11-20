@@ -293,6 +293,22 @@ class ReferenceDb:
             result.update((sid, (fid, name)) for sid, fid, name in rows)
         return result
 
+    def classes(self, species_ids):
+        """species id → class name, for species whose genus, family and
+        order lead to a class."""
+        result = {}
+        for chunk in _chunks(set(species_ids)):
+            marks = ",".join("?" * len(chunk))
+            rows = self._db.execute(
+                f"""SELECT s.id, c.name FROM species s
+                    JOIN genera g ON g.id = s.genus JOIN families f ON f.id = g.family
+                    JOIN orders o ON o.id = f."order" JOIN classes c ON c.id = o.class
+                    WHERE s.id IN ({marks})""",
+                chunk,
+            )
+            result.update(rows)
+        return result
+
     def shared_scientific_names(self, species_ids):
         """[(id a, id b, normalized name)] for two of the given species that
         both carry a scientific name as their accepted name or a synonym: the

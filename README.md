@@ -253,6 +253,8 @@ schreiben. Ein Rezept legt fest:
 - optional `exclude`: Arten, die ein Mensch trotz bestandener Filter
   herausnimmt, je mit Grund, etwa Schlammspringer in einem Taucherdeck. Das
   Werkzeug selbst nimmt nichts nach Art heraus
+- optional `extraSubdecks`: weitere Subdecks nach den Levels, je für eine
+  andere Tiergruppe (siehe [Zusätzliche Subdecks](#zusätzliche-subdecks))
 
 Mehrere Gebiete fragt das Werkzeug je Quelle in einer Abfrage ab (iNat-Orte
 als Komma-Liste, OBIS-Gebiete als ein `MULTIPOLYGON`), sodass eine
@@ -289,8 +291,9 @@ pip install "jsonschema[format]" duckdb
 python3 scripts/build_deck.py recipes/<base>.json
 ```
 
-Das schreibt `data/decks/<base>.json` (Format 2, Subdecks `level-1` …, die
-Arten unter dem bevorzugten Namen der Referenz-DB) und den Bericht
+Das schreibt `data/decks/<base>.json` (Format 2, Subdecks `level-1` … und
+die zusätzlichen, die Arten unter dem bevorzugten Namen der Referenz-DB) und
+den Bericht
 `recipes/<base>.report.md`. Gibt es das Deck schon, bleiben `sourceId`,
 `supersedes` und alles, was das Rezept nicht festlegt, erhalten. Der Bericht
 enthält je Art die Belege (Zählung je Quelle, FishBase/SeaLifeBase-Status in
@@ -341,6 +344,29 @@ nicht „nicht vorhanden“ sagt, oder eine Zeile in einem Führer. Fehlt er,
 kommt es nicht ins Deck, steht oben im Bericht, und der Lauf endet mit
 Exit-Code 2. Automatisch ermittelte Highlights lieferten vor allem
 Fehlbestimmungen, etwa Indopazifik-Arten in der Karibik.
+
+### Zusätzliche Subdecks
+
+Ein Eintrag in `extraSubdecks` hängt ein Subdeck für eine andere Tiergruppe
+hinter die Levels, etwa die Wirbellosen eines Riffdecks, dessen Levels die
+Fische halten. Er nennt `id` (nicht `level-<n>`), `name` und `translations`
+wie ein Subdeck im Deck-Format, eigene `taxa` (iNat, dazu WoRMS-IDs, wenn
+die Region OBIS fragt) und `size`, optional eigene `filters`, `highlights`
+und `exclude`. Reihenfolge-Quelle (nur `inat`) und Region sind die des
+Rezepts. Die eigenen `filters` ersetzen die des Rezepts Schlüssel für
+Schlüssel, die übrigen gelten weiter; `minLengthCm: 0` hebt eine
+Mindestgröße auf.
+
+Das Subdeck nimmt die häufigsten Arten seiner Taxa bis `size`, die
+Highlights mitgezählt; gibt es weniger Kandidaten, bleibt es kleiner.
+Namenszuordnung, Nachweis für Highlights und Ausschluss von Hand gelten wie
+bei den Levels. Eine Art, die schon in einem Level oder einem früheren
+Subdeck steht, bleibt draußen, auch als Highlight, sodass jede Art in genau
+einem Subdeck steht; die Taxa dürfen sich darum überschneiden (Weichtiere
+umfassen die Kopffüßer der Levels). `speciesNames` des Decks ist die
+Vereinigung. Der Bericht hat je Subdeck einen eigenen Abschnitt mit Liste,
+Klasse je Art, Ausschlüssen, Prüfung und Grenze; mit den Führern gleicht er
+nur die Levels ab.
 
 ### Danach
 

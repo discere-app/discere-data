@@ -7,7 +7,9 @@
 # species (count per source, FishBase/SeaLifeBase distribution in the recipe
 # regions, water type, guide), the highlights that stayed out, the species
 # around each level boundary, the comparison with the guides both ways, the
-# excluded candidates with their reason and the names nobody resolved.
+# excluded candidates with their reason and the names nobody resolved; then
+# a section of the same kind per extra subdeck (deckbuilder/extra.py),
+# without the guide comparison.
 #
 # The report holds no date or path, so a rerun on the same data writes the
 # same file and its diff shows only what changed.
@@ -55,7 +57,7 @@ def escape(text):
 
 class Report:
     def __init__(self, recipe, base, selection, names, facts, flags, evidence, guides, notes, meta, existing_names,
-                 areas, resolution, checks, mapped=None):
+                 areas, resolution, checks, mapped=None, extras=(), placed="Level 1"):
         self.recipe = recipe
         self.base = base
         self.s = selection
@@ -71,6 +73,8 @@ class Report:
         self.resolution = resolution  # name → species id or None
         self.checks = checks          # checks.Checks
         self.mapped = mapped          # [inat_names.Applied], None if the order source is not inat
+        self.extras = list(extras)    # [extra.ExtraResult]
+        self.placed = placed          # where an accepted highlight goes
         self.order_label = ORDER_LABELS[recipe["order"]["source"]]
         self.level_of = {i: n for n, level in enumerate(selection.levels, 1) for i in level}
         self.rank_of = {i: n for n, i in enumerate(selection.ranked, 1)}
@@ -238,7 +242,7 @@ class Report:
             self.out()
 
         if self.existing_names is not None:
-            new_names = {self.names[i] for i in deck_ids}
+            new_names = {self.names[i] for i in deck_ids} | {e.names[i] for e in self.extras for i in e.ids}
             old_names = set(self.existing_names)
             self.out("## Änderungen gegenüber dem bestehenden Deck")
             self.out()
@@ -251,19 +255,10 @@ class Report:
 
         self.out("## Ausgeschlossene Kandidaten")
         self.out()
-        if s.excluded:
-            self.out("<details><summary>" + f"{len(s.excluded)} Arten" + "</summary>")
-            self.out()
-            self.out(f"| Art | {self.order_label} | Wasser | Grund |")
-            self.out("|---|---|---|---|")
-            for species_id, reason, detail in s.excluded:
-                self.out(f"| *{escape(self.names[species_id])}* | {number(s.candidates[species_id].count)} | "
-                         f"{water_label(self.flags.get(species_id))} | {reason} ({detail}) |")
-            self.out()
-            self.out("</details>")
-        else:
-            self.out("Keine.")
-        self.out()
+        self.render_excluded()
+
+        for extra in self.extras:
+            self.render_extra(extra)
 
         self.out("## Nicht aufgelöste Namen der Reihenfolge-Quelle")
         self.out()
@@ -295,9 +290,92 @@ class Report:
             if species_id and self.names[species_id] != name:
                 shown += f" (Rezept: *{escape(name)}*)"
             ev = self.evidence.get(species_id)
-            status = f"verworfen: {rejected[name]}" if name in rejected else "Level 1"
+            status = f"verworfen: {rejected[name]}" if name in rejected else self.placed
             self.out(f"| {shown} | {escape(highlight['reason'])} | {number(self.rank_of.get(species_id))} | "
                      f"{(', '.join(evidence_sources(ev)) or 'keine') if ev else '–'} | {status} |")
+        self.out()
+
+    def render_extra(self, e):
+        """The section of an extra subdeck: a report of its own, its
+        headings one level down. The guides are left out; they list the
+        recipe's main taxa."""
+        spec = e.spec
+        sub = Report({**self.recipe, "highlights": spec.get("highlights", []), **(
+            {"exclude": spec["exclude"]} if "exclude" in spec else {})}, self.base, e.selection, e.names, e.facts,
+            e.flags, e.evidence, [], e.notes, [], None, [], e.resolution, e.checks, e.mapped, placed=spec["id"])
+        sub.classes = e.classes
+        sub.render_extra_body()
+        self.lines += [("#" + line) if line.startswith("#") else line for line in sub.lines]
+
+    def render_extra_body(self):
+        s = self.s
+        ids = s.levels[0]
+        self.out(f"# Subdeck `{self.placed}` ({len(ids)})")
+        self.out()
+        self.out("Eigene Taxa, Größe und Filter, Reihenfolge-Quelle und Region des Rezepts. Arten, die schon in "
+                 "einem Level oder einem früheren Subdeck stehen, bleiben draußen; die Führer werden nicht "
+                 "abgeglichen.")
+        self.out()
+        for note in self.notes:
+            self.out(f"- {note}")
+        self.out()
+        if s.rejected_highlights:
+            self.out("**Verworfene Highlights:**")
+            self.out()
+            for name, reason in s.rejected_highlights:
+                self.out(f"- *{escape(name)}*: {reason}")
+            self.out()
+        self.render_mapped()
+        self.render_hand_excluded()
+        self.render_highlights()
+        self.render_checks(ids)
+        self.out("## Arten")
+        self.out()
+        self.table_header(["Klasse"])
+        for species_id in ids:
+            self.row(species_id, [self.classes.get(species_id, "?")])
+        self.out()
+        self.out("## Grenzfälle")
+        self.out()
+        self.out(f"Je {BOUNDARY_WIDTH} Arten vor und nach der Grenze (Highlights übersprungen).")
+        self.out()
+        self.table_header(["Klasse", "Im Subdeck"])
+        for _, before, after in boundaries(s):
+            for species_id in before:
+                self.row(species_id, [self.classes.get(species_id, "?"), "ja"])
+            self.out("| | **Grenze** | | | | | | |")
+            for species_id in after:
+                self.row(species_id, [self.classes.get(species_id, "?"), "nein"])
+        self.out()
+        self.out("## Ausgeschlossene Kandidaten")
+        self.out()
+        self.render_excluded()
+        self.out("## Nicht aufgelöste Namen")
+        self.out()
+        if s.unresolved:
+            self.out(f"<details><summary>{len(s.unresolved)} Namen</summary>")
+            self.out()
+            self.out(", ".join(f"*{escape(name)}* ({number(count)})" for name, count in s.unresolved))
+            self.out()
+            self.out("</details>")
+        else:
+            self.out("Keine.")
+        self.out()
+
+    def render_excluded(self):
+        s = self.s
+        if s.excluded:
+            self.out("<details><summary>" + f"{len(s.excluded)} Arten" + "</summary>")
+            self.out()
+            self.out(f"| Art | {self.order_label} | Wasser | Grund |")
+            self.out("|---|---|---|---|")
+            for species_id, reason, detail in s.excluded:
+                self.out(f"| *{escape(self.names[species_id])}* | {number(s.candidates[species_id].count)} | "
+                         f"{water_label(self.flags.get(species_id))} | {reason} ({detail}) |")
+            self.out()
+            self.out("</details>")
+        else:
+            self.out("Keine.")
         self.out()
 
     def species_list(self, ids):

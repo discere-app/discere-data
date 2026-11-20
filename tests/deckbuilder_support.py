@@ -51,7 +51,8 @@ class FakeFetcher:
 
 
 SCHEMA = """
-CREATE TABLE families (id TEXT PRIMARY KEY, name TEXT NOT NULL);
+CREATE TABLE classes (id TEXT PRIMARY KEY, name TEXT NOT NULL);
+CREATE TABLE families (id TEXT PRIMARY KEY, name TEXT NOT NULL, "order" TEXT);
 CREATE TABLE genera (id TEXT PRIMARY KEY, name TEXT NOT NULL, family TEXT);
 CREATE TABLE common_names (
     entity_id TEXT NOT NULL, language TEXT NOT NULL, country TEXT, name TEXT NOT NULL,
@@ -66,11 +67,11 @@ CREATE TABLE species_name_lookup (normalized_name TEXT PRIMARY KEY, species_id T
 CREATE TABLE taxonomy_distribution_regions (
     entity_id TEXT NOT NULL, source TEXT NOT NULL, region_scope TEXT NOT NULL, region_key TEXT NOT NULL,
     establishment_status TEXT, presence_status TEXT);
-CREATE TABLE orders (id TEXT PRIMARY KEY, external_source TEXT NOT NULL, name TEXT NOT NULL);
+CREATE TABLE orders (id TEXT PRIMARY KEY, external_source TEXT NOT NULL, name TEXT NOT NULL, class TEXT);
 """
 
 
-def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=None, common_names=()):
+def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=None, common_names=(), classes=None):
     """A reference DB at `path`.
     species:      (id, "Genus epithet", source, SpecCode, depth_min_m, max_length_cm)
     synonyms:     ("Other name", species id[, name_status]) — also findable by
@@ -78,6 +79,7 @@ def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=N
     occurrences:  (species id, region_key, establishment_status, presence_status)
     orders:       (order name, external_source)
     families:     {genus name: family name}; the family id is "f:<name>"
+    classes:      {family name: class name}, each through an order of its own
     common_names: (entity id, language, name, country, is_preferred, rank)"""
     db = sqlite3.connect(path)
     db.executescript(SCHEMA)
@@ -85,7 +87,13 @@ def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=N
         genus, epithet = name.split()
         family = (families or {}).get(genus)
         if family:
-            db.execute("INSERT OR IGNORE INTO families VALUES (?, ?)", (f"f:{family}", family))
+            class_name = (classes or {}).get(family)
+            if class_name:
+                db.execute("INSERT OR IGNORE INTO classes VALUES (?, ?)", (f"c:{class_name}", class_name))
+                db.execute("INSERT OR IGNORE INTO orders VALUES (?, 'test', ?, ?)",
+                           (f"o:{family}", f"{family}ales", f"c:{class_name}"))
+            db.execute("INSERT OR IGNORE INTO families VALUES (?, ?, ?)",
+                       (f"f:{family}", family, class_name and f"o:{family}"))
         db.execute("INSERT OR IGNORE INTO genera VALUES (?, ?, ?)", (f"g:{genus}", genus, family and f"f:{family}"))
         db.execute("INSERT INTO species VALUES (?, ?, ?, ?, ?, ?, ?, 'active')",
                    (sid, code, source, epithet, length, depth, f"g:{genus}"))
@@ -104,6 +112,6 @@ def make_refdb(path, species, synonyms=(), occurrences=(), orders=(), families=N
         db.execute("INSERT INTO common_names VALUES (?, ?, ?, ?, ?, ?)",
                    (row[0], row[1], row[3], row[2], row[5], row[4]))
     for n, (name, source) in enumerate(orders):
-        db.execute("INSERT INTO orders VALUES (?, ?, ?)", (f"o:{n}", source, name))
+        db.execute("INSERT INTO orders VALUES (?, ?, ?, NULL)", (f"o:{n}", source, name))
     db.commit()
     db.close()

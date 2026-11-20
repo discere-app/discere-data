@@ -30,6 +30,14 @@
     {
       "if": { "required": ["region"], "properties": { "region": { "required": ["obis"] } } },
       "then": { "required": ["taxa"], "properties": { "taxa": { "required": ["obis"] } } }
+    },
+    {
+      "if": { "required": ["extraSubdecks"] },
+      "then": { "properties": { "order": { "properties": { "source": { "const": "inat" } } } } }
+    },
+    {
+      "if": { "required": ["extraSubdecks", "region"], "properties": { "region": { "required": ["obis"] } } },
+      "then": { "properties": { "extraSubdecks": { "items": { "properties": { "taxa": { "required": ["obis"] } } } } } }
     }
   ],
   "properties": {
@@ -225,6 +233,48 @@
         "properties": {
           "name": { "$ref": "deck.schema.json#/$defs/scientificName" },
           "reason": { "description": "Why it is no encounter for the deck's audience, in one sentence.", "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "extraSubdecks": {
+      "description": "Subdecks after the levels, each for another group of animals, e.g. the invertebrates of a dive deck whose levels hold the fishes. Each takes the most frequent species of its own taxa from the recipe's order source and region (only inat) up to its size, with the same name mapping, highlight evidence and exclusion by hand as the levels. A species already on a level or in an earlier extra subdeck stays out, so every species is in one subdeck only; the deck's speciesNames is the union. The guides are not compared with them.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "taxa", "size"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "description": "The subdeck id in the deck; the level ids level-<n> are taken.",
+            "allOf": [
+              { "$ref": "deck.schema.json#/$defs/subdeck/properties/id" },
+              { "not": { "pattern": "^level-[0-9]+$" } }
+            ]
+          },
+          "name": { "$ref": "deck.schema.json#/$defs/subdeck/properties/name" },
+          "translations": { "$ref": "deck.schema.json#/$defs/subdeck/properties/translations" },
+          "taxa": {
+            "description": "The subdeck's taxa: inat for the order source, obis (WoRMS AphiaIDs) for the OBIS evidence if the region has obis.",
+            "type": "object",
+            "required": ["inat"],
+            "additionalProperties": false,
+            "properties": {
+              "inat": { "$ref": "#/$defs/taxonIds" },
+              "obis": { "$ref": "#/$defs/taxonIds" }
+            }
+          },
+          "size": {
+            "description": "Number of species including the highlights; fewer if fewer candidates pass.",
+            "type": "integer",
+            "minimum": 1
+          },
+          "filters": {
+            "description": "Override the recipe's filters key by key; minLengthCm 0 lifts a minimum length.",
+            "$ref": "#/properties/filters"
+          },
+          "highlights": { "$ref": "#/properties/highlights" },
+          "exclude": { "$ref": "#/properties/exclude" }
         }
       }
     },
