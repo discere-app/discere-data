@@ -1,23 +1,23 @@
 {
   "formatVersion": 2,
   "name": "Karibik & tropischer Westatlantik",
-  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Karibik, der Bahamas, Südfloridas mit den Keys und Bermudas. Vom Golf von Mexiko nur Yucatán (Quintana Roo), die Pazifikküste Mittelamerikas gehört nicht dazu. Level 1 enthält die häufigsten Arten und Highlights wie Walhai und Seepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit.",
+  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Karibik, der Bahamas, Südfloridas mit den Keys und Bermudas. Vom Golf von Mexiko nur Yucatán (Quintana Roo), die Pazifikküste Mittelamerikas gehört nicht dazu. Level 1 enthält die häufigsten Arten und Highlights wie Walhai und Seepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
   "translations": {
     "de": {
       "name": "Karibik & tropischer Westatlantik",
-      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Karibik, der Bahamas, Südfloridas mit den Keys und Bermudas. Vom Golf von Mexiko nur Yucatán (Quintana Roo), die Pazifikküste Mittelamerikas gehört nicht dazu. Level 1 enthält die häufigsten Arten und Highlights wie Walhai und Seepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit."
+      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Karibik, der Bahamas, Südfloridas mit den Keys und Bermudas. Vom Golf von Mexiko nur Yucatán (Quintana Roo), die Pazifikküste Mittelamerikas gehört nicht dazu. Level 1 enthält die häufigsten Arten und Highlights wie Walhai und Seepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
     },
     "en": {
       "name": "Caribbean & Tropical Western Atlantic",
-      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Caribbean, the Bahamas, South Florida with the Keys and Bermuda. Of the Gulf of Mexico only Yucatán (Quintana Roo) is included, and not the Pacific coast of Central America. Level 1 holds the most common species and highlights such as the whale shark and seahorses, Levels 2 and 3 further species by frequency."
+      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Caribbean, the Bahamas, South Florida with the Keys and Bermuda. Of the Gulf of Mexico only Yucatán (Quintana Roo) is included, and not the Pacific coast of Central America. Level 1 holds the most common species and highlights such as the whale shark and seahorses, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
     },
     "fr": {
       "name": "Caraïbes et Atlantique ouest tropical",
-      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes des Caraïbes, des Bahamas, du sud de la Floride avec les Keys et des Bermudes. Du golfe du Mexique, seul le Yucatán (Quintana Roo) est inclus, la côte pacifique de l'Amérique centrale ne l'est pas. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine et les hippocampes, les niveaux 2 et 3 d'autres espèces par fréquence."
+      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes des Caraïbes, des Bahamas, du sud de la Floride avec les Keys et des Bermudes. Du golfe du Mexique, seul le Yucatán (Quintana Roo) est inclus, la côte pacifique de l'Amérique centrale ne l'est pas. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine et les hippocampes, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
     },
     "es": {
       "name": "Caribe y Atlántico occidental tropical",
-      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos del Caribe, las Bahamas, el sur de Florida con los Cayos y las Bermudas. Del golfo de México solo se incluye Yucatán (Quintana Roo), y no la costa pacífica de Centroamérica. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena y los caballitos de mar, los niveles 2 y 3 otras especies por frecuencia."
+      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos del Caribe, las Bahamas, el sur de Florida con los Cayos y las Bermudas. Del golfo de México solo se incluye Yucatán (Quintana Roo), y no la costa pacífica de Centroamérica. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena y los caballitos de mar, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
     }
   },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Snorkeling_Bari_Reef%2C_Bonaire_%2812840799335%29.jpg/330px-Snorkeling_Bari_Reef%2C_Bonaire_%2812840799335%29.jpg",
@@ -88,7 +88,7 @@
     "Haemulon plumierii",
     "Holocentrus rufus",
     "Rhincodon typus",
-    "Mobula birostris",
+    "Mobula yarae",
     "Sphyrna mokarran",
     "Hippocampus reidi",
     "Antennarius multiocellatus",
@@ -167,9 +167,7 @@
     "Stegastes xanthurus",
     "Canthidermis sufflamen",
     "Heteropriacanthus cruentatus",
-    "Poecilia latipinna",
     "Epinephelus guttatus",
-    "Dajaus monticola",
     "Neoniphon vexillarium",
     "Octopus briareus",
     "Halichoeres maculipinna",
@@ -204,17 +202,18 @@
     "Albula vulpes",
     "Mycteroperca tigris",
     "Acanthemblemaria aspera",
+    "Emblemaria pandionis",
+    "Scarus coelestinus",
     "Gorgonia ventalina",
     "Aliger gigas",
     "Panulirus argus",
     "Oreaster reticulatus",
-    "Physalia physalis",
     "Condylactis gigantea",
     "Diadema antillarum",
     "Echinometra lucunter",
     "Porites astreoides",
-    "Cyphoma gibbosum",
     "Acropora palmata",
+    "Cyphoma gibbosum",
     "Pseudodiploria strigosa",
     "Spirobranchus giganteus",
     "Elysia crispata",
@@ -242,6 +241,7 @@
     "Millepora complanata",
     "Ancylomenes pedersoni",
     "Aplysina archeri",
+    "Isostichopus badionotus",
     "Acropora cervicornis",
     "Astrophyton muricatum"
   ],
@@ -305,7 +305,7 @@
         "Haemulon plumierii",
         "Holocentrus rufus",
         "Rhincodon typus",
-        "Mobula birostris",
+        "Mobula yarae",
         "Sphyrna mokarran",
         "Hippocampus reidi",
         "Antennarius multiocellatus",
@@ -424,9 +424,7 @@
         "Stegastes xanthurus",
         "Canthidermis sufflamen",
         "Heteropriacanthus cruentatus",
-        "Poecilia latipinna",
         "Epinephelus guttatus",
-        "Dajaus monticola",
         "Neoniphon vexillarium",
         "Octopus briareus",
         "Halichoeres maculipinna",
@@ -460,7 +458,9 @@
         "Strongylura notata",
         "Albula vulpes",
         "Mycteroperca tigris",
-        "Acanthemblemaria aspera"
+        "Acanthemblemaria aspera",
+        "Emblemaria pandionis",
+        "Scarus coelestinus"
       ]
     },
     {
@@ -485,13 +485,12 @@
         "Aliger gigas",
         "Panulirus argus",
         "Oreaster reticulatus",
-        "Physalia physalis",
         "Condylactis gigantea",
         "Diadema antillarum",
         "Echinometra lucunter",
         "Porites astreoides",
-        "Cyphoma gibbosum",
         "Acropora palmata",
+        "Cyphoma gibbosum",
         "Pseudodiploria strigosa",
         "Spirobranchus giganteus",
         "Elysia crispata",
@@ -519,6 +518,7 @@
         "Millepora complanata",
         "Ancylomenes pedersoni",
         "Aplysina archeri",
+        "Isostichopus badionotus",
         "Acropora cervicornis",
         "Astrophyton muricatum"
       ]
