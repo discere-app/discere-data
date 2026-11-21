@@ -6,8 +6,9 @@
 # point at what a person has to decide (exclude with a reason, map a name,
 # change a level). Nothing here takes a species out.
 #
-# - dead: most annotated observations say dead — empty shells, beach finds,
-#   fish on the market.
+# - dead: most observations annotated alive or dead say dead — empty
+#   shells, beach finds, fish on the market. "Cannot be determined" says
+#   neither and stays out of the share.
 # - name of the region: the deck carries the iNaturalist name, which the
 #   reference DB knows only as a synonym of the species it lists; often a
 #   species complex the reference DB has not split (Halichoeres annularis
@@ -49,10 +50,10 @@ def percent(part, whole):
 
 
 def dead(signals, species_id, t):
-    annotated = signals.annotated.get(species_id, 0)
     found = signals.dead.get(species_id, 0)
+    annotated = signals.alive.get(species_id, 0) + found
     if annotated >= t["deadMinAnnotated"] and found >= t["deadShare"] * annotated:
-        return f"{found} von {annotated} annotierten Beobachtungen tot ({percent(found, annotated)})"
+        return f"{found} von {annotated} Beobachtungen mit Angabe lebend/tot tot ({percent(found, annotated)})"
     return None
 
 

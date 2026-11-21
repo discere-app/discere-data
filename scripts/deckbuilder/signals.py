@@ -5,8 +5,8 @@
 # count means "a diver meets this here" (deckbuilder/findings.py judges):
 #
 # - Annotation Alive or Dead: how many of a species' observations in the
-#   region carry it, and how many say dead. Two species_counts queries per
-#   region and taxa, whatever the number of species.
+#   region are annotated alive, how many dead. Two species_counts queries
+#   per region and taxa, whatever the number of species.
 # - Observers: how many people observed the species, and how many
 #   observations the most active of them made. One request per species, so
 #   only for the species where the answer matters (levels 1 and 2 and the
@@ -24,8 +24,8 @@ from .selection import counts_by_id
 
 @dataclass
 class Signals:
+    alive: dict = field(default_factory=dict)      # species id → observations annotated alive
     dead: dict = field(default_factory=dict)       # species id → observations annotated dead
-    annotated: dict = field(default_factory=dict)  # species id → observations annotated alive or dead
     observers: dict = field(default_factory=dict)  # species id → (observers, [observations of the most active])
 
 
@@ -49,10 +49,10 @@ def collect(fetcher, region, taxa, source, name_map, resolution, observed_ids, t
     def by_species(counts):
         return counts_by_id(inat_names.apply(counts, name_map)[0], resolution)
 
+    alive = by_species(inat.annotation_counts(fetcher, region, taxa, inat.ALIVE))
     dead = by_species(inat.annotation_counts(fetcher, region, taxa, inat.DEAD))
-    annotated = by_species(inat.annotation_counts(fetcher, region, taxa))
     taxon_ids = taxon_ids_by_species(source.taxon_ids, name_map, resolution)
     observers = {
         i: inat.top_observers(fetcher, region, taxon_ids[i], top) for i in observed_ids if i in taxon_ids
     }
-    return Signals(dead, annotated, observers)
+    return Signals(alive, dead, observers)

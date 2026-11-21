@@ -16,8 +16,9 @@
 # angelfish family Pomacanthidae.
 #
 # Besides the counts, two signals for the report (deckbuilder/findings.py):
-# how many observations carry the annotation Alive or Dead, and how many of
-# them say dead (an empty shell, a fish on the market), and who observed a
+# how many observations are annotated alive and how many dead (an empty
+# shell, a fish on the market) — the value Cannot Be Determined says
+# neither and does not count — and who observed a
 # species: if two people account for most observations, the count says
 # little about how common it is.
 # =============================================================================
@@ -26,8 +27,9 @@ from .sources import SourceResult
 
 API = "https://api.inaturalist.org/v1/observations/species_counts"
 OBSERVERS = "https://api.inaturalist.org/v1/observations/observers"
-# The controlled term "Alive or Dead" and its value "Dead".
+# The controlled term "Alive or Dead" and its values "Alive" and "Dead".
 ALIVE_OR_DEAD = 17
+ALIVE = 18
 DEAD = 19
 PLACES = "https://api.inaturalist.org/v1/places/{ids}"
 PER_PAGE = 500
@@ -84,12 +86,10 @@ def species_counts(fetcher, region, taxon_ids):
     return SourceResult(counts, notes, {r["taxon"]["name"]: r["taxon"]["id"] for r in results if "id" in r["taxon"]})
 
 
-def annotation_counts(fetcher, region, taxon_ids, value_id=None):
-    """[(name, count)] of the observations carrying the annotation Alive or
-    Dead (term ALIVE_OR_DEAD), or only those with the value `value_id`."""
-    params = {**_query(region, taxon_ids), "term_id": ALIVE_OR_DEAD}
-    if value_id is not None:
-        params["term_value_id"] = value_id
+def annotation_counts(fetcher, region, taxon_ids, value_id):
+    """[(name, count)] of the observations annotated Alive or Dead with the
+    value `value_id` (ALIVE or DEAD)."""
+    params = {**_query(region, taxon_ids), "term_id": ALIVE_OR_DEAD, "term_value_id": value_id}
     results, _, _ = _species_count_pages(fetcher, params)
     return [(r["taxon"]["name"], r["count"]) for r in results]
 

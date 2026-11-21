@@ -80,8 +80,11 @@ RECIPE = {
 
 
 TAXON_IDS = {name: 1000 + n for n, (name, _) in enumerate(INAT_RESULTS)}
-# Annotation Alive or Dead: (annotated, dead) per iNaturalist name.
-ANNOTATIONS = {"Alpha one": (10, 9), "Beta two": (10, 7), "Delta four": (4, 4)}
+# Annotation Alive or Dead: (alive, dead, cannot be determined) per
+# iNaturalist name. Alpha one is mostly dead among alive and dead, but not
+# among all its annotations.
+ANNOTATIONS = {"Alpha one": (1, 9, 10), "Beta two": (3, 7, 0), "Delta four": (0, 4, 2)}
+ANNOTATION_VALUES = {"18": 0, "19": 1, "20": 2}
 # Observers: (observers, [observations of the most active]) per taxon id.
 OBSERVERS = {TAXON_IDS["Alpha one"]: (3, [60, 20, 20]), TAXON_IDS["Beta two"]: (30, [10, 5, 5])}
 
@@ -100,8 +103,8 @@ def answer(base, params):
         return {"total_results": observers,
                 "results": [{"observation_count": n} for n in top[:params["per_page"]]]}
     if "inaturalist" in base and "term_id" in params:
-        column = 1 if "term_value_id" in params else 0
-        return species_counts_body([(n, a[column]) for n, a in ANNOTATIONS.items()])
+        values = [ANNOTATION_VALUES[str(params["term_value_id"])]] if "term_value_id" in params else [0, 1, 2]
+        return species_counts_body([(n, sum(a[v] for v in values)) for n, a in ANNOTATIONS.items()])
     if "inaturalist" in base:
         return species_counts_body(INAT_RESULTS)
     if "obis" in base and "datasetid" in params:
@@ -431,8 +434,9 @@ class BuildTest(unittest.TestCase):
     def test_mostly_dead_observations_are_reported(self):
         self.run_build()
         found = self.found()
-        self.assertIn("| *Alpha one* | level-1 | tot beobachtet | 9 von 10 annotierten Beobachtungen tot (90 %) |",
-                      found)
+        # 9 dead, 1 alive, 10 cannot be determined: the share is 9 of 10.
+        self.assertIn("| *Alpha one* | level-1 | tot beobachtet | 9 von 10 Beobachtungen mit Angabe lebend/tot tot "
+                      "(90 %) |", found)
         self.assertNotIn("| *Beta two* | level-1 | tot beobachtet", found)     # 7 of 10
         self.assertNotIn("| *Delta four* | level-1 | tot beobachtet", found)   # 4 of 4, too few annotated
         self.assertIn("Alpha one", self.deck()["speciesNames"])

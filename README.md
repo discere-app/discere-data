@@ -337,7 +337,7 @@ belassen.
 
 | Warnung | Wann | Schwellen in `warnings` |
 |---|---|---|
-| tot beobachtet | mindestens `deadShare` der in iNaturalist mit „Alive or Dead“ annotierten Beobachtungen sagen tot, bei mindestens `deadMinAnnotated` annotierten: Schalen, Strandfunde, Marktfisch | `deadShare` 0,8; `deadMinAnnotated` 5 |
+| tot beobachtet | mindestens `deadShare` der in iNaturalist als lebend oder tot annotierten Beobachtungen sagen tot („nicht bestimmbar“ zählt nicht), bei mindestens `deadMinAnnotated` solchen: Schalen, Strandfunde, Marktfisch | `deadShare` 0,8; `deadMinAnnotated` 5 |
 | Name der Region | das Deck trägt den iNaturalist-Namen, die Referenz-DB führt die Art unter einem anderen | – |
 | wenige Beobachter | die `fewObservers` aktivsten Beobachter haben mindestens `fewObserversShare` der Beobachtungen gemacht; nur Level 1 und 2 und Highlights | `fewObserversShare` 0,5; `fewObservers` 2 |
 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase setzen `Fresh`; viele Rifffische zu Recht (Tarpon, Bullenhai), manche sind Fluss- oder Teichfische | – |

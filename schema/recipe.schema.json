@@ -220,11 +220,11 @@
       "additionalProperties": false,
       "properties": {
         "deadShare": {
-          "description": "Warn when at least this share of the observations annotated Alive or Dead on iNaturalist say dead (shells, beach finds, market fish).",
+          "description": "Warn when at least this share of the observations annotated alive or dead on iNaturalist (annotation Alive or Dead; Cannot Be Determined does not count) say dead (shells, beach finds, market fish).",
           "type": "number", "minimum": 0, "maximum": 1, "default": 0.8
         },
         "deadMinAnnotated": {
-          "description": "… among at least this many annotated observations.",
+          "description": "… among at least this many observations annotated alive or dead.",
           "type": "integer", "minimum": 1, "default": 5
         },
         "fewObserversShare": {

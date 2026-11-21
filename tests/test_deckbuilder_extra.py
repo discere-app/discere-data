@@ -84,8 +84,9 @@ def answer(base, params):
     if base.endswith("/observers"):
         return {"total_results": 5, "results": [{"observation_count": 1}]}
     if "inaturalist" in base and "term_id" in params:
-        annotated = {"Coral one": (10, 9), "Snail tiny": (10, 2)} if params["taxon_id"] == INVERTEBRATE_TAXA else {}
-        column = 1 if "term_value_id" in params else 0
+        # (alive, dead) per name
+        annotated = {"Coral one": (1, 9), "Snail tiny": (8, 2)} if params["taxon_id"] == INVERTEBRATE_TAXA else {}
+        column = {18: 0, 19: 1}[int(params["term_value_id"])]
         return {"total_results": len(annotated),
                 "results": [{"count": a[column], "taxon": {"name": n}} for n, a in annotated.items()]}
     if "inaturalist" in base:
