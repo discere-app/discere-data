@@ -1,23 +1,23 @@
 {
   "formatVersion": 2,
   "name": "Korallendreieck",
-  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der artenreichsten Riffregion der Welt: Indonesien, Philippinen, Sabah (Malaysia), Papua-Neuguinea, Osttimor und Salomonen. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Mandarinfisch und Zwergseepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit.",
+  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der artenreichsten Riffregion der Welt: Indonesien, Philippinen, Sabah (Malaysia), Papua-Neuguinea, Osttimor und Salomonen. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Mandarinfisch und Zwergseepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
   "translations": {
     "de": {
       "name": "Korallendreieck",
-      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der artenreichsten Riffregion der Welt: Indonesien, Philippinen, Sabah (Malaysia), Papua-Neuguinea, Osttimor und Salomonen. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Mandarinfisch und Zwergseepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit."
+      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der artenreichsten Riffregion der Welt: Indonesien, Philippinen, Sabah (Malaysia), Papua-Neuguinea, Osttimor und Salomonen. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Mandarinfisch und Zwergseepferdchen, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
     },
     "en": {
       "name": "Coral Triangle",
-      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the world's richest reef region: Indonesia, the Philippines, Sabah (Malaysia), Papua New Guinea, Timor-Leste and the Solomon Islands. Level 1 holds the most common species and highlights such as the whale shark, mandarinfish and pygmy seahorse, Levels 2 and 3 further species by frequency."
+      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the world's richest reef region: Indonesia, the Philippines, Sabah (Malaysia), Papua New Guinea, Timor-Leste and the Solomon Islands. Level 1 holds the most common species and highlights such as the whale shark, mandarinfish and pygmy seahorse, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
     },
     "fr": {
       "name": "Triangle de corail",
-      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de la région récifale la plus riche du monde : Indonésie, Philippines, Sabah (Malaisie), Papouasie-Nouvelle-Guinée, Timor oriental et îles Salomon. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine, le poisson-mandarin et l'hippocampe pygmée, les niveaux 2 et 3 d'autres espèces par fréquence."
+      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de la région récifale la plus riche du monde : Indonésie, Philippines, Sabah (Malaisie), Papouasie-Nouvelle-Guinée, Timor oriental et îles Salomon. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine, le poisson-mandarin et l'hippocampe pygmée, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
     },
     "es": {
       "name": "Triángulo de Coral",
-      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de la región de arrecifes más rica del mundo: Indonesia, Filipinas, Sabah (Malasia), Papúa Nueva Guinea, Timor Oriental y las Islas Salomón. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena, el pez mandarín y el caballito de mar pigmeo, los niveles 2 y 3 otras especies por frecuencia."
+      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de la región de arrecifes más rica del mundo: Indonesia, Filipinas, Sabah (Malasia), Papúa Nueva Guinea, Timor Oriental y las Islas Salomón. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena, el pez mandarín y el caballito de mar pigmeo, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
     }
   },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Coral_in_Raja_Ampat.jpg/330px-Coral_in_Raja_Ampat.jpg",
@@ -226,9 +226,9 @@
     "Chromodoris magnifica",
     "Halgerda batangas",
     "Cypraea tigris",
+    "Nembrotha cristata",
     "Phyllidia elegans",
     "Caloria indica",
-    "Nembrotha cristata",
     "Pearsonothuria graeffei",
     "Nembrotha chamberlaini",
     "Tridacna crocea",
@@ -504,9 +504,9 @@
         "Chromodoris magnifica",
         "Halgerda batangas",
         "Cypraea tigris",
+        "Nembrotha cristata",
         "Phyllidia elegans",
         "Caloria indica",
-        "Nembrotha cristata",
         "Pearsonothuria graeffei",
         "Nembrotha chamberlaini",
         "Tridacna crocea",
