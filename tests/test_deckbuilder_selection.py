@@ -48,6 +48,19 @@ class SplitLevelsTest(unittest.TestCase):
         self.assertEqual(cuts, [2, 3, 3])
 
 
+    COUNTS = {"a": 50, "b": 40, "c": 30, "d": 20, "e": 9, "f": 8, "g": 6, "h": 5, "i": 4}
+
+    def test_a_level_ends_at_its_minimum_and_leaves_the_rest_to_the_next(self):
+        levels, sequence, cuts = split_levels(self.RANKED, [], [2, 3, 2], [0, 25, 5], self.COUNTS)
+        self.assertEqual(levels, [["a", "b"], ["c"], ["d", "e"]])
+        self.assertEqual(cuts, [2, 3, 5])
+        self.assertEqual(sequence, self.RANKED)
+
+    def test_a_level_below_its_minimum_stays_empty_and_highlights_need_none(self):
+        levels, _, _ = split_levels(self.RANKED, ["i"], [2, 3, 2], [45, 100], self.COUNTS)
+        self.assertEqual(levels, [["a", "i"], [], ["b", "c"]])
+
+
 class HighlightTest(unittest.TestCase):
     RESOLUTION = {"Seen": "s1", "Listed": "s2", "Distributed": "s3", "Gone": "s4", "Nowhere": "s5",
                   "Synonym of seen": "s1", "Unknown": None}

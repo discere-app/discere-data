@@ -97,23 +97,44 @@ class GbifTest(unittest.TestCase):
         self.assertEqual(order_query["phylumKey"], ["44"])
 
 
+NO_RECORDS = {"total": 0, "results": []}
+
+
 class ObisTest(unittest.TestCase):
     # (j)
     def test_only_species_over_all_pages(self):
         pages = {0: fixture("obis_page1.json"), 2: fixture("obis_page2.json")}
-        fetcher = FakeFetcher(answer=lambda base, params: pages.get(params["skip"]))
+        fetcher = FakeFetcher(answer=lambda base, params: NO_RECORDS if "datasetid" in params else pages.get(params["skip"]))
         result = obis.checklist(fetcher, ["POLYGON((0 0, 1 0, 1 1, 0 0))"], [10194, 10193])
         self.assertEqual(result.counts, [("Epinephelus itajara", 324678), ("Elops smithi", 147498)])
         self.assertEqual(query(fetcher.requested[0])["taxonid"], ["10194,10193"])
         self.assertEqual(query(fetcher.requested[0])["geometry"], ["POLYGON((0 0, 1 0, 1 1, 0 0))"])
 
+    def test_records_of_the_inaturalist_dataset_do_not_count(self):
+        pages = {0: fixture("obis_page1.json"), 2: fixture("obis_page2.json")}
+        from_inat = {"total": 2, "results": [
+            {"scientificName": "Epinephelus itajara", "taxonRank": "Species", "records": 324000},
+            {"scientificName": "Elops smithi", "taxonRank": "Species", "records": 147498},
+        ]}
+
+        def answer(base, params):
+            if "datasetid" in params:
+                return from_inat if params["skip"] == 0 else NO_RECORDS
+            return pages.get(params["skip"])
+
+        fetcher = FakeFetcher(answer=answer)
+        result = obis.checklist(fetcher, ["POLYGON((0 0, 1 0, 1 1, 0 0))"], [10194])
+        self.assertEqual(result.counts, [("Epinephelus itajara", 678)])
+        dataset_queries = [query(u)["datasetid"] for u in fetcher.requested if "datasetid" in u]
+        self.assertEqual(dataset_queries, [["eaea291a-1e1d-4382-b86f-ac3cc15b8d5a"]])
+
     def test_several_areas_in_one_multipolygon(self):
-        fetcher = FakeFetcher(answer=lambda base, params: {"total": 0, "results": []})
+        fetcher = FakeFetcher(answer=lambda base, params: NO_RECORDS)
         obis.checklist(fetcher, [
             "POLYGON((0 0, 1 0, 1 1, 0 0))",
             " MULTIPOLYGON(((5 5, 6 5, 6 6, 5 5)),((8 8, 9 8, 9 9, 8 8)))",
         ], [10194])
-        self.assertEqual(len(fetcher.requested), 1)
+        self.assertEqual(len(fetcher.requested), 2)
         self.assertEqual(query(fetcher.requested[0])["geometry"], [
             "MULTIPOLYGON(((0 0, 1 0, 1 1, 0 0)),((5 5, 6 5, 6 6, 5 5)),((8 8, 9 8, 9 9, 8 8)))"
         ])

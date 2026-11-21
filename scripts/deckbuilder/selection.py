@@ -43,7 +43,7 @@ BOUNDARY_WIDTH = 10
 class Candidate:
     id: str
     count: float
-    names: list = field(default_factory=list)   # the source's names for it
+    names: list = field(default_factory=list)   # the source's names for it, most counted first
 
 
 @dataclass
@@ -94,6 +94,9 @@ def aggregate(counts, resolution, combine=sum):
         candidate = by_id.setdefault(species_id, Candidate(species_id, None))
         candidate.count = count if candidate.count is None else combine([candidate.count, count])
         candidate.names.append(name)
+    count_of = dict(counts)
+    for candidate in by_id.values():
+        candidate.names.sort(key=lambda n: -count_of[n])
     unresolved.sort(key=lambda item: (-item[1], item[0]))
     return by_id, unresolved
 
@@ -142,22 +145,38 @@ def rank(candidates, names):
     return [c.id for c in sorted(candidates, key=lambda c: (-c.count, names[c.id]))]
 
 
-def split_levels(ranked, highlights, sizes):
+def _while_counted(ids, counts, minimum):
+    """The leading `ids` whose count reaches `minimum` (all without one)."""
+    if minimum is None:
+        return list(ids)
+    taken = []
+    for i in ids:
+        if counts[i] < minimum:
+            break
+        taken.append(i)
+    return taken
+
+
+def split_levels(ranked, highlights, sizes, minimums=(), counts=None):
     """The levels, the sequence they are cut from and the cut indices.
     Level 1 is the first sizes[0] of `ranked` plus every highlight not
     among them; the later levels follow in `ranked` order, highlights left
-    out."""
-    top = ranked[:sizes[0]]
+    out. With `minimums` (per level, from level 1; `counts` id → count) a
+    level ends at the first species below its minimum, so it becomes
+    smaller or empty rather than filled up with rare species; what it
+    leaves goes on to the next level. Highlights need no minimum."""
+    minimum = list(minimums) + [None] * (len(sizes) - len(minimums))
+    top = _while_counted(ranked[:sizes[0]], counts, minimum[0])
     picked = set(highlights)
-    rest = [i for i in ranked[sizes[0]:] if i not in picked]
+    rest = [i for i in ranked[len(top):] if i not in picked]
     levels = [top + [h for h in highlights if h not in top]]
-    sequence = top + rest
-    cuts, end = [sizes[0]], 0
-    for size in sizes[1:]:
-        levels.append(rest[end:end + size])
-        end += size
-        cuts.append(sizes[0] + end)
-    return levels, sequence, [min(c, len(sequence)) for c in cuts]
+    cuts, end = [len(top)], 0
+    for n, size in enumerate(sizes[1:], 1):
+        level = _while_counted(rest[end:end + size], counts, minimum[n])
+        levels.append(level)
+        end += len(level)
+        cuts.append(len(top) + end)
+    return levels, top + rest, cuts
 
 
 def check_highlights(names, resolution, evidence, taken=None):
@@ -226,7 +245,8 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
     ranked = rank(passed, names)
     highlights, rejected = check_highlights([h["name"] for h in recipe.get("highlights", [])], resolution, evidence,
                                             taken)
-    split = split or (lambda r, h: split_levels(r, h, recipe["levelSizes"]))
+    counts = {i: c.count for i, c in candidates.items()}
+    split = split or (lambda r, h: split_levels(r, h, recipe["levelSizes"], recipe.get("levelMinCounts", ()), counts))
     levels, sequence, cuts = split(ranked, highlights)
     return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected, unused)
 

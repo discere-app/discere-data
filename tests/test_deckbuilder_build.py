@@ -22,6 +22,7 @@ import json
 import os
 import tempfile
 import unittest
+from urllib.parse import parse_qs, urlsplit
 
 from deckbuilder_support import ROOT, SCHEMA_DIR, FakeFetcher, make_refdb
 from jsonschema import Draft202012Validator, FormatChecker
@@ -78,16 +79,41 @@ RECIPE = {
 }
 
 
+TAXON_IDS = {name: 1000 + n for n, (name, _) in enumerate(INAT_RESULTS)}
+# Annotation Alive or Dead: (annotated, dead) per iNaturalist name.
+ANNOTATIONS = {"Alpha one": (10, 9), "Beta two": (10, 7), "Delta four": (4, 4)}
+# Observers: (observers, [observations of the most active]) per taxon id.
+OBSERVERS = {TAXON_IDS["Alpha one"]: (3, [60, 20, 20]), TAXON_IDS["Beta two"]: (30, [10, 5, 5])}
+
+
+def species_counts_body(counts):
+    return {"total_results": len(counts),
+            "results": [{"count": c, "taxon": {"name": n, "id": TAXON_IDS.get(n, 1)}} for n, c in counts]}
+
+
 def answer(base, params):
     if base.startswith("https://api.inaturalist.org/v1/places/"):
         ids = base.rsplit("/", 1)[1].split(",")
         return {"results": [{"id": int(i), "display_name": f"Ort {i}"} for i in ids]}
+    if base.endswith("/observers"):
+        observers, top = OBSERVERS.get(int(str(params["taxon_id"]).split(",")[0]), (1, [1]))
+        return {"total_results": observers,
+                "results": [{"observation_count": n} for n in top[:params["per_page"]]]}
+    if "inaturalist" in base and "term_id" in params:
+        column = 1 if "term_value_id" in params else 0
+        return species_counts_body([(n, a[column]) for n, a in ANNOTATIONS.items()])
     if "inaturalist" in base:
-        return {"total_results": len(INAT_RESULTS),
-                "results": [{"count": c, "taxon": {"name": n}} for n, c in INAT_RESULTS]}
+        return species_counts_body(INAT_RESULTS)
+    if "obis" in base and "datasetid" in params:
+        return {"total": 1, "results": [{"scientificName": "Alpha one", "taxonRank": "Species", "records": 4}]}
     if "obis" in base:
-        return {"total": 1, "results": [{"scientificName": "Kappa ten", "taxonRank": "Species", "records": 2}]}
+        return {"total": 2, "results": [{"scientificName": "Kappa ten", "taxonRank": "Species", "records": 2},
+                                        {"scientificName": "Alpha one", "taxonRank": "Species", "records": 4}]}
     return None
+
+
+def query(url):
+    return parse_qs(urlsplit(url).query)
 
 
 class BuildTest(unittest.TestCase):
@@ -158,7 +184,7 @@ class BuildTest(unittest.TestCase):
         levels = [s["speciesNames"] for s in self.deck()["subdecks"]]
         self.assertEqual(levels, [
             ["Alpha one", "Beta two", "Delta four", "Kappa ten", "Nu thirteen"],
-            ["Gamma three", "Epsilon five"],
+            ["Gammaold three", "Epsilon five"],
             ["Theta eight"],
         ])
         self.assertEqual([s["id"] for s in self.deck()["subdecks"]], ["level-1", "level-2", "level-3"])
@@ -192,11 +218,13 @@ class BuildTest(unittest.TestCase):
         self.assertEqual(self.run_build(), build.EXIT_OK)
 
     # (d)
-    def test_synonym_is_written_as_preferred_name_and_unknown_name_reported(self):
+    def test_regional_name_is_written_and_unknown_name_reported(self):
+        # iNaturalist counts s:3 as "Gammaold three", which the reference DB
+        # knows as a synonym of Gamma three: the deck keeps the region's name.
         self.run_build()
         names = self.deck()["speciesNames"]
-        self.assertIn("Gamma three", names)
-        self.assertNotIn("Gammaold three", names)
+        self.assertIn("Gammaold three", names)
+        self.assertNotIn("Gamma three", names)
         unresolved = self.report().split("## Nicht aufgelöste Namen der Reihenfolge-Quelle")[1]
         self.assertIn("| *Nomen nudum* | 15 |", unresolved)
 
@@ -266,16 +294,16 @@ class BuildTest(unittest.TestCase):
         section = self.checks()
         # Deck: Alpha Beta Delta Kappa Nu | Gamma Epsilon | Theta; only Alpha
         # and Gamma have iNaturalist and the distribution.
-        self.assertIn("(Reihenfolge-Quelle und OBIS oder Verbreitung): 2/8 (25 %)", section)
+        self.assertIn("(Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): 2/8 (25 %)", section)
         single = section.split("**Arten ohne zweite, unabhängige Quelle:**")[1].split("**Eine Art")[0]
         self.assertIn("- *Beta two*: Reihenfolge-Quelle\n", single)
         self.assertIn("- *Kappa ten*: OBIS, Führer\n", single)
         self.assertIn("- *Nu thirteen*: Verbreitung\n", single)
         self.assertNotIn("*Alpha one*", single)
-        self.assertNotIn("*Gamma three*", single)
+        self.assertNotIn("*Gammaold three*", single)
 
     def test_endemics(self):
-        self.assertIn("laut FishBase/SeaLifeBase: 1: *Gamma three*", self.checks())
+        self.assertIn("laut FishBase/SeaLifeBase: 1: *Gammaold three*", self.checks())
 
     def test_common_names_as_the_app_picks_them(self):
         section = self.checks()
@@ -366,7 +394,7 @@ class BuildTest(unittest.TestCase):
         del recipe["taxa"]["obis"]
         self.write_recipe(recipe)
         self.run_build()
-        inat_queries = [u for u in self.fetcher.requested if "species_counts" in u]
+        inat_queries = [u for u in self.fetcher.requested if "species_counts" in u and "term_id" not in u]
         self.assertEqual(len(inat_queries), 1)
         self.assertNotIn("place_id", inat_queries[0])
         self.assertNotIn("swlat", inat_queries[0])
@@ -388,12 +416,77 @@ class BuildTest(unittest.TestCase):
         candidates = section.split("**Im Führer und häufig")[1]
         for name in ("Beta two", "Delta four", "Nu thirteen", "Theta eight"):
             self.assertIn(f"*{name}*", suspects)
-        for name in ("Alpha one", "Gamma three", "Epsilon five", "Kappa ten"):
+        for name in ("Alpha one", "Gammaold three", "Epsilon five", "Kappa ten"):
             self.assertNotIn(f"*{name}*", suspects)
         self.assertIn("*Mu twelve*", candidates)
         self.assertNotIn("*Alpha one*", candidates)
         self.assertIn("6 Namen, 5 Arten aufgelöst, 1 Namen nicht aufgelöst", section)
         self.assertIn("*Omega unknown*", section)
+
+
+    # Warnings to decide (deckbuilder/findings.py)
+    def found(self):
+        return self.report().split("## Zu entscheiden")[1].split("## Verworfene Highlights")[0]
+
+    def test_mostly_dead_observations_are_reported(self):
+        self.run_build()
+        found = self.found()
+        self.assertIn("| *Alpha one* | level-1 | tot beobachtet | 9 von 10 annotierten Beobachtungen tot (90 %) |",
+                      found)
+        self.assertNotIn("| *Beta two* | level-1 | tot beobachtet", found)     # 7 of 10
+        self.assertNotIn("| *Delta four* | level-1 | tot beobachtet", found)   # 4 of 4, too few annotated
+        self.assertIn("Alpha one", self.deck()["speciesNames"])
+
+    def test_warning_thresholds_come_from_the_recipe(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["warnings"] = {"deadShare": 0.7, "deadMinAnnotated": 4, "fewObserversShare": 0.9}
+        self.write_recipe(recipe)
+        self.run_build()
+        found = self.found()
+        self.assertIn("| *Beta two* | level-1 | tot beobachtet | 7 von 10", found)
+        self.assertIn("| *Delta four* | level-1 | tot beobachtet | 4 von 4", found)
+        self.assertNotIn("wenige Beobachter", found)
+
+    def test_regional_name_is_reported_and_every_written_name_resolves(self):
+        self.run_build()
+        self.assertIn("| *Gammaold three* | level-2 | Name der Region | Deck: *Gammaold three*; "
+                      "die Referenz-DB führt die Art als *Gamma three* |", self.found())
+        names = self.deck()["speciesNames"]
+        self.assertTrue(all(self.db.resolve(names).values()))
+        with self.assertRaises(build.BuildError):
+            build.check_names(self.db, {"Gammaold three": "s:3", "Delta old": "s:5"})
+
+    def test_few_observers_are_reported_for_levels_1_and_2_only(self):
+        self.run_build()
+        found = self.found()
+        self.assertIn("| *Alpha one* | level-1 | wenige Beobachter | 80 von 100 Beobachtungen von 2 Personen (80 %); "
+                      "3 Beobachter insgesamt |", found)
+        self.assertNotIn("| *Beta two* | level-1 | wenige Beobachter", found)
+        asked = {int(query(u)["taxon_id"][0]) for u in self.fetcher.requested if "/observers" in u}
+        self.assertIn(TAXON_IDS["Gammaold three"], asked)
+        self.assertNotIn(TAXON_IDS["Theta eight"], asked)
+        self.assertIn("| 1 | *Alpha one* (3 Beobachter) | 100 |", self.report())
+
+    def test_freshwater_flag_is_reported_without_excluding(self):
+        self.run_build()
+        self.assertIn("| *Epsilon five* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt "
+                      "(Süß/Brack/Meer) |", self.found())
+        self.assertIn("Epsilon five", self.deck()["speciesNames"])
+
+    def test_warnings_are_summed_up_on_stdout(self):
+        self.assertEqual(self.run_build(), build.EXIT_HIGHLIGHT_REJECTED)
+        self.assertIn("[WARN] Zu entscheiden: 4 Warnungen (tot beobachtet 1, Name der Region 1, "
+                      "wenige Beobachter 1, Süßwasser-Kennzeichen 1)", self.stdout)
+
+    def test_a_level_below_its_minimum_count_stays_smaller(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["levelMinCounts"] = [0, 75]
+        self.write_recipe(recipe)
+        self.run_build()
+        levels = [s["speciesNames"] for s in self.deck()["subdecks"]]
+        # Epsilon five (60) misses level 2 and moves on to level 3.
+        self.assertEqual(levels[1:], [["Gammaold three"], ["Epsilon five"]])
+        self.assertIn("Mindestzählung je Level 0/75", self.report())
 
 
 class RecipeSchemaTest(unittest.TestCase):
@@ -436,6 +529,24 @@ class RecipeSchemaTest(unittest.TestCase):
             del recipe["taxa"]
             del recipe["region"]
         self.assertEqual(self.errors(change), [])
+
+    def test_warning_thresholds_and_level_minimums(self):
+        def valid(recipe):
+            recipe["levelMinCounts"] = [20, 10]
+            recipe["warnings"] = {"deadShare": 0.8, "deadMinAnnotated": 5, "fewObserversShare": 0.5, "fewObservers": 2}
+        self.assertEqual(self.errors(valid), [])
+        self.assertTrue(self.errors(lambda r: r.update(warnings={"deadShare": 80})))
+        self.assertTrue(self.errors(lambda r: r.update(warnings={"deadRatio": 0.8})))
+
+    def test_more_level_minimums_than_levels_stop_the_load(self):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["levelMinCounts"] = [1, 1, 1, 1]
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, "r.json")
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(recipe, f)
+            with self.assertRaisesRegex(recipe_module.RecipeError, "levelMinCounts"):
+                recipe_module.load(path)
 
 
 class InatNamesFileTest(unittest.TestCase):

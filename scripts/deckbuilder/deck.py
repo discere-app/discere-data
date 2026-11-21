@@ -3,14 +3,25 @@
 #
 # Format 2 with one subdeck per level (deckbuilder/levels.py: ids level-1 …,
 # names in every app language), then the recipe's extra subdecks
-# (deckbuilder/extra.py) with the id and names the recipe gives them. What the recipe sets is written anew on
-# every run: name, description, translations, learning settings, sources,
-# speciesNames and subdecks, and imageUrl/createdBy if the recipe has them.
+# (deckbuilder/extra.py) with the id and names the recipe gives them. What
+# the recipe sets is written anew on every run: name, description,
+# translations, learning settings, sources, speciesNames and subdecks, and
+# imageUrl/createdBy if the recipe has them.
 # Everything else an existing deck file holds stays as it is — above all its
 # sourceId (assigned by scripts/sync_index.sh, the deck's identity in the
 # app) and supersedes.
 #
-# A species is named by its preferred scientific name in the reference DB,
+# With iNaturalist as the order source, a species is named as iNaturalist
+# names it in the region (its most observed name there): iNaturalist often
+# splits a species complex the reference DB still holds as one species with
+# the regional names as synonyms (Halichoeres annularis in the Andaman Sea,
+# H. marginatus in the reference DB). The app resolves the name through
+# those synonyms all the same, and the deck is right once the reference DB
+# splits. Every name counted for a species resolves to it by construction;
+# deckbuilder/build.py checks the written names once more.
+#
+# Otherwise (another order source, a highlight iNaturalist does not count)
+# a species is named by its preferred scientific name in the reference DB,
 # so the app resolves it for sure — unless the app would resolve that name
 # to another species (a homonym); then the name from the source stays.
 # =============================================================================
@@ -37,10 +48,26 @@ SEALIFEBASE = {"name": "SeaLifeBase", "url": "https://www.sealifebase.org/"}
 
 
 def deck_name(facts, source_names):
-    """The name the deck writes for a species (see the file comment)."""
+    """The name the deck writes for a species without a regional name."""
     if facts.preferred_resolves or not source_names:
         return facts.preferred_name
     return source_names[0]
+
+
+def deck_names(facts, candidates, highlights, resolution, regional):
+    """species id → the name the deck writes (see the file comment).
+    `candidates` are the order source's (selection.Candidate, names most
+    counted first), `highlights` the recipe's highlight names, `regional`
+    whether the order source's names are the region's (iNaturalist)."""
+    names = {}
+    for species_id, facts_ in facts.items():
+        candidate = candidates.get(species_id)
+        if candidate and regional:
+            names[species_id] = candidate.names[0]
+        else:
+            source = candidate.names if candidate else [h for h in highlights if resolution.get(h) == species_id]
+            names[species_id] = deck_name(facts_, source)
+    return names
 
 
 def deck_sources(recipe, species_sources):

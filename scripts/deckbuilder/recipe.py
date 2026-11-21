@@ -55,6 +55,8 @@ def load(path):
     if errors:
         lines = [f"  {'/'.join(map(str, e.absolute_path)) or '(Wurzel)'}: {e.message}" for e in errors]
         raise RecipeError(f"{path} passt nicht zu schema/recipe.schema.json:\n" + "\n".join(lines))
+    if len(recipe.get("levelMinCounts", [])) > len(recipe["levelSizes"]):
+        raise RecipeError(f"{path}: levelMinCounts hat mehr Einträge als levelSizes")
     base = os.path.dirname(os.path.abspath(path))
     if recipe["order"]["source"] == "reef":
         recipe["order"]["csv"] = os.path.join(base, recipe["order"]["csv"])

@@ -14,11 +14,21 @@
 # Actinopterygii), 47273 sharks and rays (subclass Elasmobranchii), 49232
 # lampreys (order Petromyzontiformes). 47237 is not the lampreys but the
 # angelfish family Pomacanthidae.
+#
+# Besides the counts, two signals for the report (deckbuilder/findings.py):
+# how many observations carry the annotation Alive or Dead, and how many of
+# them say dead (an empty shell, a fish on the market), and who observed a
+# species: if two people account for most observations, the count says
+# little about how common it is.
 # =============================================================================
 
 from .sources import SourceResult
 
 API = "https://api.inaturalist.org/v1/observations/species_counts"
+OBSERVERS = "https://api.inaturalist.org/v1/observations/observers"
+# The controlled term "Alive or Dead" and its value "Dead".
+ALIVE_OR_DEAD = 17
+DEAD = 19
 PLACES = "https://api.inaturalist.org/v1/places/{ids}"
 PER_PAGE = 500
 # iNaturalist pages no further than this many results.
@@ -47,24 +57,47 @@ def place_names(fetcher, place_ids):
     return names
 
 
-def species_counts(fetcher, region, taxon_ids):
-    params = {
-        **region_params(region),
-        "taxon_id": ",".join(str(t) for t in taxon_ids),
-        "quality_grade": "research",
-        "per_page": PER_PAGE,
-    }
-    counts, notes = [], []
-    page = 1
+def _species_count_pages(fetcher, params):
+    """All results of /v1/observations/species_counts for `params`, and the
+    notes on paging."""
+    results, page = [], 1
     while True:
-        body = fetcher.get_json(API, {**params, "page": page})
-        results = body.get("results") or []
-        counts.extend((r["taxon"]["name"], r["count"]) for r in results)
+        body = fetcher.get_json(API, {**params, "per_page": PER_PAGE, "page": page})
+        found = body.get("results") or []
+        results.extend(found)
         total = body.get("total_results", 0)
-        if not results or page * PER_PAGE >= min(total, MAX_RESULTS):
+        if not found or page * PER_PAGE >= min(total, MAX_RESULTS):
             break
         page += 1
-    if total > MAX_RESULTS:
-        notes.append(f"iNaturalist liefert nur die ersten {MAX_RESULTS} von {total} Taxa")
-    notes.append(f"iNaturalist: {len(counts)} Taxa (Seiten: {page})")
-    return SourceResult(counts, notes)
+    notes = [f"iNaturalist liefert nur die ersten {MAX_RESULTS} von {total} Taxa"] if total > MAX_RESULTS else []
+    return results, notes, page
+
+
+def _query(region, taxon_ids):
+    return {**region_params(region), "taxon_id": ",".join(str(t) for t in taxon_ids), "quality_grade": "research"}
+
+
+def species_counts(fetcher, region, taxon_ids):
+    results, notes, pages = _species_count_pages(fetcher, _query(region, taxon_ids))
+    counts = [(r["taxon"]["name"], r["count"]) for r in results]
+    notes.append(f"iNaturalist: {len(counts)} Taxa (Seiten: {pages})")
+    return SourceResult(counts, notes, {r["taxon"]["name"]: r["taxon"]["id"] for r in results if "id" in r["taxon"]})
+
+
+def annotation_counts(fetcher, region, taxon_ids, value_id=None):
+    """[(name, count)] of the observations carrying the annotation Alive or
+    Dead (term ALIVE_OR_DEAD), or only those with the value `value_id`."""
+    params = {**_query(region, taxon_ids), "term_id": ALIVE_OR_DEAD}
+    if value_id is not None:
+        params["term_value_id"] = value_id
+    results, _, _ = _species_count_pages(fetcher, params)
+    return [(r["taxon"]["name"], r["count"]) for r in results]
+
+
+def top_observers(fetcher, region, taxon_ids, top):
+    """(number of observers, [observation counts of the `top` most active])
+    of the taxa, among the research-grade observations in the region."""
+    body = fetcher.get_json(OBSERVERS, {
+        **_query(region, taxon_ids), "order_by": "observation_count", "per_page": top,
+    })
+    return body.get("total_results", 0), [r["observation_count"] for r in (body.get("results") or [])[:top]]

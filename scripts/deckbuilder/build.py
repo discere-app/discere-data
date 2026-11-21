@@ -30,9 +30,9 @@ import sys
 
 from jsonschema import Draft202012Validator, FormatChecker
 
-from . import gbif, guide, inat, inat_names, obis, reef_csv
+from . import findings, gbif, guide, inat, inat_names, obis, reef_csv, signals
 from .checks import LANGUAGES, run_checks
-from .deck import build_deck, deck_name, deck_sources
+from .deck import build_deck, deck_names, deck_sources
 from .recipe import SCHEMA_DIR, RecipeError
 from .recipe import exclude_names, highlight_names
 from .recipe import load as load_recipe
@@ -99,6 +99,15 @@ def describe_areas(recipe, fetcher):
     return areas
 
 
+def check_names(db, written):
+    """Every written name (name → species id) resolves to its species
+    through the reference DB's species_name_lookup, as the app resolves it."""
+    resolved = db.resolve(written)
+    wrong = sorted(name for name, species_id in written.items() if resolved[name] != species_id)
+    if wrong:
+        raise BuildError("diese Namen löst die App nicht zu ihrer Art auf: " + ", ".join(wrong))
+
+
 def check_deck(deck):
     with open(os.path.join(SCHEMA_DIR, "deck.schema.json"), encoding="utf-8") as f:
         schema = json.load(f)
@@ -123,9 +132,11 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
                 existing = json.load(f)
 
         order, combine = order_counts(recipe, fetcher, db)
+        source = order  # before the name mapping: its taxon ids are iNaturalist's
         notes = list(order.notes)
         mapped = None
-        if recipe["order"]["source"] == "inat":
+        regional = recipe["order"]["source"] == "inat"
+        if regional:
             counts, mapped = inat_names.apply(order.counts, name_map)
             order = SourceResult(counts, order.notes)
         obis_counts = []
@@ -165,13 +176,17 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
         }
 
         selection = select(order.counts, resolution, facts, flags, evidence, recipe, combine)
-        source_names = {i: c.names for i, c in selection.candidates.items()}
-        for name in highlight_names(recipe):
-            if resolution[name]:
-                source_names.setdefault(resolution[name], [name])
-        names = {i: deck_name(f, source_names.get(i, [])) for i, f in facts.items()}
+        names = deck_names(facts, selection.candidates, highlight_names(recipe), resolution, regional)
+        t = findings.thresholds(recipe)
+        found_signals = None
+        if regional:
+            observed = [i for level in selection.levels[:2] for i in level] + selection.highlights
+            found_signals = signals.collect(fetcher, region.get("inat"), recipe["taxa"]["inat"], source, name_map,
+                                            resolution, observed, t["fewObservers"])
+        subdeck_of = {i: f"level-{n}" for n, level in enumerate(selection.levels, 1) for i in level}
+        found = findings.find(subdeck_of, names, facts, flags, evidence, found_signals, t)
 
-        taken = {i: f"level-{n}" for n, level in enumerate(selection.levels, 1) for i in level}
+        taken = dict(subdeck_of)
         extras = []
         extra_ids = [spec["id"] for spec in recipe.get("extraSubdecks", [])]
         if len(set(extra_ids)) < len(extra_ids):
@@ -180,7 +195,10 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
             extra = build_extra(recipe, spec, fetcher, db, water, name_map, taken)
             taken.update((i, spec["id"]) for i in extra.ids)
             extras.append(extra)
+            found += extra.findings
 
+        check_names(db, {names[i]: i for level in selection.levels for i in level}
+                    | {e.names[i]: i for e in extras for i in e.ids})
         levels = [[names[i] for i in level] for level in selection.levels]
         used = {facts[i].source for level in selection.levels for i in level}
         used |= {e.facts[i].source for e in extras for i in e.ids}
@@ -202,7 +220,8 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
         report = Report(
             recipe, base, selection, names, facts, flags, evidence, guide_reports, notes, list(meta),
             existing.get("speciesNames") if existing else None, describe_areas(recipe, fetcher),
-            resolution, checks, mapped, extras,
+            resolution, checks, mapped, extras, found,
+            found_signals.observers if found_signals else {},
         ).render()
     except (RecipeError, BuildError, RuntimeError) as e:
         print(f"[ERROR] {e}", file=sys.stderr)
@@ -224,6 +243,9 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
     for e in extras:
         for name, why in e.selection.unused_excludes:
             print(f"[WARN] Subdeck {e.spec['id']}: Ausschluss {name} wirkt nicht: {why}")
+    if found:
+        by_kind = ", ".join(f"{kind} {n}" for kind in findings.KINDS if (n := sum(f.kind == kind for f in found)))
+        print(f"[WARN] Zu entscheiden: {len(found)} Warnungen ({by_kind}), siehe Bericht")
     if selection.unresolved:
         print(f"[WARN] {len(selection.unresolved)} Namen der Reihenfolge-Quelle nicht aufgelöst (siehe Bericht)")
     if existing is None:

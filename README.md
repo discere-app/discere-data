@@ -247,7 +247,8 @@ schreiben. Ein Rezept legt fest:
   eine REEF-CSV braucht keine
 - `filters`: Wasser (`salt`, `fresh`, `any`), Mindestzahl Nachweise,
   Tauchgrenze, Mindestgröße
-- `levelSizes`: Umfang je Level
+- `levelSizes`: Umfang je Level, optional `levelMinCounts`: Mindestzählung
+  je Level (siehe [Highlights und Levels](#highlights-und-levels))
 - `highlights`, je mit Namen und einem Satz Begründung, und optional
   `guides` (Namenslisten von Führern)
 - optional `exclude`: Arten, die ein Mensch trotz bestandener Filter
@@ -255,6 +256,8 @@ schreiben. Ein Rezept legt fest:
   Werkzeug selbst nimmt nichts nach Art heraus
 - optional `extraSubdecks`: weitere Subdecks nach den Levels, je für eine
   andere Tiergruppe (siehe [Zusätzliche Subdecks](#zusätzliche-subdecks))
+- optional `warnings`: Schwellen der Warnungen (siehe
+  [Zu entscheiden](#zu-entscheiden))
 
 Mehrere Gebiete fragt das Werkzeug je Quelle in einer Abfrage ab (iNat-Orte
 als Komma-Liste, OBIS-Gebiete als ein `MULTIPOLYGON`), sodass eine
@@ -292,8 +295,7 @@ python3 scripts/build_deck.py recipes/<base>.json
 ```
 
 Das schreibt `data/decks/<base>.json` (Format 2, Subdecks `level-1` … und
-die zusätzlichen, die Arten unter dem bevorzugten Namen der Referenz-DB) und
-den Bericht
+die zusätzlichen) und den Bericht
 `recipes/<base>.report.md`. Gibt es das Deck schon, bleiben `sourceId`,
 `supersedes` und alles, was das Rezept nicht festlegt, erhalten. Der Bericht
 enthält je Art die Belege (Zählung je Quelle, FishBase/SeaLifeBase-Status in
@@ -301,7 +303,8 @@ den Regionen, Salz/Süß, Treffer im Führer), die Highlights mit Begründung
 und Belegen, die Arten um jede Level-Grenze, den Abgleich mit den Führern,
 die ausgeschlossenen Kandidaten mit Grund und die nicht aufgelösten Namen.
 Dazu prüft er das Deck: welche Arten nur eine Quelle belegt (die
-Reihenfolge-Quelle ohne OBIS oder Verbreitungsdaten), welche endemisch
+Reihenfolge-Quelle ohne OBIS oder Verbreitungsdaten; OBIS zählt ohne seinen
+iNaturalist-Datensatz, der dieselben Beobachtungen spiegelt), welche endemisch
 sind, welchen Arten und Familien ein deutscher oder englischer Volksname
 fehlt (so ausgewählt wie in der App) und welche zwei Arten einen Volksnamen
 oder einen gültigen Namen oder ein Synonym teilen, also vielleicht eine Art
@@ -315,6 +318,31 @@ GBIF und OBIS und die Salz/Süß-Angaben; ein zweiter Lauf fragt nichts neu
 ab. `--refresh` fragt die Quellen neu, `--cache-dir` und `--reference-db`
 ändern die Orte. Exit-Code 0: geschrieben; 1: abgebrochen, nichts
 geschrieben; 2: geschrieben, aber ein Highlight blieb draußen.
+
+Mit iNaturalist als Reihenfolge-Quelle schreibt das Deck jede Art unter dem
+Namen, unter dem iNaturalist sie in der Region am häufigsten zählt. Führt
+die Referenz-DB ihn nur als Synonym (iNaturalist hat einen Artkomplex
+aufgeteilt, die Referenz-DB noch nicht), findet die App die Art trotzdem,
+und das Deck stimmt, sobald die Referenz-DB nachzieht. Sonst steht der
+bevorzugte Name der Referenz-DB im Deck. Jeder geschriebene Name muss in der
+Referenz-DB zu seiner Art auflösen, sonst bricht der Lauf ab.
+
+### Zu entscheiden
+
+Was die Filter nicht entscheiden können, listet der Bericht oben unter „Zu
+entscheiden“ (Art, Subdeck, Warnung, Zahlen), die Zusammenfassung steht in
+der Ausgabe. Das Werkzeug nimmt nichts heraus: Jede Zeile wird im Rezept
+entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst
+belassen.
+
+| Warnung | Wann | Schwellen in `warnings` |
+|---|---|---|
+| tot beobachtet | mindestens `deadShare` der in iNaturalist mit „Alive or Dead“ annotierten Beobachtungen sagen tot, bei mindestens `deadMinAnnotated` annotierten: Schalen, Strandfunde, Marktfisch | `deadShare` 0,8; `deadMinAnnotated` 5 |
+| Name der Region | das Deck trägt den iNaturalist-Namen, die Referenz-DB führt die Art unter einem anderen | – |
+| wenige Beobachter | die `fewObservers` aktivsten Beobachter haben mindestens `fewObserversShare` der Beobachtungen gemacht; nur Level 1 und 2 und Highlights | `fewObserversShare` 0,5; `fewObservers` 2 |
+| Süßwasser-Kennzeichen | FishBase/SeaLifeBase setzen `Fresh`; viele Rifffische zu Recht (Tarpon, Bullenhai), manche sind Fluss- oder Teichfische | – |
+
+Die Warnungen gelten für die Levels und die zusätzlichen Subdecks.
 
 ### Welche Quelle wofür
 
@@ -335,7 +363,11 @@ Salz/Süß-Angabe bleiben drin.
 Level 1 enthält die häufigsten Arten und dazu die Highlights: Arten, die man
 in der Region kennen will, auch wenn sie selten sind (Walhai, Seepferdchen,
 Anglerfisch …). Level 2 und 3 folgen nur nach Häufigkeit, bis zum Umfang
-aus dem Rezept.
+aus dem Rezept. `levelMinCounts` setzt je Level eine Mindestzählung der
+Reihenfolge-Quelle: Ein Level endet an der ersten Art darunter und wird
+kleiner oder leer, statt sich mit Arten zu füllen, die nur vereinzelte
+Beobachtungen belegen; der Rest geht ans nächste Level. Highlights brauchen
+keine Mindestzählung. Ohne Eintrag nimmt ein Level seinen vollen Umfang.
 
 Jedes Highlight braucht einen Nachweis in der Region (bei einem weltweiten
 Deck: irgendwo): einen Eintrag in der

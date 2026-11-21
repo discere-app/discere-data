@@ -18,6 +18,7 @@
 from collections import Counter
 
 from .checks import LANGUAGES, evidence_sources
+from .findings import KINDS
 from .selection import BOUNDARY_WIDTH, HAND_EXCLUDED, boundaries, compare_with_guide
 
 ORDER_LABELS = {"inat": "iNat", "gbif": "GBIF", "reef": "REEF SF%"}
@@ -57,7 +58,7 @@ def escape(text):
 
 class Report:
     def __init__(self, recipe, base, selection, names, facts, flags, evidence, guides, notes, meta, existing_names,
-                 areas, resolution, checks, mapped=None, extras=(), placed="Level 1"):
+                 areas, resolution, checks, mapped=None, extras=(), found=(), observers=None, placed="Level 1"):
         self.recipe = recipe
         self.base = base
         self.s = selection
@@ -75,6 +76,8 @@ class Report:
         self.mapped = mapped          # [inat_names.Applied], None if the order source is not inat
         self.extras = list(extras)    # [extra.ExtraResult]
         self.placed = placed          # where an accepted highlight goes
+        self.found = list(found)      # [findings.Finding] of the whole deck
+        self.observers = observers or {}  # species id → (observers, [observations of the most active])
         self.order_label = ORDER_LABELS[recipe["order"]["source"]]
         self.level_of = {i: n for n, level in enumerate(selection.levels, 1) for i in level}
         self.rank_of = {i: n for n, i in enumerate(selection.ranked, 1)}
@@ -84,7 +87,7 @@ class Report:
         self.lines.append(line)
 
     def table_header(self, extra=()):
-        columns = ["Rang", "Art", self.order_label, "OBIS", "FishBase/SLB im Gebiet", "Wasser"]
+        columns = ["Rang", "Art", self.order_label, "OBIS ohne iNat", "FishBase/SLB im Gebiet", "Wasser"]
         if self.guides:
             columns.append("Führer")
         columns += list(extra)
@@ -102,6 +105,8 @@ class Report:
             note.append("Quelle: " + ", ".join(f"*{escape(n)}*" for n in source_names))
         if not self.facts[species_id].preferred_resolves:
             note.append(f"bevorzugter Name *{escape(self.facts[species_id].preferred_name)}* löst anders auf")
+        if species_id in self.observers:
+            note.append(f"{self.observers[species_id][0]} Beobachter")
         cells = [
             number(self.rank_of.get(species_id)),
             f"*{escape(name)}*" + (f" ({'; '.join(note)})" if note else ""),
@@ -147,10 +152,14 @@ class Report:
             self.out(f"  - {reason}: {n}")
         self.out(f"- Kandidaten nach den Filtern: {len(s.ranked)}")
         sizes = ", ".join(f"Level {n}: {len(level)}" for n, level in enumerate(s.levels, 1))
+        minimums = self.recipe.get("levelMinCounts")
         self.out(f"- Deck: {len(deck_ids)} Arten ({sizes}); Umfang laut Rezept "
-                 f"{'/'.join(map(str, self.recipe['levelSizes']))} plus Highlights")
+                 f"{'/'.join(map(str, self.recipe['levelSizes']))} plus Highlights"
+                 + (f", Mindestzählung je Level {'/'.join(f'{m:g}' for m in minimums)}" if minimums else ""))
         self.out(f"- Highlights: {len(s.highlights)} im Deck, {len(s.rejected_highlights)} verworfen")
         self.out()
+
+        self.render_found()
 
         self.out("## Verworfene Highlights")
         self.out()
@@ -172,7 +181,7 @@ class Report:
         self.out("## Deck")
         self.out()
         self.out(f"Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle ({self.order_label}), "
-                 "OBIS-Nachweise, Einträge der FishBase/SeaLifeBase-Verbreitung in den Rezept-Regionen "
+                 "OBIS-Nachweise ohne den iNaturalist-Datensatz, Einträge der FishBase/SeaLifeBase-Verbreitung in den Rezept-Regionen "
                  "(~~durchgestrichen~~: Eintrag sagt „nicht vorhanden“), Wasser laut FishBase/SeaLifeBase"
                  + (", Nummer des Führers, der die Art listet." if self.guides else "."))
         for n, level in enumerate(s.levels, 1):
@@ -295,6 +304,26 @@ class Report:
                      f"{(', '.join(evidence_sources(ev)) or 'keine') if ev else '–'} | {status} |")
         self.out()
 
+    def render_found(self):
+        """The warnings of the whole deck, levels and extra subdecks, as one
+        list to work through."""
+        names = {**self.names, **{i: e.names[i] for e in self.extras for i in e.ids}}
+        self.out("## Zu entscheiden")
+        self.out()
+        if not self.found:
+            self.out("Keine Warnungen.")
+            self.out()
+            return
+        self.out("Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, "
+                 "Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.")
+        self.out()
+        self.out("| Art | Subdeck | Warnung | Zahlen |")
+        self.out("|---|---|---|---|")
+        for kind in KINDS:
+            for f in (f for f in self.found if f.kind == kind):
+                self.out(f"| *{escape(names[f.species_id])}* | {f.subdeck} | {kind} | {f.detail} |")
+        self.out()
+
     def render_extra(self, e):
         """The section of an extra subdeck: a report of its own, its
         headings one level down. The guides are left out; they list the
@@ -302,7 +331,8 @@ class Report:
         spec = e.spec
         sub = Report({**self.recipe, "highlights": spec.get("highlights", []), **(
             {"exclude": spec["exclude"]} if "exclude" in spec else {})}, self.base, e.selection, e.names, e.facts,
-            e.flags, e.evidence, [], e.notes, [], None, [], e.resolution, e.checks, e.mapped, placed=spec["id"])
+            e.flags, e.evidence, [], e.notes, [], None, [], e.resolution, e.checks, e.mapped,
+            observers=e.observers, placed=spec["id"])
         sub.classes = e.classes
         sub.render_extra_body()
         self.lines += [("#" + line) if line.startswith("#") else line for line in sub.lines]
@@ -386,7 +416,7 @@ class Report:
         total = len(deck_ids) or 1
         self.out("## Prüfung")
         self.out()
-        self.out(f"- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS oder Verbreitung): "
+        self.out(f"- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): "
                  f"{len(c.two_sources)}/{len(deck_ids)} ({100 * len(c.two_sources) / total:.0f} %)")
         self.out(f"- Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: {len(c.endemic)}"
                  + (f": {self.species_list(c.endemic)}" if c.endemic else ""))
