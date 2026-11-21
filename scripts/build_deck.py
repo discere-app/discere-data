@@ -36,7 +36,7 @@ import time
 
 sys.dont_write_bytecode = True
 
-from deckbuilder import build, recipe, refdb, water_flags  # noqa: E402
+from deckbuilder import build, inat_names, recipe, refdb, water_flags  # noqa: E402
 from deckbuilder.fetch import CachedFetcher  # noqa: E402
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
@@ -45,12 +45,14 @@ DEFAULT_CACHE = os.path.join(os.path.expanduser("~"), ".cache", "discere-deckbui
 
 def main():
     parser = argparse.ArgumentParser(description="Deck aus einem Rezept und Beobachtungsdaten bauen")
-    parser.add_argument("recipe", help="Rezept, z. B. recipes/karibik.json")
+    parser.add_argument("recipe", help="Rezept, z. B. recipes/caribbean.json")
     parser.add_argument("--decks-dir", default=os.path.join(ROOT, "data", "decks"))
     parser.add_argument("--cache-dir", default=DEFAULT_CACHE, help="Caches außerhalb des Repos")
     parser.add_argument("--refresh", action="store_true",
                         help="Quellen und Salz/Süß-Angaben neu abfragen statt aus dem Cache lesen")
     parser.add_argument("--reference-db", help="diese Referenz-DB nehmen statt der neuesten laut Manifest")
+    parser.add_argument("--inat-names", default=os.path.join(ROOT, "recipes", "inat_names.json"),
+                        help="Zuordnung von iNaturalist-Namen zu Namen der Referenz-DB")
     parser.add_argument("--fishbase-version", default=water_flags.DEFAULT_VERSION,
                         help="Version der FishBase/SeaLifeBase-Parquets für Salz/Süß")
     args = parser.parse_args()
@@ -60,6 +62,7 @@ def main():
         # Checked here already, so a broken recipe stops before the reference
         # DB is downloaded; build.run checks it again for its own callers.
         recipe.load(args.recipe)
+        name_map = inat_names.load(args.inat_names)
         db_path = args.reference_db or refdb.ensure_reference_db(args.cache_dir)
         water = water_flags.load(args.cache_dir, args.fishbase_version, args.refresh)
     except (OSError, RuntimeError, recipe.RecipeError) as e:
@@ -71,7 +74,7 @@ def main():
         ("Referenz-DB", db.describe()),
         ("Salz/Süß", f"FishBase/SeaLifeBase {args.fishbase_version} (species.parquet)"),
     ]
-    code = build.run(args.recipe, args.decks_dir, fetcher, db, water, meta)
+    code = build.run(args.recipe, args.decks_dir, fetcher, db, water, meta, name_map)
     db.close()
     print(f"HTTP: {fetcher.network_requests} Requests ans Netz, {fetcher.cache_hits} aus dem Cache; "
           f"{time.monotonic() - started:.0f} s")

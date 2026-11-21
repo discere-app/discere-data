@@ -1,0 +1,158 @@
+{
+  "$schema": "../schema/recipe.schema.json",
+  "deck": {
+    "name": "Hawaii",
+    "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Hawaii-Inseln einschließlich der Nordwestlichen Hawaii-Inseln, mit vielen Arten, die es nur hier gibt. Level 1 enthält die häufigsten Arten und Highlights wie Riffmanta und Hawaii-Mönchsrobbe, Level 2 und 3 weitere Arten nach Häufigkeit.",
+    "translations": {
+      "de": {
+        "name": "Hawaii",
+        "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Hawaii-Inseln einschließlich der Nordwestlichen Hawaii-Inseln, mit vielen Arten, die es nur hier gibt. Level 1 enthält die häufigsten Arten und Highlights wie Riffmanta und Hawaii-Mönchsrobbe, Level 2 und 3 weitere Arten nach Häufigkeit."
+      },
+      "en": {
+        "name": "Hawaii",
+        "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Hawaiian Islands including the Northwestern Hawaiian Islands, with many species found nowhere else. Level 1 holds the most common species and highlights such as the reef manta and Hawaiian monk seal, Levels 2 and 3 further species by frequency."
+      },
+      "fr": {
+        "name": "Hawaï",
+        "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de l'archipel d'Hawaï, îles du Nord-Ouest comprises, avec de nombreuses espèces qui n'existent nulle part ailleurs. Le niveau 1 réunit les espèces les plus communes et des incontournables comme la raie manta de récif et le phoque moine d'Hawaï, les niveaux 2 et 3 d'autres espèces par fréquence."
+      },
+      "es": {
+        "name": "Hawái",
+        "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de las islas de Hawái, incluidas las islas de Sotavento, con muchas especies que no existen en ningún otro lugar. El nivel 1 reúne las especies más comunes y joyas como la manta de arrecife y la foca monje de Hawái, los niveles 2 y 3 otras especies por frecuencia."
+      }
+    },
+    "learningMode": "family",
+    "nameType": "commonName",
+    "reviewMode": "flip",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Reef_Triggerfish_1.JPG/330px-Reef_Triggerfish_1.JPG"
+  },
+  "order": { "source": "inat" },
+  "region": {
+    "inat": {
+      "placeIds": [11, 141380]
+    },
+    "obis": [
+      {
+        "name": "Hawaii-Inseln mit den Nordwestlichen Hawaii-Inseln",
+        "wkt": "POLYGON((-179.5 29, -154.5 29, -154.5 18.5, -179.5 18.5, -179.5 29))"
+      }
+    ],
+    "fishbase": ["840B", "840:US-HI"]
+  },
+  "taxa": {
+    "inat": [47178, 47273, 372234, 47459],
+    "obis": [10194, 10193, 987094, 11707]
+  },
+  "filters": {
+    "water": "salt",
+    "minCount": 5,
+    "diveDepthLimitM": 40,
+    "minLengthCm": 4
+  },
+  "levelSizes": [40, 60, 50],
+  "highlights": [
+    {
+      "name": "Mobula alfredi",
+      "reason": "Der Riffmanta kommt vor Kona nachts ins Lampenlicht, einer der bekanntesten Tauchgänge der Welt."
+    },
+    {
+      "name": "Neomonachus schauinslandi",
+      "reason": "Die Hawaii-Mönchsrobbe kommt nur hier vor und ist eine der seltensten Robben der Welt."
+    },
+    {
+      "name": "Galeocerdo cuvier",
+      "reason": "Der Tigerhai ist der große Hai Hawaiis und wird vor Oahu und Maui regelmäßig gesehen."
+    },
+    {
+      "name": "Stenella longirostris",
+      "reason": "Spinnerdelfine ruhen tagsüber in den Buchten der Kona-Küste."
+    },
+    {
+      "name": "Megaptera novaeangliae",
+      "reason": "Buckelwale kalben im Winter zwischen Maui, Lanai und Molokai."
+    }
+  ],
+  "extraSubdecks": [
+    {
+      "id": "invertebrates",
+      "name": "Wirbellose & Korallen",
+      "translations": {
+        "de": { "name": "Wirbellose & Korallen" },
+        "en": { "name": "Invertebrates & Corals" },
+        "fr": { "name": "Invertébrés et coraux" },
+        "es": { "name": "Invertebrados y corales" }
+      },
+      "taxa": {
+        "inat": [47534, 47115, 85493, 47549, 48824, 130868, 52318, 47490],
+        "obis": [1267, 51, 1066, 1806, 558, 146420, 2853, 883]
+      },
+      "size": 40,
+      "filters": { "minLengthCm": 0 },
+      "highlights": [
+        {
+          "name": "Hymenocera picta",
+          "reason": "Die Harlekingarnele frisst nur Seesterne und ist einer der begehrtesten Funde für Unterwasserfotografen."
+        },
+        {
+          "name": "Charonia tritonis",
+          "reason": "Das Tritonshorn frisst Dornenkronen-Seesterne und ist selten geworden, weil seine Schale begehrt ist."
+        },
+        {
+          "name": "Panulirus marginatus",
+          "reason": "Die Hawaii-Languste lebt nur auf Hawaii und versteckt sich tagsüber in Riffhöhlen."
+        }
+      ],
+      "exclude": [
+        {
+          "name": "Grapsus tenuicrustatus",
+          "reason": "Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen."
+        },
+        {
+          "name": "Grapsus longitarsis",
+          "reason": "Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen."
+        },
+        {
+          "name": "Metopograpsus thukuhar",
+          "reason": "Uferkrabbe der Felsküste und Hafenmauern, lebt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Ocypode pallidula",
+          "reason": "Geisterkrabbe, lebt am trockenen Sandstrand."
+        },
+        {
+          "name": "Nerita picea",
+          "reason": "Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Nerita polita",
+          "reason": "Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Littoraria pintado",
+          "reason": "Strandschnecke der Spritzwasserzone, sitzt über dem Wasser auf den Uferfelsen."
+        },
+        {
+          "name": "Echinolittorina hawaiiensis",
+          "reason": "Strandschnecke der Spritzwasserzone, sitzt über dem Wasser auf den Uferfelsen."
+        },
+        {
+          "name": "Cellana exarata",
+          "reason": "Napfschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser."
+        },
+        {
+          "name": "Veronicella cubensis",
+          "reason": "Landnacktschnecke, kein Meerestier."
+        },
+        {
+          "name": "Trochus intextus",
+          "reason": "Fast nur als leere Schale am Strand beobachtet (iNaturalist: 27 von 29 Beobachtungen mit Angabe „tot“)."
+        }
+      ]
+    }
+  ],
+  "imageCredit": {
+    "author": "Qyd",
+    "license": "CC BY 2.5",
+    "page": "https://commons.wikimedia.org/wiki/File:Reef_Triggerfish_1.JPG"
+  }
+}
