@@ -1,23 +1,23 @@
 {
   "formatVersion": 2,
   "name": "Thailand & Andamanensee",
-  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Andamanensee: Thailands Westküste von Ranong bis Satun mit Similan- und Surin-Inseln, die Mergui-Inseln (Tanintharyi, Myanmar) sowie die Andamanen und Nikobaren; ohne Golf von Thailand. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Riesenmanta und Zebrahai, Level 2 und 3 weitere Arten nach Häufigkeit.",
+  "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger der Andamanensee: Thailands Westküste von Ranong bis Satun mit Similan- und Surin-Inseln, die Mergui-Inseln (Tanintharyi, Myanmar) sowie die Andamanen und Nikobaren; ohne Golf von Thailand. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Riesenmanta und Zebrahai, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
   "translations": {
     "de": {
       "name": "Thailand & Andamanensee",
-      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Andamanensee: Thailands Westküste von Ranong bis Satun mit Similan- und Surin-Inseln, die Mergui-Inseln (Tanintharyi, Myanmar) sowie die Andamanen und Nikobaren; ohne Golf von Thailand. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Riesenmanta und Zebrahai, Level 2 und 3 weitere Arten nach Häufigkeit."
+      "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger der Andamanensee: Thailands Westküste von Ranong bis Satun mit Similan- und Surin-Inseln, die Mergui-Inseln (Tanintharyi, Myanmar) sowie die Andamanen und Nikobaren; ohne Golf von Thailand. Level 1 enthält die häufigsten Arten und Highlights wie Walhai, Riesenmanta und Zebrahai, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
     },
     "en": {
       "name": "Thailand & Andaman Sea",
-      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Andaman Sea: Thailand's west coast from Ranong to Satun with the Similan and Surin Islands, the Mergui Archipelago (Tanintharyi, Myanmar) and the Andaman and Nicobar Islands; not the Gulf of Thailand. Level 1 holds the most common species and highlights such as the whale shark, giant manta and zebra shark, Levels 2 and 3 further species by frequency."
+      "description": "Reef fish, sharks, rays, sea turtles, cephalopods and marine mammals of the Andaman Sea: Thailand's west coast from Ranong to Satun with the Similan and Surin Islands, the Mergui Archipelago (Tanintharyi, Myanmar) and the Andaman and Nicobar Islands; not the Gulf of Thailand. Level 1 holds the most common species and highlights such as the whale shark, giant manta and zebra shark, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
     },
     "fr": {
       "name": "Thaïlande et mer d'Andaman",
-      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de la mer d'Andaman : la côte ouest de la Thaïlande, de Ranong à Satun, avec les îles Similan et Surin, l'archipel de Mergui (Tanintharyi, Birmanie) et les îles Andaman-et-Nicobar ; sans le golfe de Thaïlande. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine, la raie manta géante et le requin-zèbre, les niveaux 2 et 3 d'autres espèces par fréquence."
+      "description": "Poissons de récif, requins, raies, tortues marines, céphalopodes et mammifères marins de la mer d'Andaman : la côte ouest de la Thaïlande, de Ranong à Satun, avec les îles Similan et Surin, l'archipel de Mergui (Tanintharyi, Birmanie) et les îles Andaman-et-Nicobar ; sans le golfe de Thaïlande. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le requin-baleine, la raie manta géante et le requin-zèbre, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
     },
     "es": {
       "name": "Tailandia y mar de Andamán",
-      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos del mar de Andamán: la costa occidental de Tailandia, de Ranong a Satun, con las islas Similan y Surin, el archipiélago de Mergui (Tanintharyi, Myanmar) y las islas Andamán y Nicobar; sin el golfo de Tailandia. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena, la manta gigante y el tiburón cebra, los niveles 2 y 3 otras especies por frecuencia."
+      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas, cefalópodos y mamíferos marinos del mar de Andamán: la costa occidental de Tailandia, de Ranong a Satun, con las islas Similan y Surin, el archipiélago de Mergui (Tanintharyi, Myanmar) y las islas Andamán y Nicobar; sin el golfo de Tailandia. El nivel 1 reúne las especies más comunes y joyas como el tiburón ballena, la manta gigante y el tiburón cebra, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
     }
   },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Thailand_-_Sea_Turtle_diving_-_Similan_Islands_%2816964389292%29.jpg/330px-Thailand_-_Sea_Turtle_diving_-_Similan_Islands_%2816964389292%29.jpg",
@@ -86,7 +86,7 @@
     "Rhincodon typus",
     "Mobula birostris",
     "Stegostoma tigrinum",
-    "Hippocampus histrix",
+    "Hippocampus comes",
     "Solenostomus paradoxus",
     "Dugong dugon",
     "Cephalopholis argus",
@@ -102,10 +102,8 @@
     "Neotrygon malaccensis",
     "Scolopsis margaritifera",
     "Caranx melampygus",
-    "Istiblennius dussumieri",
     "Ecsenius bicolor",
     "Halichoeres annularis",
-    "Hippocampus comes",
     "Istigobius ornatus",
     "Acanthosepion pharaonis",
     "Tylosurus crocodilus",
@@ -154,7 +152,6 @@
     "Octopus cyanea",
     "Siganus virgatus",
     "Aluterus scriptus",
-    "Terapon jarbua",
     "Gomphosus caeruleus",
     "Halichoeres argus",
     "Canthigaster petersii",
@@ -199,6 +196,9 @@
     "Pomacentrus chrysurus",
     "Centropyge eibli",
     "Gymnothorax fimbriatus",
+    "Hemitaurichthys zoster",
+    "Lutjanus monostigma",
+    "Pygoplites diacanthus",
     "Tridacna crocea",
     "Acanthaster planci",
     "Diadema setosum",
@@ -226,17 +226,17 @@
     "Plerogyra sinuosa",
     "Stenopus hispidus",
     "Galaxea fascicularis",
+    "Neopetrolisthes maculatus",
     "Phyllidiella zeylanica",
     "Goniobranchus annulatus",
     "Protoreaster nodosus",
     "Dardanus megistos",
     "Echinometra mathaei",
-    "Porpita porpita",
-    "Neopetrolisthes maculatus",
     "Phyllidia elegans",
     "Phyllidia coelestis",
     "Goniobranchus geminus",
     "Gonodactylus chiragra",
+    "Rhynchocinetes durbanensis",
     "Odontodactylus scyllarus",
     "Hymenocera picta"
   ],
@@ -302,7 +302,7 @@
         "Rhincodon typus",
         "Mobula birostris",
         "Stegostoma tigrinum",
-        "Hippocampus histrix",
+        "Hippocampus comes",
         "Solenostomus paradoxus",
         "Dugong dugon"
       ]
@@ -338,10 +338,8 @@
         "Neotrygon malaccensis",
         "Scolopsis margaritifera",
         "Caranx melampygus",
-        "Istiblennius dussumieri",
         "Ecsenius bicolor",
         "Halichoeres annularis",
-        "Hippocampus comes",
         "Istigobius ornatus",
         "Acanthosepion pharaonis",
         "Tylosurus crocodilus",
@@ -384,7 +382,9 @@
         "Parupeneus macronemus",
         "Pomacanthus annularis",
         "Salarias fasciatus",
-        "Echidna nebulosa"
+        "Echidna nebulosa",
+        "Parupeneus barberinus",
+        "Ctenochaetus striatus"
       ]
     },
     {
@@ -405,12 +405,9 @@
         }
       },
       "speciesNames": [
-        "Parupeneus barberinus",
-        "Ctenochaetus striatus",
         "Octopus cyanea",
         "Siganus virgatus",
         "Aluterus scriptus",
-        "Terapon jarbua",
         "Gomphosus caeruleus",
         "Halichoeres argus",
         "Canthigaster petersii",
@@ -454,7 +451,10 @@
         "Naso unicornis",
         "Pomacentrus chrysurus",
         "Centropyge eibli",
-        "Gymnothorax fimbriatus"
+        "Gymnothorax fimbriatus",
+        "Hemitaurichthys zoster",
+        "Lutjanus monostigma",
+        "Pygoplites diacanthus"
       ]
     },
     {
@@ -502,17 +502,17 @@
         "Plerogyra sinuosa",
         "Stenopus hispidus",
         "Galaxea fascicularis",
+        "Neopetrolisthes maculatus",
         "Phyllidiella zeylanica",
         "Goniobranchus annulatus",
         "Protoreaster nodosus",
         "Dardanus megistos",
         "Echinometra mathaei",
-        "Porpita porpita",
-        "Neopetrolisthes maculatus",
         "Phyllidia elegans",
         "Phyllidia coelestis",
         "Goniobranchus geminus",
         "Gonodactylus chiragra",
+        "Rhynchocinetes durbanensis",
         "Odontodactylus scyllarus",
         "Hymenocera picta"
       ]
