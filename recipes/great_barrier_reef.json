@@ -2,23 +2,23 @@
   "$schema": "../schema/recipe.schema.json",
   "deck": {
     "name": "Great Barrier Reef & Korallenmeer",
-    "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit.",
+    "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
     "translations": {
       "de": {
         "name": "Great Barrier Reef & Korallenmeer",
-        "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit."
+        "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
       },
       "en": {
         "name": "Great Barrier Reef & Coral Sea",
-        "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Great Barrier Reef, New Caledonia and Vanuatu. Level 1 holds the most common species and highlights such as the humphead wrasse, reef manta and dugong, Levels 2 and 3 further species by frequency."
+        "description": "Reef fish, sharks, rays, sea turtles, cephalopods and marine mammals of the Great Barrier Reef, New Caledonia and Vanuatu. Level 1 holds the most common species and highlights such as the humphead wrasse, reef manta and dugong, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
       },
       "fr": {
         "name": "Grande Barrière de corail et mer de Corail",
-        "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de la Grande Barrière de corail, de la Nouvelle-Calédonie et du Vanuatu. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le napoléon, la raie manta de récif et le dugong, les niveaux 2 et 3 d'autres espèces par fréquence."
+        "description": "Poissons de récif, requins, raies, tortues marines, céphalopodes et mammifères marins de la Grande Barrière de corail, de la Nouvelle-Calédonie et du Vanuatu. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le napoléon, la raie manta de récif et le dugong, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
       },
       "es": {
         "name": "Gran Barrera de Coral y mar del Coral",
-        "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de la Gran Barrera de Coral, Nueva Caledonia y Vanuatu. El nivel 1 reúne las especies más comunes y joyas como el pez napoleón, la manta de arrecife y el dugongo, los niveles 2 y 3 otras especies por frecuencia."
+        "description": "Peces de arrecife, tiburones, rayas, tortugas marinas, cefalópodos y mamíferos marinos de la Gran Barrera de Coral, Nueva Caledonia y Vanuatu. El nivel 1 reúne las especies más comunes y joyas como el pez napoleón, la manta de arrecife y el dugongo, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
       }
     },
     "learningMode": "family",
@@ -77,11 +77,11 @@
     },
     {
       "name": "Dugong dugon",
-      "reason": "Der Dugong weidet in den Seegraswiesen innerhalb des Riffs, die größte Population der Welt lebt hier."
+      "reason": "Der Dugong weidet in den Seegraswiesen innerhalb des Riffs; an Australiens Küsten lebt der größte Teil des Weltbestands."
     },
     {
       "name": "Balaenoptera acutorostrata",
-      "reason": "Der Zwergzwergwal kommt im Winter an die Ribbon Reefs und schwimmt dort mit Schnorchlern."
+      "reason": "Der Zwerg-Zwergwal kommt im Winter an die Ribbon Reefs und schwimmt dort mit Schnorchlern."
     }
   ],
   "extraSubdecks": [
@@ -95,8 +95,8 @@
         "es": { "name": "Invertebrados y corales" }
       },
       "taxa": {
-        "inat": [47534, 47115, 85493, 47549, 48824, 130868, 52318, 47490],
-        "obis": [1267, 51, 1066, 1806, 558, 146420, 2853, 883]
+        "inat": [47534, 47114, 47584, 47429, 85493, 47549, 48824, 130868, 52318, 47490],
+        "obis": [1267, 101, 105, 55, 1066, 1806, 558, 146420, 2853, 883]
       },
       "size": 40,
       "filters": { "minLengthCm": 0 },
