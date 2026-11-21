@@ -29,7 +29,7 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
@@ -39,7 +39,6 @@ Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` m
 | *Sphyrna mokarran* | level-2 | tot beobachtet | 8 von 8 Beobachtungen mit Angabe lebend/tot tot (100 %) |
 | *Himantura uarnak* | level-2 | tot beobachtet | 4 von 5 Beobachtungen mit Angabe lebend/tot tot (80 %) |
 | *Conomurex persicus* | invertebrates | tot beobachtet | 7 von 8 Beobachtungen mit Angabe lebend/tot tot (88 %) |
-| *Cirrhitus spilotoceps* | level-3 | Name der Region | Deck: *Cirrhitus spilotoceps*; die Referenz-DB führt die Art als *Cirrhitus pinnulatus* |
 | *Carcharhinus limbatus* | level-1 | wenige Beobachter | 28 von 35 Beobachtungen von 2 Personen (80 %); 8 Beobachter insgesamt |
 | *Amphiprion omanensis* | level-1 | wenige Beobachter | 5 von 9 Beobachtungen von 2 Personen (56 %); 6 Beobachter insgesamt |
 | *Chlorurus sordidus* | level-2 | wenige Beobachter | 18 von 30 Beobachtungen von 2 Personen (60 %); 12 Beobachter insgesamt |
@@ -53,17 +52,14 @@ Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` m
 | *Sphyrna mokarran* | level-2 | wenige Beobachter | 15 von 15 Beobachtungen von 2 Personen (100 %); 2 Beobachter insgesamt |
 | *Carcharhinus dussumieri* | level-2 | wenige Beobachter | 11 von 13 Beobachtungen von 2 Personen (85 %); 4 Beobachter insgesamt |
 | *Cheilodipterus persicus* | level-2 | wenige Beobachter | 7 von 12 Beobachtungen von 2 Personen (58 %); 7 Beobachter insgesamt |
-| *Lutjanus argentimaculatus* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Terapon jarbua* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Monodactylus argenteus* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Pastinachus sephen* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Chanos chanos* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Gerres longirostris* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Rhizoprionodon acutus* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Lutjanus ehrenbergii* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Acanthopagrus berda* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Caranx sexfasciatus* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Lutjanus indicus* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Cirrhitus spilotoceps* | level-3 | *Cirrhitus pinnulatus* |
 
 ## Verworfene Highlights
 

@@ -28,20 +28,17 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Keine Warnungen.
 
-| Art | Subdeck | Warnung | Zahlen |
-|---|---|---|---|
-| *Chrysiptera leucopoma* | level-2 | Name der Region | Deck: *Chrysiptera leucopoma*; die Referenz-DB führt die Art als *Chrysiptera brownriggii* |
-| *Acanthaster solaris* | invertebrates | Name der Region | Deck: *Acanthaster solaris*; die Referenz-DB führt die Art als *Acanthaster planci* |
-| *Pteraeolidia semperi* | invertebrates | Name der Region | Deck: *Pteraeolidia semperi*; die Referenz-DB führt die Art als *Pteraeolidia ianthina* |
-| *Carcharhinus leucas* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Mobula alfredi* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Meer) |
-| *Ellochelon vaigiensis* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Lutjanus fulvus* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Terapon jarbua* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Lutjanus bohar* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Anguilla marmorata* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Chrysiptera leucopoma* | level-2 | *Chrysiptera brownriggii* |
+| *Acanthaster solaris* | invertebrates | *Acanthaster planci* |
+| *Pteraeolidia semperi* | invertebrates | *Pteraeolidia ianthina* |
 
 ## Verworfene Highlights
 

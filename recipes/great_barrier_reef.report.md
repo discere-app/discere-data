@@ -28,22 +28,26 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
-| *Concholabrus fasciatus* | level-3 | Name der Region | Deck: *Concholabrus fasciatus*; die Referenz-DB führt die Art als *Cheilinus fasciatus* |
-| *Acanthaster solaris* | invertebrates | Name der Region | Deck: *Acanthaster solaris*; die Referenz-DB führt die Art als *Acanthaster planci* |
-| *Pteraeolidia semperi* | invertebrates | Name der Region | Deck: *Pteraeolidia semperi*; die Referenz-DB führt die Art als *Pteraeolidia ianthina* |
 | *Hippocampus kuda* | level-1 | wenige Beobachter | 633 von 842 Beobachtungen von 2 Personen (75 %); 23 Beobachter insgesamt |
 | *Neoglyphidodon nigroris* | level-2 | wenige Beobachter | 311 von 601 Beobachtungen von 2 Personen (52 %); 108 Beobachter insgesamt |
 | *Stegastes lacrymatus* | level-2 | wenige Beobachter | 285 von 556 Beobachtungen von 2 Personen (51 %); 134 Beobachter insgesamt |
 | *Salarias alboguttatus* | level-2 | wenige Beobachter | 361 von 516 Beobachtungen von 2 Personen (70 %); 63 Beobachter insgesamt |
 | *Pomacentrus amboinensis* | level-2 | wenige Beobachter | 272 von 494 Beobachtungen von 2 Personen (55 %); 89 Beobachter insgesamt |
 | *Diodon hystrix* | level-2 | wenige Beobachter | 250 von 457 Beobachtungen von 2 Personen (55 %); 84 Beobachter insgesamt |
-| *Mobula alfredi* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Meer) |
-| *Lutjanus bohar* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Plectorhinchus gibbosus* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Concholabrus fasciatus* | level-3 | *Cheilinus fasciatus* |
+| *Acanthaster solaris* | invertebrates | *Acanthaster planci* |
+| *Pteraeolidia semperi* | invertebrates | *Pteraeolidia ianthina* |
 
 ## Verworfene Highlights
 

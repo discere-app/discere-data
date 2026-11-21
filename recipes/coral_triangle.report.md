@@ -28,15 +28,17 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Keine Warnungen.
 
-| Art | Subdeck | Warnung | Zahlen |
-|---|---|---|---|
-| *Concholabrus fasciatus* | level-2 | Name der Region | Deck: *Concholabrus fasciatus*; die Referenz-DB führt die Art als *Cheilinus fasciatus* |
-| *Pteraeolidia semperi* | invertebrates | Name der Region | Deck: *Pteraeolidia semperi*; die Referenz-DB führt die Art als *Pteraeolidia ianthina* |
-| *Acanthaster solaris* | invertebrates | Name der Region | Deck: *Acanthaster solaris*; die Referenz-DB führt die Art als *Acanthaster planci* |
-| *Mobula alfredi* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Meer) |
-| *Caranx sexfasciatus* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Concholabrus fasciatus* | level-2 | *Cheilinus fasciatus* |
+| *Pteraeolidia semperi* | invertebrates | *Pteraeolidia ianthina* |
+| *Acanthaster solaris* | invertebrates | *Acanthaster planci* |
 
 ## Verworfene Highlights
 

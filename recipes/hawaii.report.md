@@ -28,25 +28,24 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
 | *Physalia utriculus* | invertebrates | tot beobachtet | 27 von 31 Beobachtungen mit Angabe lebend/tot tot (87 %) |
-| *Physalia utriculus* | invertebrates | Name der Region | Deck: *Physalia utriculus*; die Referenz-DB führt die Art als *Physalia physalis* |
-| *Mauritia mauritiana* | invertebrates | Name der Region | Deck: *Mauritia mauritiana*; die Referenz-DB führt die Art als *Cypraea mauritiana* |
-| *Pteraeolidia semperi* | invertebrates | Name der Region | Deck: *Pteraeolidia semperi*; die Referenz-DB führt die Art als *Pteraeolidia ianthina* |
-| *Acanthaster solaris* | invertebrates | Name der Region | Deck: *Acanthaster solaris*; die Referenz-DB führt die Art als *Acanthaster planci* |
-| *Stylocheilus striatus* | invertebrates | Name der Region | Deck: *Stylocheilus striatus*; die Referenz-DB führt die Art als *Stylocheilus longicauda* |
 | *Antennarius commerson* | level-2 | wenige Beobachter | 324 von 540 Beobachtungen von 2 Personen (60 %); 87 Beobachter insgesamt |
-| *Gymnothorax meleagris* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Mobula alfredi* | level-1 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Meer) |
-| *Lutjanus fulvus* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Sarotherodon melanotheron* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Kuhlia xenura* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Kuhlia sandvicensis* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Mugil cephalus* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Chanos chanos* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Physalia utriculus* | invertebrates | *Physalia physalis* |
+| *Mauritia mauritiana* | invertebrates | *Cypraea mauritiana* |
+| *Pteraeolidia semperi* | invertebrates | *Pteraeolidia ianthina* |
+| *Acanthaster solaris* | invertebrates | *Acanthaster planci* |
+| *Stylocheilus striatus* | invertebrates | *Stylocheilus longicauda* |
 
 ## Verworfene Highlights
 

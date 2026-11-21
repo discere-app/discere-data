@@ -28,27 +28,29 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
 | *Diodon hystrix* | level-1 | tot beobachtet | 41 von 49 Beobachtungen mit Angabe lebend/tot tot (84 %) |
 | *Strombus gracilior* | invertebrates | tot beobachtet | 7 von 8 Beobachtungen mit Angabe lebend/tot tot (88 %) |
 | *Chama coralloides* | invertebrates | tot beobachtet | 11 von 12 Beobachtungen mit Angabe lebend/tot tot (92 %) |
-| *Neoniphon suborbitalis* | level-2 | Name der Region | Deck: *Neoniphon suborbitalis*; die Referenz-DB führt die Art als *Sargocentron suborbitale* |
-| *Eucidaris galapagensis* | invertebrates | Name der Region | Deck: *Eucidaris galapagensis*; die Referenz-DB führt die Art als *Eucidaris thouarsii* |
-| *Physalia utriculus* | invertebrates | Name der Region | Deck: *Physalia utriculus*; die Referenz-DB führt die Art als *Physalia physalis* |
-| *Acanthaster ellisii* | invertebrates | Name der Region | Deck: *Acanthaster ellisii*; die Referenz-DB führt die Art als *Acanthaster planci* |
-| *Phyllonotus erythrostomus* | invertebrates | Name der Region | Deck: *Phyllonotus erythrostomus*; die Referenz-DB führt die Art als *Hexaplex erythrostomus* |
-| *Chama coralloides* | invertebrates | Name der Region | Deck: *Chama coralloides*; die Referenz-DB führt die Art als *Chama echinata* |
 | *Mola mola* | level-1 | wenige Beobachter | 2 von 4 Beobachtungen von 2 Personen (50 %); 4 Beobachter insgesamt |
 | *Holacanthus clarionensis* | level-2 | wenige Beobachter | 189 von 274 Beobachtungen von 2 Personen (69 %); 59 Beobachter insgesamt |
 | *Lepidonectes corallicola* | level-2 | wenige Beobachter | 155 von 215 Beobachtungen von 2 Personen (72 %); 41 Beobachter insgesamt |
-| *Caranx sexfasciatus* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Mugil cephalus* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Carcharhinus leucas* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Dajaus monticola* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Dormitator latifrons* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Neoniphon suborbitalis* | level-2 | *Sargocentron suborbitale* |
+| *Eucidaris galapagensis* | invertebrates | *Eucidaris thouarsii* |
+| *Physalia utriculus* | invertebrates | *Physalia physalis* |
+| *Acanthaster ellisii* | invertebrates | *Acanthaster planci* |
+| *Phyllonotus erythrostomus* | invertebrates | *Hexaplex erythrostomus* |
+| *Chama coralloides* | invertebrates | *Chama echinata* |
 
 ## Verworfene Highlights
 

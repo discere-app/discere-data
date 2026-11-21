@@ -29,18 +29,23 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 ## Zu entscheiden
 
-Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
+Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
-| *Halichoeres annularis* | level-2 | Name der Region | Deck: *Halichoeres annularis*; die Referenz-DB führt die Art als *Halichoeres marginatus* |
-| *Concholabrus fasciatus* | level-2 | Name der Region | Deck: *Concholabrus fasciatus*; die Referenz-DB führt die Art als *Cheilinus fasciatus* |
-| *Halichoeres chrysotaenia* | level-3 | Name der Region | Deck: *Halichoeres chrysotaenia*; die Referenz-DB führt die Art als *Halichoeres vrolikii* |
-| *Pteraeolidia semperi* | invertebrates | Name der Region | Deck: *Pteraeolidia semperi*; die Referenz-DB führt die Art als *Pteraeolidia ianthina* |
 | *Mobula birostris* | level-1 | wenige Beobachter | 23 von 43 Beobachtungen von 2 Personen (53 %); 18 Beobachter insgesamt |
 | *Hippocampus histrix* | level-1 | wenige Beobachter | 4 von 8 Beobachtungen von 2 Personen (50 %); 6 Beobachter insgesamt |
-| *Terapon jarbua* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
-| *Plectorhinchus gibbosus* | level-3 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt (Süß/Brack/Meer) |
+
+## Hinweise: Namen
+
+Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.
+
+| Name im Deck | Subdeck | Referenz-DB |
+|---|---|---|
+| *Halichoeres annularis* | level-2 | *Halichoeres marginatus* |
+| *Concholabrus fasciatus* | level-2 | *Cheilinus fasciatus* |
+| *Halichoeres chrysotaenia* | level-3 | *Halichoeres vrolikii* |
+| *Pteraeolidia semperi* | invertebrates | *Pteraeolidia ianthina* |
 
 ## Verworfene Highlights
 
