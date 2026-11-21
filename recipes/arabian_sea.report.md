@@ -33,12 +33,12 @@ Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` m
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
-| *Cyclichthys orbicularis* | level-1 | tot beobachtet | 10 von 11 annotierten Beobachtungen tot (91 %) |
-| *Diodon holocanthus* | level-1 | tot beobachtet | 8 von 10 annotierten Beobachtungen tot (80 %) |
-| *Carcharhinus limbatus* | level-1 | tot beobachtet | 10 von 10 annotierten Beobachtungen tot (100 %) |
-| *Sphyrna mokarran* | level-2 | tot beobachtet | 8 von 8 annotierten Beobachtungen tot (100 %) |
-| *Himantura uarnak* | level-2 | tot beobachtet | 4 von 5 annotierten Beobachtungen tot (80 %) |
-| *Conomurex persicus* | invertebrates | tot beobachtet | 7 von 8 annotierten Beobachtungen tot (88 %) |
+| *Cyclichthys orbicularis* | level-1 | tot beobachtet | 10 von 11 Beobachtungen mit Angabe lebend/tot tot (91 %) |
+| *Diodon holocanthus* | level-1 | tot beobachtet | 8 von 10 Beobachtungen mit Angabe lebend/tot tot (80 %) |
+| *Carcharhinus limbatus* | level-1 | tot beobachtet | 10 von 10 Beobachtungen mit Angabe lebend/tot tot (100 %) |
+| *Sphyrna mokarran* | level-2 | tot beobachtet | 8 von 8 Beobachtungen mit Angabe lebend/tot tot (100 %) |
+| *Himantura uarnak* | level-2 | tot beobachtet | 4 von 5 Beobachtungen mit Angabe lebend/tot tot (80 %) |
+| *Conomurex persicus* | invertebrates | tot beobachtet | 7 von 8 Beobachtungen mit Angabe lebend/tot tot (88 %) |
 | *Cirrhitus spilotoceps* | level-3 | Name der Region | Deck: *Cirrhitus spilotoceps*; die Referenz-DB führt die Art als *Cirrhitus pinnulatus* |
 | *Carcharhinus limbatus* | level-1 | wenige Beobachter | 28 von 35 Beobachtungen von 2 Personen (80 %); 8 Beobachter insgesamt |
 | *Amphiprion omanensis* | level-1 | wenige Beobachter | 5 von 9 Beobachtungen von 2 Personen (56 %); 6 Beobachter insgesamt |
@@ -380,8 +380,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 1: *Cirrhitus spilotoceps*
-- entfallen: 1: *Cirrhitus pinnulatus*
+- neu: 0
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 

@@ -32,7 +32,7 @@ Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` m
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
-| *Physalia utriculus* | invertebrates | tot beobachtet | 27 von 33 annotierten Beobachtungen tot (82 %) |
+| *Physalia utriculus* | invertebrates | tot beobachtet | 27 von 31 Beobachtungen mit Angabe lebend/tot tot (87 %) |
 | *Physalia utriculus* | invertebrates | Name der Region | Deck: *Physalia utriculus*; die Referenz-DB führt die Art als *Physalia physalis* |
 | *Mauritia mauritiana* | invertebrates | Name der Region | Deck: *Mauritia mauritiana*; die Referenz-DB führt die Art als *Cypraea mauritiana* |
 | *Pteraeolidia semperi* | invertebrates | Name der Region | Deck: *Pteraeolidia semperi*; die Referenz-DB führt die Art als *Pteraeolidia ianthina* |
@@ -357,8 +357,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 5: *Acanthaster solaris*, *Mauritia mauritiana*, *Physalia utriculus*, *Pteraeolidia semperi*, *Stylocheilus striatus*
-- entfallen: 5: *Acanthaster planci*, *Cypraea mauritiana*, *Physalia physalis*, *Pteraeolidia ianthina*, *Stylocheilus longicauda*
+- neu: 0
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 

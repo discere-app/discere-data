@@ -32,9 +32,9 @@ Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` m
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
-| *Diodon hystrix* | level-1 | tot beobachtet | 41 von 49 annotierten Beobachtungen tot (84 %) |
-| *Strombus gracilior* | invertebrates | tot beobachtet | 7 von 8 annotierten Beobachtungen tot (88 %) |
-| *Chama coralloides* | invertebrates | tot beobachtet | 11 von 12 annotierten Beobachtungen tot (92 %) |
+| *Diodon hystrix* | level-1 | tot beobachtet | 41 von 49 Beobachtungen mit Angabe lebend/tot tot (84 %) |
+| *Strombus gracilior* | invertebrates | tot beobachtet | 7 von 8 Beobachtungen mit Angabe lebend/tot tot (88 %) |
+| *Chama coralloides* | invertebrates | tot beobachtet | 11 von 12 Beobachtungen mit Angabe lebend/tot tot (92 %) |
 | *Neoniphon suborbitalis* | level-2 | Name der Region | Deck: *Neoniphon suborbitalis*; die Referenz-DB führt die Art als *Sargocentron suborbitale* |
 | *Eucidaris galapagensis* | invertebrates | Name der Region | Deck: *Eucidaris galapagensis*; die Referenz-DB führt die Art als *Eucidaris thouarsii* |
 | *Physalia utriculus* | invertebrates | Name der Region | Deck: *Physalia utriculus*; die Referenz-DB führt die Art als *Physalia physalis* |
@@ -426,8 +426,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 6: *Acanthaster ellisii*, *Chama coralloides*, *Eucidaris galapagensis*, *Neoniphon suborbitalis*, *Phyllonotus erythrostomus*, *Physalia utriculus*
-- entfallen: 6: *Acanthaster planci*, *Chama echinata*, *Eucidaris thouarsii*, *Hexaplex erythrostomus*, *Physalia physalis*, *Sargocentron suborbitale*
+- neu: 0
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 

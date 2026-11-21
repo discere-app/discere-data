@@ -355,8 +355,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 4: *Concholabrus fasciatus*, *Halichoeres annularis*, *Halichoeres chrysotaenia*, *Pteraeolidia semperi*
-- entfallen: 4: *Cheilinus fasciatus*, *Halichoeres marginatus*, *Halichoeres vrolikii*, *Pteraeolidia ianthina*
+- neu: 0
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 
