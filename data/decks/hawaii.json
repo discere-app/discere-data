@@ -1,23 +1,23 @@
 {
   "formatVersion": 2,
   "name": "Hawaii",
-  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Hawaii-Inseln einschließlich der Nordwestlichen Hawaii-Inseln, mit vielen Arten, die es nur hier gibt. Level 1 enthält die häufigsten Arten und Highlights wie Riffmanta und Hawaii-Mönchsrobbe, Level 2 und 3 weitere Arten nach Häufigkeit.",
+  "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger der Hawaii-Inseln einschließlich der Nordwestlichen Hawaii-Inseln, mit vielen Arten, die es nur hier gibt. Level 1 enthält die häufigsten Arten und Highlights wie Riffmanta und Hawaii-Mönchsrobbe, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
   "translations": {
     "de": {
       "name": "Hawaii",
-      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer der Hawaii-Inseln einschließlich der Nordwestlichen Hawaii-Inseln, mit vielen Arten, die es nur hier gibt. Level 1 enthält die häufigsten Arten und Highlights wie Riffmanta und Hawaii-Mönchsrobbe, Level 2 und 3 weitere Arten nach Häufigkeit."
+      "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger der Hawaii-Inseln einschließlich der Nordwestlichen Hawaii-Inseln, mit vielen Arten, die es nur hier gibt. Level 1 enthält die häufigsten Arten und Highlights wie Riffmanta und Hawaii-Mönchsrobbe, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
     },
     "en": {
       "name": "Hawaii",
-      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Hawaiian Islands including the Northwestern Hawaiian Islands, with many species found nowhere else. Level 1 holds the most common species and highlights such as the reef manta and Hawaiian monk seal, Levels 2 and 3 further species by frequency."
+      "description": "Reef fish, sharks, rays, sea turtles, cephalopods and marine mammals of the Hawaiian Islands including the Northwestern Hawaiian Islands, with many species found nowhere else. Level 1 holds the most common species and highlights such as the reef manta and Hawaiian monk seal, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
     },
     "fr": {
       "name": "Hawaï",
-      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de l'archipel d'Hawaï, îles du Nord-Ouest comprises, avec de nombreuses espèces qui n'existent nulle part ailleurs. Le niveau 1 réunit les espèces les plus communes et des incontournables comme la raie manta de récif et le phoque moine d'Hawaï, les niveaux 2 et 3 d'autres espèces par fréquence."
+      "description": "Poissons de récif, requins, raies, tortues marines, céphalopodes et mammifères marins de l'archipel d'Hawaï, îles du Nord-Ouest comprises, avec de nombreuses espèces qui n'existent nulle part ailleurs. Le niveau 1 réunit les espèces les plus communes et des incontournables comme la raie manta de récif et le phoque moine d'Hawaï, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
     },
     "es": {
       "name": "Hawái",
-      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de las islas de Hawái, incluidas las islas de Sotavento, con muchas especies que no existen en ningún otro lugar. El nivel 1 reúne las especies más comunes y joyas como la manta de arrecife y la foca monje de Hawái, los niveles 2 y 3 otras especies por frecuencia."
+      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas, cefalópodos y mamíferos marinos de las islas de Hawái, incluidas las islas de Sotavento, con muchas especies que no existen en ningún otro lugar. El nivel 1 reúne las especies más comunes y joyas como la manta de arrecife y la foca monje de Hawái, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
     }
   },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Reef_Triggerfish_1.JPG/330px-Reef_Triggerfish_1.JPG",
@@ -56,7 +56,6 @@
     "Canthigaster jactator",
     "Mulloidichthys flavolineatus",
     "Chaetodon lunula",
-    "Istiblennius zebra",
     "Gymnothorax meleagris",
     "Chaetodon auriga",
     "Melichthys niger",
@@ -83,12 +82,12 @@
     "Acanthurus blochii",
     "Melichthys vidua",
     "Echidna nebulosa",
+    "Sufflamen bursa",
     "Mobula alfredi",
     "Monachus schauinslandi",
     "Galeocerdo cuvier",
     "Stenella longirostris",
     "Megaptera novaeangliae",
-    "Sufflamen bursa",
     "Gymnothorax flavimarginatus",
     "Abudefduf abdominalis",
     "Gymnothorax eurostus",
@@ -114,7 +113,6 @@
     "Chaetodon unimaculatus",
     "Chaetodon miliaris",
     "Lutjanus fulvus",
-    "Sarotherodon melanotheron",
     "Chaetodon multicinctus",
     "Acanthurus xanthopterus",
     "Antennarius commerson",
@@ -194,18 +192,17 @@
     "Acanthurus nigricans",
     "Sebastapistes coniorta",
     "Carcharhinus galapagensis",
-    "Chanos chanos",
     "Echidna polyzona",
     "Conger marginatus",
     "Pteropterus sphex",
+    "Ctenochaetus hawaiiensis",
+    "Heteropriacanthus carolinus",
+    "Acanthurus nigroris",
     "Echinometra mathaei",
     "Actinopyga varians",
-    "Colobocentrotus atratus",
     "Heterocentrotus mamillatus",
-    "Calcinus seurati",
     "Tripneustes gratilla",
     "Holothuria atra",
-    "Physalia utriculus",
     "Hypselodoris imperialis",
     "Diadema savignyi",
     "Pocillopora meandrina",
@@ -235,6 +232,9 @@
     "Luria isabella",
     "Stylocheilus striatus",
     "Chelidonura hirundinina",
+    "Tambja morosa",
+    "Thorunna daniellae",
+    "Mithrodia fisheri",
     "Charonia tritonis",
     "Hymenocera picta",
     "Panulirus marginatus"
@@ -271,7 +271,6 @@
         "Canthigaster jactator",
         "Mulloidichthys flavolineatus",
         "Chaetodon lunula",
-        "Istiblennius zebra",
         "Gymnothorax meleagris",
         "Chaetodon auriga",
         "Melichthys niger",
@@ -298,6 +297,7 @@
         "Acanthurus blochii",
         "Melichthys vidua",
         "Echidna nebulosa",
+        "Sufflamen bursa",
         "Mobula alfredi",
         "Monachus schauinslandi",
         "Galeocerdo cuvier",
@@ -323,7 +323,6 @@
         }
       },
       "speciesNames": [
-        "Sufflamen bursa",
         "Gymnothorax flavimarginatus",
         "Abudefduf abdominalis",
         "Gymnothorax eurostus",
@@ -349,7 +348,6 @@
         "Chaetodon unimaculatus",
         "Chaetodon miliaris",
         "Lutjanus fulvus",
-        "Sarotherodon melanotheron",
         "Chaetodon multicinctus",
         "Acanthurus xanthopterus",
         "Antennarius commerson",
@@ -382,7 +380,9 @@
         "Pristiapogon kallopterus",
         "Neochirus barberi",
         "Diodon holocanthus",
-        "Platybelone platyura"
+        "Platybelone platyura",
+        "Gymnothorax melatremus",
+        "Bodianus albotaeniatus"
       ]
     },
     {
@@ -403,8 +403,6 @@
         }
       },
       "speciesNames": [
-        "Gymnothorax melatremus",
-        "Bodianus albotaeniatus",
         "Scorpaenopsis diabolus",
         "Thalassoma purpureum",
         "Kuhlia sandvicensis",
@@ -449,10 +447,12 @@
         "Acanthurus nigricans",
         "Sebastapistes coniorta",
         "Carcharhinus galapagensis",
-        "Chanos chanos",
         "Echidna polyzona",
         "Conger marginatus",
-        "Pteropterus sphex"
+        "Pteropterus sphex",
+        "Ctenochaetus hawaiiensis",
+        "Heteropriacanthus carolinus",
+        "Acanthurus nigroris"
       ]
     },
     {
@@ -475,12 +475,9 @@
       "speciesNames": [
         "Echinometra mathaei",
         "Actinopyga varians",
-        "Colobocentrotus atratus",
         "Heterocentrotus mamillatus",
-        "Calcinus seurati",
         "Tripneustes gratilla",
         "Holothuria atra",
-        "Physalia utriculus",
         "Hypselodoris imperialis",
         "Diadema savignyi",
         "Pocillopora meandrina",
@@ -510,6 +507,9 @@
         "Luria isabella",
         "Stylocheilus striatus",
         "Chelidonura hirundinina",
+        "Tambja morosa",
+        "Thorunna daniellae",
+        "Mithrodia fisheri",
         "Charonia tritonis",
         "Hymenocera picta",
         "Panulirus marginatus"
