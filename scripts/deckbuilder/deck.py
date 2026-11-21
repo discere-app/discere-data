@@ -47,7 +47,7 @@ def deck_sources(recipe, species_sources):
     asked, FishBase/SeaLifeBase for the species they hold, and every guide
     with a URL."""
     sources = [ORDER_SOURCES[recipe["order"]["source"]]]
-    if "obis" in recipe["region"]:
+    if "obis" in recipe.get("region", {}):
         sources.append(OBIS)
     if "fishbase" in species_sources:
         sources.append(FISHBASE)

@@ -1,9 +1,11 @@
 # =============================================================================
 # obis.py — species checklist from OBIS for a sea area
 #
-# Records per species in a WKT polygon (GET /v3/checklist), for WoRMS taxon
-# IDs (Actinopteri 10194, Elasmobranchii 10193). Only rank "Species" counts;
-# the checklist also lists genera and families.
+# Records per species in one or more sea areas (GET /v3/checklist), for
+# WoRMS taxon IDs (Actinopteri 10194, Elasmobranchii 10193). Only rank
+# "Species" counts; the checklist also lists genera and families. Several
+# areas go into one MULTIPOLYGON, which OBIS counts as one area: a record
+# inside two overlapping areas counts once.
 #
 # OBIS reflects research effort rather than what a diver sees: in the
 # Caribbean, monitoring programs and lagoon fisheries put the goliath grouper
@@ -17,8 +19,25 @@ API = "https://api.obis.org/v3/checklist"
 PAGE_SIZE = 1000
 
 
-def checklist(fetcher, wkt, taxon_ids):
-    params = {"geometry": wkt, "taxonid": ",".join(str(t) for t in taxon_ids), "size": PAGE_SIZE}
+def _polygons(wkt):
+    """The polygon bodies of a POLYGON or MULTIPOLYGON, e.g. "((0 0, …))"."""
+    text = wkt.strip()
+    body = text[text.index("("):]
+    if text.upper().startswith("MULTIPOLYGON"):
+        return body[1:-1].strip()
+    return body
+
+
+def combined_geometry(wkts):
+    """One geometry for several areas: a single one as given, more as one
+    MULTIPOLYGON."""
+    if len(wkts) == 1:
+        return wkts[0]
+    return "MULTIPOLYGON(" + ",".join(_polygons(w) for w in wkts) + ")"
+
+
+def checklist(fetcher, wkts, taxon_ids):
+    params = {"geometry": combined_geometry(wkts), "taxonid": ",".join(str(t) for t in taxon_ids), "size": PAGE_SIZE}
     counts, skip = [], 0
     while True:
         body = fetcher.get_json(API, {**params, "skip": skip})

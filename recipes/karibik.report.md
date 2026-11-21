@@ -4,18 +4,24 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
 
 - Referenz-DB: v3 (FishBase v26.06, SeaLifeBase v26.06)
 - Salz/Süß: FishBase/SeaLifeBase v25.04 (species.parquet)
-- iNaturalist: 1713 Taxa (Seiten: 4)
-- OBIS: 3425 Arten
+- iNaturalist: 1402 Taxa (Seiten: 3)
+- OBIS: 2820 Arten
+
+## Gebiete
+
+- iNaturalist: Monroe County, US, FL (1828), Miami-Dade County, US, FL (2345), Broward County, FL, US (1798), Palm Beach County, FL, US (1754), Quintana Roo, MX (7426), Belize (6953), Izabal, GT (10674), Cortés, HN (10725), Atlántida, HN (10720), Colón, HN (10722), Gracias a Dios, HN (13033), Islas de la Bahía, HN (10730), Atlántico Norte, NI (13143), Atlántico Sur, NI (13144), Limón, CR (12776), Bocas del Toro, PA (11521), Colón, PA (13153), Kuna Yala, PA (11525), San Andrés y Providencia, CO (12741), La Guajira, CO (13365), Magdalena, CO (8170), Atlántico, CO (12747), Bolívar, CO (12748), Sucre, CO (12743), Córdoba, CO (12732), Venezuela (1303), Bahamas (7313), Turks and Caicos Islands (7315), Cuba (6944), Cayman Islands (7488), Jamaica (8748), Haiti (7526), Dominican Republic (6931), Puerto Rico (6848), United States Virgin Islands (10319), British Virgin Islands (10318), Anguilla (10281), Saint-Martin (51360), Sint Maarten (10411), Saint-Barthélemy (51356), Antigua and Barbuda (10283), Saint Kitts and Nevis (10297), Montserrat (10304), Guadeloupe (8177), Dominica (9184), Martinique (10305), Saint Lucia (10300), Saint Vincent and the Grenadines (10317), Grenada (9992), Barbados (10285), Trinidad and Tobago (7375), Aruba (8359), Curaçao (10408), Bonaire, Sint Eustatius and Saba (8360)
+- OBIS: Florida-Straße, Bahamas, Große Antillen und Yucatán, Karibisches Meer südlich 17,5° N, ohne Pazifikküste
+- FishBase/SeaLifeBase-Verbreitung: 028, 044, 052, 084, 092, 136, 192, 212, 214, 308, 312, 332, 388, 474, 500, 531, 533, 534, 535, 630, 652, 659, 660, 662, 663, 670, 780, 796, 850, 862, 840:US-FL
 
 ## Übersicht
 
-- Arten der Reihenfolge-Quelle, aufgelöst: 1675; nicht aufgelöst: 28
-- ausgeschlossen: 921
-  - zu wenige Nachweise: 456
-  - kein Meeresfisch: 410
+- Arten der Reihenfolge-Quelle, aufgelöst: 1372; nicht aufgelöst: 23
+- ausgeschlossen: 802
+  - kein Meeresfisch: 460
+  - zu wenige Nachweise: 293
   - zu klein: 39
-  - nur tiefer als die Tauchgrenze: 16
-- Kandidaten nach den Filtern: 754
+  - nur tiefer als die Tauchgrenze: 10
+- Kandidaten nach den Filtern: 570
 - Deck: 157 Arten (Level 1: 47, Level 2: 60, Level 3: 50); Umfang laut Rezept 40/60/50 plus Highlights
 - Highlights: 7 im Deck, 0 verworfen
 
@@ -31,173 +37,173 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer |
 |---|---|---|---|---|---|---|
-| 1 | *Abudefduf saxatilis* | 9936 | 27863 | native ×27 | Meer | 1 |
-| 2 | *Acanthurus coeruleus* | 8419 | 77883 | native ×27 | Meer | 1 |
-| 3 | *Thalassoma bifasciatum* | 7206 | 122265 | native ×27 | Meer | 1 |
-| 4 | *Sparisoma viride* | 6930 | 65295 | native ×27 | Meer | 1 |
-| 5 | *Sphyraena barracuda* | 6402 | 11323 | native ×27 | Brack/Meer | 1 |
-| 6 | *Haemulon flavolineatum* | 5671 | 41909 | native ×27 | Meer | 1 |
-| 7 | *Lutjanus apodus* | 5665 | 20466 | native ×27 | Brack/Meer | 1 |
-| 8 | *Lutjanus griseus* | 4727 | 27939 | native ×27 | Süß/Brack/Meer | 1 |
-| 9 | *Pomacanthus paru* | 4576 | 10021 | native ×28 | Meer | 1 |
-| 10 | *Haemulon sciurus* | 4527 | 31231 | native ×27 | Meer | 1 |
-| 11 | *Halichoeres bivittatus* | 4384 | 75005 | native ×26 | Meer | 1 |
-| 12 | *Acanthurus tractus* | 4195 | 6778 | native ×27, stray ×1 | Meer | 1 |
-| 13 | *Ginglymostoma cirratum* | 4163 | 3619 | native ×25 | Brack/Meer | 1 |
-| 14 | *Hypanus americanus* | 3998 | 6959 | native ×21 | Brack/Meer | 1 |
-| 15 | *Aulostomus maculatus* | 3787 | 7905 | native ×26 | Meer | 1 |
-| 16 | *Ocyurus chrysurus* | 3659 | 74450 | native ×27 | Meer | 1 |
-| 17 | *Pterois volitans* | 3632 | 4809 | introduced ×14 | Meer | 1 |
-| 18 | *Scarus iseri* | 3629 | 110509 | native ×27 | Meer | 1 |
-| 19 | *Chaetodon capistratus* | 3575 | 28147 | native ×15 | Meer | 1 |
-| 20 | *Caranx ruber* | 3533 | 28779 | native ×27 | Meer | 1 |
-| 21 | *Lactophrys triqueter* | 3533 | 5574 | native ×26 | Meer | 1 |
-| 22 | *Megalops atlanticus* | 3450 | 58987 | native ×27 | Süß/Brack/Meer | 1 |
-| 23 | *Microspathodon chrysurus* | 3339 | 16586 | native ×27 | Meer | 1 |
-| 24 | *Sparisoma aurofrenatum* | 3055 | 104915 | native ×27 | Meer | 1 |
-| 25 | *Gerres cinereus* | 2685 | 3655 | native ×27 | Süß/Brack/Meer | 1 |
-| 26 | *Diodon hystrix* | 2608 | 2445 | native ×26 | Meer | 1 |
-| 27 | *Holacanthus ciliaris* (Quelle: *Holacanthus ciliaris × bermudensis*) | 2580 | 11801 | native ×28 | Meer | 1 |
-| 28 | *Pomacanthus arcuatus* | 2481 | 21163 | native ×25 | Meer | 1 |
-| 29 | *Urobatis jamaicensis* | 2477 | 2818 | native ×26 | Meer | 1 |
-| 30 | *Haemulon plumierii* | 2463 | 66778 | native ×26 | Meer | 1 |
-| 31 | *Anisotremus virginicus* | 2462 | 19895 | native ×27 | Meer | 1 |
-| 32 | *Halichoeres garnoti* | 2417 | 74248 | native ×27 | Meer | 1 |
-| 33 | *Scarus vetula* | 2411 | 9079 | native ×27 | Meer | 1 |
-| 34 | *Sparisoma rubripinne* | 2336 | 14339 | native ×21 | Meer | 1 |
-| 35 | *Chaetodon striatus* | 2329 | 7767 | native ×27 | Meer | 1 |
-| 36 | *Aetobatus narinari* | 2301 | 9346 | native ×27 | Brack/Meer | 1 |
-| 37 | *Gymnothorax moringa* | 2218 | 3208 | native ×22 | Meer | 1 |
-| 38 | *Cephalopholis cruentata* | 2207 | 23065 | native ×27 | Meer | 1 |
-| 39 | *Canthigaster rostrata* | 2180 | 22350 | native ×27 | Meer | 1 |
-| 40 | *Holocentrus rufus* | 2090 | 9342 | native ×25 | Meer | 1 |
-| 105 | *Rhincodon typus* (Highlight) | 878 | 1030 | native ×27 | Meer | 1 |
-| 543 | *Mobula birostris* (Highlight) | 20 | 88 | native ×9 | Meer | 1 |
-| 250 | *Sphyrna mokarran* (Highlight) | 152 | 2237 | native ×26 | Brack/Meer | 1 |
-| 65 | *Hippocampus reidi* (Highlight) | 1369 | 1076 | native ×17 | Brack/Meer | 1 |
-| 200 | *Antennarius multiocellatus* (Highlight) | 249 | 340 | native ×26 | Meer | 1 |
-| 74 | *Eques punctatus* (Highlight) | 1266 | 1633 | native ×26 | Meer | 1 |
-| 129 | *Opistognathus aurifrons* (Highlight) | 570 | 10190 | native ×27 | Meer | 1 |
+| 1 | *Abudefduf saxatilis* | 9431 | 27830 | native ×27 | Meer | 1 |
+| 2 | *Acanthurus coeruleus* | 7821 | 77830 | native ×27 | Meer | 1 |
+| 3 | *Thalassoma bifasciatum* | 6740 | 122238 | native ×27 | Meer | 1 |
+| 4 | *Sparisoma viride* | 6191 | 65204 | native ×27 | Meer | 1 |
+| 5 | *Sphyraena barracuda* | 5803 | 11300 | native ×27 | Brack/Meer | 1 |
+| 6 | *Haemulon flavolineatum* | 5478 | 41852 | native ×27 | Meer | 1 |
+| 7 | *Lutjanus apodus* | 5403 | 20422 | native ×27 | Brack/Meer | 1 |
+| 8 | *Pomacanthus paru* | 4317 | 10014 | native ×28 | Meer | 1 |
+| 9 | *Halichoeres bivittatus* | 4255 | 74986 | native ×26 | Meer | 1 |
+| 10 | *Haemulon sciurus* | 4168 | 31222 | native ×27 | Meer | 1 |
+| 11 | *Acanthurus tractus* | 3992 | 6785 | native ×27, stray ×1 | Meer | 1 |
+| 12 | *Lutjanus griseus* | 3886 | 27926 | native ×27 | Süß/Brack/Meer | 1 |
+| 13 | *Ginglymostoma cirratum* | 3854 | 3586 | native ×25 | Brack/Meer | 1 |
+| 14 | *Hypanus americanus* | 3728 | 6953 | native ×21 | Brack/Meer | 1 |
+| 15 | *Aulostomus maculatus* | 3520 | 7894 | native ×26 | Meer | 1 |
+| 16 | *Scarus iseri* | 3441 | 110388 | native ×27 | Meer | 1 |
+| 17 | *Pterois volitans* | 3410 | 4796 | introduced ×14 | Meer | 1 |
+| 18 | *Chaetodon capistratus* | 3335 | 28063 | native ×15 | Meer | 1 |
+| 19 | *Lactophrys triqueter* | 3326 | 5571 | native ×26 | Meer | 1 |
+| 20 | *Caranx ruber* | 3281 | 28757 | native ×27 | Meer | 1 |
+| 21 | *Megalops atlanticus* | 3246 | 58982 | native ×27 | Süß/Brack/Meer | 1 |
+| 22 | *Ocyurus chrysurus* | 3124 | 74426 | native ×27 | Meer | 1 |
+| 23 | *Microspathodon chrysurus* | 3022 | 16496 | native ×27 | Meer | 1 |
+| 24 | *Sparisoma aurofrenatum* | 2771 | 104870 | native ×27 | Meer | 1 |
+| 25 | *Gerres cinereus* | 2658 | 3617 | native ×27 | Süß/Brack/Meer | 1 |
+| 26 | *Urobatis jamaicensis* | 2395 | 2805 | native ×26 | Meer | 1 |
+| 27 | *Diodon hystrix* | 2378 | 2358 | native ×26 | Meer | 1 |
+| 28 | *Holacanthus ciliaris* (Quelle: *Holacanthus ciliaris × bermudensis*) | 2359 | 11789 | native ×28 | Meer | 1 |
+| 29 | *Halichoeres garnoti* | 2227 | 74238 | native ×27 | Meer | 1 |
+| 30 | *Chaetodon striatus* | 2213 | 7753 | native ×27 | Meer | 1 |
+| 31 | *Pomacanthus arcuatus* | 2205 | 21142 | native ×25 | Meer | 1 |
+| 32 | *Scarus vetula* | 2157 | 9076 | native ×27 | Meer | 1 |
+| 33 | *Sparisoma rubripinne* | 2151 | 14298 | native ×21 | Meer | 1 |
+| 34 | *Anisotremus virginicus* | 2147 | 19877 | native ×27 | Meer | 1 |
+| 35 | *Gymnothorax moringa* | 2139 | 3200 | native ×22 | Meer | 1 |
+| 36 | *Canthigaster rostrata* | 2100 | 22342 | native ×27 | Meer | 1 |
+| 37 | *Haemulon plumierii* | 2085 | 66724 | native ×26 | Meer | 1 |
+| 38 | *Aetobatus narinari* | 2082 | 9331 | native ×27 | Brack/Meer | 1 |
+| 39 | *Cephalopholis cruentata* | 2032 | 23037 | native ×27 | Meer | 1 |
+| 40 | *Scorpaena plumieri* | 2012 | 2194 | native ×21 | Meer | 1 |
+| 247 | *Rhincodon typus* (Highlight) | 103 | 1025 | native ×27 | Meer | 1 |
+| – | *Mobula birostris* (Highlight) | – | 76 | native ×9 | Meer | 1 |
+| 235 | *Sphyrna mokarran* (Highlight) | 112 | 2237 | native ×26 | Brack/Meer | 1 |
+| 60 | *Hippocampus reidi* (Highlight) | 1352 | 1065 | native ×17 | Brack/Meer | 1 |
+| 178 | *Antennarius multiocellatus* (Highlight) | 247 | 339 | native ×26 | Meer | 1 |
+| 70 | *Eques punctatus* (Highlight) | 1231 | 1628 | native ×26 | Meer | 1 |
+| 123 | *Opistognathus aurifrons* (Highlight) | 544 | 10190 | native ×27 | Meer | 1 |
 
 ### Level 2 (60)
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer |
 |---|---|---|---|---|---|---|
-| 41 | *Scorpaena plumieri* | 2071 | 2222 | native ×21 | Meer | 1 |
-| 42 | *Sphoeroides testudineus* | 2066 | 2147 | native ×26 | Brack/Meer | 1 |
-| 43 | *Synodus intermedius* | 1957 | 2917 | native ×24 | Meer | 1 |
-| 44 | *Bodianus rufus* | 1948 | 15191 | native ×27 | Meer | 1 |
-| 45 | *Azurina cyanea* | 1946 | 24614 | native ×27 | Meer | 1 |
-| 46 | *Mulloidichthys martinicus* | 1904 | 8154 | native ×27 | Meer | 1 |
-| 47 | *Halichoeres radiatus* | 1785 | 10880 | native ×27 | Brack/Meer | 1 |
-| 48 | *Scarus guacamaia* | 1763 | 4988 | native ×27 | Meer | 1 |
-| 49 | *Aluterus scriptus* | 1711 | 2952 | native ×25 | Meer | 1 |
-| 50 | *Stegastes planifrons* | 1698 | 21274 | native ×27 | Meer | 1 |
-| 51 | *Stegastes partitus* | 1671 | 86474 | native ×27 | Meer | 1 |
-| 52 | *Acanthurus chirurgus* | 1662 | 31721 | native ×27 | Meer | 1 |
-| 53 | *Gymnothorax funebris* | 1638 | 1599 | native ×21 | Meer | 1 |
-| 54 | *Diodon holocanthus* | 1571 | 2021 | native ×12 | Meer | 1 |
-| 55 | *Azurina multilineata* | 1563 | 15488 | native ×27 | Meer | 1 |
-| 56 | *Bothus lunatus* | 1552 | 1512 | native ×27 | Meer | 1 |
-| 57 | *Chaetodon ocellatus* | 1520 | 15668 | native ×28 | Meer | 1 |
-| 58 | *Lutjanus analis* | 1482 | 21650 | native ×27 | Brack/Meer | 1 |
-| 59 | *Acanthostracion quadricornis* | 1480 | 2418 | native ×21 | Meer | 1 |
-| 60 | *Brachygenys chrysargyrea* | 1480 | 4901 | native ×28 | Meer | 1 |
-| 61 | *Stegastes leucostictus* | 1466 | 14632 | native ×27 | Meer | 1 |
-| 62 | *Scarus taeniopterus* | 1462 | 22964 | native ×27 | Meer | 1 |
-| 63 | *Holacanthus tricolor* | 1377 | 13761 | native ×28 | Meer | 1 |
-| 64 | *Caranx latus* | 1373 | 1940 | native ×28 | Süß/Brack/Meer | 1 |
-| 66 | *Lutjanus synagris* | 1362 | 7091 | native ×26 | Meer | 1 |
-| 67 | *Haemulon aurolineatum* | 1353 | 20782 | native ×27 | Meer | 1 |
-| 68 | *Cephalopholis fulva* | 1342 | 8056 | native ×27 | Meer | 1 |
-| 69 | *Lutjanus mahogoni* | 1339 | 5991 | native ×26 | Meer | 1 |
-| 70 | *Lachnolaimus maximus* | 1328 | 24517 | native ×26 | Meer | 1 |
-| 71 | *Haemulon parra* | 1325 | 3922 | native ×27 | Meer | 1 |
-| 72 | *Tylosurus crocodilus* | 1310 | 1356 | native ×27 | Meer | 1 |
-| 73 | *Acanthostracion polygonium* | 1274 | 1491 | native ×25 | Meer | 1 |
-| 75 | *Centropomus undecimalis* | 1247 | 27886 | native ×27 | Süß/Brack/Meer | 1 |
-| 76 | *Cantherhines macrocerus* | 1222 | 1394 | native ×26 | Meer | 1 |
-| 77 | *Myripristis jacobus* | 1222 | 3848 | native ×29 | Meer | 1 |
-| 78 | *Serranus tigrinus* | 1215 | 13536 | native ×27 | Meer | 1 |
-| 79 | *Epinephelus striatus* | 1203 | 1888 | native ×27 | Meer | 1 |
-| 80 | *Stegastes diencaeus* | 1167 | 4604 | native ×27 | Meer | 1 |
-| 81 | *Lactophrys bicaudalis* | 1152 | 1503 | native ×27 | Meer | 1 |
-| 82 | *Carcharhinus perezii* | 1144 | 1187 | native ×26 | Meer | 1 |
-| 83 | *Bodianus parrae* | 1143 | 13799 | native ×27 | Meer | 1 |
-| 84 | *Poecilia latipinna* | 1133 | 1702 | introduced ×1, native ×1 | Süß/Brack/Meer | 1 |
-| 85 | *Lagodon rhomboides* | 1124 | 2345 | native ×3 | Süß/Brack/Meer | 1 |
-| 86 | *Holocentrus adscensionis* | 1117 | 8200 | native ×25 | Meer | 1 |
-| 87 | *Pseudupeneus maculatus* | 1113 | 18801 | native ×26 | Meer | 1 |
-| 88 | *Cantherhines pullus* | 1108 | 2514 | native ×26 | Meer | 1 |
-| 89 | *Sparisoma chrysopterum* | 1104 | 12555 | native ×27 | Meer | 1 |
-| 90 | *Caranx crysos* | 1099 | 3663 | native ×27 | Brack/Meer | 1 |
-| 91 | *Melichthys niger* | 1058 | 3800 | native ×27 | Meer | 1 |
-| 92 | *Ophioblennius macclurei* | 1041 | 1913 | native ×7 | Meer | 1 |
-| 93 | *Stegastes adustus* | 1017 | 12948 | native ×27 | Meer | 1 |
-| 94 | *Gymnothorax miliaris* | 1007 | 1154 | native ×27 | Meer | 1 |
-| 95 | *Caranx hippos* | 1004 | 40219 | native ×18 | Brack/Meer | 1 |
-| 96 | *Styracura schmardae* | 993 | 728 | native ×17 | Meer | 1 |
-| 97 | *Haemulon carbonarium* | 968 | 5152 | native ×27 | Meer | 1 |
-| 98 | *Gramma loreto* | 961 | 3850 | native ×26 | Meer | 1 |
-| 99 | *Caranx bartholomaei* | 952 | 4821 | native ×27 | Meer | 1 |
-| 100 | *Echidna catenata* | 952 | 991 | native ×27 | Meer | 1 |
-| 101 | *Myrichthys breviceps* | 923 | 906 | native ×12 | Meer | 1 |
-| 102 | *Trachinotus falcatus* | 907 | 465 | native ×26 | Brack/Meer | 1 |
+| 41 | *Holocentrus rufus* | 2000 | 9337 | native ×25 | Meer | 1 |
+| 42 | *Sphoeroides testudineus* | 1929 | 2145 | native ×26 | Brack/Meer | 1 |
+| 43 | *Synodus intermedius* | 1893 | 2912 | native ×24 | Meer | 1 |
+| 44 | *Mulloidichthys martinicus* | 1821 | 8152 | native ×27 | Meer | 1 |
+| 45 | *Azurina cyanea* | 1781 | 24611 | native ×27 | Meer | 1 |
+| 46 | *Bodianus rufus* | 1774 | 15169 | native ×27 | Meer | 1 |
+| 47 | *Halichoeres radiatus* | 1696 | 10873 | native ×27 | Brack/Meer | 1 |
+| 48 | *Stegastes planifrons* | 1628 | 21240 | native ×27 | Meer | 1 |
+| 49 | *Acanthurus chirurgus* | 1593 | 31691 | native ×27 | Meer | 1 |
+| 50 | *Stegastes partitus* | 1532 | 86466 | native ×27 | Meer | 1 |
+| 51 | *Bothus lunatus* | 1529 | 1504 | native ×27 | Meer | 1 |
+| 52 | *Aluterus scriptus* | 1514 | 2931 | native ×25 | Meer | 1 |
+| 53 | *Scarus guacamaia* | 1506 | 4983 | native ×27 | Meer | 1 |
+| 54 | *Gymnothorax funebris* | 1453 | 1595 | native ×21 | Meer | 1 |
+| 55 | *Azurina multilineata* | 1447 | 15480 | native ×27 | Meer | 1 |
+| 56 | *Stegastes leucostictus* | 1443 | 14632 | native ×27 | Meer | 1 |
+| 57 | *Scarus taeniopterus* | 1400 | 22962 | native ×27 | Meer | 1 |
+| 58 | *Chaetodon ocellatus* | 1383 | 15640 | native ×28 | Meer | 1 |
+| 59 | *Brachygenys chrysargyrea* | 1362 | 4897 | native ×28 | Meer | 1 |
+| 61 | *Lutjanus analis* | 1334 | 21648 | native ×27 | Brack/Meer | 1 |
+| 62 | *Cephalopholis fulva* | 1296 | 8051 | native ×27 | Meer | 1 |
+| 63 | *Caranx latus* | 1289 | 1933 | native ×28 | Süß/Brack/Meer | 1 |
+| 64 | *Haemulon aurolineatum* | 1282 | 20764 | native ×27 | Meer | 1 |
+| 65 | *Tylosurus crocodilus* | 1276 | 1341 | native ×27 | Meer | 1 |
+| 66 | *Lutjanus mahogoni* | 1266 | 5975 | native ×26 | Meer | 1 |
+| 67 | *Diodon holocanthus* | 1253 | 1800 | native ×12 | Meer | 1 |
+| 68 | *Haemulon parra* | 1243 | 3920 | native ×27 | Meer | 1 |
+| 69 | *Holacanthus tricolor* | 1238 | 13752 | native ×28 | Meer | 1 |
+| 71 | *Acanthostracion polygonium* | 1227 | 1491 | native ×25 | Meer | 1 |
+| 72 | *Myripristis jacobus* | 1196 | 3844 | native ×29 | Meer | 1 |
+| 73 | *Cantherhines macrocerus* | 1178 | 1392 | native ×26 | Meer | 1 |
+| 74 | *Acanthostracion quadricornis* | 1167 | 2405 | native ×21 | Meer | 1 |
+| 75 | *Epinephelus striatus* | 1156 | 1887 | native ×27 | Meer | 1 |
+| 76 | *Serranus tigrinus* | 1148 | 13523 | native ×27 | Meer | 1 |
+| 77 | *Stegastes diencaeus* | 1131 | 4603 | native ×27 | Meer | 1 |
+| 78 | *Lutjanus synagris* | 1119 | 7082 | native ×26 | Meer | 1 |
+| 79 | *Lactophrys bicaudalis* | 1093 | 1501 | native ×27 | Meer | 1 |
+| 80 | *Sparisoma chrysopterum* | 1071 | 12541 | native ×27 | Meer | 1 |
+| 81 | *Bodianus parrae* | 1070 | 13797 | native ×27 | Meer | 1 |
+| 82 | *Pseudupeneus maculatus* | 1061 | 18795 | native ×26 | Meer | 1 |
+| 83 | *Cantherhines pullus* | 1059 | 2498 | native ×26 | Meer | 1 |
+| 84 | *Holocentrus adscensionis* | 1036 | 8195 | native ×25 | Meer | 1 |
+| 85 | *Lachnolaimus maximus* | 1032 | 24516 | native ×26 | Meer | 1 |
+| 86 | *Ophioblennius macclurei* | 1014 | 1906 | native ×7 | Meer | 1 |
+| 87 | *Melichthys niger* | 1005 | 3795 | native ×27 | Meer | 1 |
+| 88 | *Stegastes adustus* | 1002 | 12944 | native ×27 | Meer | 1 |
+| 89 | *Caranx crysos* | 995 | 3663 | native ×27 | Brack/Meer | 1 |
+| 90 | *Gymnothorax miliaris* | 971 | 1154 | native ×27 | Meer | 1 |
+| 91 | *Styracura schmardae* | 966 | 719 | native ×17 | Meer | 1 |
+| 92 | *Echidna catenata* | 947 | 988 | native ×27 | Meer | 1 |
+| 93 | *Carcharhinus perezii* | 936 | 1187 | native ×26 | Meer | 1 |
+| 94 | *Gramma loreto* | 935 | 3847 | native ×26 | Meer | 1 |
+| 95 | *Myrichthys breviceps* | 909 | 906 | native ×12 | Meer | 1 |
+| 96 | *Caranx bartholomaei* | 903 | 4815 | native ×27 | Meer | 1 |
+| 97 | *Haemulon carbonarium* | 890 | 5125 | native ×27 | Meer | 1 |
+| 98 | *Sphoeroides spengleri* | 865 | 2248 | native ×22 | Brack/Meer | 1 |
+| 99 | *Hypoplectrus puella* | 849 | 6431 | native ×27 | Meer | 1 |
+| 100 | *Pareques acuminatus* | 821 | 3017 | native ×16 | Meer | 1 |
+| 101 | *Kyphosus sectatrix* | 814 | 10209 | native ×27 | Meer | 1 |
+| 102 | *Trachinotus falcatus* | 804 | 465 | native ×26 | Brack/Meer | 1 |
 
 ### Level 3 (50)
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer |
 |---|---|---|---|---|---|---|
-| 103 | *Sphoeroides spengleri* | 904 | 2252 | native ×22 | Brack/Meer | 1 |
-| 104 | *Archosargus probatocephalus* | 900 | 996 | native ×6 | Brack/Meer | 1 |
-| 106 | *Hypoplectrus puella* | 876 | 6452 | native ×27 | Meer | 1 |
-| 107 | *Pareques acuminatus* | 860 | 3019 | native ×16 | Meer | 1 |
-| 108 | *Ariopsis felis* | 858 | 879 | native ×1 | Brack/Meer | 1 |
-| 109 | *Kyphosus sectatrix* | 858 | 10211 | native ×27 | Meer | 1 |
-| 110 | *Chaetodipterus faber* | 840 | 1929 | native ×19 | Brack/Meer | 1 |
-| 111 | *Kyphosus vaigiensis* | 799 | 578 | – | Meer | 1 |
-| 112 | *Malacoctenus triangulatus* | 788 | 8402 | native ×27 | Meer | 1 |
-| 113 | *Balistes vetula* | 747 | 2891 | native ×26 | Meer | 1 |
-| 114 | *Canthidermis sufflamen* | 723 | 1816 | native ×25 | Meer | 1 |
-| 115 | *Trachinotus goodei* | 716 | 817 | native ×27 | Meer | 1 |
-| 116 | *Halichoeres maculipinna* | 705 | 43934 | native ×26 | Meer | 1 |
-| 117 | *Stegastes xanthurus* | 705 | 515 | native ×26 | Meer | 1 |
-| 118 | *Negaprion brevirostris* | 701 | 1077 | native ×26 | Brack/Meer | 1 |
-| 119 | *Heteropriacanthus cruentatus* | 695 | 1503 | native ×29 | Meer | 1 |
-| 120 | *Dajaus monticola* | 687 | 969 | native ×19 | Süß/Brack/Meer | 1 |
-| 121 | *Anisotremus surinamensis* | 665 | 1734 | native ×27 | Meer | 1 |
-| 122 | *Chilomycterus schoepfii* | 652 | 860 | native ×4 | Meer | 1 |
-| 123 | *Lutjanus jocu* | 644 | 1723 | native ×26 | Süß/Brack/Meer | 1 |
-| 124 | *Epinephelus guttatus* | 620 | 4027 | native ×26 | Meer | 1 |
-| 125 | *Abudefduf taurus* | 604 | 573 | native ×27 | Meer | 1 |
-| 126 | *Lactophrys trigonus* | 604 | 971 | native ×24, questionable ×1 | Meer | 1 |
-| 127 | *Parablennius marmoreus* | 575 | 3554 | native ×26 | Meer | 1 |
-| 128 | *Echeneis naucrates* | 571 | 990 | native ×26 | Brack/Meer | 1 |
-| 130 | *Hypoplectrus unicolor* | 560 | 16294 | native ×27 | Meer | 1 |
-| 131 | *Scarus coelestinus* | 557 | 3563 | native ×26, questionable ×1 | Meer | 1 |
-| 132 | *Hemiramphus brasiliensis* | 546 | 1011 | native ×21 | Meer | 1 |
-| 133 | *Epinephelus itajara* | 543 | 325415 | native ×27 | Brack/Meer | 1 |
-| 134 | *Gnatholepis thompsoni* | 543 | 5796 | native ×27 | Meer | 1 |
-| 135 | *Mugil cephalus* | 541 | 723 | native ×2, questionable ×12 | Süß/Brack/Meer | 1 |
-| 136 | *Scarus coeruleus* | 527 | 5354 | native ×26 | Meer | 1 |
-| 137 | *Rypticus saponaceus* | 522 | 1033 | native ×27 | Meer | 1 |
-| 138 | *Malacanthus plumieri* | 520 | 2245 | native ×18 | Meer | 1 |
-| 139 | *Strongylura notata* | 510 | 1192 | native ×6, questionable ×1 | Süß/Brack/Meer | 1 |
-| 140 | *Elacatinus evelynae* | 484 | 2461 | native ×25, questionable ×1 | Meer | 1 |
-| 141 | *Pempheris schomburgkii* | 470 | 870 | native ×27 | Meer | 1 |
-| 142 | *Stegastes acapulcoensis* | 469 | 362 | – | Meer | – |
-| 143 | *Balistes capriscus* | 459 | 1785 | native ×18 | Meer | 1 |
-| 144 | *Carcharhinus leucas* | 450 | 2756 | native ×26 | Süß/Brack/Meer | 1 |
-| 145 | *Hypoplectrus indigo* | 450 | 675 | native ×10, questionable ×3 | Meer | 1 |
-| 146 | *Holacanthus bermudensis* | 427 | 10974 | native ×5 | Meer | 1 |
-| 147 | *Malacoctenus macropus* | 421 | 2351 | native ×27 | Meer | 1 |
-| 148 | *Elops saurus* | 417 | 673 | native ×20 | Brack/Meer | 1 |
-| 149 | *Lophogobius cyprinoides* | 407 | 602 | native ×14 | Süß/Brack/Meer | 1 |
-| 150 | *Dactylopterus volitans* | 406 | 524 | native ×20 | Brack/Meer | 1 |
-| 151 | *Apogon maculatus* | 405 | 1603 | native ×26 | Meer | 1 |
-| 152 | *Monacanthus tuckeri* | 405 | 1434 | native ×25 | Meer | 1 |
-| 153 | *Strongylura marina* | 405 | 1257 | native ×7 | Süß/Brack/Meer | 1 |
-| 154 | *Acanthemblemaria aspera* | 393 | 774 | native ×26 | Meer | 1 |
+| 103 | *Malacoctenus triangulatus* | 777 | 8396 | native ×27 | Meer | 1 |
+| 104 | *Kyphosus vaigiensis* | 712 | 577 | – | Meer | 1 |
+| 105 | *Trachinotus goodei* | 703 | 814 | native ×27 | Meer | 1 |
+| 106 | *Balistes vetula* | 702 | 2885 | native ×26 | Meer | 1 |
+| 107 | *Canthidermis sufflamen* | 683 | 1810 | native ×25 | Meer | 1 |
+| 108 | *Heteropriacanthus cruentatus* | 676 | 1499 | native ×29 | Meer | 1 |
+| 109 | *Stegastes xanthurus* | 676 | 516 | native ×26 | Meer | 1 |
+| 110 | *Poecilia latipinna* | 658 | 1702 | introduced ×1, native ×1 | Süß/Brack/Meer | 1 |
+| 111 | *Dajaus monticola* | 640 | 823 | native ×19 | Süß/Brack/Meer | 1 |
+| 112 | *Halichoeres maculipinna* | 620 | 43931 | native ×26 | Meer | 1 |
+| 113 | *Caranx hippos* | 619 | 40202 | native ×18 | Brack/Meer | 1 |
+| 114 | *Chaetodipterus faber* | 616 | 1917 | native ×19 | Brack/Meer | 1 |
+| 115 | *Abudefduf taurus* | 604 | 573 | native ×27 | Meer | 1 |
+| 116 | *Negaprion brevirostris* | 604 | 1076 | native ×26 | Brack/Meer | 1 |
+| 117 | *Centropomus undecimalis* | 603 | 27875 | native ×27 | Süß/Brack/Meer | 1 |
+| 118 | *Lutjanus jocu* | 602 | 1710 | native ×26 | Süß/Brack/Meer | 1 |
+| 119 | *Epinephelus guttatus* | 597 | 4027 | native ×26 | Meer | 1 |
+| 120 | *Lactophrys trigonus* | 582 | 971 | native ×24, questionable ×1 | Meer | 1 |
+| 121 | *Anisotremus surinamensis* | 569 | 1731 | native ×27 | Meer | 1 |
+| 122 | *Parablennius marmoreus* | 567 | 3553 | native ×26 | Meer | 1 |
+| 124 | *Hypoplectrus unicolor* | 530 | 16288 | native ×27 | Meer | 1 |
+| 125 | *Gnatholepis thompsoni* | 524 | 5793 | native ×27 | Meer | 1 |
+| 126 | *Rypticus saponaceus* | 511 | 1022 | native ×27 | Meer | 1 |
+| 127 | *Hemiramphus brasiliensis* | 509 | 1010 | native ×21 | Meer | 1 |
+| 128 | *Malacanthus plumieri* | 497 | 2245 | native ×18 | Meer | 1 |
+| 129 | *Echeneis naucrates* | 488 | 985 | native ×26 | Brack/Meer | 1 |
+| 130 | *Elacatinus evelynae* | 478 | 2460 | native ×25, questionable ×1 | Meer | 1 |
+| 131 | *Hypoplectrus indigo* | 440 | 673 | native ×10, questionable ×3 | Meer | 1 |
+| 132 | *Pempheris schomburgkii* | 430 | 867 | native ×27 | Meer | 1 |
+| 133 | *Malacoctenus macropus* | 419 | 2351 | native ×27 | Meer | 1 |
+| 134 | *Balistes capriscus* | 412 | 1785 | native ×18 | Meer | 1 |
+| 135 | *Apogon maculatus* | 403 | 1597 | native ×26 | Meer | 1 |
+| 136 | *Dactylopterus volitans* | 400 | 519 | native ×20 | Brack/Meer | 1 |
+| 137 | *Monacanthus tuckeri* | 393 | 1433 | native ×25 | Meer | 1 |
+| 138 | *Strongylura notata* | 390 | 1192 | native ×6, questionable ×1 | Süß/Brack/Meer | 1 |
+| 139 | *Holacanthus bermudensis* | 387 | 10974 | native ×5 | Meer | 1 |
+| 140 | *Scarus coeruleus* | 385 | 5354 | native ×26 | Meer | 1 |
+| 141 | *Lagodon rhomboides* | 379 | 2345 | native ×3 | Süß/Brack/Meer | 1 |
+| 142 | *Mycteroperca tigris* | 372 | 766 | native ×27 | Meer | 1 |
+| 143 | *Acanthemblemaria aspera* | 356 | 772 | native ×26 | Meer | 1 |
+| 144 | *Albula vulpes* | 356 | 1448 | native ×28 | Brack/Meer | 1 |
+| 145 | *Labrisomus nuchipinnis* | 353 | 1003 | native ×27 | Meer | 1 |
+| 146 | *Emblemaria pandionis* | 352 | 416 | native ×27 | Meer | 1 |
+| 147 | *Lophogobius cyprinoides* | 346 | 599 | native ×14 | Süß/Brack/Meer | 1 |
+| 148 | *Scomberomorus regalis* | 346 | 4249 | native ×26 | Meer | 1 |
+| 149 | *Halichoeres poeyi* | 341 | 6171 | native ×27 | Meer | 1 |
+| 150 | *Xyrichtys splendens* | 339 | 5054 | native ×8 | Meer | 1 |
+| 151 | *Serranus tabacarius* | 338 | 3730 | native ×27 | Meer | 1 |
+| 152 | *Scarus coelestinus* | 333 | 3560 | native ×26, questionable ×1 | Meer | 1 |
+| 153 | *Archosargus probatocephalus* | 331 | 996 | native ×6 | Brack/Meer | 1 |
 
 ## Grenzfälle
 
@@ -207,131 +213,129 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer | Level |
 |---|---|---|---|---|---|---|---|
-| 31 | *Anisotremus virginicus* | 2462 | 19895 | native ×27 | Meer | 1 | 1 |
-| 32 | *Halichoeres garnoti* | 2417 | 74248 | native ×27 | Meer | 1 | 1 |
-| 33 | *Scarus vetula* | 2411 | 9079 | native ×27 | Meer | 1 | 1 |
-| 34 | *Sparisoma rubripinne* | 2336 | 14339 | native ×21 | Meer | 1 | 1 |
-| 35 | *Chaetodon striatus* | 2329 | 7767 | native ×27 | Meer | 1 | 1 |
-| 36 | *Aetobatus narinari* | 2301 | 9346 | native ×27 | Brack/Meer | 1 | 1 |
-| 37 | *Gymnothorax moringa* | 2218 | 3208 | native ×22 | Meer | 1 | 1 |
-| 38 | *Cephalopholis cruentata* | 2207 | 23065 | native ×27 | Meer | 1 | 1 |
-| 39 | *Canthigaster rostrata* | 2180 | 22350 | native ×27 | Meer | 1 | 1 |
-| 40 | *Holocentrus rufus* | 2090 | 9342 | native ×25 | Meer | 1 | 1 |
+| 31 | *Pomacanthus arcuatus* | 2205 | 21142 | native ×25 | Meer | 1 | 1 |
+| 32 | *Scarus vetula* | 2157 | 9076 | native ×27 | Meer | 1 | 1 |
+| 33 | *Sparisoma rubripinne* | 2151 | 14298 | native ×21 | Meer | 1 | 1 |
+| 34 | *Anisotremus virginicus* | 2147 | 19877 | native ×27 | Meer | 1 | 1 |
+| 35 | *Gymnothorax moringa* | 2139 | 3200 | native ×22 | Meer | 1 | 1 |
+| 36 | *Canthigaster rostrata* | 2100 | 22342 | native ×27 | Meer | 1 | 1 |
+| 37 | *Haemulon plumierii* | 2085 | 66724 | native ×26 | Meer | 1 | 1 |
+| 38 | *Aetobatus narinari* | 2082 | 9331 | native ×27 | Brack/Meer | 1 | 1 |
+| 39 | *Cephalopholis cruentata* | 2032 | 23037 | native ×27 | Meer | 1 | 1 |
+| 40 | *Scorpaena plumieri* | 2012 | 2194 | native ×21 | Meer | 1 | 1 |
 | | **Grenze** | | | | | | |
-| 41 | *Scorpaena plumieri* | 2071 | 2222 | native ×21 | Meer | 1 | 2 |
-| 42 | *Sphoeroides testudineus* | 2066 | 2147 | native ×26 | Brack/Meer | 1 | 2 |
-| 43 | *Synodus intermedius* | 1957 | 2917 | native ×24 | Meer | 1 | 2 |
-| 44 | *Bodianus rufus* | 1948 | 15191 | native ×27 | Meer | 1 | 2 |
-| 45 | *Azurina cyanea* | 1946 | 24614 | native ×27 | Meer | 1 | 2 |
-| 46 | *Mulloidichthys martinicus* | 1904 | 8154 | native ×27 | Meer | 1 | 2 |
-| 47 | *Halichoeres radiatus* | 1785 | 10880 | native ×27 | Brack/Meer | 1 | 2 |
-| 48 | *Scarus guacamaia* | 1763 | 4988 | native ×27 | Meer | 1 | 2 |
-| 49 | *Aluterus scriptus* | 1711 | 2952 | native ×25 | Meer | 1 | 2 |
-| 50 | *Stegastes planifrons* | 1698 | 21274 | native ×27 | Meer | 1 | 2 |
+| 41 | *Holocentrus rufus* | 2000 | 9337 | native ×25 | Meer | 1 | 2 |
+| 42 | *Sphoeroides testudineus* | 1929 | 2145 | native ×26 | Brack/Meer | 1 | 2 |
+| 43 | *Synodus intermedius* | 1893 | 2912 | native ×24 | Meer | 1 | 2 |
+| 44 | *Mulloidichthys martinicus* | 1821 | 8152 | native ×27 | Meer | 1 | 2 |
+| 45 | *Azurina cyanea* | 1781 | 24611 | native ×27 | Meer | 1 | 2 |
+| 46 | *Bodianus rufus* | 1774 | 15169 | native ×27 | Meer | 1 | 2 |
+| 47 | *Halichoeres radiatus* | 1696 | 10873 | native ×27 | Brack/Meer | 1 | 2 |
+| 48 | *Stegastes planifrons* | 1628 | 21240 | native ×27 | Meer | 1 | 2 |
+| 49 | *Acanthurus chirurgus* | 1593 | 31691 | native ×27 | Meer | 1 | 2 |
+| 50 | *Stegastes partitus* | 1532 | 86466 | native ×27 | Meer | 1 | 2 |
 
 ### Level 2/3
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer | Level |
 |---|---|---|---|---|---|---|---|
-| 93 | *Stegastes adustus* | 1017 | 12948 | native ×27 | Meer | 1 | 2 |
-| 94 | *Gymnothorax miliaris* | 1007 | 1154 | native ×27 | Meer | 1 | 2 |
-| 95 | *Caranx hippos* | 1004 | 40219 | native ×18 | Brack/Meer | 1 | 2 |
-| 96 | *Styracura schmardae* | 993 | 728 | native ×17 | Meer | 1 | 2 |
-| 97 | *Haemulon carbonarium* | 968 | 5152 | native ×27 | Meer | 1 | 2 |
-| 98 | *Gramma loreto* | 961 | 3850 | native ×26 | Meer | 1 | 2 |
-| 99 | *Caranx bartholomaei* | 952 | 4821 | native ×27 | Meer | 1 | 2 |
-| 100 | *Echidna catenata* | 952 | 991 | native ×27 | Meer | 1 | 2 |
-| 101 | *Myrichthys breviceps* | 923 | 906 | native ×12 | Meer | 1 | 2 |
-| 102 | *Trachinotus falcatus* | 907 | 465 | native ×26 | Brack/Meer | 1 | 2 |
+| 93 | *Carcharhinus perezii* | 936 | 1187 | native ×26 | Meer | 1 | 2 |
+| 94 | *Gramma loreto* | 935 | 3847 | native ×26 | Meer | 1 | 2 |
+| 95 | *Myrichthys breviceps* | 909 | 906 | native ×12 | Meer | 1 | 2 |
+| 96 | *Caranx bartholomaei* | 903 | 4815 | native ×27 | Meer | 1 | 2 |
+| 97 | *Haemulon carbonarium* | 890 | 5125 | native ×27 | Meer | 1 | 2 |
+| 98 | *Sphoeroides spengleri* | 865 | 2248 | native ×22 | Brack/Meer | 1 | 2 |
+| 99 | *Hypoplectrus puella* | 849 | 6431 | native ×27 | Meer | 1 | 2 |
+| 100 | *Pareques acuminatus* | 821 | 3017 | native ×16 | Meer | 1 | 2 |
+| 101 | *Kyphosus sectatrix* | 814 | 10209 | native ×27 | Meer | 1 | 2 |
+| 102 | *Trachinotus falcatus* | 804 | 465 | native ×26 | Brack/Meer | 1 | 2 |
 | | **Grenze** | | | | | | |
-| 103 | *Sphoeroides spengleri* | 904 | 2252 | native ×22 | Brack/Meer | 1 | 3 |
-| 104 | *Archosargus probatocephalus* | 900 | 996 | native ×6 | Brack/Meer | 1 | 3 |
-| 106 | *Hypoplectrus puella* | 876 | 6452 | native ×27 | Meer | 1 | 3 |
-| 107 | *Pareques acuminatus* | 860 | 3019 | native ×16 | Meer | 1 | 3 |
-| 108 | *Ariopsis felis* | 858 | 879 | native ×1 | Brack/Meer | 1 | 3 |
-| 109 | *Kyphosus sectatrix* | 858 | 10211 | native ×27 | Meer | 1 | 3 |
-| 110 | *Chaetodipterus faber* | 840 | 1929 | native ×19 | Brack/Meer | 1 | 3 |
-| 111 | *Kyphosus vaigiensis* | 799 | 578 | – | Meer | 1 | 3 |
-| 112 | *Malacoctenus triangulatus* | 788 | 8402 | native ×27 | Meer | 1 | 3 |
-| 113 | *Balistes vetula* | 747 | 2891 | native ×26 | Meer | 1 | 3 |
+| 103 | *Malacoctenus triangulatus* | 777 | 8396 | native ×27 | Meer | 1 | 3 |
+| 104 | *Kyphosus vaigiensis* | 712 | 577 | – | Meer | 1 | 3 |
+| 105 | *Trachinotus goodei* | 703 | 814 | native ×27 | Meer | 1 | 3 |
+| 106 | *Balistes vetula* | 702 | 2885 | native ×26 | Meer | 1 | 3 |
+| 107 | *Canthidermis sufflamen* | 683 | 1810 | native ×25 | Meer | 1 | 3 |
+| 108 | *Heteropriacanthus cruentatus* | 676 | 1499 | native ×29 | Meer | 1 | 3 |
+| 109 | *Stegastes xanthurus* | 676 | 516 | native ×26 | Meer | 1 | 3 |
+| 110 | *Poecilia latipinna* | 658 | 1702 | introduced ×1, native ×1 | Süß/Brack/Meer | 1 | 3 |
+| 111 | *Dajaus monticola* | 640 | 823 | native ×19 | Süß/Brack/Meer | 1 | 3 |
+| 112 | *Halichoeres maculipinna* | 620 | 43931 | native ×26 | Meer | 1 | 3 |
 
 ### Level 3/nicht im Deck
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer | Level |
 |---|---|---|---|---|---|---|---|
-| 145 | *Hypoplectrus indigo* | 450 | 675 | native ×10, questionable ×3 | Meer | 1 | 3 |
-| 146 | *Holacanthus bermudensis* | 427 | 10974 | native ×5 | Meer | 1 | 3 |
-| 147 | *Malacoctenus macropus* | 421 | 2351 | native ×27 | Meer | 1 | 3 |
-| 148 | *Elops saurus* | 417 | 673 | native ×20 | Brack/Meer | 1 | 3 |
-| 149 | *Lophogobius cyprinoides* | 407 | 602 | native ×14 | Süß/Brack/Meer | 1 | 3 |
-| 150 | *Dactylopterus volitans* | 406 | 524 | native ×20 | Brack/Meer | 1 | 3 |
-| 151 | *Apogon maculatus* | 405 | 1603 | native ×26 | Meer | 1 | 3 |
-| 152 | *Monacanthus tuckeri* | 405 | 1434 | native ×25 | Meer | 1 | 3 |
-| 153 | *Strongylura marina* | 405 | 1257 | native ×7 | Süß/Brack/Meer | 1 | 3 |
-| 154 | *Acanthemblemaria aspera* | 393 | 774 | native ×26 | Meer | 1 | 3 |
+| 144 | *Albula vulpes* | 356 | 1448 | native ×28 | Brack/Meer | 1 | 3 |
+| 145 | *Labrisomus nuchipinnis* | 353 | 1003 | native ×27 | Meer | 1 | 3 |
+| 146 | *Emblemaria pandionis* | 352 | 416 | native ×27 | Meer | 1 | 3 |
+| 147 | *Lophogobius cyprinoides* | 346 | 599 | native ×14 | Süß/Brack/Meer | 1 | 3 |
+| 148 | *Scomberomorus regalis* | 346 | 4249 | native ×26 | Meer | 1 | 3 |
+| 149 | *Halichoeres poeyi* | 341 | 6171 | native ×27 | Meer | 1 | 3 |
+| 150 | *Xyrichtys splendens* | 339 | 5054 | native ×8 | Meer | 1 | 3 |
+| 151 | *Serranus tabacarius* | 338 | 3730 | native ×27 | Meer | 1 | 3 |
+| 152 | *Scarus coelestinus* | 333 | 3560 | native ×26, questionable ×1 | Meer | 1 | 3 |
+| 153 | *Archosargus probatocephalus* | 331 | 996 | native ×6 | Brack/Meer | 1 | 3 |
 | | **Grenze** | | | | | | |
-| 155 | *Abudefduf troschelii* | 392 | 358 | – | Meer | – | – |
-| 156 | *Hippocampus erectus* | 392 | 803 | native ×27 | Meer | 1 | – |
-| 157 | *Opsanus beta* | 392 | 2619 | native ×4 | Meer | 1 | – |
-| 158 | *Scomberomorus regalis* | 392 | 4253 | native ×26 | Meer | 1 | – |
-| 159 | *Mycteroperca tigris* | 387 | 766 | native ×27 | Meer | 1 | – |
-| 160 | *Labrisomus nuchipinnis* | 378 | 1010 | native ×27 | Meer | 1 | – |
-| 161 | *Cynoscion nebulosus* | 373 | 472 | native ×2 | Brack/Meer | 1 | – |
-| 162 | *Stephanolepis hispida* | 373 | 1082 | native ×26 | Meer | 1 | – |
-| 163 | *Labrisomus conditus* | 371 | 275 | – | Meer | 1 | – |
-| 164 | *Albula vulpes* | 366 | 1462 | native ×28 | Brack/Meer | 1 | – |
+| 154 | *Strongylura marina* | 330 | 1256 | native ×7 | Süß/Brack/Meer | 1 | – |
+| 155 | *Labrisomus conditus* | 327 | 275 | – | Meer | 1 | – |
+| 156 | *Epinephelus itajara* | 317 | 325414 | native ×27 | Brack/Meer | 1 | – |
+| 157 | *Neoniphon marianus* (Quelle: *Flammeo marianus*) | 316 | 1297 | native ×24 | Meer | 1 | – |
+| 158 | *Carcharhinus leucas* | 314 | 2739 | native ×26 | Süß/Brack/Meer | 1 | – |
+| 159 | *Heteroconger longissimus* | 312 | 434 | native ×25 | Meer | 1 | – |
+| 160 | *Atherinomorus stipes* | 306 | 923 | native ×12 | Süß/Brack/Meer | 1 | – |
+| 161 | *Harengula humeralis* | 304 | 988 | native ×27 | Meer | 1 | – |
+| 162 | *Narcine bancroftii* | 294 | 217 | native ×3 | Meer | 1 | – |
+| 163 | *Amblycirrhitus pinos* | 287 | 1134 | native ×27 | Meer | 1 | – |
 
 ## Abgleich mit Führern
 
 ### 1. Smithsonian: Shorefishes of the Greater Caribbean
 
 - 1896 Namen, 1878 Arten aufgelöst, 15 Namen nicht aufgelöst
-- Deck-Arten im Führer: 156/157
+- Deck-Arten im Führer: 157/157
   - Level 1: 47/47
   - Level 2: 60/60
-  - Level 3: 49/50
-- Kandidaten im Führer, aber nicht im Deck: 452
+  - Level 3: 50/50
+- Kandidaten im Führer, aber nicht im Deck: 411
 
 **Im Deck, nicht im Führer** (Verdacht: Fehlbestimmung, falsch verortet oder Süßwasser):
 
-| Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer | Level |
-|---|---|---|---|---|---|---|---|
-| 142 | *Stegastes acapulcoensis* | 469 | 362 | – | Meer | – | 3 |
+Keine.
 
 **Im Führer und häufig, aber nicht im Deck** (Kandidaten; die 30 häufigsten):
 
 | Rang | Art | iNat | OBIS | FishBase/SLB im Gebiet | Wasser | Führer |
 |---|---|---|---|---|---|---|
-| 156 | *Hippocampus erectus* | 392 | 803 | native ×27 | Meer | 1 |
-| 157 | *Opsanus beta* | 392 | 2619 | native ×4 | Meer | 1 |
-| 158 | *Scomberomorus regalis* | 392 | 4253 | native ×26 | Meer | 1 |
-| 159 | *Mycteroperca tigris* | 387 | 766 | native ×27 | Meer | 1 |
-| 160 | *Labrisomus nuchipinnis* | 378 | 1010 | native ×27 | Meer | 1 |
-| 161 | *Cynoscion nebulosus* | 373 | 472 | native ×2 | Brack/Meer | 1 |
-| 162 | *Stephanolepis hispida* | 373 | 1082 | native ×26 | Meer | 1 |
-| 163 | *Labrisomus conditus* | 371 | 275 | – | Meer | 1 |
-| 164 | *Albula vulpes* | 366 | 1462 | native ×28 | Brack/Meer | 1 |
-| 165 | *Synodus foetens* | 361 | 1083 | native ×12 | Brack/Meer | 1 |
-| 166 | *Emblemaria pandionis* | 354 | 416 | native ×27 | Meer | 1 |
-| 167 | *Serranus tabacarius* | 353 | 3730 | native ×27 | Meer | 1 |
-| 168 | *Cyprinodon variegatus* | 348 | 823 | native ×24 | Süß/Brack/Meer | 1 |
-| 169 | *Sphoeroides nephelus* | 347 | 473 | native ×26 | Brack/Meer | 1 |
-| 170 | *Haemulon macrostoma* | 346 | 2757 | native ×27 | Meer | 1 |
-| 171 | *Halichoeres poeyi* | 345 | 6175 | native ×27 | Meer | 1 |
-| 172 | *Xyrichtys splendens* | 345 | 5054 | native ×8 | Meer | 1 |
-| 173 | *Sphyrna tiburo* | 335 | 367 | native ×7 | Brack/Meer | 1 |
-| 175 | *Coryphaena hippurus* | 322 | 12433 | native ×28 | Brack/Meer | 1 |
-| 176 | *Bagre marinus* | 321 | 387 | native ×3, ~~misidentification ×3~~ | Brack/Meer | 1 |
-| 177 | *Heteroconger longissimus* | 318 | 434 | native ×25 | Meer | 1 |
-| 178 | *Neoniphon marianus* (Quelle: *Flammeo marianus*) | 317 | 1298 | native ×24 | Meer | 1 |
-| 179 | *Narcine bancroftii* | 311 | 201 | native ×3 | Meer | 1 |
-| 180 | *Diplectrum formosum* | 308 | 915 | native ×24 | Meer | 1 |
-| 181 | *Atherinomorus stipes* | 307 | 925 | native ×12 | Süß/Brack/Meer | 1 |
-| 182 | *Amblycirrhitus pinos* | 306 | 1136 | native ×27 | Meer | 1 |
-| 183 | *Harengula humeralis* | 305 | 973 | native ×27 | Meer | 1 |
-| 184 | *Haemulon album* | 303 | 1263 | native ×27 | Meer | 1 |
-| 185 | *Scartella cristata* | 300 | 700 | native ×27 | Meer | 1 |
-| 186 | *Lutjanus cyanopterus* | 294 | 564 | native ×26 | Brack/Meer | 1 |
+| 154 | *Strongylura marina* | 330 | 1256 | native ×7 | Süß/Brack/Meer | 1 |
+| 155 | *Labrisomus conditus* | 327 | 275 | – | Meer | 1 |
+| 156 | *Epinephelus itajara* | 317 | 325414 | native ×27 | Brack/Meer | 1 |
+| 157 | *Neoniphon marianus* (Quelle: *Flammeo marianus*) | 316 | 1297 | native ×24 | Meer | 1 |
+| 158 | *Carcharhinus leucas* | 314 | 2739 | native ×26 | Süß/Brack/Meer | 1 |
+| 159 | *Heteroconger longissimus* | 312 | 434 | native ×25 | Meer | 1 |
+| 160 | *Atherinomorus stipes* | 306 | 923 | native ×12 | Süß/Brack/Meer | 1 |
+| 161 | *Harengula humeralis* | 304 | 988 | native ×27 | Meer | 1 |
+| 162 | *Narcine bancroftii* | 294 | 217 | native ×3 | Meer | 1 |
+| 163 | *Amblycirrhitus pinos* | 287 | 1134 | native ×27 | Meer | 1 |
+| 164 | *Scartella cristata* | 284 | 699 | native ×27 | Meer | 1 |
+| 165 | *Hippocampus erectus* | 271 | 800 | native ×27 | Meer | 1 |
+| 166 | *Lutjanus cyanopterus* | 271 | 564 | native ×26 | Brack/Meer | 1 |
+| 167 | *Stephanolepis hispida* | 271 | 1082 | native ×26 | Meer | 1 |
+| 168 | *Bothus ocellatus* | 270 | 823 | native ×26 | Meer | 1 |
+| 169 | *Haemulon album* | 268 | 1263 | native ×27 | Meer | 1 |
+| 170 | *Xyrichtys martinicensis* | 266 | 1594 | native ×10 | Meer | 1 |
+| 171 | *Coryphopterus glaucofraenum* | 265 | 30065 | native ×26 | Meer | 1 |
+| 172 | *Myrichthys ocellatus* | 263 | 365 | native ×25 | Meer | 1 |
+| 173 | *Bothus maculiferus* | 262 | 238 | native ×8 | Meer | 1 |
+| 174 | *Haemulon macrostoma* | 260 | 2751 | native ×27 | Meer | 1 |
+| 175 | *Hypoplectrus chlorurus* | 256 | 1528 | native ×13 | Meer | 1 |
+| 176 | *Mugil cephalus* | 250 | 722 | native ×2, questionable ×12 | Süß/Brack/Meer | 1 |
+| 177 | *Coryphopterus dicrus* | 248 | 2477 | native ×27 | Meer | 1 |
+| 179 | *Coryphopterus venezuelae* | 244 | 222 | native ×7 | Meer | 1 |
+| 180 | *Diplodus holbrookii* | 244 | 358 | native ×1, questionable ×1 | Brack/Meer | 1 |
+| 181 | *Sanopus splendidus* | 234 | 118 | native ×1 | Meer | 1 |
+| 182 | *Archosargus rhomboidalis* | 233 | 690 | native ×25 | Brack/Meer | 1 |
+| 183 | *Cyprinodon variegatus* | 232 | 823 | native ×24 | Süß/Brack/Meer | 1 |
+| 184 | *Gobiomorus dormitor* | 226 | 522 | native ×27 | Süß/Brack/Meer | 1 |
 
 <details><summary>Nicht aufgelöste Namen des Führers</summary>
 
@@ -341,444 +345,386 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 
 ## Ausgeschlossene Kandidaten
 
-<details><summary>921 Arten</summary>
+<details><summary>802 Arten</summary>
 
 | Art | iNat | Wasser | Grund |
 |---|---|---|---|
-| *Mayaheros urophthalmus* | 3951 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepisosteus platyrhincus* | 3162 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Micropterus salmoides* | 1843 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gambusia holbrooki* | 1517 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepomis macrochirus* | 1506 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cichla ocellaris* | 1356 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pelmatolapia mariae* | 1107 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Acanthemblemaria spinosa* | 992 | Meer | zu klein (höchstens 3.1 cm) |
-| *Astronotus ocellatus* | 845 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Mycteroperca bonaci* | 818 | Meer | nur tiefer als die Tauchgrenze (erst ab 60 m) |
-| *Oreochromis aureus* | 552 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Clarias batrachus* | 529 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Parachromis managuensis* | 521 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rubricatochromis guttatus* | 423 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Oreochromis niloticus* | 406 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Belonesox belizanus* | 400 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepomis punctatus* | 399 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepomis gulosus* | 355 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Fundulus chrysotus* | 311 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rhamdia guatemalensis* | 286 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Channa aurolineata* | 282 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepomis microlophus* | 259 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus citrinellus* | 253 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Mayaheros urophthalmus* | 2962 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepisosteus platyrhincus* | 2182 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Micropterus salmoides* | 1255 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cichla ocellaris* | 1251 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Acanthemblemaria spinosa* | 989 | Meer | zu klein (höchstens 3.1 cm) |
+| *Pelmatolapia mariae* | 944 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gambusia holbrooki* | 832 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepomis macrochirus* | 798 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Mycteroperca bonaci* | 672 | Meer | nur tiefer als die Tauchgrenze (erst ab 60 m) |
+| *Astronotus ocellatus* | 472 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Parachromis managuensis* | 397 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Oreochromis aureus* | 383 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Clarias batrachus* | 295 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Channa aurolineata* | 280 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Vieja melanurus* | 277 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Coryphopterus lipernes* | 248 | Meer | zu klein (höchstens 3 cm) |
-| *Poecilia reticulata* | 243 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Vieja melanurus* | 241 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Synbranchus marmoratus* | 240 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lucania goodei* | 233 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Oreochromis mossambicus* | 224 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Brycon costaricensis* | 214 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hoplosternum littorale* | 211 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gymnothorax vicinus* | 207 | Meer | nur tiefer als die Tauchgrenze (erst ab 50 m) |
-| *Jordanella floridae* | 202 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepomis punctatus* | 236 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Belonesox belizanus* | 231 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia reticulata* | 216 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Oreochromis mossambicus* | 213 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gymnothorax vicinus* | 204 | Meer | nur tiefer als die Tauchgrenze (erst ab 50 m) |
+| *Amphilophus citrinellus* | 203 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Elacatinus lobeli* | 195 | Meer | zu klein (höchstens 3.1 cm) |
-| *Rocio octofasciata* | 187 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gambusia rhizophorae* | 180 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Parachromis dovii* | 178 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cribroheros alfari* | 173 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Heterandria formosa* | 169 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia mexicana* | 167 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Priapichthys annectens* | 161 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cichlasoma bimaculatum* | 159 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Fundulus grandis* | 157 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Trichromis salvini* | 172 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Synbranchus marmoratus* | 171 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Fundulus chrysotus* | 170 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rhamdia guatemalensis* | 170 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rubricatochromis guttatus* | 168 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepomis gulosus* | 162 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Oreochromis niloticus* | 162 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepomis microlophus* | 161 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Anablepsoides hartii* | 155 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Trichromis salvini* | 154 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia velifera* | 147 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rocio octofasciata* | 148 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Heterotilapia buettikoferi* | 146 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amatitlania nigrofasciata* | 142 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ctenopharyngodon idella* | 141 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amia calva* | 138 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gambusia yucatana* | 127 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Labidesthes vanhyningi* | 121 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cyprinus rubrofuscus* | 116 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Andinoacara coeruleopunctatus* | 112 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ictalurus punctatus* | 112 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Fundulus seminolis* | 110 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Oxyzygonectes dovii* | 97 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia orri* | 89 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Alfaro cultratus* | 88 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Andinoacara pulcher* | 86 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pomoxis nigromaculatus* | 85 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia velifera* | 131 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lucania goodei* | 126 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ctenopharyngodon idella* | 121 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gambusia yucatana* | 121 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cichlasoma bimaculatum* | 114 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cyprinus rubrofuscus* | 91 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Andinoacara pulcher* | 89 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia orri* | 87 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Andinoacara coeruleopunctatus* | 86 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Jordanella floridae* | 83 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Elacatinus cayman* | 82 | Meer | zu klein (höchstens 2.33 cm) |
-| *Amatitlania siquia* | 80 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Vieja maculicauda* | 79 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepomis marginatus* | 78 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Awaous banana* | 77 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cynodonichthys isthmensis* | 76 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Amia calva* | 78 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Typhliasina pearsei* | 78 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Vieja maculicauda* | 77 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Tigrigobius dilepis* | 76 | Meer | zu klein (höchstens 2.5 cm) |
-| *Typhliasina pearsei* | 76 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Etheostoma fusiforme* | 70 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax orstedii* | 68 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Brachyrhaphis olomina* | 68 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cryptoheros cutteri* | 68 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ameiurus natalis* | 65 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Chitala ornata* | 65 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Parachromis friedrichsthalii* | 65 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Phallichthys amates* | 65 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Astyanax bacalarensis* | 75 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Amatitlania nigrofasciata* | 74 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Heterandria formosa* | 73 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Petenia splendida* | 71 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Xiphophorus hellerii* | 70 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Awaous banana* | 67 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hoplosternum littorale* | 66 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gambusia puncticulata* | 62 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Alectis ciliaris* | 61 | Meer | nur tiefer als die Tauchgrenze (erst ab 60 m) |
-| *Coryphopterus hyalinus* | 61 | Brack/Meer | zu klein (höchstens 2.5 cm) |
-| *Astyanax bacalarensis* | 60 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus labiatus* | 59 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hoplias malabaricus* | 59 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hoplias malabaricus* | 62 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Coryphopterus hyalinus* | 60 | Brack/Meer | zu klein (höchstens 2.5 cm) |
+| *Fundulus grandis* | 59 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Emblemariopsis bottomei* | 58 | Meer | zu klein (höchstens 2.96 cm) |
-| *Herotilapia multispinosa* | 55 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ameiurus nebulosus* | 52 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Fundulus seminolis* | 57 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ophisternon infernale* | 57 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepomis marginatus* | 56 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Chitala ornata* | 54 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Astyanax bimaculatus* | 52 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Tomocichla tuba* | 52 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Amphilophus labiatus* | 51 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ginsburgellus novemlineatus* | 51 | Meer | zu klein (höchstens 2.5 cm) |
-| *Notemigonus crysoleucas* | 51 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Labidesthes vanhyningi* | 51 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sicydium punctatum* | 51 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Xiphophorus hellerii* | 50 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hypsophrys nematopus* | 49 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Macrognathus siamensis* | 49 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Petenia splendida* | 49 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Astatotilapia calliptera* | 48 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ophisternon infernale* | 48 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Tigrigobius harveyi* | 48 | Meer | zu klein (höchstens 2.11 cm) |
-| *Lepisosteus osseus* | 47 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Enneacanthus gloriosus* | 46 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Floridichthys polyommus* | 46 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rhamdia quelen* | 46 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hypostomus robinii* | 45 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amatitlania septemfasciata* | 44 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Archocentrus centrarchus* | 44 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Alburnops petersoni* | 43 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ameiurus catus* | 43 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cribroheros longimanus* | 43 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hypsophrys nicaraguensis* | 43 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Piaractus brachypomus* | 42 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ictalurus punctatus* | 44 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cryptoheros cutteri* | 43 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Floridichthys polyommus* | 42 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acyrtops beryllinus* | 41 | Meer | zu klein (höchstens 2.5 cm) |
 | *Enneanectes deloachorum* | 41 | Meer | zu klein (höchstens 2.16 cm) |
 | *Malacoctenus erdmani* | 41 | Meer | zu klein (höchstens 3.8 cm) |
-| *Sicydium salvini* | 40 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Nomeus gronovii* | 39 | Meer | nur tiefer als die Tauchgrenze (erst ab 200 m) |
-| *Erimyzon sucetta* | 37 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Piaractus brachypomus* | 41 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Alectis ciliaris* | 40 | Meer | nur tiefer als die Tauchgrenze (erst ab 60 m) |
+| *Ariopsis assimilis* | 38 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pseudoxiphophorus bimaculatus* | 37 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Risor ruber* | 37 | Meer | zu klein (höchstens 2.5 cm) |
-| *Ariopsis assimilis* | 36 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Enneacanthus gloriosus* | 36 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Heros severus* | 36 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia gillii* | 35 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poeciliopsis turrubarensis* | 35 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rhamdia nicaraguensis* | 34 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cribroheros robertsoni* | 33 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cribroheros alfari* | 35 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cribroheros robertsoni* | 34 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Nomeus gronovii* | 34 | Meer | nur tiefer als die Tauchgrenze (erst ab 200 m) |
+| *Phallichthys amates* | 34 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Priapichthys annectens* | 34 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ameiurus nebulosus* | 33 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Caquetaia kraussii* | 33 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Macrognathus siamensis* | 33 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acanthemblemaria rivasi* | 32 | Meer | zu klein (höchstens 3 cm) |
-| *Brachyrhaphis holdridgei* | 32 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Eleotris picta* | 32 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lepomis auritus* | 32 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Brachyrhaphis rhabdophora* | 31 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pomoxis nigromaculatus* | 32 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Etheostoma fusiforme* | 31 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acyrtus rubiginosus* | 30 | Meer | zu klein (höchstens 3.5 cm) |
-| *Elassoma evergladei* | 30 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Enneanectes matador* | 30 | Meer | zu klein (höchstens 2.1 cm) |
 | *Gambusia wrayi* | 30 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gobiomorus maculatus* | 30 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sicydium plumieri* | 30 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Anableps anableps* | 29 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lutjanus vivanus* | 29 | Meer | nur tiefer als die Tauchgrenze (erst ab 90 m) |
-| *Andinoacara latifrons* | 28 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Atractosteus tropicus* | 28 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Caquetaia kraussii* | 28 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cynodonichthys isthmensis* | 28 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Poecilia vandepolli* | 28 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Poecilia vivipara* | 28 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Thorichthys meeki* | 28 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cichlasoma taenia* | 27 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Nandopsis haitiensis* | 27 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cribroheros rostratus* | 26 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Andinoacara latifrons* | 26 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Enneanectes atrorus* | 26 | Meer | zu klein (höchstens 3.3 cm) |
-| *Roeboides bouchellei* | 26 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Notemigonus crysoleucas* | 26 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia mexicana* | 26 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ancistrus trinitatis* | 25 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Elacatinus louisae* | 25 | Meer | zu klein (höchstens 3.8 cm) |
-| *Parachromis motaguensis* | 25 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Etelis oculatus* | 24 | Meer | nur tiefer als die Tauchgrenze (erst ab 100 m) |
 | *Poecilia picta* | 24 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Trichopsis vittata* | 24 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ameiurus natalis* | 23 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lutjanus vivanus* | 23 | Meer | nur tiefer als die Tauchgrenze (erst ab 90 m) |
+| *Alfaro cultratus* | 22 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Anableps microlepis* | 22 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gambusia sexradiata* | 22 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gymnotus carapo* | 22 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Osteogaster aenea* | 22 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hoplias microlepis* | 21 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Alfaro huberi* | 20 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax bransfordii* | 20 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Parachromis dovii* | 22 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Elacatinus centralis* | 20 | Meer | zu klein (höchstens 3.79 cm) |
 | *Limia perugiae* | 20 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pimelodella chagresi* | 20 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia gillii* | 20 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brycon costaricensis* | 19 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Coptodon rendalli* | 19 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Thorichthys meeki* | 19 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Fonchiiichthys uracanthus* | 18 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Geophagus crassilabris* | 18 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Chuco intermedium* | 18 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Tigrigobius pallens* | 18 | Meer | zu klein (höchstens 1.9 cm) |
 | *Tigrigobius saucrus* | 18 | Meer | zu klein (höchstens 1.6 cm) |
-| *Xenophallus umbratilis* | 18 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Carassius auratus* | 17 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Emblemariopsis leptocirris* | 17 | Meer | zu klein (höchstens 2.2 cm) |
+| *Erimyzon sucetta* | 17 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gambusia punctata* | 17 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lebiasina panamensis* | 17 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia caucana* | 17 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Tomicodon rupestris* | 17 | Meer | zu klein (höchstens 2.73 cm) |
 | *Bathygobius geminatus* | 16 | Meer | zu klein (höchstens 3.8 cm) |
+| *Cryptoheros chetumalensis* | 16 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Emblemariopsis leptocirris* | 16 | Meer | zu klein (höchstens 2.2 cm) |
+| *Fonchiiichthys uracanthus* | 16 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Geophagus crassilabris* | 16 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hoplias microlepis* | 16 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Nandopsis tetracanthus* | 16 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Amatitlania myrnae* | 15 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ancistrus chagresi* | 15 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyprinodon riverendi* | 15 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gambusia manni* | 15 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Helicolenus dactylopterus* | 15 | Meer | nur tiefer als die Tauchgrenze (erst ab 50 m) |
+| *Elassoma evergladei* | 15 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lebiasina panamensis* | 15 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Clarias gariepinus* | 14 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyphocharax magdalenae* | 14 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gambusia sexradiata* | 14 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Etelis oculatus* | 14 | Meer | nur tiefer als die Tauchgrenze (erst ab 100 m) |
+| *Gambusia manni* | 14 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hemibrycon taeniurus* | 14 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia caucana* | 14 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Xiphophorus maculatus* | 14 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ancistrus chagresi* | 13 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax panamensis* | 13 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Alburnops petersoni* | 13 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Amatitlania siquia* | 13 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ameiurus catus* | 13 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Atractosteus tristoechus* | 13 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ctenolucius hujeta* | 13 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Emblemariopsis bahamensis* | 13 | Meer | zu klein (höchstens 2.6 cm) |
-| *Herichthys cyanoguttatus* | 13 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lythrypnus elasson* | 13 | Meer | zu klein (höchstens 1.58 cm) |
+| *Astyanax panamensis* | 12 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Atractosteus tropicus* | 12 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Coryphopterus kuna* | 12 | Meer | zu klein (höchstens 1.71 cm) |
 | *Eleotris perniger* | 12 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Noturus gyrinus* | 12 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Panamius panamensis* | 12 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pseudoxiphophorus bimaculatus* | 12 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus sagittae* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Brycon behreae* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Prochilodus reticulatus* | 12 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pygocentrus cariba* | 12 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Alfaro huberi* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyprinodon dearborni* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cyprinus carpio* | 11 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Emblemariopsis pricei* | 11 | Meer | zu klein (höchstens 2.86 cm) |
-| *Gephyrocharax atracaudatus* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hyporthodus flavolimbatus* | 11 | Meer | nur tiefer als die Tauchgrenze (erst ab 90 m) |
-| *Morone chrysops* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia sphenops* | 11 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Panamius panamensis* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Parachromis friedrichsthalii* | 11 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Roeboides dientonito* | 11 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Caulolatilus cyanops* | 10 | Meer | nur tiefer als die Tauchgrenze (erst ab 45 m) |
-| *Cichla monoculus* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Callichthys callichthys* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Emblemariopsis pricei* | 10 | Meer | zu klein (höchstens 2.86 cm) |
 | *Emblemariopsis ruetzleri* | 10 | Meer | zu klein (höchstens 2 cm) |
 | *Esox niger* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Fundulus lineolatus* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gambusia hispaniolae* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Garmanella pulchra* | 10 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hemigrammus unilineatus* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pontinus longispinis* | 10 | Meer | nur tiefer als die Tauchgrenze (erst ab 75 m) |
-| *Brycon guatemalensis* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Callichthys callichthys* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hypsophrys nematopus* | 10 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia sphenops* | 10 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Carassius auratus* | 9 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cryptoheros spilurus* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Esox americanus* | 9 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Geophagus steindachneri* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Garmanella pulchra* | 9 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hemichromis fasciatus* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lopholatilus chamaeleonticeps* | 9 | Meer | nur tiefer als die Tauchgrenze (erst ab 80 m) |
 | *Poecilia elegans* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Polycentrus schomburgkii* | 9 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Seriola fasciata* | 9 | Meer | nur tiefer als die Tauchgrenze (erst ab 55 m) |
+| *Prochilodus magdalenae* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Trichopodus pectoralis* | 9 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amatitlania kanna* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax aeneus* | 8 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Chaetostoma fischeri* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Astyanax belizianus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Caulolatilus cyanops* | 8 | Meer | nur tiefer als die Tauchgrenze (erst ab 45 m) |
 | *Corynopoma riisei* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Emblemariopsis tayrona* | 8 | Meer | zu klein (höchstens 3.1 cm) |
 | *Gambusia xanthosoma* | 8 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gobiesox cephalus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Kryptolebias marmoratus* | 8 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Notropis maculatus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Prochilodus magdalenae* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Prochilodus reticulatus* | 8 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rhamdia laticauda* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Tomicodon cryptus* | 8 | Meer | zu klein (höchstens 1.9 cm) |
-| *Trichomycterus striatus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus xiloaensis* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax nicaraguensis* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gephyrocharax atracaudatus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepisosteus osseus* | 8 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Phractocephalus hemioliopterus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rhamdia nicaraguensis* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Xiphophorus maculatus* | 8 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Amatitlania kanna* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cichla monoculus* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyprinodon nichollsi* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Dorosoma chavesi* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lebiasina boruca* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Geophagus steindachneri* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Helicolenus dactylopterus* | 7 | Meer | nur tiefer als die Tauchgrenze (erst ab 50 m) |
+| *Herotilapia multispinosa* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Kryptolebias marmoratus* | 7 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia vittata* | 7 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lythrypnus spilus* | 7 | Meer | zu klein (höchstens 2.5 cm) |
-| *Misgurnus anguillicaudatus* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Phractocephalus hemioliopterus* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia hondurensis* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ophisternon aenigmaticum* | 7 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Seriola fasciata* | 7 | Meer | nur tiefer als die Tauchgrenze (erst ab 55 m) |
 | *Sternopygus aequilabiatus* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Tomicodon cryptus* | 7 | Meer | zu klein (höchstens 1.9 cm) |
 | *Vieja bifasciata* | 7 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acanthemblemaria greenfieldi* | 6 | Meer | zu klein (höchstens 3.6 cm) |
-| *Amatitlania sajica* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus astorquii* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus zaliosus* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax belizianus* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Aulopus filamentosus* | 6 | Meer | nur tiefer als die Tauchgrenze (erst ab 50 m) |
+| *Amatitlania septemfasciata* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brycon guatemalensis* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Crenicichla geayi* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cyprinus carpio* | 6 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Elacatinus colini* | 6 | Meer | zu klein (höchstens 3.2 cm) |
-| *Emblemariopsis occidentalis* | 6 | Meer | zu klein (höchstens 1.92 cm) |
-| *Euprepocaranx dorsalis* | 6 | Meer | nur tiefer als die Tauchgrenze (erst ab 60 m) |
-| *Gymnotus maculosus* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hypostomus hondae* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lepomis auritus* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Megaleporinus muyscorum* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Noturus gyrinus* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Odontostilbe pulchra* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ophisternon aenigmaticum* | 6 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poecilia salvatoris* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Priapichthys panamensis* | 6 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Talamancaheros sieboldii* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Trachelyopterus insignis* | 6 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Atherinella hubbsi* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Astronotus mikoljii* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Astyanax nicaraguensis* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Brachyhypopomus occidentalis* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Brachyrhaphis episcopi* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Brachyrhaphis terrabensis* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Colossoma macropomum* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brachyrhaphis holdridgei* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cribroheros bussingi* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cryptopsilotris batrachodes* | 5 | Meer | zu klein (höchstens 1.9 cm) |
 | *Cubanichthys cubensis* | 5 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cynodonichthys brunneus* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyprinodon brontotheroides* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Emblemariopsis lancea* | 5 | Meer | zu klein (höchstens 2.43 cm) |
+| *Emblemariopsis occidentalis* | 5 | Meer | zu klein (höchstens 1.92 cm) |
+| *Fundulus lineolatus* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gambusia luma* | 5 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gambusia nicaraguensis* | 5 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gobiesox potamius* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hemanthias leptus* | 5 | Meer | nur tiefer als die Tauchgrenze (erst ab 60 m) |
-| *Hyporthodus acanthistius* | 5 | Meer | nur tiefer als die Tauchgrenze (erst ab 46 m) |
+| *Hyphessobrycon panamensis* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hypostomus hondae* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia nigrofasciata* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia sulphurophila* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lythrypnus heterochroma* | 5 | Meer | zu klein (höchstens 2.5 cm) |
 | *Maylandia zebra* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pethia conchonius* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pontinus longispinis* | 5 | Meer | nur tiefer als die Tauchgrenze (erst ab 75 m) |
+| *Rachovia maculipinnis* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rineloricaria magdalenae* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Talamancaheros underwoodi* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Roeboides bouchellei* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Serrasalmus rhombeus* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Tomicodon reitzae* | 5 | Meer | zu klein (höchstens 3.5 cm) |
-| *Amphilophus amarillo* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus chancho* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Tomocichla tuba* | 5 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Antigonia capros* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Apogon pillionatus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Argyropelecus aculeatus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Atherinella milleri* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Auxis thazard* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Bairdiella chrysoura* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
 | *Bathypterois bigelowi* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Brevoortia patronus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Brevoortia smithi* | 4 | Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Carapus bermudensis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Carcharodon carcharias* | 4 | Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Centropomus viridis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Citharichthys gilberti* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Citharichthys macrops* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Citharichthys spilopterus* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Cynodonichthys fuscolineatus* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Chaetostoma fischeri* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Colossoma macropomum* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cribroheros longimanus* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Emblemaria vitta* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Gobioides broussonnetii* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Gobiomorus polylepis* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
+| *Gobiesox cephalus* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gobiosoma grosvenori* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Gymnothorax ocellatus* | 4 | Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Hemanthias peruanus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Hemieleotris latifasciata* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gymnothorax saxicola* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Gymnura lessae* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Hemicaranx amblyrhynchus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Hexanchus griseus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Hollardia hollardi* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Hoplosternum magdalenae* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hoplostethus occidentalis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Hyphessobrycon panamensis* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Hyporthodus nigritus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Hypostomus aspidolepis* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hypostomus wilsoni* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lagocephalus lagocephalus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Limia caymanensis* | 4 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Liopropoma carmabi* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Lipogramma trilineata* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Lonchopisthus micrognathus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Lopholatilus chamaeleonticeps* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Microphis brachyurus* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
 | *Micropterus chattahoochae* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Mobula tarapacana* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Mugil setosus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Mustelus canis* | 4 | Brack/Meer | zu wenige Nachweise (4 < 5) |
-| *Naucrates ductor* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Notropis maculatus* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Oligoplites palometa* | 4 | Süß/Brack/Meer | zu wenige Nachweise (4 < 5) |
+| *Ophichthus gomesii* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Parachromis motaguensis* | 4 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Phaeoptyx xenus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Plagioscion surinamensis* | 4 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Poecilia hispaniolana* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia hondurensis* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Potamotrygon orbignyi* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Prochilodus mariae* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pseudoplatystoma magdaleniatum* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Quassiremus ascensionis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Rostroraja texana* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Remora osteochir* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Scorpaena calcarata* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Scorpaenodes tredecimspinosus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Seriola zonata* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Squalus cubensis* | 4 | Meer | zu wenige Nachweise (4 < 5) |
 | *Symphurus caribbeanus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Tylosurus pacificus* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Umbrina xanti* | 4 | Meer | zu wenige Nachweise (4 < 5) |
-| *Uraspis helvola* | 4 | Meer | zu wenige Nachweise (4 < 5) |
+| *Trichomycterus striatus* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Vieja zonata* | 4 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acyrtus lanthanum* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Amphilophus flaveolus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Anablepsoides cryptocallus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Antennarius commerson* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Antennatus strigatus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Anarchopterus criniger* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Anchoa mitchilli* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Anthias asperilinguis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Anthias nicholsi* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Ariosoma balearicum* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Astyanax mexicanus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Atherinella brasiliensis* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Bairdiella ensifera* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Atherinella milleri* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Auxis thazard* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Bathygobius curacao* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Brotula barbata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Brotula clarkae* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Caulolatilus affinis* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Carapus bermudensis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Carcharhinus isodon* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Carcharodon carcharias* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Cerdale floridana* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Chilomycterus spinosus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Cichla orinocensis* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Citharichthys spilopterus* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Copella arnoldi* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Coptodon zillii* | 3 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cordylancistrus tayrona* | 3 | ? | zu wenige Nachweise (3 < 5) |
-| *Coryphaena equiselis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Coryphopterus alloides* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Cribroheros rhytisma* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cribroheros rostratus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ctenobrycon magdalenae* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ctenogobius smaragdus* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Cynodonichthys rubripunctatus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cynoponticus coniceps* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Cynopotamus magdalenae* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyttopsis rosea* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Diapterus brevirostris* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Echiophis intertinctus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Emblemariopsis diaphana* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Emmelichthyops atlanticus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Enneanectes wilki* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Epinephelus analogus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Etropus crossotus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Fodiator rostratus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Fundulus rubrifrons* | 3 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Evorthodus lyricus* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Gambusia pseudopunctata* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gasteropelecus maculatus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gillellus greyae* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Gobiesox nigripinnis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Gobioides broussonnetii* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Gonioplectrus hispanus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Gymnotus cylindricus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Haemulopsis leuciscus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Hirundichthys affinis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Hyperoglyphe perciformis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Guavina guavina* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Gymnothorax nigromarginatus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Hyporhamphus unifasciatus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Lobotes pacifica* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Hyporthodus nigritus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Hypostomus aspidolepis* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lagocephalus lagocephalus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Malacoctenus delalandii* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Masturus lanceolatus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Membras martinica* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Micropogonias furnieri* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Mobula thurstoni* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Monopterus albus* | 3 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Narcine entemedor* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Odontoscion xanthops* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Oligoplites palometa* | 3 | Süß/Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Oligoplites refulgens* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Ophidion josephi* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Opisthonema libertate* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Morone chrysops* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Mustelus canis* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Opistognathus gilberti* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Opistognathus lonchurus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Oxydoras sifontesi* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Paraclinus barbatus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Paraclinus infrons* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Paralabrax loro* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Phallichthys quadripunctatus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pimephales promelas* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Parexocoetus hillianus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Peprilus paru* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Poecilia wingei* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poeciliopsis pleurospilus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Polydactylus octonemus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Polydactylus oligodon* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Polymixia lowei* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Pontinus furcirhinus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Prionace glauca* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Priapichthys puetzi* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Prionotus carolinus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Pristigenys serrula* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Pseudupeneus grandisquamis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Prionotus roseus* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Regalecus glesne* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Rhamdia laticauda* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rhaphiodon vulpinus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rivulus cylindraceus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Roeboides dayi* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Roeboides guatemalensis* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rypticus nigripinnis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Sanopus greenfieldorum* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Sarda sarda* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
-| *Sphyraena ensis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Sphyraena qenie* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Semaprochilodus kneri* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Seriola zonata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
+| *Serrasalmus elongatus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Serrasalmus manueli* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Sorubim cuspicaudus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sphyrna alleni* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
+| *Squalus cubensis* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Starksia ocellata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Starksia smithvanizi* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Starksia splendens* | 3 | Meer | zu wenige Nachweise (3 < 5) |
@@ -786,149 +732,111 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | *Stathmonotus stahli* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Steindachnerina argentea* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Tigrigobius zebrellus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Trachinotus kennedyi* | 3 | Brack/Meer | zu wenige Nachweise (3 < 5) |
 | *Trichopodus trichopterus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Triportheus magdalenae* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Urophycis cirrata* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Vomerogobius flavus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Xiphophorus variatus* | 3 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Zapteryx xyster* | 3 | Meer | zu wenige Nachweise (3 < 5) |
-| *Abantennarius coccineus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Acanthonus armatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Zu cristatus* | 3 | Meer | zu wenige Nachweise (3 < 5) |
 | *Acyrtus artius* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Albula esuncula* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Amphilophus trimaculatus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Anchovia macrolepidota* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Aphredoderus sayanus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Aplatophis zorro* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Anablepsoides deltaphilus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Apogon robbyi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Astatheros macracanthus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Archocentrus centrarchus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Argyropelecus aculeatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Astrapogon alutus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Astronesthes similus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Bairdiella armata* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Astyanax macal* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Astyanax orstedii* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Barbulifer ceuthoecus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Bathytoshia centroura* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Batrachoides gilberti* | 2 | Süß/Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Batrachoides pacifici* | 2 | Süß/Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Bollmannia boqueronensis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Brachyplatystoma filamentosum* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Brachyrhaphis hessfeldi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Bryx dunckeri* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Bunocephalus colombianus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Callechelys bilinearis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Caranx vinctus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Carcharhinus porosus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Carcharias taurus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Caulolatilus chrysops* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Centropomus armatus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Centropomus mexicanus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Chaenomugil proboscideus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Chanos chanos* | 2 | Süß/Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Characidium marshi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Centropristis philadelphica* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Chaunax suttkusi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Cheilopogon exsiliens* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Cheilopogon furcatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Cichlasoma dimerus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Clarkichthys bilineatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Corvula batabana* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Cheilopogon cyanopterus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Cichla intermedia* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Citharichthys macrops* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Creagrutus bolivari* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cryptoheros chetumalensis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ctenogobius sagittula* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Crenuchus spilurus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cynodonichthys brunneus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cynodonichthys monikae* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cynodonichthys tenuis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cynoscion jamaicensis* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Cynoscion nothus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Cynoscion reticulatus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Cynoscion stolzmanni* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Cynoscion virescens* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Cyprinodon desquamator* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyprinodon higuey* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Dactyloscopus tridigitatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Darienheros calobrensis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Decapterus tabl* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Dermatolepis inermis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Diapterus peruvianus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Diapterus rhombeus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Diplectrum pacificum* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Doryrhamphus melanopleura* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Dicrossus filamentosus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ekemblemaria nigra* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Elacatinus serranilla* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Emblemaria caldwelli* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Enneanectes flavus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Erotelis smaragdus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Erythrinus erythrinus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Etmopterus schultzi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Euleptorhamphus viridis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Gambusia affinis* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gambusia beebei* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gasteropelecus maculatus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gephyrocharax valencia* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gillellus uranidea* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Girardinus microdactylus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Girardinus uninotatus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gobiesox adustus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Gobiosoma longipala* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Grammicolepis brachiusculus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Guavina guavina* | 2 | Süß/Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Gymnachirus texae* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Gymnothorax kolpos* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Gymnothorax verrilli* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Halieutichthys aculeatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Harengula thrissina* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Hemicaranx leucurus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Hemiramphus saltator* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Gymnotus cylindricus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hemanthias leptus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Heteroconger camelopardalis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Hexanchus vitulus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Hyperoglyphe perciformis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Hyporthodus flavolimbatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Hyporthodus mystacinus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Hypsoblennius brevipinnis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Hypsoblennius striatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Iniistius pavo* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Isthmoheros tuyrensis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Istiompax indica* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Isurus oxyrinchus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Isurus paucus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Kathetostoma albigutta* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Lepidonectes clarkhubbsi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Letharchus velifer* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Lebiasina erythrinoides* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Leporinus ortomaculatus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia melanogaster* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lythrypnus crocodilus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Menticirrhus saxatilis* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Mesoheros atromaculatus* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Mola mola* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Monocirrhus polyacanthus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Monopterus albus* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Mugil liza* | 2 | Süß/Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Mullus auratus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Muraena argus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Muraena retifera* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Nannostomus eques* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Nanocheirodon insignis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Nebris occidentalis* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Neoheterandria tridentiger* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Nezumia aequalis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Odontaspis ferox* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Odontognathus compressus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Ostichthys trachypoma* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Oxynotus caribbaeus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Pangasianodon hypophthalmus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Paracanthurus hepatus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Pareques viola* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Paracheirodon axelrodi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Parodon alfonsoi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Parophidion schmidti* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Penetopteryx nanus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Peristedion brevirostre* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Polydactylus approximans* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Phallichthys quadripunctatus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Piaractus orinoquensis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pimelodus blochii* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Poecilia salvatoris* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Potamotrygon magdalenae* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Priapichthys puetzi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Potamotrygon schroederi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Prionace glauca* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Prognichthys occidentalis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Pseudobatos glaucostigma* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Pseudophallus mindii* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pseudoplatystoma orinocoense* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Puntigrus tetrazona* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Remora albescens* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Rhinoptera brasiliensis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Remora remora* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Rhizoprionodon lalandii* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Rivulus roloffi* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rypticus randalli* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Sarda sarda* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Sargocentron bullisi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Saurida normani* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Scarus compressus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Scomber colias* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
 | *Scyliorhinus hesperius* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Scyliorhinus retifer* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Serrasalmus neveriensis* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sicydium gymnogaster* | 2 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Sorubim cuspicaudus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Sphoeroides dorsalis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Sphoeroides pachygaster* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Sphyrna tudes* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Starksia culebrae* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Starksia lepicoelia* | 2 | Meer | zu wenige Nachweise (2 < 5) |
@@ -936,317 +844,294 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | *Starksia weigti* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Starksia williamsi* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Stellifer colonensis* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
+| *Sternopygus macrurus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sturisomatichthys aureus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Syngnathus springeri* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Thalassophryne maculosa* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Thorichthys aureus* | 2 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Thunnus obesus* | 2 | Meer | zu wenige Nachweise (2 < 5) |
 | *Thunnus thynnus* | 2 | Brack/Meer | zu wenige Nachweise (2 < 5) |
-| *Tigrigobius inornatus* | 2 | ? | zu wenige Nachweise (2 < 5) |
 | *Tigrigobius rubrigenis* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Urotrygon cimar* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Urotrygon munda* | 2 | Meer | zu wenige Nachweise (2 < 5) |
-| *Abantennarius sanguineus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Achirus mazatlanus* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Uraspis helvola* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Urophycis cirrata* | 2 | Meer | zu wenige Nachweise (2 < 5) |
+| *Abramites hypselonotus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Acaronia nassa* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acipenser ruthenus* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Acyrtops amplicirrus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Adontosternarchus devenanzii* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ageneiosus inermis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ageneiosus lineatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ageneiosus magoi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ageneiosus pardalis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Ageneiosus polystictus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Albula nemoptera* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Alepisaurus ferox* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Alopias pelagicus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Alopias superciliosus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Amatitlania nanolutea* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ambloplites rupestris* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus hogaboomorum* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus tolteca* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Amphilophus viridis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Anarchopterus tectus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Anchoa lamprotaenia* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Anchoa lyolepis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Anchoa mundeola* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Ancistrus brevifilis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ancistrus triradiatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Andinoacara rivulatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Anoplogaster cornuta* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Apteronotus eschmeyeri* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Arapaima gigas* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Arcos rhodospilus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Argyropelecus hemigymnus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ancylopsetta quadrocellata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Anduzedoras oxyrhynchus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Anisotremus taeniatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Anodus orinocensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Anthias nicholsi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Aphredoderus sayanus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Apistogramma diplotaenia* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Apistogramma lineata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Arothron meleagris* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Astroscopus guttatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Astroscopus zephyreus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Astyanax altior* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Astyanax anai* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax mexicanus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Astyanax nasutus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Astyanax bransfordii* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Astyanax orthodus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Atherinella chagresi* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Aulostomus chinensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Aulopus filamentosus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Austrofundulus limnaeus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Auxis brachydorax* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Bagre pinnimaculatus* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Bathylagichthys greyae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Austrofundulus transilis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Baryancistrus beggini* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Batrachoides surinamensis* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Batrachoides waltersi* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Bellator militaris* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Beryx decadactylus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Bothus mancus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Bregmaceros bathymaster* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Boulengerella lateristriga* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Boulengerella lucius* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brachyplatystoma rousseauxii* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brachyplatystoma vaillantii* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Brycon chagrensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Brycon moorei* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brycon falcatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Brycon pesu* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Brycon whitei* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Bunocephalus colombianus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Bryconops colaroja* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Calophysus macropterus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Carcharhinus signatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Carcharias taurus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Carnegiella strigata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cathorops mapale* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cathorops spixii* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Catoprion mento* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Centrophorus uyato* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Centropomus robalito* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Centropristis fuscula* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Cerdale ionthas* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Cetengraulis mysticetus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Cetopsis coecutiens* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cetorhinus maximus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Chauliodus sloani* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Chaetostoma anomalum* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Chalceus macrolepidotus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Characidium longum* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cheilopogon furcatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Cheilopogon heterurus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Cheilopogon nigricans* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Chlorophthalmus agassizi* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Chloroscombrus orqueta* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Chortiheros wesseli* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cichla pleiozona* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cichla temensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cichlasoma dimerus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cincelichthys bocourti* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cirrhigaleus asper* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Citharichthys arenaceus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Citharichthys dinoceros* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Citharichthys mariajorisae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Coccorella atlantica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Compsura gorgonae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Conger esculentus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Conger oceanicus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Cookeolus japonicus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Coralliozetus springeri* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Corvula macrops* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Cribroheros diquis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cryptoheros spilurus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cordylancistrus tayrona* | 1 | ? | zu wenige Nachweise (1 < 5) |
+| *Corvula batabana* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Ctenogobius shufeldti* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Curimata mivartii* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Cynodonichthys tenuis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cynodonichthys weberi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cynoponticus savanna* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Cynopotamus bipunctatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cynoscion acoupa* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Cynoscion regalis* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Cynoscion arenarius* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Cyphocharax aspilos* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyphotilapia frontosa* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Cyprinodon beltrani* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Cyprinodon bondi* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Dactyloscopus poeyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Dascyllus aruanus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Dasyscopelus selenops* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Decapterus kurroides* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Diaphus fragilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Diaphus subtilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Diodon eydouxii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dekeyseria picta* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Diplectrum radiale* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Diplodus bermudensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Distocyclus conirostris* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ditropichthys storeri* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Dormitator latifrons* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Duopalatinus peruanus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Echiophis brunneus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Echiostoma barbatum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Eigenmannia macrops* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Elacatinus atronasus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Eleutheronema tetradactylum* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Elachocharax junki* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Electrophorus electricus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Eleotris picta* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Emblemaria hyltoni* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Entomocorus gameroi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Epinephelus ongus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Epinnula magistralis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Erotelis armiger* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Erythrinus erythrinus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Erythrocles monodi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Erotelis smaragdus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Eugerres brasilianus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Eumegistus brevorti* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Eustomias fissibarbis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Eustomias obscurus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Evermannia zosterura* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Evoxymetopon taeniatum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Fistularia petimba* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Exallodontus aguanai* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Exastilithoxus fimbriatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Farlowella odontotumulus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Foetorepus agassizii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Fowlerichthys avalonis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Fowlerichthys ocellatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Fundulus grandissimus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Fundulus persimilis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gastropsetta frontalis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Gelanoglanis nanonocticolus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Genyatremus luteus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Gigantactis macronema* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Gilbertolus maracaiboensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Gillellus healae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Girardinus creolus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gobiesox daedaleus* | 1 | Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gobiesox papillifer* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Gobioides peruanus* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Gorgasia punctata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Glanapteryx anguilla* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gymnachirus texae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Gymnocorymbus ternetzi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Gymnothorax castaneus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Gymnothorax conspersus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Gymnothorax equatorialis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Gymnothorax maderensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Gymnothorax polygonius* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Haemulopsis axillaris* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Haemulopsis nitida* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Halichoeres aestuaricola* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Hemanthias signifer* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Hemibrycon dariensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Haemulon maculicauda* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Halieutichthys aculeatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Helogenes marmoratus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hemiancistrus subviridis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hemiodus gracilis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hemiodus unimaculatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hemiramphus balao* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Hemisorubim platyrhynchos* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Heptranchias perlo* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Howella atlantica* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hirundichthys affinis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hoplias aimara* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hoplias teres* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hydrolycus armatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hydrolycus wallacei* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hyphessobrycon axelrodi* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Hypoplectrus liberte* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Hyporhamphus naos* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Hyporthodus niphobles* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Hypsoblennius paytensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Hyporhamphus meeki* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Hypostomus plecostomus* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Hypsophrys nicaraguensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Ichthyapus ophioneus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Ichthyoelephas longirostris* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Ilisha fuerthii* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Ipnops murrayi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Isorineloricaria acuarius* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Jenkinsia stolifera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Kajikia albida* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Kronoheros umbrifer* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Kryptolebias ocellatus* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Labeotropheus fuelleborni* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Labrisomus multiporosus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Lampanyctus macdonaldi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Larimus fasciatus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Lasiancistrus caucanus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Laemolyta taeniata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Laetacara fulvipinnis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Laimosemion lyricauda* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Laimosemion tecminae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lasiancistrus guacharote* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lasiancistrus schomburgkii* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lates niloticus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lebiasina erythrinoides* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lebiasina festae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Lebiasina uruyensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lepidocybium flavobrunneum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Lepidophanes guentheri* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Leptoancistrus canensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Lile gracilis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Leporinus brunneus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia immaculata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia miragoanensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia pauciradiata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Limia yaguajali* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Liopropoma aberrans* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Liopropoma eukrines* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Lobianchia gemellarii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Llanolebias stellifer* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lonchopisthus higmani* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Lophius gastrophysus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Lucifuga dentata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Lupinoblennius vinctus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Lutjanus jordani* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Lutjanus viridis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Lycengraulis grossidens* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Macolor niger* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Makunaima pittieri* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Malacoctenus costaricanus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Masturus lanceolatus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Maurolicus weitzmani* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Melanorhinus microps* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Melanostomias bartonbeani* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Mesonauta festivus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Menidia peninsulae* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Mesonauta egregius* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Metynnis fasciatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Microgobius meeki* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Microgobius thalassinus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Mitsukurina owstoni* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Micromoema xiphophora* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Mola mola* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Mugil brevirostris* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Mugil trichodon* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Mullus auratus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Muraena retifera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Mustelus higmani* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Mustelus norrisi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Mustelus sinusmexicanus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Myliobatis longirostris* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Nannostomus eques* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Narcine vermiculata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Nemichthys curvirostris* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Myleus setiger* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Mylossoma duriventre* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Nannostomus nigrotaeniatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Naucrates ductor* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Neobathyclupea argentea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Neomerinthe hemingwayi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Nicholsina denticulata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Notarius troschelii* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Odontognathus panamensis* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Odontostomops normalops* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Odonus niger* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Ogcocephalus pantostictus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Ogilbia cayorum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Ophichthus puncticeps* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Ophidion grayi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Ophisternon berlini* | 1 | ? | zu wenige Nachweise (1 < 5) |
-| *Opistognathus scops* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Opsanus dichrostomus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Orthopristis chalcea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Oxyporhamphus micropterus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Ostichthys trachypoma* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Oxynotus caribbaeus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Panaqolus maccus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Panaque nigrolineatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Paraclinus naeorhegmis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Paragoniates alburnus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Paralichthys lethostigma* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Paralonchurus brasiliensis* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Paratrygon parvaspina* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pellona harroweri* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Pimelodus blochii* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pisodonophis daspilotus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Pimelodus coprophagus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Platygillellus rubrocinctus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Pliosteostoma lutipinnis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Platynematichthys notatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Platyurosternarchus macrostoma* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Poecilia kykesis* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Poeciliopsis santaelena* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Polyipnus laternatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Polylepion gilmorei* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Polymixia lowei* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Pomacanthus semicirculatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Pontinus rathbuni* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Porichthys plectrodon* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Potamorhina altamazonica* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Potamotrygon motoro* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Potamotrygon yepezi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Prionotus horrens* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Pristipomoides macrophthalmus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Prochilodus mariae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Prognathodes guyanensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Protemblemaria punctata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Psalidodon anisitsi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Psalidodon fasciatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Psenes cyanophrys* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Psenes maculatus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Pseudophallus starksii* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pseudanos winterbottomi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pseudolithoxus anthrax* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pseudoplatystoma metaense* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pseudoplatystoma tigrinum* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pseudoscopelus scutatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Pseudoxiphophorus anzuetoi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Psilotris alepis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Pterobrycon myrnae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Pterodoras granulosus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pterophyllum scalare* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pteroplatytrygon violacea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Pterygoplichthys disjunctivus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Pterygoplichthys multiradiatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Pygocentrus cariba* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rachovia brevis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rachovia hummelincki* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rachovia maculipinnis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Rachovia pyropunctata* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Remora australis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Remora brachyptera* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Remora albescens* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Repomucenus calcaratus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Rhaphiodon vulpinus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rhizoprionodon longurio* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Rhynchoconger flavus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Roeboides ilseae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Rondeletia loricata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Rhinodoras gallagheri* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rhinoptera brasiliensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Rineloricaria melini* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rocio spinosissima* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Rostroraja eglanteria* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Rostroraja texana* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Salminus affinis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Satanoperca leucosticta* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Sciades dowii* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Saurida normani* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Scarus ghobban* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Sciades proops* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Scombrops oculatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Scorpaena afuerae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Scomber colias* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Scorpaena bergii* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Serranus atrobranchus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Serranus notospilus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Serranus scriba* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Serrasalmus irritans* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Serrasalmus medinai* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sicydium adelum* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Sicydium altum* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sicydium buscki* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Sigmops elongatus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sicydium salvini* | 1 | Süß/Brack | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Sparisoma frondosum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Sphoeroides kendalli* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Sphyraena argentea* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Squalus clarkae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Squatina dumeril* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sphoeroides dorsalis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sphoeroides pachygaster* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Starksia fasciata* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Starksia sluiteri* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Stathmonotus gymnodermis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Sternoptyx pseudobscura* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Sternopygus pejeraton* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Stomias boa* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Sternarchorhynchus roseni* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Symphurus ommaspilus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Syngnathus caribbaeus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Synodontis eupterus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Synodus poeyi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Synodus scituliceps* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Synodus sechurae* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Taractichthys longipinnis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Thalassoma grammaticum* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Tatia brunnea* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
+| *Tetragonopterus argenteus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Thalassophryne nattereri* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Thorichthys affinis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Thunnus alalunga* | 1 | Meer | zu wenige Nachweise (1 < 5) |
@@ -1255,17 +1140,17 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | *Trachelyopterus galeatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Trachurus lathami* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Trichomycterus mondolfi* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Trinectes fonsecensis* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
 | *Trinectes paulistanus* | 1 | Süß/Brack/Meer | zu wenige Nachweise (1 < 5) |
-| *Uropterygius versutus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
-| *Urotrygon rogersi* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Triportheus venezuelensis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Vladichthys gloverensis* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Xenophallus umbratilis* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Xiphophorus mayae* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
-| *Zaphotias pedaliotus* | 1 | Meer | zu wenige Nachweise (1 < 5) |
+| *Xiphophorus variatus* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 | *Zebrasoma flavescens* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Zebrasoma scopas* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Zebrasoma velifer* | 1 | Meer | zu wenige Nachweise (1 < 5) |
 | *Zoarces americanus* | 1 | Brack/Meer | zu wenige Nachweise (1 < 5) |
+| *Zungaro zungaro* | 1 | Süß | kein Meeresfisch (Saltwater nicht gesetzt) |
 
 </details>
 
@@ -1275,31 +1160,26 @@ Die Referenz-DB der App kennt diese Namen nicht; die App fände sie auch nicht.
 
 | Name | iNat |
 |---|---|
-| *Neoniphon vexillarius* | 633 |
-| *Neoniphon coruscus* | 99 |
-| *Eretmobrycon scleroparius* | 25 |
+| *Neoniphon vexillarius* | 627 |
+| *Neoniphon coruscus* | 98 |
+| *Parachromis multifasciatus* | 21 |
 | *Saxatilia frenata* | 20 |
-| *Parachromis multifasciatus* | 19 |
-| *Micropterus nigricans* | 17 |
+| *Micropterus nigricans* | 16 |
 | *Hiatirhaphis cascajalensis* | 13 |
 | *Saxatilia saxatilis* | 11 |
-| *Haemulopsis elongata* | 9 |
-| *Hiatirhaphis parismina* | 9 |
-| *Hyporthodus drummondhayi* | 7 |
+| *Eretmobrycon scleroparius* | 7 |
 | *Rhonciscus approximans* | 7 |
 | *Sphoeroides psittacus* | 6 |
 | *Poecilia zonata* | 5 |
 | *Acyrtus nudus* | 4 |
-| *Brevidens striatus* | 4 |
-| *Eretmobrycon emperador* | 3 |
+| *Eretmobrycon emperador* | 4 |
+| *Brevidens striatus* | 3 |
 | *Poecilia dominicensis* | 3 |
 | *Cynodonichthys pivijay* | 2 |
-| *Chiasmodon* | 1 |
-| *Eretmobrycon terrabensis* | 1 |
-| *Hypanus geijskesi* | 1 |
+| *Lophiosilurus apurensis* | 2 |
+| *Arapaima* | 1 |
+| *Hiatirhaphis parismina* | 1 |
 | *Lasiancistrus wiwa* | 1 |
-| *Lophiosilurus apurensis* | 1 |
-| *Pimelodella floridablancaensis* | 1 |
-| *Pteraclis carolinum* | 1 |
+| *Pimelodus yuma* | 1 |
 | *Saxatilia alta* | 1 |
-| *Stellifer strabo* | 1 |
+| *Squatina* | 1 |
