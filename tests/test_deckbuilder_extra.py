@@ -196,7 +196,7 @@ class ExtraSubdeckTest(unittest.TestCase):
 
     def test_warnings_of_the_extra_subdeck_join_the_deck_list(self):
         self.run_build()
-        found = self.report().split("## Zu entscheiden")[1].split("## Verworfene Highlights")[0]
+        found = self.report().split("## Zu entscheiden")[1].split("\n## ")[0]
         self.assertIn("| *Coral one* | invertebrates | tot beobachtet | 9 von 10", found)
         self.assertNotIn("*Snail tiny*", found)
 

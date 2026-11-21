@@ -184,7 +184,7 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
             found_signals = signals.collect(fetcher, region.get("inat"), recipe["taxa"]["inat"], source, name_map,
                                             resolution, observed, t["fewObservers"])
         subdeck_of = {i: f"level-{n}" for n, level in enumerate(selection.levels, 1) for i in level}
-        found = findings.find(subdeck_of, names, facts, flags, evidence, found_signals, t)
+        found = findings.find(subdeck_of, evidence, found_signals, t)
 
         taken = dict(subdeck_of)
         extras = []

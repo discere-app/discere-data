@@ -160,6 +160,7 @@ class Report:
         self.out()
 
         self.render_found()
+        self.render_regional_names()
 
         self.out("## Verworfene Highlights")
         self.out()
@@ -314,14 +315,36 @@ class Report:
             self.out("Keine Warnungen.")
             self.out()
             return
-        self.out("Hinweise, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, "
-                 "Namenszuordnung, Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.")
+        self.out("Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` mit Grund, "
+                 "Level) oder bewusst belassen. Schwellen: `warnings` im Rezept.")
         self.out()
         self.out("| Art | Subdeck | Warnung | Zahlen |")
         self.out("|---|---|---|---|")
         for kind in KINDS:
             for f in (f for f in self.found if f.kind == kind):
                 self.out(f"| *{escape(names[f.species_id])}* | {f.subdeck} | {kind} | {f.detail} |")
+        self.out()
+
+    def render_regional_names(self):
+        """The species the deck names otherwise than the reference DB
+        prefers (deckbuilder/deck.py), levels and extra subdecks. Nothing
+        to decide: the app resolves every name to its species."""
+        subdecks = [(f"level-{n}", level, self.names, self.facts) for n, level in enumerate(self.s.levels, 1)]
+        subdecks += [(e.spec["id"], e.ids, e.names, e.facts) for e in self.extras]
+        rows = [(names[i], subdeck, facts[i].preferred_name) for subdeck, ids, names, facts in subdecks for i in ids
+                if names[i] != facts[i].preferred_name]
+        if not rows:
+            return
+        self.out("## Hinweise: Namen")
+        self.out()
+        self.out("Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, sondern unter dem "
+                 "der Quelle, bei iNaturalist unter dem, unter dem sie in der Region zählt. Nichts zu entscheiden: "
+                 "Die App löst jeden davon über die Synonyme der Referenz-DB zur selben Art auf.")
+        self.out()
+        self.out("| Name im Deck | Subdeck | Referenz-DB |")
+        self.out("|---|---|---|")
+        for written, subdeck, preferred in rows:
+            self.out(f"| *{escape(written)}* | {subdeck} | *{escape(preferred)}* |")
         self.out()
 
     def render_extra(self, e):

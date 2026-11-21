@@ -429,7 +429,7 @@ class BuildTest(unittest.TestCase):
 
     # Warnings to decide (deckbuilder/findings.py)
     def found(self):
-        return self.report().split("## Zu entscheiden")[1].split("## Verworfene Highlights")[0]
+        return self.report().split("## Zu entscheiden")[1].split("\n## ")[0]
 
     def test_mostly_dead_observations_are_reported(self):
         self.run_build()
@@ -451,10 +451,13 @@ class BuildTest(unittest.TestCase):
         self.assertIn("| *Delta four* | level-1 | tot beobachtet | 4 von 4", found)
         self.assertNotIn("wenige Beobachter", found)
 
-    def test_regional_name_is_reported_and_every_written_name_resolves(self):
+    def test_regional_name_is_a_note_not_a_decision_and_every_written_name_resolves(self):
         self.run_build()
-        self.assertIn("| *Gammaold three* | level-2 | Name der Region | Deck: *Gammaold three*; "
-                      "die Referenz-DB führt die Art als *Gamma three* |", self.found())
+        self.assertNotIn("Gammaold three", self.found())
+        self.assertIn("## Hinweise: Namen", self.report())
+        notes = self.report().split("## Hinweise: Namen")[1].split("\n## ")[0]
+        self.assertIn("| *Gammaold three* | level-2 | *Gamma three* |", notes)
+        self.assertNotIn("*Alpha one*", notes)
         names = self.deck()["speciesNames"]
         self.assertTrue(all(self.db.resolve(names).values()))
         with self.assertRaises(build.BuildError):
@@ -471,16 +474,10 @@ class BuildTest(unittest.TestCase):
         self.assertNotIn(TAXON_IDS["Theta eight"], asked)
         self.assertIn("| 1 | *Alpha one* (3 Beobachter) | 100 |", self.report())
 
-    def test_freshwater_flag_is_reported_without_excluding(self):
-        self.run_build()
-        self.assertIn("| *Epsilon five* | level-2 | Süßwasser-Kennzeichen | FishBase/SeaLifeBase: Fresh gesetzt "
-                      "(Süß/Brack/Meer) |", self.found())
-        self.assertIn("Epsilon five", self.deck()["speciesNames"])
-
     def test_warnings_are_summed_up_on_stdout(self):
         self.assertEqual(self.run_build(), build.EXIT_HIGHLIGHT_REJECTED)
-        self.assertIn("[WARN] Zu entscheiden: 4 Warnungen (tot beobachtet 1, Name der Region 1, "
-                      "wenige Beobachter 1, Süßwasser-Kennzeichen 1)", self.stdout)
+        self.assertIn("[WARN] Zu entscheiden: 2 Warnungen (tot beobachtet 1, wenige Beobachter 1), siehe Bericht",
+                      self.stdout)
 
     def test_a_level_below_its_minimum_count_stays_smaller(self):
         recipe = json.loads(json.dumps(RECIPE))

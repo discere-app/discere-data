@@ -91,7 +91,7 @@ def build_extra(recipe, spec, fetcher, db, water, name_map, taken):
     t = findings.thresholds(recipe)
     found_signals = signals.collect(fetcher, region.get("inat"), spec["taxa"]["inat"], result, name_map,
                                     resolution, selection.highlights, t["fewObservers"])
-    found = findings.find({i: spec["id"] for i in ids}, names, facts, flags, evidence, found_signals, t)
+    found = findings.find({i: spec["id"] for i in ids}, evidence, found_signals, t)
     family_of = db.families(ids)
     checks = run_checks(
         ids, evidence, db.common_names(ids, LANGUAGES), family_of,
