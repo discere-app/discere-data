@@ -14,3 +14,4 @@ from dataclasses import dataclass, field
 class SourceResult:
     counts: list                       # [(name, count)]
     notes: list = field(default_factory=list)
+    taxon_ids: dict = field(default_factory=dict)  # name → the source's taxon id, where it has one

@@ -81,6 +81,14 @@ RECIPE = {
 def answer(base, params):
     if base.startswith("https://api.inaturalist.org/v1/places/"):
         return {"results": [{"id": 1, "display_name": "Ort 1"}]}
+    if base.endswith("/observers"):
+        return {"total_results": 5, "results": [{"observation_count": 1}]}
+    if "inaturalist" in base and "term_id" in params:
+        # (alive, dead) per name
+        annotated = {"Coral one": (1, 9), "Snail tiny": (8, 2)} if params["taxon_id"] == INVERTEBRATE_TAXA else {}
+        column = {18: 0, 19: 1}[int(params["term_value_id"])]
+        return {"total_results": len(annotated),
+                "results": [{"count": a[column], "taxon": {"name": n}} for n, a in annotated.items()]}
     if "inaturalist" in base:
         column = {FISH_TAXA: 2, INVERTEBRATE_TAXA: 3}[params["taxon_id"]]
         results = [{"count": row[column], "taxon": {"name": row[1]}} for row in SPECIES if row[column] is not None]
@@ -185,6 +193,12 @@ class ExtraSubdeckTest(unittest.TestCase):
         section = self.report().split("## Subdeck `invertebrates` (3)")[1]
         self.assertIn("| *Crab land* | 60 | Lebt an Land. |", section)
         self.assertIn("| *Clam giant* | Größte Muschel. |", section)
+
+    def test_warnings_of_the_extra_subdeck_join_the_deck_list(self):
+        self.run_build()
+        found = self.report().split("## Zu entscheiden")[1].split("\n## ")[0]
+        self.assertIn("| *Coral one* | invertebrates | tot beobachtet | 9 von 10", found)
+        self.assertNotIn("*Snail tiny*", found)
 
     def test_report_has_a_section_with_classes_and_boundary(self):
         self.run_build()

@@ -17,10 +17,10 @@
 
 from dataclasses import dataclass
 
-from . import inat, inat_names, obis
+from . import findings, inat, inat_names, obis, signals
 from .checks import LANGUAGES, run_checks
 from .recipe import RecipeError
-from .deck import deck_name
+from .deck import deck_names
 from .selection import Evidence, counts_by_id, select, split_extra
 
 
@@ -37,6 +37,8 @@ class ExtraResult:
     notes: list
     checks: object      # checks.Checks of the subdeck's species
     classes: dict       # species id → class name
+    findings: list      # [findings.Finding] of the subdeck's species
+    observers: dict     # species id → (observers, [observations of the most active]), highlights only
 
     @property
     def ids(self):
@@ -83,17 +85,17 @@ def build_extra(recipe, spec, fetcher, db, water, name_map, taken):
                   "exclude": spec.get("exclude", [])}
     selection = select(counts, resolution, facts, flags, evidence, sub_recipe, sum, taken=taken,
                        split=lambda ranked, highlights: split_extra(ranked, highlights, spec["size"]))
-    source_names = {i: c.names for i, c in selection.candidates.items()}
-    for name in highlights:
-        if resolution[name]:
-            source_names.setdefault(resolution[name], [name])
-    names = {i: deck_name(f, source_names.get(i, [])) for i, f in facts.items()}
+    names = deck_names(facts, selection.candidates, highlights, resolution, True)
 
     ids = selection.levels[0]
+    t = findings.thresholds(recipe)
+    found_signals = signals.collect(fetcher, region.get("inat"), spec["taxa"]["inat"], result, name_map,
+                                    resolution, selection.highlights, t["fewObservers"])
+    found = findings.find({i: spec["id"] for i in ids}, evidence, found_signals, t)
     family_of = db.families(ids)
     checks = run_checks(
         ids, evidence, db.common_names(ids, LANGUAGES), family_of,
         db.common_names({f for f, _ in family_of.values()}, LANGUAGES), db.shared_scientific_names(ids),
     )
     return ExtraResult(spec, selection, resolution, facts, flags, evidence, names, mapped, notes, checks,
-                       db.classes(ids))
+                       db.classes(ids), found, found_signals.observers)

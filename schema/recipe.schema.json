@@ -208,6 +208,35 @@
       "minItems": 1,
       "items": { "type": "integer", "minimum": 1 }
     },
+    "levelMinCounts": {
+      "description": "Minimum count in the order source per level, from level 1, like levelSizes and at most as many entries. A level ends at the first species below its minimum and becomes smaller or empty, rather than filled up with species a single photographer decides on; what it leaves goes on to the next level. Highlights need no minimum. Without it, or for a level without an entry, levels take their full size.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "number", "minimum": 0 }
+    },
+    "warnings": {
+      "description": "Thresholds of the warnings the report lists under \"Zu entscheiden\" (scripts/deckbuilder/findings.py); they only warn, the recipe decides.",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "deadShare": {
+          "description": "Warn when at least this share of the observations annotated alive or dead on iNaturalist (annotation Alive or Dead; Cannot Be Determined does not count) say dead (shells, beach finds, market fish).",
+          "type": "number", "minimum": 0, "maximum": 1, "default": 0.8
+        },
+        "deadMinAnnotated": {
+          "description": "… among at least this many observations annotated alive or dead.",
+          "type": "integer", "minimum": 1, "default": 5
+        },
+        "fewObserversShare": {
+          "description": "Warn when the fewObservers most active observers made at least this share of a species' observations (levels 1 and 2 and the highlights).",
+          "type": "number", "minimum": 0, "maximum": 1, "default": 0.5
+        },
+        "fewObservers": {
+          "description": "How many observers count as few.",
+          "type": "integer", "minimum": 1, "default": 2
+        }
+      }
+    },
     "highlights": {
       "description": "Species worth knowing in the region even if rare, picked by hand; they go on level 1. Each needs evidence in the region (order source, OBIS, distribution data or a guide), or it stays out and the run fails. Not limited to the taxa: a dolphin or a nudibranch may be a highlight if the reference DB knows it.",
       "type": "array",
