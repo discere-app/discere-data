@@ -118,7 +118,7 @@
     "Cephalopholis miniata",
     "Acanthurus pyroferus",
     "Coris gaimard",
-    "Cheilinus fasciatus",
+    "Concholabrus fasciatus",
     "Centropyge bicolor",
     "Antennarius commerson",
     "Carcharhinus melanopterus",
@@ -203,7 +203,7 @@
     "Sufflamen chrysopterum",
     "Linckia laevigata",
     "Chromodoris annae",
-    "Pteraeolidia ianthina",
+    "Pteraeolidia semperi",
     "Odontodactylus scyllarus",
     "Protoreaster nodosus",
     "Phyllidia varicosa",
@@ -239,7 +239,7 @@
     "Choriaster granulatus",
     "Dardanus pedunculatus",
     "Hymenocera picta",
-    "Acanthaster planci",
+    "Acanthaster solaris",
     "Hexabranchus sanguineus"
   ],
   "subdecks": [
@@ -356,7 +356,7 @@
         "Cephalopholis miniata",
         "Acanthurus pyroferus",
         "Coris gaimard",
-        "Cheilinus fasciatus",
+        "Concholabrus fasciatus",
         "Centropyge bicolor",
         "Antennarius commerson",
         "Carcharhinus melanopterus",
@@ -481,7 +481,7 @@
       "speciesNames": [
         "Linckia laevigata",
         "Chromodoris annae",
-        "Pteraeolidia ianthina",
+        "Pteraeolidia semperi",
         "Odontodactylus scyllarus",
         "Protoreaster nodosus",
         "Phyllidia varicosa",
@@ -517,7 +517,7 @@
         "Choriaster granulatus",
         "Dardanus pedunculatus",
         "Hymenocera picta",
-        "Acanthaster planci",
+        "Acanthaster solaris",
         "Hexabranchus sanguineus"
       ]
     }
