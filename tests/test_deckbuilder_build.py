@@ -479,6 +479,66 @@ class BuildTest(unittest.TestCase):
         self.assertIn("[WARN] Zu entscheiden: 2 Warnungen (tot beobachtet 1, wenige Beobachter 1), siehe Bericht",
                       self.stdout)
 
+    # Placements by hand
+    def place(self, *placements, change=None):
+        recipe = json.loads(json.dumps(RECIPE))
+        recipe["placements"] = [{"name": n, "level": level, "reason": f"Grund für {n}."} for n, level in placements]
+        if change:
+            change(recipe)
+        self.write_recipe(recipe)
+        return self.run_build()
+
+    def placements_section(self):
+        return self.report().split("## Von Hand verschoben")[1].split("\n## ")[0]
+
+    def test_a_placed_species_moves_to_its_level_and_the_others_fill_up(self):
+        self.place(("Alpha one", 3))
+        levels = [s["speciesNames"] for s in self.deck()["subdecks"]]
+        # Alpha one (100, rank 1) leaves level 1; Gammaold three (80) takes its place there.
+        self.assertEqual(levels, [
+            ["Beta two", "Gammaold three", "Delta four", "Kappa ten", "Nu thirteen"],
+            ["Epsilon five", "Theta eight"],
+            ["Mu twelve", "Alpha one"],
+        ])
+        self.assertIn("| *Alpha one* | 1 | 100 | 3 | Grund für Alpha one. |", self.placements_section())
+        self.assertIn("| 1 | *Alpha one* (von Hand auf Level 3) | 100 |", self.report())
+
+    def test_a_placement_resolves_through_synonyms(self):
+        self.place(("Gamma three", 1))
+        self.assertIn("Gammaold three", self.deck()["subdecks"][0]["speciesNames"])
+        self.assertIn("| *Gammaold three* | 3 | 80 | 1 | Grund für Gamma three. |", self.placements_section())
+
+    def test_a_placement_below_the_minimum_of_its_level_is_reported(self):
+        self.place(("Theta eight", 2), change=lambda r: r.update(levelMinCounts=[0, 75]))
+        self.assertIn("Theta eight", self.deck()["subdecks"][1]["speciesNames"])
+        self.assertIn("| 2 (unter dessen Mindestzählung 75) |", self.placements_section())
+
+    def test_a_placement_without_effect_is_reported(self):
+        self.place(("Zeta six", 2), ("Fictus name", 2), ("Lambda eleven", 3),
+                   change=lambda r: r.update(highlights=[h for h in r["highlights"] if h["name"] != "Lambda eleven"]))
+        section = self.placements_section()
+        self.assertIn("- *Zeta six*: ausgeschlossen: kein Meeresfisch", section)
+        self.assertIn("- *Fictus name*: Name in der Referenz-DB nicht gefunden", section)
+        self.assertIn("- *Lambda eleven*: nicht unter den Arten der Reihenfolge-Quelle", section)
+        self.assertIn("[WARN] Verschiebung Zeta six wirkt nicht: ausgeschlossen: kein Meeresfisch", self.stdout)
+        self.assertNotIn("Zeta six", self.deck()["speciesNames"])
+
+    def test_a_species_placed_and_highlighted_or_excluded_stops_the_run(self):
+        self.assertEqual(self.place(("Beta two", 3)), build.EXIT_STOPPED)
+        self.assertIn("Highlight und von Hand verschoben zugleich: Beta two", self.stderr)
+
+        def exclude_theta(recipe):
+            recipe["exclude"] = [{"name": "Theta eight", "reason": "x"}]
+        self.assertEqual(self.place(("Theta eight", 3), change=exclude_theta), build.EXIT_STOPPED)
+        self.assertIn("von Hand ausgeschlossen und von Hand verschoben zugleich: Theta eight", self.stderr)
+
+        self.assertEqual(self.place(("Gamma three", 2), ("Gammaold three", 3)), build.EXIT_STOPPED)
+        self.assertIn("eine Art zweimal verschoben: Gamma three, Gammaold three", self.stderr)
+
+    def test_a_placement_on_a_level_the_recipe_lacks_stops_the_run(self):
+        self.assertEqual(self.place(("Alpha one", 4)), build.EXIT_STOPPED)
+        self.assertIn("placements auf ein Level, das levelSizes nicht hat: Alpha one", self.stderr)
+
     def test_a_level_below_its_minimum_count_stays_smaller(self):
         recipe = json.loads(json.dumps(RECIPE))
         recipe["levelMinCounts"] = [0, 75]

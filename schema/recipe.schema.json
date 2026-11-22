@@ -265,6 +265,21 @@
         }
       }
     },
+    "placements": {
+      "description": "Species a person puts on another level than their count gives them, each with the level and the reason, e.g. a species counted mostly in one monitoring that a diver in the region meets rarely. The species leaves the ranking and is appended to that level; the other levels fill up as after an exclusion. It has to be a candidate of the order source; the level ignores its minimum count for it, and the report says so. A species cannot be a highlight, excluded and placed at once, and the level has to exist in levelSizes.",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["name", "level", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "name": { "$ref": "deck.schema.json#/$defs/scientificName" },
+          "level": { "description": "The level, from 1.", "type": "integer", "minimum": 1 },
+          "reason": { "description": "Why the count misleads about this species, in one sentence.", "type": "string", "minLength": 1 }
+        }
+      }
+    },
     "extraSubdecks": {
       "description": "Subdecks after the levels, each for another group of animals, e.g. the invertebrates of a dive deck whose levels hold the fishes. Each takes the most frequent species of its own taxa from the recipe's order source and region (only inat) up to its size, with the same name mapping, highlight evidence and exclusion by hand as the levels. A species already on a level or in an earlier extra subdeck stays out, so every species is in one subdeck only; the deck's speciesNames is the union. The guides are not compared with them.",
       "type": "array",

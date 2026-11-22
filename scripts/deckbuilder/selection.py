@@ -17,6 +17,11 @@
 # 3. Level 1 holds the first N1 candidates plus every highlight not already
 #    among them. Levels 2, 3, … take the next N2, N3, … candidates, skipping
 #    the highlights, which are on level 1.
+#    A person may also put a candidate on another level by name, with a
+#    reason (the recipe's placements), when its count misleads, say a
+#    species counted almost only in one monitoring. It leaves the ranking
+#    and is appended to that level; the others fill up as after an
+#    exclusion.
 # 4. A highlight is picked by hand for being worth knowing, not for being
 #    common. It needs evidence in the region all the same: a record in the
 #    order source or OBIS, an entry in the FishBase/SeaLifeBase distribution
@@ -75,6 +80,15 @@ class Selection:
     highlights: list           # ids of the accepted highlights, in recipe order
     rejected_highlights: list  # [(name, reason)]
     unused_excludes: list = field(default_factory=list)  # [(name, why)] exclusions that took nothing out
+    placed: dict = field(default_factory=dict)            # id → Placement, the species put on a level by hand
+    unused_placements: list = field(default_factory=list)  # [(name, why)] placements that moved nothing
+
+
+@dataclass
+class Placement:
+    name: str     # as the recipe writes it
+    level: int    # from 1
+    reason: str
 
 
 HAND_EXCLUDED = "von Hand ausgeschlossen"
@@ -227,6 +241,15 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
             unused.append((entry["name"], "nicht unter den Arten der Reihenfolge-Quelle"))
         else:
             by_hand[species_id] = (entry["name"], entry["reason"])
+    placed, unused_placements = {}, []
+    for entry in recipe.get("placements", []):
+        species_id = resolution.get(entry["name"])
+        if species_id is None:
+            unused_placements.append((entry["name"], "Name in der Referenz-DB nicht gefunden"))
+        elif species_id not in candidates:
+            unused_placements.append((entry["name"], "nicht unter den Arten der Reihenfolge-Quelle"))
+        else:
+            placed[species_id] = Placement(entry["name"], entry["level"], entry["reason"])
     passed, excluded = [], []
     for candidate in candidates.values():
         reason = exclusion_reason(candidate, facts[candidate.id], flags.get(candidate.id), filters)
@@ -236,6 +259,8 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
             excluded.append((candidate.id, *reason))
             if candidate.id in by_hand:
                 unused.append((by_hand[candidate.id][0], f"schon ausgeschlossen: {reason[0]}"))
+            if candidate.id in placed:
+                unused_placements.append((placed.pop(candidate.id).name, f"ausgeschlossen: {reason[0]}"))
         elif candidate.id in by_hand:
             excluded.append((candidate.id, HAND_EXCLUDED, by_hand[candidate.id][1]))
         else:
@@ -247,8 +272,11 @@ def select(order_counts, resolution, facts, flags, evidence, recipe, combine=sum
                                             taken)
     counts = {i: c.count for i, c in candidates.items()}
     split = split or (lambda r, h: split_levels(r, h, recipe["levelSizes"], recipe.get("levelMinCounts", ()), counts))
-    levels, sequence, cuts = split(ranked, highlights)
-    return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected, unused)
+    levels, sequence, cuts = split([i for i in ranked if i not in placed], highlights)
+    for species_id, placement in placed.items():
+        levels[placement.level - 1].append(species_id)
+    return Selection(candidates, unresolved, excluded, ranked, levels, sequence, cuts, highlights, rejected, unused,
+                     placed, unused_placements)
 
 
 def boundaries(selection, width=BOUNDARY_WIDTH):
