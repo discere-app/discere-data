@@ -208,6 +208,7 @@
     "Aliger gigas",
     "Panulirus argus",
     "Oreaster reticulatus",
+    "Physalia physalis",
     "Condylactis gigantea",
     "Diadema antillarum",
     "Echinometra lucunter",
@@ -241,7 +242,6 @@
     "Millepora complanata",
     "Ancylomenes pedersoni",
     "Aplysina archeri",
-    "Isostichopus badionotus",
     "Acropora cervicornis",
     "Astrophyton muricatum"
   ],
@@ -485,6 +485,7 @@
         "Aliger gigas",
         "Panulirus argus",
         "Oreaster reticulatus",
+        "Physalia physalis",
         "Condylactis gigantea",
         "Diadema antillarum",
         "Echinometra lucunter",
@@ -518,7 +519,6 @@
         "Millepora complanata",
         "Ancylomenes pedersoni",
         "Aplysina archeri",
-        "Isostichopus badionotus",
         "Acropora cervicornis",
         "Astrophyton muricatum"
       ]

@@ -412,8 +412,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 1: *Scarus coelestinus*
-- entfallen: 1: *Lophogobius cyprinoides*
+- neu: 1: *Physalia physalis*
+- entfallen: 1: *Isostichopus badionotus*
 
 ## Ausgeschlossene Kandidaten
 
@@ -1274,7 +1274,6 @@ Keine (`recipes/inat_names.json`).
 | *Grapsus grapsus* | 4823 | Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen. |
 | *Ocypode quadrata* | 4500 | Geisterkrabbe, lebt am trockenen Sandstrand. |
 | *Acanthopleura granulata* | 3708 | Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
-| *Physalia physalis* | 3596 | Treibt an der Oberfläche der Hochsee und wird vor allem angespült am Strand beobachtet, keine Begegnung am Riff. |
 | *Nerita versicolor* | 2363 | Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
 | *Cenchritis muricatus* | 2150 | Strandschnecke der Spritzwasserzone, sitzt über dem Wasser auf den Uferfelsen. |
 | *Nerita tessellata* | 1987 | Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
@@ -1294,18 +1293,18 @@ Keine (`recipes/inat_names.json`).
 
 | Highlight | Begründung | Rang | Belege | Status |
 |---|---|---|---|---|
-| *Acropora cervicornis* | Die Hirschgeweihkoralle baute einst die Flachriffe der Karibik und ist heute vom Aussterben bedroht; sie wird in Riffgärten nachgezüchtet. | 39 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
-| *Ancylomenes pedersoni* | Die Pederson-Putzergarnele betreibt in Anemonen Putzerstationen, an denen Fische Schlange stehen. | 36 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
-| *Astrophyton muricatum* | Das Gorgonenhaupt entfaltet nachts seine verzweigten Arme auf Gorgonien, ein Höhepunkt jedes Nachttauchgangs. | 78 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Acropora cervicornis* | Die Hirschgeweihkoralle baute einst die Flachriffe der Karibik und ist heute vom Aussterben bedroht; sie wird in Riffgärten nachgezüchtet. | 40 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Ancylomenes pedersoni* | Die Pederson-Putzergarnele betreibt in Anemonen Putzerstationen, an denen Fische Schlange stehen. | 37 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Astrophyton muricatum* | Das Gorgonenhaupt entfaltet nachts seine verzweigten Arme auf Gorgonien, ein Höhepunkt jedes Nachttauchgangs. | 79 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
 
 ### Prüfung
 
 - Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): 40/40 (100 %)
 - Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: 0
-- Arten ohne Volksnamen `de` in der Referenz-DB: 33/40 (82 %)
+- Arten ohne Volksnamen `de` in der Referenz-DB: 34/40 (85 %)
 - Arten ohne Volksnamen `en` in der Referenz-DB: 0/40 (0 %)
-- Familien ohne Volksnamen `de`: 31/31 (100 %): *Acroporidae*, *Actiniidae*, *Agariciidae*, *Amphinomidae*, *Aplysiidae*, *Aplysinidae*, *Callyspongiidae*, *Diadematidae*, *Diogenidae*, *Echinometridae*, *Faviidae*, *Gorgoniidae*, *Gorgonocephalidae*, *Inachidae*, *Merulinidae*, *Milleporidae*, *Oreasteridae*, *Ovulidae*, *Palaemonidae*, *Palinuridae*, *Petrosiidae*, *Plakobranchidae*, *Poritidae*, *Rhizangiidae*, *Sabellidae*, *Serpulidae*, *Stenopodidae*, *Stichopodidae*, *Strombidae*, *Toxopneustidae*, *Zoanthidae*
-- Familien ohne Volksnamen `en`: 22/31 (71 %): *Acroporidae*, *Actiniidae*, *Agariciidae*, *Amphinomidae*, *Aplysinidae*, *Callyspongiidae*, *Diadematidae*, *Echinometridae*, *Faviidae*, *Gorgoniidae*, *Gorgonocephalidae*, *Inachidae*, *Merulinidae*, *Oreasteridae*, *Petrosiidae*, *Plakobranchidae*, *Poritidae*, *Rhizangiidae*, *Serpulidae*, *Stichopodidae*, *Toxopneustidae*, *Zoanthidae*
+- Familien ohne Volksnamen `de`: 31/31 (100 %): *Acroporidae*, *Actiniidae*, *Agariciidae*, *Amphinomidae*, *Aplysiidae*, *Aplysinidae*, *Callyspongiidae*, *Diadematidae*, *Diogenidae*, *Echinometridae*, *Faviidae*, *Gorgoniidae*, *Gorgonocephalidae*, *Inachidae*, *Merulinidae*, *Milleporidae*, *Oreasteridae*, *Ovulidae*, *Palaemonidae*, *Palinuridae*, *Petrosiidae*, *Physaliidae*, *Plakobranchidae*, *Poritidae*, *Rhizangiidae*, *Sabellidae*, *Serpulidae*, *Stenopodidae*, *Strombidae*, *Toxopneustidae*, *Zoanthidae*
+- Familien ohne Volksnamen `en`: 22/31 (71 %): *Acroporidae*, *Actiniidae*, *Agariciidae*, *Amphinomidae*, *Aplysinidae*, *Callyspongiidae*, *Diadematidae*, *Echinometridae*, *Faviidae*, *Gorgoniidae*, *Gorgonocephalidae*, *Inachidae*, *Merulinidae*, *Oreasteridae*, *Petrosiidae*, *Physaliidae*, *Plakobranchidae*, *Poritidae*, *Rhizangiidae*, *Serpulidae*, *Toxopneustidae*, *Zoanthidae*
 
 Volksnamen wie die App sie wählt (ohne Landesbezug; zur Laufzeit kann die App Namen aus iNaturalist ergänzen). Im Lernmodus Familie fragt die App den Familiennamen ab und fällt ohne Namen in der App-Sprache auf Englisch, dann auf den wissenschaftlichen Namen zurück.
 
@@ -1325,42 +1324,42 @@ Keine.
 | 2 | *Aliger gigas* | 3859 | 1266 | native ×29 | Meer | Gastropoda |
 | 3 | *Panulirus argus* | 3857 | 634 | native ×22 | Meer | Malacostraca |
 | 4 | *Oreaster reticulatus* | 3651 | 172 | native ×3 | Meer | Asteroidea |
-| 5 | *Condylactis gigantea* | 3152 | 87 | native ×2 | Meer | Hexacorallia |
-| 6 | *Diadema antillarum* | 3100 | 1944 | native ×8 | Meer | Echinoidea |
-| 7 | *Echinometra lucunter* | 2826 | 815 | native ×5 | Meer | Echinoidea |
-| 8 | *Porites astreoides* | 2511 | 32603 | native ×5 | Meer | Hexacorallia |
-| 9 | *Acropora palmata* | 2445 | 9331 | native ×28 | Meer | Hexacorallia |
-| 10 | *Cyphoma gibbosum* | 2442 | 580 | native ×6 | Meer | Gastropoda |
-| 11 | *Pseudodiploria strigosa* | 2335 | 18912 | native ×7 | Meer | Hexacorallia |
-| 12 | *Spirobranchus giganteus* | 2326 | 72 | native ×2 | Meer | Polychaeta |
-| 13 | *Elysia crispata* | 2286 | 197 | native ×5 | Meer | Gastropoda |
-| 14 | *Hermodice carunculata* | 2244 | 232 | native ×3 | Meer | Polychaeta |
-| 15 | *Montastraea cavernosa* | 2026 | 22791 | native ×7 | Meer | Hexacorallia |
-| 16 | *Stenorhynchus seticornis* | 1903 | 620 | native ×26 | Meer | Malacostraca |
-| 17 | *Xestospongia muta* | 1760 | 966 | native ×5 | Brack/Meer | Demospongiae |
-| 18 | *Tripneustes ventricosus* | 1681 | 622 | native ×3 | Meer | Echinoidea |
-| 19 | *Diploria labyrinthiformis* | 1597 | 7723 | native ×5 | Meer | Hexacorallia |
-| 20 | *Stenopus hispidus* | 1565 | 248 | native ×4 | Meer | Malacostraca |
-| 21 | *Siderastrea siderea* | 1529 | 28065 | native ×26 | Meer | Hexacorallia |
-| 22 | *Orbicella faveolata* | 1492 | 29530 | native ×3 | Meer | Hexacorallia |
-| 23 | *Orbicella annularis* | 1421 | 26957 | native ×7 | Meer | Hexacorallia |
-| 24 | *Sabellastarte magnifica* | 1359 | 51 | native ×3 | Meer | Polychaeta |
-| 25 | *Agaricia agaricites* | 1293 | 19334 | native ×22 | Meer | Hexacorallia |
-| 26 | *Aplysina fistularis* | 1280 | 140 | native ×6 | Brack/Meer | Demospongiae |
-| 27 | *Palythoa caribaeorum* | 1270 | 1523 | native ×1 | Meer | Hexacorallia |
-| 28 | *Aplysia dactylomela* | 1239 | 68 | native ×5 | Meer | Gastropoda |
-| 29 | *Millepora alcicornis* | 1190 | 9704 | native ×4 | Brack/Meer | Hydrozoa |
-| 30 | *Porites porites* | 1180 | 13329 | native ×20 | Meer | Hexacorallia |
-| 31 | *Aiolochroia crassa* | 1068 | 114 | native ×6 | Brack/Meer | Demospongiae |
-| 32 | *Colpophyllia natans* | 1005 | 11954 | native ×5 | Meer | Hexacorallia |
-| 33 | *Clibanarius tricolor* | 990 | 87 | native ×4 | Meer | Malacostraca |
-| 34 | *Callyspongia plicifera* | 965 | – | native ×4 | Meer | Demospongiae |
-| 35 | *Millepora complanata* | 952 | 7558 | native ×3 | Brack/Meer | Hydrozoa |
-| 36 | *Ancylomenes pedersoni* (Highlight; 335 Beobachter) | 914 | 136 | native ×2 | Meer | Malacostraca |
-| 37 | *Aplysina archeri* | 906 | 72 | native ×2 | Brack/Meer | Demospongiae |
-| 38 | *Isostichopus badionotus* | 887 | 188 | native ×8 | Meer | Holothuroidea |
-| 39 | *Acropora cervicornis* (Highlight; 382 Beobachter) | 876 | 2516 | native ×28 | Meer | Hexacorallia |
-| 78 | *Astrophyton muricatum* (Highlight; 187 Beobachter) | 497 | 260 | native ×2 | Meer | Ophiuroidea |
+| 5 | *Physalia physalis* (Quelle: *Physalia utriculus*) | 3596 | 40 | – | Meer | Hydrozoa |
+| 6 | *Condylactis gigantea* | 3152 | 87 | native ×2 | Meer | Hexacorallia |
+| 7 | *Diadema antillarum* | 3100 | 1944 | native ×8 | Meer | Echinoidea |
+| 8 | *Echinometra lucunter* | 2826 | 815 | native ×5 | Meer | Echinoidea |
+| 9 | *Porites astreoides* | 2511 | 32603 | native ×5 | Meer | Hexacorallia |
+| 10 | *Acropora palmata* | 2445 | 9331 | native ×28 | Meer | Hexacorallia |
+| 11 | *Cyphoma gibbosum* | 2442 | 580 | native ×6 | Meer | Gastropoda |
+| 12 | *Pseudodiploria strigosa* | 2335 | 18912 | native ×7 | Meer | Hexacorallia |
+| 13 | *Spirobranchus giganteus* | 2326 | 72 | native ×2 | Meer | Polychaeta |
+| 14 | *Elysia crispata* | 2286 | 197 | native ×5 | Meer | Gastropoda |
+| 15 | *Hermodice carunculata* | 2244 | 232 | native ×3 | Meer | Polychaeta |
+| 16 | *Montastraea cavernosa* | 2026 | 22791 | native ×7 | Meer | Hexacorallia |
+| 17 | *Stenorhynchus seticornis* | 1903 | 620 | native ×26 | Meer | Malacostraca |
+| 18 | *Xestospongia muta* | 1760 | 966 | native ×5 | Brack/Meer | Demospongiae |
+| 19 | *Tripneustes ventricosus* | 1681 | 622 | native ×3 | Meer | Echinoidea |
+| 20 | *Diploria labyrinthiformis* | 1597 | 7723 | native ×5 | Meer | Hexacorallia |
+| 21 | *Stenopus hispidus* | 1565 | 248 | native ×4 | Meer | Malacostraca |
+| 22 | *Siderastrea siderea* | 1529 | 28065 | native ×26 | Meer | Hexacorallia |
+| 23 | *Orbicella faveolata* | 1492 | 29530 | native ×3 | Meer | Hexacorallia |
+| 24 | *Orbicella annularis* | 1421 | 26957 | native ×7 | Meer | Hexacorallia |
+| 25 | *Sabellastarte magnifica* | 1359 | 51 | native ×3 | Meer | Polychaeta |
+| 26 | *Agaricia agaricites* | 1293 | 19334 | native ×22 | Meer | Hexacorallia |
+| 27 | *Aplysina fistularis* | 1280 | 140 | native ×6 | Brack/Meer | Demospongiae |
+| 28 | *Palythoa caribaeorum* | 1270 | 1523 | native ×1 | Meer | Hexacorallia |
+| 29 | *Aplysia dactylomela* | 1239 | 68 | native ×5 | Meer | Gastropoda |
+| 30 | *Millepora alcicornis* | 1190 | 9704 | native ×4 | Brack/Meer | Hydrozoa |
+| 31 | *Porites porites* | 1180 | 13329 | native ×20 | Meer | Hexacorallia |
+| 32 | *Aiolochroia crassa* | 1068 | 114 | native ×6 | Brack/Meer | Demospongiae |
+| 33 | *Colpophyllia natans* | 1005 | 11954 | native ×5 | Meer | Hexacorallia |
+| 34 | *Clibanarius tricolor* | 990 | 87 | native ×4 | Meer | Malacostraca |
+| 35 | *Callyspongia plicifera* | 965 | – | native ×4 | Meer | Demospongiae |
+| 36 | *Millepora complanata* | 952 | 7558 | native ×3 | Brack/Meer | Hydrozoa |
+| 37 | *Ancylomenes pedersoni* (Highlight; 335 Beobachter) | 914 | 136 | native ×2 | Meer | Malacostraca |
+| 38 | *Aplysina archeri* | 906 | 72 | native ×2 | Brack/Meer | Demospongiae |
+| 40 | *Acropora cervicornis* (Highlight; 382 Beobachter) | 876 | 2516 | native ×28 | Meer | Hexacorallia |
+| 79 | *Astrophyton muricatum* (Highlight; 187 Beobachter) | 497 | 260 | native ×2 | Meer | Ophiuroidea |
 
 ### Grenzfälle
 
@@ -1368,31 +1367,31 @@ Je 10 Arten vor und nach der Grenze (Highlights übersprungen).
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser | Klasse | Im Subdeck |
 |---|---|---|---|---|---|---|---|
-| 28 | *Aplysia dactylomela* | 1239 | 68 | native ×5 | Meer | Gastropoda | ja |
-| 29 | *Millepora alcicornis* | 1190 | 9704 | native ×4 | Brack/Meer | Hydrozoa | ja |
-| 30 | *Porites porites* | 1180 | 13329 | native ×20 | Meer | Hexacorallia | ja |
-| 31 | *Aiolochroia crassa* | 1068 | 114 | native ×6 | Brack/Meer | Demospongiae | ja |
-| 32 | *Colpophyllia natans* | 1005 | 11954 | native ×5 | Meer | Hexacorallia | ja |
-| 33 | *Clibanarius tricolor* | 990 | 87 | native ×4 | Meer | Malacostraca | ja |
-| 34 | *Callyspongia plicifera* | 965 | – | native ×4 | Meer | Demospongiae | ja |
-| 35 | *Millepora complanata* | 952 | 7558 | native ×3 | Brack/Meer | Hydrozoa | ja |
-| 37 | *Aplysina archeri* | 906 | 72 | native ×2 | Brack/Meer | Demospongiae | ja |
-| 38 | *Isostichopus badionotus* | 887 | 188 | native ×8 | Meer | Holothuroidea | ja |
+| 28 | *Palythoa caribaeorum* | 1270 | 1523 | native ×1 | Meer | Hexacorallia | ja |
+| 29 | *Aplysia dactylomela* | 1239 | 68 | native ×5 | Meer | Gastropoda | ja |
+| 30 | *Millepora alcicornis* | 1190 | 9704 | native ×4 | Brack/Meer | Hydrozoa | ja |
+| 31 | *Porites porites* | 1180 | 13329 | native ×20 | Meer | Hexacorallia | ja |
+| 32 | *Aiolochroia crassa* | 1068 | 114 | native ×6 | Brack/Meer | Demospongiae | ja |
+| 33 | *Colpophyllia natans* | 1005 | 11954 | native ×5 | Meer | Hexacorallia | ja |
+| 34 | *Clibanarius tricolor* | 990 | 87 | native ×4 | Meer | Malacostraca | ja |
+| 35 | *Callyspongia plicifera* | 965 | – | native ×4 | Meer | Demospongiae | ja |
+| 36 | *Millepora complanata* | 952 | 7558 | native ×3 | Brack/Meer | Hydrozoa | ja |
+| 38 | *Aplysina archeri* | 906 | 72 | native ×2 | Brack/Meer | Demospongiae | ja |
 | | **Grenze** | | | | | | |
-| 40 | *Pseudodiploria clivosa* | 875 | 2787 | native ×6 | Meer | ? | nein |
-| 41 | *Cassiopea andromeda* | 861 | 1 | – | Meer | ? | nein |
-| 42 | *Ircinia felix* | 850 | 196 | native ×7 | Brack/Meer | ? | nein |
-| 43 | *Fasciolaria tulipa* | 831 | 721 | native ×21 | Meer | ? | nein |
-| 44 | *Bartholomea annulata* | 826 | 118 | native ×2 | Meer | ? | nein |
-| 45 | *Niphates digitalis* | 807 | 55 | native ×4 | Brack/Meer | ? | nein |
-| 46 | *Petrochirus diogenes* | 794 | 185 | native ×1 | Meer | ? | nein |
-| 47 | *Anamobaea orstedii* | 791 | 4 | native ×2 | Meer | ? | nein |
-| 48 | *Stichodactyla helianthus* | 783 | 52 | native ×2 | Meer | ? | nein |
-| 49 | *Cerithium litteratum* | 757 | 889 | native ×2 | Meer | ? | nein |
+| 39 | *Isostichopus badionotus* | 887 | 188 | native ×8 | Meer | ? | nein |
+| 41 | *Pseudodiploria clivosa* | 875 | 2787 | native ×6 | Meer | ? | nein |
+| 42 | *Cassiopea andromeda* | 861 | 1 | – | Meer | ? | nein |
+| 43 | *Ircinia felix* | 850 | 196 | native ×7 | Brack/Meer | ? | nein |
+| 44 | *Fasciolaria tulipa* | 831 | 721 | native ×21 | Meer | ? | nein |
+| 45 | *Bartholomea annulata* | 826 | 118 | native ×2 | Meer | ? | nein |
+| 46 | *Niphates digitalis* | 807 | 55 | native ×4 | Brack/Meer | ? | nein |
+| 47 | *Petrochirus diogenes* | 794 | 185 | native ×1 | Meer | ? | nein |
+| 48 | *Anamobaea orstedii* | 791 | 4 | native ×2 | Meer | ? | nein |
+| 49 | *Stichodactyla helianthus* | 783 | 52 | native ×2 | Meer | ? | nein |
 
 ### Ausgeschlossene Kandidaten
 
-<details><summary>688 Arten</summary>
+<details><summary>687 Arten</summary>
 
 | Art | iNat | Wasser | Grund |
 |---|---|---|---|
@@ -1401,7 +1400,6 @@ Je 10 Arten vor und nach der Grenze (Highlights übersprungen).
 | *Grapsus grapsus* | 4823 | Meer | von Hand ausgeschlossen (Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen.) |
 | *Ocypode quadrata* | 4500 | Brack/Meer | von Hand ausgeschlossen (Geisterkrabbe, lebt am trockenen Sandstrand.) |
 | *Acanthopleura granulata* | 3708 | Meer | von Hand ausgeschlossen (Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
-| *Physalia physalis* | 3596 | Meer | von Hand ausgeschlossen (Treibt an der Oberfläche der Hochsee und wird vor allem angespült am Strand beobachtet, keine Begegnung am Riff.) |
 | *Nerita versicolor* | 2363 | Süß/Meer | von Hand ausgeschlossen (Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
 | *Cenchritis muricatus* | 2150 | Meer | von Hand ausgeschlossen (Strandschnecke der Spritzwasserzone, sitzt über dem Wasser auf den Uferfelsen.) |
 | *Nerita tessellata* | 1987 | Meer | von Hand ausgeschlossen (Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
