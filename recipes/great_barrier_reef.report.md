@@ -23,7 +23,7 @@ Erzeugt von `scripts/build_deck.py`. Daten bestimmen die Reihenfolge, Verbreitun
   - kein Meeresfisch: 27
   - nur tiefer als die Tauchgrenze: 4
 - Kandidaten nach den Filtern: 1027
-- Deck: 156 Arten (Level 1: 46, Level 2: 60, Level 3: 50); Umfang laut Rezept 40/60/50 plus Highlights
+- Deck: 157 Arten (Level 1: 46, Level 2: 60, Level 3: 51); Umfang laut Rezept 40/60/50 plus Highlights
 - Highlights: 7 im Deck, 0 verworfen
 
 ## Zu entscheiden
@@ -32,7 +32,6 @@ Warnungen, keine Ausschlüsse: Jede Zeile wird im Rezept entschieden (`exclude` 
 
 | Art | Subdeck | Warnung | Zahlen |
 |---|---|---|---|
-| *Hippocampus kuda* | level-1 | wenige Beobachter | 633 von 842 Beobachtungen von 2 Personen (75 %); 23 Beobachter insgesamt |
 | *Neoglyphidodon nigroris* | level-2 | wenige Beobachter | 311 von 601 Beobachtungen von 2 Personen (52 %); 108 Beobachter insgesamt |
 | *Stegastes lacrymatus* | level-2 | wenige Beobachter | 285 von 556 Beobachtungen von 2 Personen (51 %); 134 Beobachter insgesamt |
 | *Salarias alboguttatus* | level-2 | wenige Beobachter | 361 von 516 Beobachtungen von 2 Personen (70 %); 63 Beobachter insgesamt |
@@ -83,6 +82,12 @@ Laut `recipes/inat_names.json`: iNaturalist nennt die Art anders als die Referen
 | *Eviotops dorsogilvus* | *Eviota dorsogilva* | 1 | Umbenennung | https://www.inaturalist.org/taxon_changes/178893 |
 | *Eviotops sigillatus* | *Eviota sigillata* | 1 | Umbenennung | https://www.inaturalist.org/taxon_changes/178924 |
 
+## Von Hand verschoben
+
+| Art | Rang | iNat | Level | Grund |
+|---|---|---|---|---|
+| *Hippocampus kuda* | 29 | 842 | 3 | Fast alle Beobachtungen stammen aus einem Monitoring in Nouméa, am Great Barrier Reef selbst ist das Seepferdchen kaum beobachtet. |
+
 ## Highlights
 
 | Highlight | Begründung | Rang | Belege | Status |
@@ -97,10 +102,10 @@ Laut `recipes/inat_names.json`: iNaturalist nennt die Art anders als die Referen
 
 ## Prüfung
 
-- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): 154/156 (99 %)
+- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): 154/157 (98 %)
 - Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: 0
-- Arten ohne Volksnamen `de` in der Referenz-DB: 82/156 (53 %)
-- Arten ohne Volksnamen `en` in der Referenz-DB: 0/156 (0 %)
+- Arten ohne Volksnamen `de` in der Referenz-DB: 83/157 (53 %)
+- Arten ohne Volksnamen `en` in der Referenz-DB: 0/157 (0 %)
 - Familien ohne Volksnamen `de`: 8/41 (20 %): *Aetobatidae*, *Balaenopteridae*, *Cheloniidae*, *Dugongidae*, *Epinephelidae*, *Liopropomatidae*, *Mobulidae*, *Octopodidae*
 - Familien ohne Volksnamen `en`: 0/41 (0 %)
 
@@ -110,6 +115,7 @@ Volksnamen wie die App sie wählt (ohne Landesbezug; zur Laufzeit kann die App N
 
 - *Dugong dugon*: Verbreitung
 - *Balaenoptera acutorostrata*: Verbreitung
+- *Diagramma labiosum*: Reihenfolge-Quelle
 
 **Eine Art unter zwei Einträgen?** Deck-Arten mit gleichem Volksnamen oder gemeinsamem wissenschaftlichem Namen:
 
@@ -151,7 +157,6 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 | 26 | *Cheilinus undulatus* (Highlight; 404 Beobachter) | 900 | 517 | native ×2 | Meer |
 | 27 | *Chaetodon vagabundus* (271 Beobachter) | 896 | 1768 | native ×3 | Meer |
 | 28 | *Gomphosus varius* (308 Beobachter) | 864 | 2628 | native ×3 | Meer |
-| 29 | *Hippocampus kuda* (23 Beobachter) | 842 | 40 | native ×2 | Brack/Meer |
 | 30 | *Lutjanus carponotatus* (324 Beobachter) | 835 | 2339 | native ×1 | Meer |
 | 31 | *Chaetodon auriga* (316 Beobachter) | 824 | 1286 | native ×3 | Meer |
 | 32 | *Naso unicornis* (278 Beobachter) | 797 | 2785 | native ×3 | Meer |
@@ -163,6 +168,7 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 | 38 | *Balistoides viridescens* (337 Beobachter) | 745 | 77 | native ×2 | Meer |
 | 39 | *Pastinachus ater* (373 Beobachter) | 744 | 31 | native ×1 | Brack/Meer |
 | 40 | *Canthigaster valentini* (183 Beobachter) | 736 | 493 | native ×3 | Meer |
+| 41 | *Plectorhinchus chaetodonoides* (313 Beobachter) | 728 | 62 | native ×3 | Brack/Meer |
 | 134 | *Mobula alfredi* (Highlight; 147 Beobachter) | 361 | 5439 | native ×1 | Süß/Meer |
 | 372 | *Epinephelus lanceolatus* (Highlight; 70 Beobachter) | 96 | 23 | native ×3 | Brack/Meer |
 | 141 | *Carcharhinus amblyrhynchos* (Highlight; 99 Beobachter) | 328 | 120188 | native ×3 | Meer |
@@ -174,7 +180,6 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser |
 |---|---|---|---|---|---|
-| 41 | *Plectorhinchus chaetodonoides* (313 Beobachter) | 728 | 62 | native ×3 | Brack/Meer |
 | 42 | *Arothron hispidus* (149 Beobachter) | 702 | 199 | native ×3 | Brack/Meer |
 | 43 | *Ostracion cubicum* (237 Beobachter) | 693 | 97 | native ×3 | Meer |
 | 44 | *Caesio cuning* (340 Beobachter) | 679 | 670 | native ×3 | Meer |
@@ -234,12 +239,12 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 | 98 | *Amphiprion perideraion* (241 Beobachter) | 456 | 143 | native ×3 | Brack/Meer |
 | 99 | *Chelmon rostratus* (195 Beobachter) | 455 | 1324 | native ×1 | Brack/Meer |
 | 100 | *Chaetodon flavirostris* (153 Beobachter) | 453 | 951 | native ×2 | Brack/Meer |
+| 101 | *Chaetodon unimaculatus* (235 Beobachter) | 450 | 772 | native ×3 | Meer |
 
-### Level 3 (50)
+### Level 3 (51)
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser |
 |---|---|---|---|---|---|
-| 101 | *Chaetodon unimaculatus* | 450 | 772 | native ×3 | Meer |
 | 102 | *Chaetodon ulietensis* | 448 | 556 | native ×3 | Meer |
 | 103 | *Dischistodus melanotus* | 436 | 593 | native ×3 | Meer |
 | 104 | *Scarus altipinnis* | 433 | 1891 | native ×3 | Meer |
@@ -289,6 +294,8 @@ Spalten: Rang unter den Kandidaten, Zählung der Reihenfolge-Quelle (iNat), OBIS
 | 150 | *Anampses neoguinaicus* | 312 | 185 | native ×3 | Meer |
 | 151 | *Diploprion bifasciatus* | 312 | 268 | native ×3 | Meer |
 | 152 | *Scarus niger* | 301 | 3652 | native ×3 | Meer |
+| 153 | *Diagramma labiosum* | 300 | – | – | Brack/Meer |
+| 29 | *Hippocampus kuda* (von Hand auf Level 3) | 842 | 40 | native ×2 | Brack/Meer |
 
 ## Grenzfälle
 
@@ -298,7 +305,6 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser | Level |
 |---|---|---|---|---|---|---|
-| 31 | *Chaetodon auriga* (316 Beobachter) | 824 | 1286 | native ×3 | Meer | 1 |
 | 32 | *Naso unicornis* (278 Beobachter) | 797 | 2785 | native ×3 | Meer | 1 |
 | 33 | *Acanthurus lineatus* (348 Beobachter) | 781 | 1604 | native ×2 | Meer | 1 |
 | 34 | *Chaetodon melannotus* (287 Beobachter) | 771 | 1872 | native ×2 | Meer | 1 |
@@ -308,8 +314,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 38 | *Balistoides viridescens* (337 Beobachter) | 745 | 77 | native ×2 | Meer | 1 |
 | 39 | *Pastinachus ater* (373 Beobachter) | 744 | 31 | native ×1 | Brack/Meer | 1 |
 | 40 | *Canthigaster valentini* (183 Beobachter) | 736 | 493 | native ×3 | Meer | 1 |
+| 41 | *Plectorhinchus chaetodonoides* (313 Beobachter) | 728 | 62 | native ×3 | Brack/Meer | 1 |
 | | **Grenze** | | | | | |
-| 41 | *Plectorhinchus chaetodonoides* (313 Beobachter) | 728 | 62 | native ×3 | Brack/Meer | 2 |
 | 42 | *Arothron hispidus* (149 Beobachter) | 702 | 199 | native ×3 | Brack/Meer | 2 |
 | 43 | *Ostracion cubicum* (237 Beobachter) | 693 | 97 | native ×3 | Meer | 2 |
 | 44 | *Caesio cuning* (340 Beobachter) | 679 | 670 | native ×3 | Meer | 2 |
@@ -319,12 +325,12 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 48 | *Chromis viridis* (243 Beobachter) | 666 | 311 | native ×3 | Meer | 2 |
 | 49 | *Chaetodon baronessa* (268 Beobachter) | 656 | 1921 | native ×3 | Meer | 2 |
 | 50 | *Octopus cyanea* (193 Beobachter) | 645 | 86 | native ×3 | Meer | 2 |
+| 51 | *Cheilinus chlorourus* (185 Beobachter) | 640 | 499 | native ×2 | Meer | 2 |
 
 ### Level 2/3
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser | Level |
 |---|---|---|---|---|---|---|
-| 91 | *Zebrasoma scopas* (200 Beobachter) | 475 | 2809 | native ×2 | Meer | 2 |
 | 92 | *Lutjanus fulviflamma* (185 Beobachter) | 473 | 1197 | native ×3 | Brack/Meer | 2 |
 | 93 | *Paracirrhites forsteri* (185 Beobachter) | 467 | 168 | native ×3 | Meer | 2 |
 | 94 | *Siganus lineatus* (214 Beobachter) | 465 | 393 | native ×3 | Meer | 2 |
@@ -334,8 +340,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 98 | *Amphiprion perideraion* (241 Beobachter) | 456 | 143 | native ×3 | Brack/Meer | 2 |
 | 99 | *Chelmon rostratus* (195 Beobachter) | 455 | 1324 | native ×1 | Brack/Meer | 2 |
 | 100 | *Chaetodon flavirostris* (153 Beobachter) | 453 | 951 | native ×2 | Brack/Meer | 2 |
+| 101 | *Chaetodon unimaculatus* (235 Beobachter) | 450 | 772 | native ×3 | Meer | 2 |
 | | **Grenze** | | | | | |
-| 101 | *Chaetodon unimaculatus* | 450 | 772 | native ×3 | Meer | 3 |
 | 102 | *Chaetodon ulietensis* | 448 | 556 | native ×3 | Meer | 3 |
 | 103 | *Dischistodus melanotus* | 436 | 593 | native ×3 | Meer | 3 |
 | 104 | *Scarus altipinnis* | 433 | 1891 | native ×3 | Meer | 3 |
@@ -345,12 +351,12 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 108 | *Acanthurus xanthopterus* | 426 | 396 | native ×3 | Meer | 3 |
 | 109 | *Abudefduf vaigiensis* | 425 | 58 | native ×3 | Meer | 3 |
 | 110 | *Caranx ignobilis* | 425 | 4721 | native ×3 | Brack/Meer | 3 |
+| 111 | *Halichoeres hortulanus* | 422 | 2107 | native ×3 | Meer | 3 |
 
 ### Level 3/nicht im Deck
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser | Level |
 |---|---|---|---|---|---|---|
-| 143 | *Choerodon fasciatus* | 324 | 2421 | native ×3 | Meer | 3 |
 | 144 | *Naso brevirostris* | 324 | 198 | native ×1 | Meer | 3 |
 | 145 | *Thalassoma lutescens* | 323 | 280 | native ×2 | Meer | 3 |
 | 146 | *Lethrinus harak* | 322 | 200 | native ×3 | Brack/Meer | 3 |
@@ -360,8 +366,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 150 | *Anampses neoguinaicus* | 312 | 185 | native ×3 | Meer | 3 |
 | 151 | *Diploprion bifasciatus* | 312 | 268 | native ×3 | Meer | 3 |
 | 152 | *Scarus niger* | 301 | 3652 | native ×3 | Meer | 3 |
+| 153 | *Diagramma labiosum* | 300 | – | – | Brack/Meer | 3 |
 | | **Grenze** | | | | | |
-| 153 | *Diagramma labiosum* | 300 | – | – | Brack/Meer | – |
 | 154 | *Amphiprion clarkii* | 297 | 92 | native ×3 | Meer | – |
 | 155 | *Scolopsis margaritifera* | 297 | 150 | native ×2 | Meer | – |
 | 156 | *Ascarosepion latimanus* | 294 | 48 | native ×2 | Meer | – |
@@ -371,14 +377,15 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 | 160 | *Heniochus monoceros* | 289 | 39 | native ×3 | Meer | – |
 | 161 | *Pomacentrus adelus* | 288 | 892 | native ×3 | Meer | – |
 | 162 | *Acanthurus blochii* | 287 | 1387 | native ×2 | Meer | – |
+| 163 | *Lutjanus argentimaculatus* | 287 | 4826 | native ×3 | Süß/Brack/Meer | – |
 
 ## Abgleich mit Führern
 
 Das Rezept nennt keinen Führer.
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 2: *Anneissia bennetti*, *Stenopus hispidus*
-- entfallen: 2: *Ascarosepion latimanus*, *Sepioteuthis lessoniana*
+- neu: 1: *Diagramma labiosum*
+- entfallen: 0
 
 ## Ausgeschlossene Kandidaten
 

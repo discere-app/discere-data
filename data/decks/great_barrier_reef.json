@@ -71,7 +71,6 @@
     "Cheilinus undulatus",
     "Chaetodon vagabundus",
     "Gomphosus varius",
-    "Hippocampus kuda",
     "Lutjanus carponotatus",
     "Chaetodon auriga",
     "Naso unicornis",
@@ -83,13 +82,13 @@
     "Balistoides viridescens",
     "Pastinachus ater",
     "Canthigaster valentini",
+    "Plectorhinchus chaetodonoides",
     "Mobula alfredi",
     "Epinephelus lanceolatus",
     "Carcharhinus amblyrhynchos",
     "Caretta caretta",
     "Dugong dugon",
     "Balaenoptera acutorostrata",
-    "Plectorhinchus chaetodonoides",
     "Arothron hispidus",
     "Ostracion cubicum",
     "Caesio cuning",
@@ -199,6 +198,8 @@
     "Anampses neoguinaicus",
     "Diploprion bifasciatus",
     "Scarus niger",
+    "Diagramma labiosum",
+    "Hippocampus kuda",
     "Tridacna maxima",
     "Linckia laevigata",
     "Tridacna gigas",
@@ -287,7 +288,6 @@
         "Cheilinus undulatus",
         "Chaetodon vagabundus",
         "Gomphosus varius",
-        "Hippocampus kuda",
         "Lutjanus carponotatus",
         "Chaetodon auriga",
         "Naso unicornis",
@@ -299,6 +299,7 @@
         "Balistoides viridescens",
         "Pastinachus ater",
         "Canthigaster valentini",
+        "Plectorhinchus chaetodonoides",
         "Mobula alfredi",
         "Epinephelus lanceolatus",
         "Carcharhinus amblyrhynchos",
@@ -325,7 +326,6 @@
         }
       },
       "speciesNames": [
-        "Plectorhinchus chaetodonoides",
         "Arothron hispidus",
         "Ostracion cubicum",
         "Caesio cuning",
@@ -384,7 +384,8 @@
         "Diodon hystrix",
         "Amphiprion perideraion",
         "Chelmon rostratus",
-        "Chaetodon flavirostris"
+        "Chaetodon flavirostris",
+        "Chaetodon unimaculatus"
       ]
     },
     {
@@ -405,7 +406,6 @@
         }
       },
       "speciesNames": [
-        "Chaetodon unimaculatus",
         "Chaetodon ulietensis",
         "Dischistodus melanotus",
         "Scarus altipinnis",
@@ -454,7 +454,9 @@
         "Cirripectes chelomatus",
         "Anampses neoguinaicus",
         "Diploprion bifasciatus",
-        "Scarus niger"
+        "Scarus niger",
+        "Diagramma labiosum",
+        "Hippocampus kuda"
       ]
     },
     {

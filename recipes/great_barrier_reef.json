@@ -84,6 +84,13 @@
       "reason": "Der Zwerg-Zwergwal kommt im Winter an die Ribbon Reefs und schwimmt dort mit Schnorchlern."
     }
   ],
+  "placements": [
+    {
+      "name": "Hippocampus kuda",
+      "level": 3,
+      "reason": "Fast alle Beobachtungen stammen aus einem Monitoring in Nouméa, am Great Barrier Reef selbst ist das Seepferdchen kaum beobachtet."
+    }
+  ],
   "extraSubdecks": [
     {
       "id": "invertebrates",
