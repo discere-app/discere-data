@@ -254,6 +254,9 @@ schreiben. Ein Rezept legt fest:
 - optional `exclude`: Arten, die ein Mensch trotz bestandener Filter
   herausnimmt, je mit Grund, etwa Schlammspringer in einem Taucherdeck. Das
   Werkzeug selbst nimmt nichts nach Art heraus
+- optional `placements`: Arten, die ein Mensch auf ein anderes Level setzt,
+  als ihre Zählung ergibt, je mit Level und Grund (siehe
+  [Highlights und Levels](#highlights-und-levels))
 - optional `extraSubdecks`: weitere Subdecks nach den Levels, je für eine
   andere Tiergruppe (siehe [Zusätzliche Subdecks](#zusätzliche-subdecks))
 - optional `warnings`: Schwellen der Warnungen (siehe
@@ -369,6 +372,17 @@ Reihenfolge-Quelle: Ein Level endet an der ersten Art darunter und wird
 kleiner oder leer, statt sich mit Arten zu füllen, die nur vereinzelte
 Beobachtungen belegen; der Rest geht ans nächste Level. Highlights brauchen
 keine Mindestzählung. Ohne Eintrag nimmt ein Level seinen vollen Umfang.
+
+Führt die Zählung bei einer Art in die Irre, etwa weil fast alle
+Beobachtungen aus einem Monitoring an einem Ort stammen, setzt ein Eintrag
+in `placements` sie mit Grund auf ein bestimmtes Level. Die Art verlässt
+die Rangfolge und kommt ans Ende dieses Levels, die übrigen Levels rücken
+nach wie nach einem Ausschluss. Sie muss ein Kandidat der
+Reihenfolge-Quelle sein; die Mindestzählung des Levels gilt für sie nicht,
+der Bericht vermerkt es. Der Bericht listet die Verschiebungen unter „Von
+Hand verschoben“, auch solche ohne Wirkung. Eine Art zugleich als
+Highlight, ausgeschlossen oder verschoben, zweimal verschoben oder auf
+einem Level, das `levelSizes` nicht hat, bricht den Lauf ab.
 
 Jedes Highlight braucht einen Nachweis in der Region (bei einem weltweiten
 Deck: irgendwo): einen Eintrag in der

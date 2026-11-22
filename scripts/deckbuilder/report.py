@@ -105,6 +105,8 @@ class Report:
             note.append("Quelle: " + ", ".join(f"*{escape(n)}*" for n in source_names))
         if not self.facts[species_id].preferred_resolves:
             note.append(f"bevorzugter Name *{escape(self.facts[species_id].preferred_name)}* löst anders auf")
+        if species_id in self.s.placed:
+            note.append(f"von Hand auf Level {self.s.placed[species_id].level}")
         if species_id in self.observers:
             note.append(f"{self.observers[species_id][0]} Beobachter")
         cells = [
@@ -176,6 +178,7 @@ class Report:
 
         self.render_mapped()
         self.render_hand_excluded()
+        self.render_placements()
         self.render_highlights()
         self.render_checks(deck_ids)
 
@@ -497,6 +500,30 @@ class Report:
             self.out(f"| *{escape(entry['inat'])}* | *{escape(entry['referenceDb'])}* | {number(applied.count)} | "
                      f"{kind} | {entry['evidence']} |")
         self.out()
+
+    def render_placements(self):
+        s = self.s
+        if not s.placed and not s.unused_placements:
+            return
+        minimums = self.recipe.get("levelMinCounts", [])
+        self.out("## Von Hand verschoben")
+        self.out()
+        self.out(f"| Art | Rang | {self.order_label} | Level | Grund |")
+        self.out("|---|---|---|---|---|")
+        for species_id, placement in s.placed.items():
+            count = s.candidates[species_id].count
+            level = str(placement.level)
+            if placement.level <= len(minimums) and count < minimums[placement.level - 1]:
+                level += f" (unter dessen Mindestzählung {minimums[placement.level - 1]:g})"
+            self.out(f"| *{escape(self.names[species_id])}* | {number(self.rank_of.get(species_id))} | {number(count)} | "
+                     f"{level} | {escape(placement.reason)} |")
+        self.out()
+        if s.unused_placements:
+            self.out("Ohne Wirkung:")
+            self.out()
+            for name, why in s.unused_placements:
+                self.out(f"- *{escape(name)}*: {why}")
+            self.out()
 
     def render_hand_excluded(self):
         if "exclude" not in self.recipe:

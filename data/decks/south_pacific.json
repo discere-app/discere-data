@@ -1,23 +1,23 @@
 {
   "formatVersion": 2,
   "name": "Südpazifik",
-  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer von Fidschi, Französisch-Polynesien, den Cookinseln, Samoa, Amerikanisch-Samoa und Tonga. Level 1 enthält die häufigsten Arten und Highlights wie die Haiwand von Fakarava und die Buckelwale Tongas, Level 2 und 3 weitere Arten nach Häufigkeit.",
+  "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger von Fidschi, Französisch-Polynesien, den Cookinseln, Samoa, Amerikanisch-Samoa und Tonga. Level 1 enthält die häufigsten Arten und Highlights wie die Haiwand von Fakarava und die Buckelwale Tongas, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
   "translations": {
     "de": {
       "name": "Südpazifik",
-      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer von Fidschi, Französisch-Polynesien, den Cookinseln, Samoa, Amerikanisch-Samoa und Tonga. Level 1 enthält die häufigsten Arten und Highlights wie die Haiwand von Fakarava und die Buckelwale Tongas, Level 2 und 3 weitere Arten nach Häufigkeit."
+      "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger von Fidschi, Französisch-Polynesien, den Cookinseln, Samoa, Amerikanisch-Samoa und Tonga. Level 1 enthält die häufigsten Arten und Highlights wie die Haiwand von Fakarava und die Buckelwale Tongas, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
     },
     "en": {
       "name": "South Pacific",
-      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of Fiji, French Polynesia, the Cook Islands, Samoa, American Samoa and Tonga. Level 1 holds the most common species and highlights such as Fakarava's wall of sharks and Tonga's humpback whales, Levels 2 and 3 further species by frequency."
+      "description": "Reef fish, sharks, rays, sea turtles, cephalopods and marine mammals of Fiji, French Polynesia, the Cook Islands, Samoa, American Samoa and Tonga. Level 1 holds the most common species and highlights such as Fakarava's wall of sharks and Tonga's humpback whales, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
     },
     "fr": {
       "name": "Pacifique Sud",
-      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes des Fidji, de la Polynésie française, des îles Cook, des Samoa, des Samoa américaines et des Tonga. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le mur de requins de Fakarava et les baleines à bosse des Tonga, les niveaux 2 et 3 d'autres espèces par fréquence."
+      "description": "Poissons de récif, requins, raies, tortues marines, céphalopodes et mammifères marins des Fidji, de la Polynésie française, des îles Cook, des Samoa, des Samoa américaines et des Tonga. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le mur de requins de Fakarava et les baleines à bosse des Tonga, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
     },
     "es": {
       "name": "Pacífico Sur",
-      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de Fiyi, la Polinesia Francesa, las Islas Cook, Samoa, Samoa Americana y Tonga. El nivel 1 reúne las especies más comunes y joyas como el muro de tiburones de Fakarava y las ballenas jorobadas de Tonga, los niveles 2 y 3 otras especies por frecuencia."
+      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas, cefalópodos y mamíferos marinos de Fiyi, la Polinesia Francesa, las Islas Cook, Samoa, Samoa Americana y Tonga. El nivel 1 reúne las especies más comunes y joyas como el muro de tiburones de Fakarava y las ballenas jorobadas de Tonga, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
     }
   },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Blacktip_reef_sharks_at_Moorea_2025.jpg/330px-Blacktip_reef_sharks_at_Moorea_2025.jpg",
@@ -161,7 +161,6 @@
     "Amblyglyphidodon curacao",
     "Parapercis xanthogramma",
     "Thalassoma amblycephalum",
-    "Terapon jarbua",
     "Oxycheilinus digramma",
     "Octopus cyanea",
     "Acanthurus nigricans",
@@ -188,7 +187,6 @@
     "Halichoeres margaritaceus",
     "Thalassoma lunare",
     "Gymnothorax pictus",
-    "Anguilla marmorata",
     "Pterois volitans",
     "Acanthurus nigrofuscus",
     "Pycnochromis margaritifer",
@@ -201,6 +199,8 @@
     "Echeneis naucrates",
     "Lutjanus kasmira",
     "Parupeneus cyclostomus",
+    "Cetoscarus ocellatus",
+    "Echidna nebulosa",
     "Tridacna maxima",
     "Linckia laevigata",
     "Bohadschia argus",
@@ -419,7 +419,6 @@
         "Amblyglyphidodon curacao",
         "Parapercis xanthogramma",
         "Thalassoma amblycephalum",
-        "Terapon jarbua",
         "Oxycheilinus digramma",
         "Octopus cyanea",
         "Acanthurus nigricans",
@@ -446,7 +445,6 @@
         "Halichoeres margaritaceus",
         "Thalassoma lunare",
         "Gymnothorax pictus",
-        "Anguilla marmorata",
         "Pterois volitans",
         "Acanthurus nigrofuscus",
         "Pycnochromis margaritifer",
@@ -458,7 +456,9 @@
         "Scolopsis trilineata",
         "Echeneis naucrates",
         "Lutjanus kasmira",
-        "Parupeneus cyclostomus"
+        "Parupeneus cyclostomus",
+        "Cetoscarus ocellatus",
+        "Echidna nebulosa"
       ]
     },
     {

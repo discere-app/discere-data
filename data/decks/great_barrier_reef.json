@@ -1,23 +1,23 @@
 {
   "formatVersion": 2,
   "name": "Great Barrier Reef & Korallenmeer",
-  "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit.",
+  "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen.",
   "translations": {
     "de": {
       "name": "Great Barrier Reef & Korallenmeer",
-      "description": "Rifffische, Haie, Rochen, Meeresschildkröten und Kopffüßer des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit."
+      "description": "Rifffische, Haie, Rochen, Meeresschildkröten, Kopffüßer und Meeressäuger des Great Barrier Reef, Neukaledoniens und Vanuatus. Level 1 enthält die häufigsten Arten und Highlights wie Napoleon, Riffmanta und Dugong, Level 2 und 3 weitere Arten nach Häufigkeit. Dazu kommt ein Subdeck mit Wirbellosen und Korallen."
     },
     "en": {
       "name": "Great Barrier Reef & Coral Sea",
-      "description": "Reef fish, sharks, rays, sea turtles and cephalopods of the Great Barrier Reef, New Caledonia and Vanuatu. Level 1 holds the most common species and highlights such as the humphead wrasse, reef manta and dugong, Levels 2 and 3 further species by frequency."
+      "description": "Reef fish, sharks, rays, sea turtles, cephalopods and marine mammals of the Great Barrier Reef, New Caledonia and Vanuatu. Level 1 holds the most common species and highlights such as the humphead wrasse, reef manta and dugong, Levels 2 and 3 further species by frequency. A further subdeck covers invertebrates and corals."
     },
     "fr": {
       "name": "Grande Barrière de corail et mer de Corail",
-      "description": "Poissons de récif, requins, raies, tortues marines et céphalopodes de la Grande Barrière de corail, de la Nouvelle-Calédonie et du Vanuatu. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le napoléon, la raie manta de récif et le dugong, les niveaux 2 et 3 d'autres espèces par fréquence."
+      "description": "Poissons de récif, requins, raies, tortues marines, céphalopodes et mammifères marins de la Grande Barrière de corail, de la Nouvelle-Calédonie et du Vanuatu. Le niveau 1 réunit les espèces les plus communes et des incontournables comme le napoléon, la raie manta de récif et le dugong, les niveaux 2 et 3 d'autres espèces par fréquence. Un sous-paquet supplémentaire réunit invertébrés et coraux."
     },
     "es": {
       "name": "Gran Barrera de Coral y mar del Coral",
-      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas y cefalópodos de la Gran Barrera de Coral, Nueva Caledonia y Vanuatu. El nivel 1 reúne las especies más comunes y joyas como el pez napoleón, la manta de arrecife y el dugongo, los niveles 2 y 3 otras especies por frecuencia."
+      "description": "Peces de arrecife, tiburones, rayas, tortugas marinas, cefalópodos y mamíferos marinos de la Gran Barrera de Coral, Nueva Caledonia y Vanuatu. El nivel 1 reúne las especies más comunes y joyas como el pez napoleón, la manta de arrecife y el dugongo, los niveles 2 y 3 otras especies por frecuencia. Un submazo adicional reúne invertebrados y corales."
     }
   },
   "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Agincourt_Reef%2C_Great_Barrier_Reef%2C_Queensland_%28483804%29_%289440777727%29.jpg/330px-Agincourt_Reef%2C_Great_Barrier_Reef%2C_Queensland_%28483804%29_%289440777727%29.jpg",
@@ -71,7 +71,6 @@
     "Cheilinus undulatus",
     "Chaetodon vagabundus",
     "Gomphosus varius",
-    "Hippocampus kuda",
     "Lutjanus carponotatus",
     "Chaetodon auriga",
     "Naso unicornis",
@@ -83,13 +82,13 @@
     "Balistoides viridescens",
     "Pastinachus ater",
     "Canthigaster valentini",
+    "Plectorhinchus chaetodonoides",
     "Mobula alfredi",
     "Epinephelus lanceolatus",
     "Carcharhinus amblyrhynchos",
     "Caretta caretta",
     "Dugong dugon",
     "Balaenoptera acutorostrata",
-    "Plectorhinchus chaetodonoides",
     "Arothron hispidus",
     "Ostracion cubicum",
     "Caesio cuning",
@@ -199,6 +198,8 @@
     "Anampses neoguinaicus",
     "Diploprion bifasciatus",
     "Scarus niger",
+    "Diagramma labiosum",
+    "Hippocampus kuda",
     "Tridacna maxima",
     "Linckia laevigata",
     "Tridacna gigas",
@@ -228,14 +229,14 @@
     "Pocillopora damicornis",
     "Goniobranchus fidelis",
     "Hippopus hippopus",
-    "Ascarosepion latimanus",
-    "Sepioteuthis lessoniana",
     "Aplysia argus",
     "Lambis lambis",
     "Plakobranchus ocellatus",
     "Erronea errones",
     "Fromia indica",
     "Diadema setosum",
+    "Stenopus hispidus",
+    "Anneissia bennetti",
     "Charonia tritonis",
     "Odontodactylus scyllarus",
     "Hexabranchus sanguineus"
@@ -287,7 +288,6 @@
         "Cheilinus undulatus",
         "Chaetodon vagabundus",
         "Gomphosus varius",
-        "Hippocampus kuda",
         "Lutjanus carponotatus",
         "Chaetodon auriga",
         "Naso unicornis",
@@ -299,6 +299,7 @@
         "Balistoides viridescens",
         "Pastinachus ater",
         "Canthigaster valentini",
+        "Plectorhinchus chaetodonoides",
         "Mobula alfredi",
         "Epinephelus lanceolatus",
         "Carcharhinus amblyrhynchos",
@@ -325,7 +326,6 @@
         }
       },
       "speciesNames": [
-        "Plectorhinchus chaetodonoides",
         "Arothron hispidus",
         "Ostracion cubicum",
         "Caesio cuning",
@@ -384,7 +384,8 @@
         "Diodon hystrix",
         "Amphiprion perideraion",
         "Chelmon rostratus",
-        "Chaetodon flavirostris"
+        "Chaetodon flavirostris",
+        "Chaetodon unimaculatus"
       ]
     },
     {
@@ -405,7 +406,6 @@
         }
       },
       "speciesNames": [
-        "Chaetodon unimaculatus",
         "Chaetodon ulietensis",
         "Dischistodus melanotus",
         "Scarus altipinnis",
@@ -454,7 +454,9 @@
         "Cirripectes chelomatus",
         "Anampses neoguinaicus",
         "Diploprion bifasciatus",
-        "Scarus niger"
+        "Scarus niger",
+        "Diagramma labiosum",
+        "Hippocampus kuda"
       ]
     },
     {
@@ -504,14 +506,14 @@
         "Pocillopora damicornis",
         "Goniobranchus fidelis",
         "Hippopus hippopus",
-        "Ascarosepion latimanus",
-        "Sepioteuthis lessoniana",
         "Aplysia argus",
         "Lambis lambis",
         "Plakobranchus ocellatus",
         "Erronea errones",
         "Fromia indica",
         "Diadema setosum",
+        "Stenopus hispidus",
+        "Anneissia bennetti",
         "Charonia tritonis",
         "Odontodactylus scyllarus",
         "Hexabranchus sanguineus"

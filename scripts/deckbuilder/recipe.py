@@ -44,6 +44,11 @@ def exclude_names(recipe):
     return [e["name"] for e in recipe.get("exclude", [])]
 
 
+def placement_names(recipe):
+    """The scientific names the recipe puts on a level by hand."""
+    return [p["name"] for p in recipe.get("placements", [])]
+
+
 def load(path):
     """The recipe at `path`, checked, with its file paths made absolute."""
     try:
@@ -57,6 +62,9 @@ def load(path):
         raise RecipeError(f"{path} passt nicht zu schema/recipe.schema.json:\n" + "\n".join(lines))
     if len(recipe.get("levelMinCounts", [])) > len(recipe["levelSizes"]):
         raise RecipeError(f"{path}: levelMinCounts hat mehr Einträge als levelSizes")
+    beyond = [p["name"] for p in recipe.get("placements", []) if p["level"] > len(recipe["levelSizes"])]
+    if beyond:
+        raise RecipeError(f"{path}: placements auf ein Level, das levelSizes nicht hat: " + ", ".join(beyond))
     base = os.path.dirname(os.path.abspath(path))
     if recipe["order"]["source"] == "reef":
         recipe["order"]["csv"] = os.path.join(base, recipe["order"]["csv"])

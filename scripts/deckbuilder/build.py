@@ -34,7 +34,7 @@ from . import findings, gbif, guide, inat, inat_names, obis, reef_csv, signals
 from .checks import LANGUAGES, run_checks
 from .deck import build_deck, deck_names, deck_sources
 from .recipe import SCHEMA_DIR, RecipeError
-from .recipe import exclude_names, highlight_names
+from .recipe import exclude_names, highlight_names, placement_names
 from .recipe import load as load_recipe
 from .report import Report
 from .extra import build_extra
@@ -99,6 +99,24 @@ def describe_areas(recipe, fetcher):
     return areas
 
 
+def check_by_hand(recipe, resolution):
+    """A species is at most one of highlight, excluded and placed by hand,
+    and placed once only, whatever names the recipe uses for it."""
+    kinds = [("Highlight", highlight_names(recipe)), ("von Hand ausgeschlossen", exclude_names(recipe)),
+             ("von Hand verschoben", placement_names(recipe))]
+    for n, (first, first_names) in enumerate(kinds):
+        for second, second_names in kinds[n + 1:]:
+            both = {resolution[x] for x in first_names if resolution[x]} \
+                & {resolution[x] for x in second_names if resolution[x]}
+            if both:
+                raise BuildError(f"{first} und {second} zugleich: "
+                                 + ", ".join(sorted(x for x in first_names if resolution[x] in both)))
+    placed = [resolution[x] for x in placement_names(recipe) if resolution[x]]
+    if len(set(placed)) < len(placed):
+        raise BuildError("eine Art zweimal verschoben: " + ", ".join(
+            sorted(x for x in placement_names(recipe) if placed.count(resolution[x]) > 1)))
+
+
 def check_names(db, written):
     """Every written name (name → species id) resolves to its species
     through the reference DB's species_name_lookup, as the app resolves it."""
@@ -148,15 +166,11 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
         guides = read_guides(recipe)
 
         all_names = {name for name, _ in order.counts} | {name for name, _ in obis_counts}
-        all_names |= set(highlight_names(recipe)) | set(exclude_names(recipe))
+        all_names |= set(highlight_names(recipe)) | set(exclude_names(recipe)) | set(placement_names(recipe))
         for _, names in guides:
             all_names |= set(names)
         resolution = db.resolve(all_names)
-        both = {resolution[n] for n in highlight_names(recipe) if resolution[n]} \
-            & {resolution[n] for n in exclude_names(recipe) if resolution[n]}
-        if both:
-            raise BuildError("Highlight und von Hand ausgeschlossen zugleich: "
-                             + ", ".join(sorted(n for n in highlight_names(recipe) if resolution[n] in both)))
+        check_by_hand(recipe, resolution)
         facts = db.species(i for i in resolution.values() if i)
         flags = {i: water.get((f.source, f.external_id)) for i, f in facts.items()}
 
@@ -240,6 +254,8 @@ def run(recipe_path, decks_dir, fetcher, db, water, meta=(), name_map=()):
     print(f"{report_path}: Bericht")
     for name, why in selection.unused_excludes:
         print(f"[WARN] Ausschluss {name} wirkt nicht: {why}")
+    for name, why in selection.unused_placements:
+        print(f"[WARN] Verschiebung {name} wirkt nicht: {why}")
     for e in extras:
         for name, why in e.selection.unused_excludes:
             print(f"[WARN] Subdeck {e.spec['id']}: Ausschluss {name} wirkt nicht: {why}")
