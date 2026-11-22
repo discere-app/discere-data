@@ -212,6 +212,7 @@
     "Nidorellia armata",
     "Tripneustes depressus",
     "Elysia diomedea",
+    "Physalia utriculus",
     "Echinometra vanbrunti",
     "Pharia pyramidata",
     "Diadema mexicanum",
@@ -243,7 +244,6 @@
     "Holothuria atra",
     "Pilosabia trigona",
     "Spirobranchus incrassatus",
-    "Holothuria inornata",
     "Hymenocera picta",
     "Pocillopora damicornis"
   ],
@@ -491,6 +491,7 @@
         "Nidorellia armata",
         "Tripneustes depressus",
         "Elysia diomedea",
+        "Physalia utriculus",
         "Echinometra vanbrunti",
         "Pharia pyramidata",
         "Diadema mexicanum",
@@ -522,7 +523,6 @@
         "Holothuria atra",
         "Pilosabia trigona",
         "Spirobranchus incrassatus",
-        "Holothuria inornata",
         "Hymenocera picta",
         "Pocillopora damicornis"
       ]

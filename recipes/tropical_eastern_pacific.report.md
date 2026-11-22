@@ -46,6 +46,7 @@ Diese Arten führt das Deck nicht unter dem bevorzugten Namen der Referenz-DB, s
 |---|---|---|
 | *Neoniphon suborbitalis* | level-2 | *Sargocentron suborbitale* |
 | *Eucidaris galapagensis* | invertebrates | *Eucidaris thouarsii* |
+| *Physalia utriculus* | invertebrates | *Physalia physalis* |
 | *Acanthaster ellisii* | invertebrates | *Acanthaster planci* |
 | *Phyllonotus erythrostomus* | invertebrates | *Hexaplex erythrostomus* |
 
@@ -439,8 +440,8 @@ Je 10 Arten vor und nach jeder Level-Grenze, in der Reihenfolge, in der die Leve
 
 ## Änderungen gegenüber dem bestehenden Deck
 
-- neu: 2: *Holothuria inornata*, *Spirobranchus incrassatus*
-- entfallen: 2: *Chiton articulatus*, *Clibanarius digueti*
+- neu: 1: *Physalia utriculus*
+- entfallen: 1: *Holothuria inornata*
 
 ## Ausgeschlossene Kandidaten
 
@@ -994,7 +995,6 @@ Keine (`recipes/inat_names.json`).
 | *Ocypode gaudichaudii* | 1483 | Geisterkrabbe, lebt am trockenen Sandstrand. |
 | *Nerita scabricosta* | 1260 | Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
 | *Goniopsis pulchra* | 824 | Mangrovenkrabbe, lebt im Wurzelwerk und Schlick über dem Wasser. |
-| *Physalia utriculus* | 682 | Treibt an der Oberfläche der Hochsee und wird vor allem angespült am Strand beobachtet, keine Begegnung am Riff. |
 | *Pachygrapsus socius* | 534 | Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen. |
 | *Siphonaria gigas* | 454 | Napfschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
 | *Chiton stokesii* | 449 | Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser. |
@@ -1024,24 +1024,24 @@ Keine (`recipes/inat_names.json`).
 
 | Highlight | Begründung | Rang | Belege | Status |
 |---|---|---|---|---|
-| *Hymenocera picta* | Die Harlekingarnele frisst nur Seesterne und ist einer der begehrtesten Funde für Unterwasserfotografen. | 140 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
-| *Pocillopora damicornis* | Die Blumenkohlkoralle baut die meisten der wenigen Korallenriffe des Ostpazifiks, etwa vor Panama und der Kokosinsel. | 227 | Reihenfolge-Quelle, OBIS | invertebrates |
-| *Pavona gigantea* | Die Riesen-Pavona bildet im Ostpazifik meterhohe Korallenstöcke, die Taucher an Panamas und Costa Ricas Riffen sehen. | 33 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Hymenocera picta* | Die Harlekingarnele frisst nur Seesterne und ist einer der begehrtesten Funde für Unterwasserfotografen. | 141 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
+| *Pocillopora damicornis* | Die Blumenkohlkoralle baut die meisten der wenigen Korallenriffe des Ostpazifiks, etwa vor Panama und der Kokosinsel. | 228 | Reihenfolge-Quelle, OBIS | invertebrates |
+| *Pavona gigantea* | Die Riesen-Pavona bildet im Ostpazifik meterhohe Korallenstöcke, die Taucher an Panamas und Costa Ricas Riffen sehen. | 34 | Reihenfolge-Quelle, OBIS, Verbreitung | invertebrates |
 
 ### Prüfung
 
-- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): 39/40 (98 %)
+- Nachweis aus zwei unabhängigen Quellen (Reihenfolge-Quelle und OBIS ohne iNaturalist oder Verbreitung): 40/40 (100 %)
 - Endemisch in einer Rezept-Region laut FishBase/SeaLifeBase: 1: *Tambja mullineri*
 - Arten ohne Volksnamen `de` in der Referenz-DB: 32/40 (80 %)
-- Arten ohne Volksnamen `en` in der Referenz-DB: 14/40 (35 %)
-- Familien ohne Volksnamen `de`: 31/31 (100 %): *Acanthasteridae*, *Aeolidiidae*, *Agariciidae*, *Aplysiidae*, *Cidaridae*, *Conidae*, *Cypraeidae*, *Dendrophylliidae*, *Diadematidae*, *Diogenidae*, *Echinometridae*, *Fasciolariidae*, *Hipponicidae*, *Holothuriidae*, *Inachidae*, *Margaritidae*, *Muricidae*, *Ophidiasteridae*, *Ophiocomidae*, *Oreasteridae*, *Palaemonidae*, *Palinuridae*, *Plakobranchidae*, *Pocilloporidae*, *Polyceridae*, *Serpulidae*, *Stichopodidae*, *Strombidae*, *Toxopneustidae*, *Turbinidae*, *Veneridae*
-- Familien ohne Volksnamen `en`: 17/31 (55 %): *Aeolidiidae*, *Agariciidae*, *Cidaridae*, *Dendrophylliidae*, *Diadematidae*, *Echinometridae*, *Inachidae*, *Margaritidae*, *Ophidiasteridae*, *Ophiocomidae*, *Oreasteridae*, *Plakobranchidae*, *Pocilloporidae*, *Polyceridae*, *Serpulidae*, *Stichopodidae*, *Toxopneustidae*
+- Arten ohne Volksnamen `en` in der Referenz-DB: 13/40 (32 %)
+- Familien ohne Volksnamen `de`: 32/32 (100 %): *Acanthasteridae*, *Aeolidiidae*, *Agariciidae*, *Aplysiidae*, *Cidaridae*, *Conidae*, *Cypraeidae*, *Dendrophylliidae*, *Diadematidae*, *Diogenidae*, *Echinometridae*, *Fasciolariidae*, *Hipponicidae*, *Holothuriidae*, *Inachidae*, *Margaritidae*, *Muricidae*, *Ophidiasteridae*, *Ophiocomidae*, *Oreasteridae*, *Palaemonidae*, *Palinuridae*, *Physaliidae*, *Plakobranchidae*, *Pocilloporidae*, *Polyceridae*, *Serpulidae*, *Stichopodidae*, *Strombidae*, *Toxopneustidae*, *Turbinidae*, *Veneridae*
+- Familien ohne Volksnamen `en`: 18/32 (56 %): *Aeolidiidae*, *Agariciidae*, *Cidaridae*, *Dendrophylliidae*, *Diadematidae*, *Echinometridae*, *Inachidae*, *Margaritidae*, *Ophidiasteridae*, *Ophiocomidae*, *Oreasteridae*, *Physaliidae*, *Plakobranchidae*, *Pocilloporidae*, *Polyceridae*, *Serpulidae*, *Stichopodidae*, *Toxopneustidae*
 
 Volksnamen wie die App sie wählt (ohne Landesbezug; zur Laufzeit kann die App Namen aus iNaturalist ergänzen). Im Lernmodus Familie fragt die App den Familiennamen ab und fällt ohne Namen in der App-Sprache auf Englisch, dann auf den wissenschaftlichen Namen zurück.
 
 **Arten ohne zweite, unabhängige Quelle:**
 
-- *Holothuria inornata*: Reihenfolge-Quelle
+Keine.
 
 **Eine Art unter zwei Einträgen?** Deck-Arten mit gleichem Volksnamen oder gemeinsamem wissenschaftlichem Namen:
 
@@ -1057,40 +1057,40 @@ Keine.
 | 4 | *Nidorellia armata* | 885 | 1028 | native ×1 | Meer | Asteroidea |
 | 5 | *Tripneustes depressus* | 829 | 350 | native ×1 | Meer | Echinoidea |
 | 6 | *Elysia diomedea* | 798 | 88 | – | Meer | Gastropoda |
-| 7 | *Echinometra vanbrunti* | 662 | 297 | native ×1 | Meer | Echinoidea |
-| 8 | *Pharia pyramidata* | 618 | 446 | native ×1 | Meer | Asteroidea |
-| 9 | *Diadema mexicanum* | 518 | 735 | native ×1 | Meer | Echinoidea |
-| 10 | *Isostichopus fuscus* | 398 | 11909 | native ×1 | Meer | Holothuroidea |
-| 11 | *Tubastraea coccinea* | 393 | 600 | native ×1 | Meer | Hexacorallia |
-| 12 | *Panulirus inflatus* | 358 | 5 | – | Meer | Malacostraca |
-| 13 | *Aplysia californica* | 305 | 29 | native ×1 | Meer | Gastropoda |
-| 14 | *Acanthaster ellisii* (Quelle: *Acanthaster solaris*) | 291 | 57 | native ×1 | Meer | Asteroidea |
-| 15 | *Toxopneustes roseus* | 284 | 142 | native ×1 | Meer | Echinoidea |
-| 16 | *Hexaplex princeps* | 277 | 1124 | native ×1 | Meer | Gastropoda |
-| 17 | *Holothuria lubrica* | 266 | – | native ×1 | Meer | Holothuroidea |
-| 18 | *Titanostrombus galeatus* | 260 | 43 | native ×1 | Meer | Gastropoda |
-| 19 | *Panulirus penicillatus* | 245 | 10978 | native ×2 | Meer | Malacostraca |
-| 20 | *Panulirus gracilis* | 231 | 6986 | native ×1 | Meer | Malacostraca |
-| 21 | *Ophiocoma aethiops* | 216 | 130 | native ×1 | Meer | Ophiuroidea |
-| 22 | *Macrocypraea cervinetta* | 215 | 99 | – | Meer | Gastropoda |
-| 23 | *Tambja mullineri* | 203 | 221 | endemic ×1 | Meer | Gastropoda |
-| 24 | *Spurilla braziliana* | 188 | 5 | – | Meer | Gastropoda |
-| 25 | *Triplofusus princeps* | 170 | 244 | – | Meer | Gastropoda |
-| 26 | *Megapitaria squalida* | 169 | 148 | native ×1 | Meer | Bivalvia |
-| 27 | *Pinctada mazatlanica* | 169 | 58 | native ×1 | Meer | Bivalvia |
-| 28 | *Stenorhynchus debilis* | 165 | 201 | native ×1 | Meer | Malacostraca |
-| 29 | *Calcinus explorator* | 151 | 42 | native ×1 | Meer | Malacostraca |
-| 30 | *Turbo fluctuosus* | 148 | 87 | – | Meer | Gastropoda |
-| 31 | *Conus purpurascens* | 146 | 146 | native ×1 | Meer | Gastropoda |
-| 32 | *Conus nux* | 141 | 110 | native ×1 | Meer | Gastropoda |
-| 33 | *Pavona gigantea* (Highlight; 71 Beobachter) | 139 | 592 | native ×2 | Meer | Hexacorallia |
-| 34 | *Phyllonotus erythrostomus* | 137 | 59 | – | Meer | Gastropoda |
-| 35 | *Holothuria atra* | 132 | 124 | native ×1 | Meer | Holothuroidea |
-| 36 | *Pilosabia trigona* | 121 | 57 | native ×1 | Meer | Gastropoda |
-| 37 | *Spirobranchus incrassatus* | 119 | – | native ×1 | Meer | Polychaeta |
-| 38 | *Holothuria inornata* | 116 | – | – | Meer | Holothuroidea |
-| 140 | *Hymenocera picta* (Highlight; 30 Beobachter) | 33 | 4 | native ×1 | Meer | Malacostraca |
-| 227 | *Pocillopora damicornis* (Highlight; 14 Beobachter) | 18 | 93 | – | Meer | Hexacorallia |
+| 7 | *Physalia utriculus* | 682 | 6 | native ×1 | Meer | Hydrozoa |
+| 8 | *Echinometra vanbrunti* | 662 | 297 | native ×1 | Meer | Echinoidea |
+| 9 | *Pharia pyramidata* | 618 | 446 | native ×1 | Meer | Asteroidea |
+| 10 | *Diadema mexicanum* | 518 | 735 | native ×1 | Meer | Echinoidea |
+| 11 | *Isostichopus fuscus* | 398 | 11909 | native ×1 | Meer | Holothuroidea |
+| 12 | *Tubastraea coccinea* | 393 | 600 | native ×1 | Meer | Hexacorallia |
+| 13 | *Panulirus inflatus* | 358 | 5 | – | Meer | Malacostraca |
+| 14 | *Aplysia californica* | 305 | 29 | native ×1 | Meer | Gastropoda |
+| 15 | *Acanthaster ellisii* (Quelle: *Acanthaster solaris*) | 291 | 57 | native ×1 | Meer | Asteroidea |
+| 16 | *Toxopneustes roseus* | 284 | 142 | native ×1 | Meer | Echinoidea |
+| 17 | *Hexaplex princeps* | 277 | 1124 | native ×1 | Meer | Gastropoda |
+| 18 | *Holothuria lubrica* | 266 | – | native ×1 | Meer | Holothuroidea |
+| 19 | *Titanostrombus galeatus* | 260 | 43 | native ×1 | Meer | Gastropoda |
+| 20 | *Panulirus penicillatus* | 245 | 10978 | native ×2 | Meer | Malacostraca |
+| 21 | *Panulirus gracilis* | 231 | 6986 | native ×1 | Meer | Malacostraca |
+| 22 | *Ophiocoma aethiops* | 216 | 130 | native ×1 | Meer | Ophiuroidea |
+| 23 | *Macrocypraea cervinetta* | 215 | 99 | – | Meer | Gastropoda |
+| 24 | *Tambja mullineri* | 203 | 221 | endemic ×1 | Meer | Gastropoda |
+| 25 | *Spurilla braziliana* | 188 | 5 | – | Meer | Gastropoda |
+| 26 | *Triplofusus princeps* | 170 | 244 | – | Meer | Gastropoda |
+| 27 | *Megapitaria squalida* | 169 | 148 | native ×1 | Meer | Bivalvia |
+| 28 | *Pinctada mazatlanica* | 169 | 58 | native ×1 | Meer | Bivalvia |
+| 29 | *Stenorhynchus debilis* | 165 | 201 | native ×1 | Meer | Malacostraca |
+| 30 | *Calcinus explorator* | 151 | 42 | native ×1 | Meer | Malacostraca |
+| 31 | *Turbo fluctuosus* | 148 | 87 | – | Meer | Gastropoda |
+| 32 | *Conus purpurascens* | 146 | 146 | native ×1 | Meer | Gastropoda |
+| 33 | *Conus nux* | 141 | 110 | native ×1 | Meer | Gastropoda |
+| 34 | *Pavona gigantea* (Highlight; 71 Beobachter) | 139 | 592 | native ×2 | Meer | Hexacorallia |
+| 35 | *Phyllonotus erythrostomus* | 137 | 59 | – | Meer | Gastropoda |
+| 36 | *Holothuria atra* | 132 | 124 | native ×1 | Meer | Holothuroidea |
+| 37 | *Pilosabia trigona* | 121 | 57 | native ×1 | Meer | Gastropoda |
+| 38 | *Spirobranchus incrassatus* | 119 | – | native ×1 | Meer | Polychaeta |
+| 141 | *Hymenocera picta* (Highlight; 30 Beobachter) | 33 | 4 | native ×1 | Meer | Malacostraca |
+| 228 | *Pocillopora damicornis* (Highlight; 14 Beobachter) | 18 | 93 | – | Meer | Hexacorallia |
 
 ### Grenzfälle
 
@@ -1098,31 +1098,31 @@ Je 10 Arten vor und nach der Grenze (Highlights übersprungen).
 
 | Rang | Art | iNat | OBIS ohne iNat | FishBase/SLB im Gebiet | Wasser | Klasse | Im Subdeck |
 |---|---|---|---|---|---|---|---|
-| 28 | *Stenorhynchus debilis* | 165 | 201 | native ×1 | Meer | Malacostraca | ja |
-| 29 | *Calcinus explorator* | 151 | 42 | native ×1 | Meer | Malacostraca | ja |
-| 30 | *Turbo fluctuosus* | 148 | 87 | – | Meer | Gastropoda | ja |
-| 31 | *Conus purpurascens* | 146 | 146 | native ×1 | Meer | Gastropoda | ja |
-| 32 | *Conus nux* | 141 | 110 | native ×1 | Meer | Gastropoda | ja |
-| 34 | *Phyllonotus erythrostomus* | 137 | 59 | – | Meer | Gastropoda | ja |
-| 35 | *Holothuria atra* | 132 | 124 | native ×1 | Meer | Holothuroidea | ja |
-| 36 | *Pilosabia trigona* | 121 | 57 | native ×1 | Meer | Gastropoda | ja |
-| 37 | *Spirobranchus incrassatus* | 119 | – | native ×1 | Meer | Polychaeta | ja |
-| 38 | *Holothuria inornata* | 116 | – | – | Meer | Holothuroidea | ja |
+| 28 | *Pinctada mazatlanica* | 169 | 58 | native ×1 | Meer | Bivalvia | ja |
+| 29 | *Stenorhynchus debilis* | 165 | 201 | native ×1 | Meer | Malacostraca | ja |
+| 30 | *Calcinus explorator* | 151 | 42 | native ×1 | Meer | Malacostraca | ja |
+| 31 | *Turbo fluctuosus* | 148 | 87 | – | Meer | Gastropoda | ja |
+| 32 | *Conus purpurascens* | 146 | 146 | native ×1 | Meer | Gastropoda | ja |
+| 33 | *Conus nux* | 141 | 110 | native ×1 | Meer | Gastropoda | ja |
+| 35 | *Phyllonotus erythrostomus* | 137 | 59 | – | Meer | Gastropoda | ja |
+| 36 | *Holothuria atra* | 132 | 124 | native ×1 | Meer | Holothuroidea | ja |
+| 37 | *Pilosabia trigona* | 121 | 57 | native ×1 | Meer | Gastropoda | ja |
+| 38 | *Spirobranchus incrassatus* | 119 | – | native ×1 | Meer | Polychaeta | ja |
 | | **Grenze** | | | | | | |
-| 39 | *Glycymeris gigantea* | 114 | 51 | – | Meer | ? | nein |
-| 40 | *Ozius verreauxii* | 114 | 28 | native ×1 | Meer | ? | nein |
-| 41 | *Palythoa mutuki* | 114 | – | native ×1 | Meer | ? | nein |
-| 42 | *Exaiptasia diaphana* | 109 | 13 | – | Meer | ? | nein |
-| 43 | *Architectonica nobilis* | 99 | 51 | – | Meer | ? | nein |
-| 44 | *Crucibulum scutellatum* | 98 | 114 | native ×1 | Meer | ? | nein |
-| 45 | *Conus gladiator* | 96 | 65 | native ×1 | Meer | ? | nein |
-| 46 | *Cerithium maculosum* | 95 | 7 | – | Meer | ? | nein |
-| 47 | *Fissurella virescens* | 94 | 49 | native ×1 | Meer | ? | nein |
-| 48 | *Palaemon ritteri* | 93 | 39 | native ×1 | Meer | ? | nein |
+| 39 | *Holothuria inornata* | 116 | – | – | Meer | ? | nein |
+| 40 | *Glycymeris gigantea* | 114 | 51 | – | Meer | ? | nein |
+| 41 | *Ozius verreauxii* | 114 | 28 | native ×1 | Meer | ? | nein |
+| 42 | *Palythoa mutuki* | 114 | – | native ×1 | Meer | ? | nein |
+| 43 | *Exaiptasia diaphana* | 109 | 13 | – | Meer | ? | nein |
+| 44 | *Architectonica nobilis* | 99 | 51 | – | Meer | ? | nein |
+| 45 | *Crucibulum scutellatum* | 98 | 114 | native ×1 | Meer | ? | nein |
+| 46 | *Conus gladiator* | 96 | 65 | native ×1 | Meer | ? | nein |
+| 47 | *Cerithium maculosum* | 95 | 7 | – | Meer | ? | nein |
+| 48 | *Fissurella virescens* | 94 | 49 | native ×1 | Meer | ? | nein |
 
 ### Ausgeschlossene Kandidaten
 
-<details><summary>492 Arten</summary>
+<details><summary>491 Arten</summary>
 
 | Art | iNat | Wasser | Grund |
 |---|---|---|---|
@@ -1131,7 +1131,6 @@ Je 10 Arten vor und nach der Grenze (Highlights übersprungen).
 | *Ocypode gaudichaudii* | 1483 | Meer | von Hand ausgeschlossen (Geisterkrabbe, lebt am trockenen Sandstrand.) |
 | *Nerita scabricosta* | 1260 | Meer | von Hand ausgeschlossen (Schnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
 | *Goniopsis pulchra* | 824 | Meer | von Hand ausgeschlossen (Mangrovenkrabbe, lebt im Wurzelwerk und Schlick über dem Wasser.) |
-| *Physalia utriculus* | 682 | Meer | von Hand ausgeschlossen (Treibt an der Oberfläche der Hochsee und wird vor allem angespült am Strand beobachtet, keine Begegnung am Riff.) |
 | *Pachygrapsus socius* | 534 | Meer | von Hand ausgeschlossen (Felsenkrabbe der Spritzwasserzone, läuft über dem Wasser auf den Uferfelsen.) |
 | *Siphonaria gigas* | 454 | Meer | von Hand ausgeschlossen (Napfschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
 | *Chiton stokesii* | 449 | Meer | von Hand ausgeschlossen (Käferschnecke der Felsküste, sitzt in der Gezeitenzone über dem Wasser.) |
